@@ -24,8 +24,8 @@ On a ZCU216 with 26 real-world experimental and computing circuits, Ant-Q enable
 
 | Path | Contents |
 |---|---|
-| `gateware/` | Submodule — QubiC 2.0 gateware with Ant-Q Uplink integrated (ZCU216) |
-| `benchmark/` | Submodule — benchmark suite: 6 physical experiments and 20 computing circuits, translated to QubiC-compatible pulse-level commands, plus the 14-qubit configuration |
+| [`gateware/`](https://gitlab.com/yguang1/gateware_qce) | Submodule — QubiC 2.0 gateware with Ant-Q Uplink integrated (ZCU216) |
+| [`benchmark/`](https://gitlab.com/yguang1/benchmark_qce) | Submodule — benchmark suite: 6 physical experiments and 20 computing circuits, translated to QubiC-compatible pulse-level commands, plus the 14-qubit configuration |
 
 ## Getting Started
 
@@ -47,9 +47,9 @@ See the READMEs inside each submodule for build and usage instructions.
 
 | Component | Location | Status |
 |---|---|---|
-| Ant-Q Uplink | `gateware/` | Integrated with QubiC 2.0, publicly available |
+| Ant-Q Uplink | [`gateware/`](https://gitlab.com/yguang1/gateware_qce) | Integrated with QubiC 2.0, publicly available |
 | Ant-Q Downlink | — | Under stress testing; to be integrated into QubiC 3.0 |
-| Benchmark suite | `benchmark/` | Publicly available |
+| Benchmark suite | [`benchmark/`](https://gitlab.com/yguang1/benchmark_qce) | Publicly available |
 | Early-termination monitor | — | Host-side software service (TVD/HF convergence detection) |
 
 Upstream project: [QubiC](https://gitlab.com/LBL-QubiC) — an open-source FPGA-based qubit control system developed at Lawrence Berkeley National Laboratory. Ant-Q is being integrated into the QubiC 3.0 release.
