@@ -1,0 +1,6 @@
+[submodule "gateware"]
+	path = gateware
+	url = https://gitlab.com/yguang1/gateware_qce.git
+[submodule "benchmark"]
+	path = benchmark
+	url = https://gitlab.com/yguang1/benchmark_qce.git
