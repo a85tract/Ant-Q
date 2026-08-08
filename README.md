@@ -24,7 +24,8 @@ On a ZCU216 with 26 real-world experimental and computing circuits, Ant-Q enable
 
 | Path | Contents |
 |---|---|
-| [`gateware/`](https://gitlab.com/yguang1/gateware_qce) | Submodule — QubiC 2.0 gateware with Ant-Q Uplink integrated (ZCU216) |
+| [`gateware/`](https://gitlab.com/lbl-qubic/gateware/-/tree/feat/ddr_mem) | Submodule — official QubiC gateware, `feat/ddr_mem` branch: Ant-Q Uplink + Downlink integrated (ZCU216) |
+| [`software/`](https://gitlab.com/lbl-qubic/software/-/tree/feat/ddr_mem) | Submodule — official QubiC host software, `feat/ddr_mem` branch: DDR readout + command-streaming batch client/servers |
 | [`benchmark/`](https://gitlab.com/yguang1/benchmark_qce) | Submodule — benchmark suite: 6 physical experiments and 20 computing circuits, translated to QubiC-compatible pulse-level commands, plus the 14-qubit configuration |
 
 ## Getting Started
@@ -47,8 +48,8 @@ See the READMEs inside each submodule for build and usage instructions.
 
 | Component | Location | Status |
 |---|---|---|
-| Ant-Q Uplink | [`gateware/`](https://gitlab.com/yguang1/gateware_qce) | Integrated with QubiC 2.0, publicly available |
-| Ant-Q Downlink | — | Under stress testing; to be integrated into QubiC 3.0 |
+| Ant-Q Uplink | [`gateware/`](https://gitlab.com/lbl-qubic/gateware/-/tree/feat/ddr_mem) | Integrated, publicly available (official QubiC `feat/ddr_mem` branch) |
+| Ant-Q Downlink | [`gateware/`](https://gitlab.com/lbl-qubic/gateware/-/tree/feat/ddr_mem) + [`software/`](https://gitlab.com/lbl-qubic/software/-/tree/feat/ddr_mem) | Integrated, board-validated, publicly available (official QubiC `feat/ddr_mem` branch); mainline integration pending |
 | Benchmark suite | [`benchmark/`](https://gitlab.com/yguang1/benchmark_qce) | Publicly available |
 | Early-termination monitor | — | Host-side software service (TVD/HF convergence detection) |
 
