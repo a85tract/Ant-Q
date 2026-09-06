@@ -1,7 +1,9 @@
 # experiments/ -- measurement and analysis code
 
 Two independent parts: `board/` needs the ZCU216 with the pinned image and servers; `rq3_noise_study/` runs on any
-machine with Qiskit. Every script writes into `../results/` (override with `ANTQ_RESULTS`).
+machine with Qiskit. Every script reads and writes `<repo>/results/` (the directory next to `experiments/`; the board scripts
+accept `ANTQ_RESULTS` to redirect). Re-runs of the first-study scripts (`run_noise_exp.py`, `run_early_stop.py`) write to
+`<repo>/results/rq3_v0/` so that the archived outputs in `results/rq3_v0_archive/` stay untouched.
 
 ## board/ -- hardware measurements
 
@@ -15,7 +17,7 @@ machine with Qiskit. Every script writes into `../results/` (override with `ANTQ
 | `run_decomp.sh` | Single-circuit fixed-cost decomposition (batch_server protocol v7 stage timestamps). |
 | `run_*.sh`, `run_after_*.sh`, `run_c*_campaign.sh`, `run_phase2_*.sh`, `run_c*_batches_resilient.sh` | The exact driver sequences of the earlier campaigns and diagnostics (unit-floor root cause, prefill / start-threshold diagnostics). They hard-code the authors' gateware build directories and software checkout; kept as the record of what was run, not as portable tools. |
 | `deploy_servers.sh` | Pushes the three PS servers to the board and restarts the QubiC service. |
-| `pool_preflight.py`, `pool_smoke_test.py`, `make_pool_tables.py` | Pool-wide table checks (group compatibility of the 32 manifests, remapped-pulse byte verification, |IQ|-histogram equivalence) and the Table 4 tables with block-level confidence intervals. |
+| `pool_preflight.py`, `pool_smoke_test.py`, `make_pool_tables.py` | Pool-wide table checks (group compatibility of the 32 manifests, remapped-pulse byte verification, abs-IQ-histogram equivalence) and the Table 4 tables with block-level confidence intervals. |
 | `make_tables.py`, `make_phys_tables.py`, `make_decomp_table.py`, `make_sequences.py`, `calib_feasibility.py`, `build_real_vs_surrogate.py`, `nonmatching_mechanism.py`, `c1_slope.py`, `c1_slope_real.py` | Table builders and the analyses referenced in the reports (realized shot length by the slope method, surrogate-vs-real equivalence, the std-mode mechanism model). |
 | `scope_cadence.py` | Oscilloscope cadence metrology: capture loop (Tektronix MSO71254C, SCPI over TCP) and the gap-segmented shot-period analysis. |
 | `data/benchmark_results_20.json` | Per-circuit shots and compiled per-shot durations used by the surrogate mode. |
@@ -40,7 +42,7 @@ at commit `c22cce8` with `patches/distributed_processor_elem_cfg_pool.patch` app
 | File | Purpose |
 |---|---|
 | `run_noise_exp.py`, `run_early_stop.py` | The first study (single seed, one backend per run): readability grades and the early-stop checkpoints. Their outputs as archived are in `results/rq3_v0_archive/`. |
-| `rq3_stats.py`, `run_rq3_stats.sh` | The multi-seed study: 20 circuits x 6 fake backends x seeds 0-19, paper rule and the archived TVD-only rule side by side, ground-truth grade per seed, false/missed-stop accounting. `CIRCUITS=v1|v2`, `REF=sample|exact` (see `rq3_common.py`). |
+| `rq3_stats.py`, `run_rq3_stats.sh` | The multi-seed study: 20 circuits x 6 fake backends x seeds 0-19, paper rule and the archived TVD-only rule side by side, ground-truth grade per seed, false/missed-stop accounting. `CIRCUITS=v1` or `v2`, `REF=sample` or `exact` (see `rq3_common.py`). |
 | `make_rq3_tables.py` | Per-cell counts, stop checkpoints and the paper's table in multi-seed form (`results/table_rq3_cells*.csv`). |
 | `rq3_adequacy_gate.py` | Sampling-adequacy gate: noiseless replicate pairs per checkpoint; a circuit is evaluable only where the noiseless null stays inside PASS. |
 | `rq3_ideal_stats.py`, `rq3_sampling_floor.py`, `rq3_xeb_probe.py` | Exact ideal-distribution statistics (entropy, collision ratio), the noiseless TVD/HF floor, and the exact-probability fidelity probe used in the addendum. |

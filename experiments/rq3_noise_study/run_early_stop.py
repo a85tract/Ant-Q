@@ -34,7 +34,7 @@ from circuits import build_all_circuits
 from metrics import (counts_to_probs, total_variation_distance,
                      hellinger_fidelity, classify_readability)
 
-RESULTS_DIR = Path(__file__).parent / 'results'
+RESULTS_DIR = Path(__file__).resolve().parent.parent.parent / 'results' / 'rq3_v0'   # re-runs of the first study go here; the archived outputs are in results/rq3_v0_archive/
 RESULTS_DIR.mkdir(exist_ok=True)
 
 # Convergence: TVD between consecutive checkpoints < threshold

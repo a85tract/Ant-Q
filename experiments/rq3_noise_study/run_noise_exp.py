@@ -45,7 +45,7 @@ BACKENDS = [
     ('FakeTorino',      FakeTorino,      133),
 ]
 
-RESULTS_DIR = Path(__file__).parent / 'results'
+RESULTS_DIR = Path(__file__).resolve().parent.parent.parent / 'results' / 'rq3_v0'   # re-runs of the first study go here; the archived outputs are in results/rq3_v0_archive/
 RESULTS_DIR.mkdir(exist_ok=True)
 
 # Optional filter: only process circuits with idx in [START_IDX, END_IDX].
