@@ -32,7 +32,7 @@ Start with the reports; every table below is referenced from them with the stati
 | `table_decomp.csv` | Fixed cost per circuit and stage (addendum D) |
 | `table_stop.csv` | Early-stop pairs: time saved, overshoot, latency (report B) |
 | `table_rq3_cells_v2.csv`, `table_rq3_cells.csv` | RQ3 per circuit x backend over 20 seeds: grades, stops, false/missed stops (v2 = the paper; v1 = the first parameter set) |
-| `per_shot_realized_real.csv`, `per_shot_c1_slope.csv`, `per_shot_realized.csv` | Realized shot length of every program (slope method), the denominator of the overhead columns |
+| `per_shot_realized_real.csv`, `per_shot_c1_slope.csv`, `per_shot_realized.csv` | Realized shot length of every program (slope method). Denominator of the realized-time columns (`*_delta_real_ms`, `*_delta_real_pct` in `table3_single.csv`; `fixed_realized_*` in `table_decomp.csv`). The `delta_pct` columns of `table4_pool*.csv` / `table4_batch.csv` and `*_delta_pct` of `table3_single.csv` are relative to the compiled QPU time (`qpu_ms`) |
 | `real_vs_surrogate.csv`, `nonmatching_mechanism.csv` | Surrogate-vs-real equivalence cells and the std-mode mechanism model (first campaign) |
 | `shots_verification.csv` | The 20 circuits' shot counts with source provenance |
 | `batch_manifest.csv`, `batch_manifest_provenance.csv` | The 32 immutable batch manifests (seed 42) and their per-circuit provenance |
