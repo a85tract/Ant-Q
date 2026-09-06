@@ -1,0 +1,1264 @@
+[c1] 21 r-1: ok elapsed=436.418395 ms qpu=432.4000 ms
+[c1] 21 r0: ok elapsed=436.293684 ms qpu=432.4000 ms
+[c1] 21 r1: ok elapsed=436.475815 ms qpu=432.4000 ms
+[c1] 21 r2: ok elapsed=436.488296 ms qpu=432.4000 ms
+[c1] 21 r3: ok elapsed=436.386525 ms qpu=432.4000 ms
+[c1] 21 r4: ok elapsed=436.508326 ms qpu=432.4000 ms
+[c1] 22 r-1: ok elapsed=22.502365 ms qpu=20.0480 ms
+[c1] 22 r0: ok elapsed=22.474655 ms qpu=20.0480 ms
+[c1] 22 r1: ok elapsed=22.414014 ms qpu=20.0480 ms
+[c1] 22 r2: ok elapsed=22.457815 ms qpu=20.0480 ms
+[c1] 22 r3: ok elapsed=22.535955 ms qpu=20.0480 ms
+[c1] 22 r4: ok elapsed=22.461125 ms qpu=20.0480 ms
+[c1] 23 r-1: ok elapsed=174.527125 ms qpu=171.4000 ms
+[c1] 23 r0: ok elapsed=174.410424 ms qpu=171.4000 ms
+[c1] 23 r1: ok elapsed=174.358034 ms qpu=171.4000 ms
+[c1] 23 r2: ok elapsed=174.479455 ms qpu=171.4000 ms
+[c1] 23 r3: ok elapsed=174.415795 ms qpu=171.4000 ms
+[c1] 23 r4: ok elapsed=174.484005 ms qpu=171.4000 ms
+[c1] 24 r-1: ok elapsed=63.518256 ms qpu=60.9075 ms
+[c1] 24 r0: ok elapsed=63.518285 ms qpu=60.9075 ms
+[c1] 24 r1: ok elapsed=63.380144 ms qpu=60.9075 ms
+[c1] 24 r2: ok elapsed=63.388494 ms qpu=60.9075 ms
+[c1] 24 r3: ok elapsed=63.422495 ms qpu=60.9075 ms
+[c1] 24 r4: ok elapsed=63.329574 ms qpu=60.9075 ms
+[c1] 25 r-1: ok elapsed=20.01948 ms qpu=17.5309 ms
+[c1] 25 r0: ok elapsed=20.0175 ms qpu=17.5309 ms
+[c1] 25 r1: ok elapsed=20.019451 ms qpu=17.5309 ms
+[c1] 25 r2: ok elapsed=19.99266 ms qpu=17.5309 ms
+[c1] 25 r3: ok elapsed=19.99333 ms qpu=17.5309 ms
+[c1] 25 r4: ok elapsed=19.878899 ms qpu=17.5309 ms
+[c1] ghz8_x30 r-1: ok elapsed=2472.64149 ms qpu=26.2656 ms
+[c1] ghz8_x30 r0: ok elapsed=2412.53291 ms qpu=26.2656 ms
+[c1] ghz8_x30 r1: ok elapsed=2295.551659 ms qpu=26.2656 ms
+[c1] ghz8_x30 r2: ok elapsed=1892.279805 ms qpu=26.2656 ms
+[c1] ghz8_x30 r3: ok elapsed=2001.005874 ms qpu=26.2656 ms
+[c1] ghz8_x30 r4: ok elapsed=2127.544969 ms qpu=26.2656 ms
+[c1] qaoa12_x30 r-1: ok elapsed=13831.253915 ms qpu=12972.0000 ms
+Exception in thread Thread-227 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 175104/960000 B
+[c1] qaoa12_x30 r0: data_mismatch elapsed=None ms qpu=12972.0000 ms
+Exception in thread Thread-228 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 2560/960000 B
+[c1] qaoa12_x30 r0: data_mismatch elapsed=None ms qpu=12972.0000 ms
+!! qaoa12_x30: second failure, stopping this workload
+Exception in thread Thread-233 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 7680/40000 B
+[c1] rand10_t0 r-1: data_mismatch elapsed=None ms qpu=939.6340 ms
+Exception in thread Thread-235 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 512/393216 B
+[c1] rand10_t0 r0: data_mismatch elapsed=None ms qpu=939.6340 ms
+Exception in thread Thread-236 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 512/16000 B
+[c1] rand10_t0 r0: data_mismatch elapsed=None ms qpu=939.6340 ms
+!! rand10_t0: second failure, stopping this workload
+Exception in thread Thread-238 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 4096/40960 B
+[c1] rand10_t1 r-1: data_mismatch elapsed=None ms qpu=585.9953 ms
+Exception in thread Thread-240 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 2560/40960 B
+[c1] rand10_t1 r0: data_mismatch elapsed=None ms qpu=585.9953 ms
+Exception in thread Thread-241 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 512/24000 B
+[c1] rand10_t1 r0: data_mismatch elapsed=None ms qpu=585.9953 ms
+!! rand10_t1: second failure, stopping this workload
+Exception in thread Thread-242 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 8704/44800 B
+[c1] rand10_t2 r-1: data_mismatch elapsed=None ms qpu=704.9334 ms
+Exception in thread Thread-243 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 2560/44800 B
+[c1] rand10_t2 r0: data_mismatch elapsed=None ms qpu=704.9334 ms
+Exception in thread Thread-244 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 1536/44800 B
+[c1] rand10_t2 r0: data_mismatch elapsed=None ms qpu=704.9334 ms
+!! rand10_t2: second failure, stopping this workload
+Exception in thread Thread-245 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 512/44800 B
+[c1] rand10_t3 r-1: data_mismatch elapsed=None ms qpu=406.2972 ms
+Exception in thread Thread-246 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 5120/44800 B
+[c1] rand10_t3 r0: data_mismatch elapsed=None ms qpu=406.2972 ms
+Exception in thread Thread-247 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 1536/44800 B
+[c1] rand10_t3 r0: data_mismatch elapsed=None ms qpu=406.2972 ms
+!! rand10_t3: second failure, stopping this workload
+Exception in thread Thread-248 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 2048/40000 B
+[c1] rand10_t4 r-1: data_mismatch elapsed=None ms qpu=444.1056 ms
+Exception in thread Thread-249 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 512/40000 B
+[c1] rand10_t4 r0: data_mismatch elapsed=None ms qpu=444.1056 ms
+Exception in thread Thread-250 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand10_t4 r0: data_mismatch elapsed=None ms qpu=444.1056 ms
+!! rand10_t4: second failure, stopping this workload
+Exception in thread Thread-251 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40960 B
+[c1] rand10_t5 r-1: data_mismatch elapsed=None ms qpu=186.5695 ms
+Exception in thread Thread-252 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40960 B
+[c1] rand10_t5 r0: data_mismatch elapsed=None ms qpu=186.5695 ms
+Exception in thread Thread-253 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40960 B
+[c1] rand10_t5 r0: data_mismatch elapsed=None ms qpu=186.5695 ms
+!! rand10_t5: second failure, stopping this workload
+Exception in thread Thread-254 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand10_t6 r-1: data_mismatch elapsed=None ms qpu=1086.9310 ms
+Exception in thread Thread-255 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand10_t6 r0: data_mismatch elapsed=None ms qpu=1086.9310 ms
+Exception in thread Thread-256 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand10_t6 r0: data_mismatch elapsed=None ms qpu=1086.9310 ms
+!! rand10_t6: second failure, stopping this workload
+Exception in thread Thread-257 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/24000 B
+[c1] rand10_t7 r-1: data_mismatch elapsed=None ms qpu=665.5469 ms
+Exception in thread Thread-258 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/24000 B
+[c1] rand10_t7 r0: data_mismatch elapsed=None ms qpu=665.5469 ms
+Exception in thread Thread-259 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/24000 B
+[c1] rand10_t7 r0: data_mismatch elapsed=None ms qpu=665.5469 ms
+!! rand10_t7: second failure, stopping this workload
+Exception in thread Thread-260 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/80000 B
+[c1] rand10_t8 r-1: data_mismatch elapsed=None ms qpu=668.9461 ms
+Exception in thread Thread-261 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/80000 B
+[c1] rand10_t8 r0: data_mismatch elapsed=None ms qpu=668.9461 ms
+Exception in thread Thread-262 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/80000 B
+[c1] rand10_t8 r0: data_mismatch elapsed=None ms qpu=668.9461 ms
+!! rand10_t8: second failure, stopping this workload
+Exception in thread Thread-263 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/64000 B
+[c1] rand10_t9 r-1: data_mismatch elapsed=None ms qpu=822.8212 ms
+Exception in thread Thread-264 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/64000 B
+[c1] rand10_t9 r0: data_mismatch elapsed=None ms qpu=822.8212 ms
+Exception in thread Thread-265 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/64000 B
+[c1] rand10_t9 r0: data_mismatch elapsed=None ms qpu=822.8212 ms
+!! rand10_t9: second failure, stopping this workload
+Exception in thread Thread-266 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/393216 B
+[c1] rand20_t0 r-1: data_mismatch elapsed=None ms qpu=1011.1746 ms
+Exception in thread Thread-267 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/393216 B
+[c1] rand20_t0 r0: data_mismatch elapsed=None ms qpu=1011.1746 ms
+Exception in thread Thread-268 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/393216 B
+[c1] rand20_t0 r0: data_mismatch elapsed=None ms qpu=1011.1746 ms
+!! rand20_t0: second failure, stopping this workload
+Exception in thread Thread-269 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/960000 B
+[c1] rand20_t1 r-1: data_mismatch elapsed=None ms qpu=3240.8544 ms
+Exception in thread Thread-270 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/960000 B
+[c1] rand20_t1 r0: data_mismatch elapsed=None ms qpu=3240.8544 ms
+Exception in thread Thread-271 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/960000 B
+[c1] rand20_t1 r0: data_mismatch elapsed=None ms qpu=3240.8544 ms
+!! rand20_t1: second failure, stopping this workload
+Exception in thread Thread-272 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/2048 B
+[c1] rand20_t2 r-1: data_mismatch elapsed=None ms qpu=700.8332 ms
+Exception in thread Thread-273 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/2048 B
+[c1] rand20_t2 r0: data_mismatch elapsed=None ms qpu=700.8332 ms
+Exception in thread Thread-274 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/2048 B
+[c1] rand20_t2 r0: data_mismatch elapsed=None ms qpu=700.8332 ms
+!! rand20_t2: second failure, stopping this workload
+Exception in thread Thread-275 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/196608 B
+[c1] rand20_t3 r-1: data_mismatch elapsed=None ms qpu=1385.0320 ms
+Exception in thread Thread-276 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/196608 B
+[c1] rand20_t3 r0: data_mismatch elapsed=None ms qpu=1385.0320 ms
+Exception in thread Thread-277 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/196608 B
+[c1] rand20_t3 r0: data_mismatch elapsed=None ms qpu=1385.0320 ms
+!! rand20_t3: second failure, stopping this workload
+Exception in thread Thread-278 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand20_t4 r-1: data_mismatch elapsed=None ms qpu=1095.4322 ms
+Exception in thread Thread-279 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand20_t4 r0: data_mismatch elapsed=None ms qpu=1095.4322 ms
+Exception in thread Thread-280 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand20_t4 r0: data_mismatch elapsed=None ms qpu=1095.4322 ms
+!! rand20_t4: second failure, stopping this workload
+Exception in thread Thread-281 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand20_t5 r-1: data_mismatch elapsed=None ms qpu=834.0002 ms
+Exception in thread Thread-282 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand20_t5 r0: data_mismatch elapsed=None ms qpu=834.0002 ms
+Exception in thread Thread-283 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand20_t5 r0: data_mismatch elapsed=None ms qpu=834.0002 ms
+!! rand20_t5: second failure, stopping this workload
+Exception in thread Thread-284 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand20_t6 r-1: data_mismatch elapsed=None ms qpu=1127.8979 ms
+Exception in thread Thread-285 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand20_t6 r0: data_mismatch elapsed=None ms qpu=1127.8979 ms
+Exception in thread Thread-286 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/32768 B
+[c1] rand20_t6 r0: data_mismatch elapsed=None ms qpu=1127.8979 ms
+!! rand20_t6: second failure, stopping this workload
+Exception in thread Thread-287 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/6144 B
+[c1] rand20_t7 r-1: data_mismatch elapsed=None ms qpu=1274.3496 ms
+Exception in thread Thread-288 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/6144 B
+[c1] rand20_t7 r0: data_mismatch elapsed=None ms qpu=1274.3496 ms
+Exception in thread Thread-289 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/6144 B
+[c1] rand20_t7 r0: data_mismatch elapsed=None ms qpu=1274.3496 ms
+!! rand20_t7: second failure, stopping this workload
+Exception in thread Thread-290 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/384000 B
+[c1] rand20_t8 r-1: data_mismatch elapsed=None ms qpu=1305.8993 ms
+Exception in thread Thread-291 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/384000 B
+[c1] rand20_t8 r0: data_mismatch elapsed=None ms qpu=1305.8993 ms
+Exception in thread Thread-292 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/384000 B
+[c1] rand20_t8 r0: data_mismatch elapsed=None ms qpu=1305.8993 ms
+!! rand20_t8: second failure, stopping this workload
+Exception in thread Thread-293 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand20_t9 r-1: data_mismatch elapsed=None ms qpu=1472.2518 ms
+Exception in thread Thread-294 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand20_t9 r0: data_mismatch elapsed=None ms qpu=1472.2518 ms
+Exception in thread Thread-295 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand20_t9 r0: data_mismatch elapsed=None ms qpu=1472.2518 ms
+!! rand20_t9: second failure, stopping this workload
+Exception in thread Thread-296 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/49152 B
+[c1] rand30_t0 r-1: data_mismatch elapsed=None ms qpu=3027.1680 ms
+Exception in thread Thread-297 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/49152 B
+[c1] rand30_t0 r0: data_mismatch elapsed=None ms qpu=3027.1680 ms
+Exception in thread Thread-298 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/49152 B
+[c1] rand30_t0 r0: data_mismatch elapsed=None ms qpu=3027.1680 ms
+!! rand30_t0: second failure, stopping this workload
+Exception in thread Thread-299 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/44800 B
+[c1] rand30_t1 r-1: data_mismatch elapsed=None ms qpu=2245.6027 ms
+Exception in thread Thread-300 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/44800 B
+[c1] rand30_t1 r0: data_mismatch elapsed=None ms qpu=2245.6027 ms
+Exception in thread Thread-301 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/44800 B
+[c1] rand30_t1 r0: data_mismatch elapsed=None ms qpu=2245.6027 ms
+!! rand30_t1: second failure, stopping this workload
+Exception in thread Thread-302 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand30_t2 r-1: data_mismatch elapsed=None ms qpu=1925.4158 ms
+Exception in thread Thread-303 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand30_t2 r0: data_mismatch elapsed=None ms qpu=1925.4158 ms
+Exception in thread Thread-304 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand30_t2 r0: data_mismatch elapsed=None ms qpu=1925.4158 ms
+!! rand30_t2: second failure, stopping this workload
+Exception in thread Thread-305 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/49152 B
+[c1] rand30_t3 r-1: data_mismatch elapsed=None ms qpu=2464.9788 ms
+Exception in thread Thread-306 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/49152 B
+[c1] rand30_t3 r0: data_mismatch elapsed=None ms qpu=2464.9788 ms
+Exception in thread Thread-307 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/49152 B
+[c1] rand30_t3 r0: data_mismatch elapsed=None ms qpu=2464.9788 ms
+!! rand30_t3: second failure, stopping this workload
+Exception in thread Thread-308 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/6144 B
+[c1] rand30_t4 r-1: data_mismatch elapsed=None ms qpu=2271.0409 ms
+Exception in thread Thread-309 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/6144 B
+[c1] rand30_t4 r0: data_mismatch elapsed=None ms qpu=2271.0409 ms
+Exception in thread Thread-310 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/6144 B
+[c1] rand30_t4 r0: data_mismatch elapsed=None ms qpu=2271.0409 ms
+!! rand30_t4: second failure, stopping this workload
+Exception in thread Thread-311 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/384000 B
+[c1] rand30_t5 r-1: data_mismatch elapsed=None ms qpu=2272.6140 ms
+Exception in thread Thread-312 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/384000 B
+[c1] rand30_t5 r0: data_mismatch elapsed=None ms qpu=2272.6140 ms
+Exception in thread Thread-313 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/384000 B
+[c1] rand30_t5 r0: data_mismatch elapsed=None ms qpu=2272.6140 ms
+!! rand30_t5: second failure, stopping this workload
+Exception in thread Thread-314 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40960 B
+[c1] rand30_t6 r-1: data_mismatch elapsed=None ms qpu=2193.4908 ms
+Exception in thread Thread-315 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40960 B
+[c1] rand30_t6 r0: data_mismatch elapsed=None ms qpu=2193.4908 ms
+Exception in thread Thread-316 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40960 B
+[c1] rand30_t6 r0: data_mismatch elapsed=None ms qpu=2193.4908 ms
+!! rand30_t6: second failure, stopping this workload
+Exception in thread Thread-317 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/24000 B
+[c1] rand30_t7 r-1: data_mismatch elapsed=None ms qpu=4041.6025 ms
+Exception in thread Thread-318 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/24000 B
+[c1] rand30_t7 r0: data_mismatch elapsed=None ms qpu=4041.6025 ms
+Exception in thread Thread-319 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/24000 B
+[c1] rand30_t7 r0: data_mismatch elapsed=None ms qpu=4041.6025 ms
+!! rand30_t7: second failure, stopping this workload
+Exception in thread Thread-320 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/44800 B
+[c1] rand30_t8 r-1: data_mismatch elapsed=None ms qpu=2491.8088 ms
+Exception in thread Thread-321 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/44800 B
+[c1] rand30_t8 r0: data_mismatch elapsed=None ms qpu=2491.8088 ms
+Exception in thread Thread-322 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/44800 B
+[c1] rand30_t8 r0: data_mismatch elapsed=None ms qpu=2491.8088 ms
+!! rand30_t8: second failure, stopping this workload
+Exception in thread Thread-323 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand30_t9 r-1: data_mismatch elapsed=None ms qpu=2079.5475 ms
+Exception in thread Thread-324 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand30_t9 r0: data_mismatch elapsed=None ms qpu=2079.5475 ms
+Exception in thread Thread-325 (<lambda>):
+Traceback (most recent call last):
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/yicheng/anaconda3/envs/qubic_clean/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 202, in <lambda>
+    th = threading.Thread(target=lambda: box.setdefault('d', strm.recv_all()))
+                                                             ^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/antq_runner.py", line 135, in recv_all
+    raise RuntimeError(f'STRM error after {len(out)}/{self.total} B')
+RuntimeError: STRM error after 0/40000 B
+[c1] rand30_t9 r0: data_mismatch elapsed=None ms qpu=2079.5475 ms
+!! rand30_t9: second failure, stopping this workload

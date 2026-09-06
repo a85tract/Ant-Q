@@ -1,0 +1,66 @@
+2026-09-02T11:42:55 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T11:42:56 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_mask0 r-1: ok elapsed=131.769458 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask0 r0: ok elapsed=130.417634 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask0 r1: ok elapsed=130.626217 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask0 r2: ok elapsed=130.255193 ms qpu=47.9314 ms
+2026-09-02T11:42:58 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r-1: ok elapsed=66.00315 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r0: ok elapsed=65.931279 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r1: ok elapsed=67.505915 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r2: ok elapsed=66.01773 ms qpu=47.9314 ms
+2026-09-02T11:42:59 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r-1: ok elapsed=65.105391 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r0: ok elapsed=65.697627 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r1: ok elapsed=65.701167 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r2: ok elapsed=65.859649 ms qpu=47.9314 ms
+2026-09-02T11:43:23 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: ok elapsed=4215.656133 ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:43:58 service restarted; Sep 02 18:15:44 veneno start_qubic_server.sh[282177]: 2026-09-02 18:15:44,562 INFO: loading bitfile: 63329aaf
+218254 ./std_server 282138 /home/xilinx/software/scripts/dma_server 282175 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:44:13 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:44:48 service restarted; Sep 02 18:16:34 veneno start_qubic_server.sh[282567]: 2026-09-02 18:16:34,293 INFO: loading bitfile: 63329aaf
+218254 ./std_server 282529 /home/xilinx/software/scripts/dma_server 282565 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:45:12 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: ok elapsed=4143.915896 ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:45:46 service restarted; Sep 02 18:17:33 veneno start_qubic_server.sh[282987]: 2026-09-02 18:17:33,101 INFO: loading bitfile: 63329aaf
+218254 ./std_server 282949 /home/xilinx/software/scripts/dma_server 282985 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:45:55 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_cap1000 r-1: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+!! phys6_cap1000: second failure, stopping this workload
+2026-09-02T11:46:29 service restarted; Sep 02 18:18:15 veneno start_qubic_server.sh[283372]: 2026-09-02 18:18:15,871 INFO: loading bitfile: 63329aaf
+218254 ./std_server 283332 /home/xilinx/software/scripts/dma_server 283364 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:46:37 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6_cap1000 r-1: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+!! phys6_cap1000: second failure, stopping this workload
+2026-09-02T11:47:11 service restarted; Sep 02 18:18:58 veneno start_qubic_server.sh[283750]: 2026-09-02 18:18:58,397 INFO: loading bitfile: 63329aaf
+218254 ./std_server 283712 /home/xilinx/software/scripts/dma_server 283748 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:47:28 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6_cap1000 r-1: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: ok elapsed=2261.563979 ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r1: ok elapsed=2214.434108 ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r2: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r2: data_mismatch elapsed=None ms qpu=2162.6200 ms
+!! phys6_cap1000: second failure, stopping this workload
+2026-09-02T11:48:01 service restarted; Sep 02 18:19:48 veneno start_qubic_server.sh[284148]: 2026-09-02 18:19:48,958 INFO: loading bitfile: 63329aaf
+218254 ./std_server 284110 /home/xilinx/software/scripts/dma_server 284146 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:48:01 FLOOR DIAG DONE

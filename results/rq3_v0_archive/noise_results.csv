@@ -1,0 +1,128 @@
+idx,name,n_qubits,shots,category,backend,tvd,hellinger_fidelity,circuit_metric_name,circuit_metric_value,readable,transpiled_depth,transpiled_cx_count
+1,Bell state (GHZ-2),2,24576,ghz,FakeAlgiers,0.0178,0.9822,ghz_visibility,0.9822,PASS,5,1
+1,Bell state (GHZ-2),2,24576,ghz,FakeGuadalupeV2,0.0427,0.9572,ghz_visibility,0.9573,PASS,5,1
+1,Bell state (GHZ-2),2,24576,ghz,FakeLagosV2,0.2623,0.7376,ghz_visibility,0.7377,PASS,5,1
+1,Bell state (GHZ-2),2,24576,ghz,FakeManilaV2,0.0607,0.9392,ghz_visibility,0.9393,PASS,5,1
+1,Bell state (GHZ-2),2,24576,ghz,FakeSherbrooke,0.0413,0.9587,ghz_visibility,0.9587,PASS,6,0
+1,Bell state (GHZ-2),2,24576,ghz,FakeTorino,0.182,0.8179,ghz_visibility,0.818,PASS,8,0
+2,GHZ-3,3,8192,ghz,FakeAlgiers,0.0345,0.9655,ghz_visibility,0.9655,PASS,6,2
+2,GHZ-3,3,8192,ghz,FakeGuadalupeV2,0.0726,0.9272,ghz_visibility,0.9274,PASS,6,2
+2,GHZ-3,3,8192,ghz,FakeLagosV2,0.6077,0.3923,ghz_visibility,0.3923,FAIL,6,2
+2,GHZ-3,3,8192,ghz,FakeManilaV2,0.1581,0.8419,ghz_visibility,0.8419,PASS,6,2
+2,GHZ-3,3,8192,ghz,FakeSherbrooke,0.0742,0.9257,ghz_visibility,0.9258,PASS,9,0
+2,GHZ-3,3,8192,ghz,FakeTorino,0.2285,0.7715,ghz_visibility,0.7715,PASS,12,0
+3,VQE HeH+ 2Q,2,4000,vqe,FakeAlgiers,0.018,0.982,none,,PASS,8,1
+3,VQE HeH+ 2Q,2,4000,vqe,FakeGuadalupeV2,0.044,0.956,none,,PASS,8,1
+3,VQE HeH+ 2Q,2,4000,vqe,FakeLagosV2,0.2923,0.7078,none,,PASS,8,1
+3,VQE HeH+ 2Q,2,4000,vqe,FakeManilaV2,0.069,0.931,none,,PASS,8,1
+3,VQE HeH+ 2Q,2,4000,vqe,FakeSherbrooke,0.0447,0.9553,none,,PASS,8,0
+3,VQE HeH+ 2Q,2,4000,vqe,FakeTorino,0.1875,0.8125,none,,PASS,8,0
+4,GHZ-4,4,8192,ghz,FakeAlgiers,0.0474,0.9526,ghz_visibility,0.9526,PASS,7,3
+4,GHZ-4,4,8192,ghz,FakeGuadalupeV2,0.1108,0.8891,ghz_visibility,0.8892,PASS,7,3
+4,GHZ-4,4,8192,ghz,FakeLagosV2,0.4081,0.5918,ghz_visibility,0.5919,MARGINAL,7,3
+4,GHZ-4,4,8192,ghz,FakeManilaV2,0.1721,0.8279,ghz_visibility,0.8279,PASS,7,3
+4,GHZ-4,4,8192,ghz,FakeSherbrooke,0.0856,0.9144,ghz_visibility,0.9144,PASS,12,0
+4,GHZ-4,4,8192,ghz,FakeTorino,0.2515,0.7485,ghz_visibility,0.7485,PASS,16,0
+5,GHZ-5,5,1024,ghz,FakeAlgiers,0.0469,0.9529,ghz_visibility,0.9531,PASS,8,4
+5,GHZ-5,5,1024,ghz,FakeGuadalupeV2,0.0977,0.9022,ghz_visibility,0.9023,PASS,8,4
+5,GHZ-5,5,1024,ghz,FakeLagosV2,0.502,0.4977,ghz_visibility,0.498,MARGINAL,8,4
+5,GHZ-5,5,1024,ghz,FakeManilaV2,0.1875,0.8125,ghz_visibility,0.8125,PASS,8,4
+5,GHZ-5,5,1024,ghz,FakeSherbrooke,0.1035,0.896,ghz_visibility,0.8965,PASS,14,0
+5,GHZ-5,5,1024,ghz,FakeTorino,0.2979,0.702,ghz_visibility,0.7021,PASS,20,0
+6,GHZ-6,6,128,ghz,FakeAlgiers,0.0625,0.9591,ghz_visibility,0.9609,PASS,9,5
+6,GHZ-6,6,128,ghz,FakeGuadalupeV2,0.1719,0.8242,ghz_visibility,0.8281,PASS,9,5
+6,GHZ-6,6,128,ghz,FakeLagosV2,0.6875,0.3124,ghz_visibility,0.3125,FAIL,12,8
+6,GHZ-6,6,128,ghz,FakeSherbrooke,0.1328,0.8654,ghz_visibility,0.8672,PASS,16,0
+6,GHZ-6,6,128,ghz,FakeTorino,0.2344,0.7656,ghz_visibility,0.7656,PASS,24,0
+7,GHZ-8,8,32,ghz,FakeAlgiers,0.0938,0.9342,ghz_visibility,0.9375,PASS,11,7
+7,GHZ-8,8,32,ghz,FakeGuadalupeV2,0.0938,0.9062,ghz_visibility,0.9062,PASS,11,7
+7,GHZ-8,8,32,ghz,FakeSherbrooke,0.8438,0.1483,ghz_visibility,0.1562,FAIL,20,0
+7,GHZ-8,8,32,ghz,FakeTorino,0.3125,0.6766,ghz_visibility,0.6875,MARGINAL,32,0
+8,QFT 4Q,4,500,qft,FakeAlgiers,0.082,0.9906,none,,PASS,42,18
+8,QFT 4Q,4,500,qft,FakeGuadalupeV2,0.09,0.9854,none,,PASS,37,18
+8,QFT 4Q,4,500,qft,FakeLagosV2,0.096,0.9879,none,,PASS,37,18
+8,QFT 4Q,4,500,qft,FakeManilaV2,0.122,0.9763,none,,PASS,39,21
+8,QFT 4Q,4,500,qft,FakeSherbrooke,0.122,0.9781,none,,PASS,80,0
+8,QFT 4Q,4,500,qft,FakeTorino,0.132,0.9767,none,,PASS,86,0
+9,VQE Hubbard 16Q,16,1000,vqe,FakeAlgiers,0.985,0.0002,none,,FAIL,27,30
+9,VQE Hubbard 16Q,16,1000,vqe,FakeGuadalupeV2,0.984,0.0003,none,,FAIL,48,39
+9,VQE Hubbard 16Q,16,1000,vqe,FakeSherbrooke,0.985,0.0002,none,,FAIL,59,0
+9,VQE Hubbard 16Q,16,1000,vqe,FakeTorino,0.982,0.0003,none,,FAIL,70,0
+10,Grover Lights-Out 16Q,16,4000,grover,FakeAlgiers,0.9303,0.0052,grover_amplification,16.384,FAIL,16,4
+10,Grover Lights-Out 16Q,16,4000,grover,FakeGuadalupeV2,0.9278,0.0055,grover_amplification,0.0,FAIL,78,56
+10,Grover Lights-Out 16Q,16,4000,grover,FakeSherbrooke,0.9303,0.0052,grover_amplification,0.0,FAIL,178,0
+10,Grover Lights-Out 16Q,16,4000,grover,FakeTorino,0.9313,0.0051,grover_amplification,16.384,FAIL,24,0
+11,QSVM Kernel 15Q (LHC),15,8192,qml,FakeAlgiers,0.5527,0.2992,none,,FAIL,55,56
+11,QSVM Kernel 15Q (LHC),15,8192,qml,FakeGuadalupeV2,0.5688,0.2867,none,,FAIL,73,62
+11,QSVM Kernel 15Q (LHC),15,8192,qml,FakeSherbrooke,0.5586,0.2994,none,,FAIL,136,0
+11,QSVM Kernel 15Q (LHC),15,8192,qml,FakeTorino,0.5934,0.2635,none,,FAIL,164,0
+12,QML Kernel 17Q (Supernova),17,5000,qml,FakeAlgiers,0.7672,0.0773,none,,FAIL,61,64
+12,QML Kernel 17Q (Supernova),17,5000,qml,FakeSherbrooke,0.778,0.0729,none,,FAIL,150,0
+12,QML Kernel 17Q (Supernova),17,5000,qml,FakeTorino,0.7682,0.0775,none,,FAIL,184,0
+13,QAOA MaxCut 16Q,16,20000,qaoa,FakeAlgiers,0.6546,0.177,none,,FAIL,50,30
+13,QAOA MaxCut 16Q,16,20000,qaoa,FakeGuadalupeV2,0.6658,0.167,none,,FAIL,71,48
+13,QAOA MaxCut 16Q,16,20000,qaoa,FakeSherbrooke,0.6522,0.1794,none,,FAIL,122,0
+13,QAOA MaxCut 16Q,16,20000,qaoa,FakeTorino,0.6483,0.1844,none,,FAIL,154,0
+14,VQE BeH2 14Q,14,4096,vqe,FakeAlgiers,0.8118,0.0428,none,,FAIL,25,26
+14,VQE BeH2 14Q,14,4096,vqe,FakeGuadalupeV2,0.8069,0.0444,none,,FAIL,39,32
+14,VQE BeH2 14Q,14,4096,vqe,FakeSherbrooke,0.8008,0.047,none,,FAIL,48,0
+14,VQE BeH2 14Q,14,4096,vqe,FakeTorino,0.7971,0.0494,none,,FAIL,62,0
+15,Shor N=15 5Q,5,1000,shor,FakeAlgiers,0.052,0.9656,period_success,0.724,PASS,11,3
+15,Shor N=15 5Q,5,1000,shor,FakeGuadalupeV2,0.071,0.9367,period_success,0.694,PASS,11,3
+15,Shor N=15 5Q,5,1000,shor,FakeLagosV2,0.479,0.5188,period_success,0.373,MARGINAL,11,3
+15,Shor N=15 5Q,5,1000,shor,FakeManilaV2,0.147,0.853,period_success,0.652,PASS,11,3
+15,Shor N=15 5Q,5,1000,shor,FakeSherbrooke,0.074,0.9256,period_success,0.693,PASS,18,0
+15,Shor N=15 5Q,5,1000,shor,FakeTorino,0.108,0.8916,period_success,0.67,PASS,20,0
+16,QAOA 2Q p=1,2,1000,qaoa,FakeAlgiers,0.033,0.9987,none,,PASS,8,2
+16,QAOA 2Q p=1,2,1000,qaoa,FakeGuadalupeV2,0.045,0.9973,none,,PASS,8,2
+16,QAOA 2Q p=1,2,1000,qaoa,FakeLagosV2,0.027,0.9993,none,,PASS,8,2
+16,QAOA 2Q p=1,2,1000,qaoa,FakeManilaV2,0.028,0.9988,none,,PASS,8,2
+16,QAOA 2Q p=1,2,1000,qaoa,FakeSherbrooke,0.043,0.9972,none,,PASS,11,0
+16,QAOA 2Q p=1,2,1000,qaoa,FakeTorino,0.021,0.9993,none,,PASS,14,0
+17,Quantum teleportation 3Q,3,1024,teleport,FakeAlgiers,0.0361,0.9794,none,,PASS,16,7
+17,Quantum teleportation 3Q,3,1024,teleport,FakeGuadalupeV2,0.0605,0.9552,none,,PASS,16,7
+17,Quantum teleportation 3Q,3,1024,teleport,FakeLagosV2,0.1846,0.8143,none,,PASS,16,7
+17,Quantum teleportation 3Q,3,1024,teleport,FakeManilaV2,0.1045,0.8948,none,,PASS,16,7
+17,Quantum teleportation 3Q,3,1024,teleport,FakeSherbrooke,0.0371,0.9776,none,,PASS,26,0
+17,Quantum teleportation 3Q,3,1024,teleport,FakeTorino,0.041,0.9784,none,,PASS,22,0
+18,Deutsch-Jozsa 3Q,3,1024,query,FakeAlgiers,0.0322,0.9742,success_prob,0.4697,PASS,10,3
+18,Deutsch-Jozsa 3Q,3,1024,query,FakeGuadalupeV2,0.0791,0.9205,success_prob,0.4814,PASS,10,3
+18,Deutsch-Jozsa 3Q,3,1024,query,FakeLagosV2,0.5674,0.4326,success_prob,0.2158,MARGINAL,10,3
+18,Deutsch-Jozsa 3Q,3,1024,query,FakeManilaV2,0.1465,0.8535,success_prob,0.4307,PASS,10,3
+18,Deutsch-Jozsa 3Q,3,1024,query,FakeSherbrooke,0.0703,0.9296,success_prob,0.457,PASS,11,0
+18,Deutsch-Jozsa 3Q,3,1024,query,FakeTorino,0.082,0.9178,success_prob,0.4473,PASS,16,0
+19,Bernstein-Vazirani 5Q,5,1024,query,FakeAlgiers,0.0645,0.9349,success_prob,0.4434,PASS,14,7
+19,Bernstein-Vazirani 5Q,5,1024,query,FakeGuadalupeV2,0.1436,0.8564,success_prob,0.4258,PASS,14,7
+19,Bernstein-Vazirani 5Q,5,1024,query,FakeLagosV2,0.4551,0.5446,success_prob,0.2607,MARGINAL,14,7
+19,Bernstein-Vazirani 5Q,5,1024,query,FakeManilaV2,0.2139,0.7861,success_prob,0.3975,PASS,14,7
+19,Bernstein-Vazirani 5Q,5,1024,query,FakeSherbrooke,0.126,0.8737,success_prob,0.4219,PASS,24,0
+19,Bernstein-Vazirani 5Q,5,1024,query,FakeTorino,0.1318,0.8681,success_prob,0.4404,PASS,32,0
+20,VQE 1Q eigensolver,1,10000,vqe,FakeAlgiers,0.0041,1.0,none,,PASS,4,0
+20,VQE 1Q eigensolver,1,10000,vqe,FakeGuadalupeV2,0.009,0.9999,none,,PASS,4,0
+20,VQE 1Q eigensolver,1,10000,vqe,FakeLagosV2,0.0017,1.0,none,,PASS,4,0
+20,VQE 1Q eigensolver,1,10000,vqe,FakeManilaV2,0.0042,1.0,none,,PASS,4,0
+20,VQE 1Q eigensolver,1,10000,vqe,FakeSherbrooke,0.0029,1.0,none,,PASS,4,0
+20,VQE 1Q eigensolver,1,10000,vqe,FakeTorino,0.0094,0.9999,none,,PASS,4,0
+21,QAOA MaxCut 12Q,12,10000,qaoa,FakeAlgiers,0.313,0.7493,none,,MARGINAL,38,22
+21,QAOA MaxCut 12Q,12,10000,qaoa,FakeGuadalupeV2,0.3217,0.7341,none,,MARGINAL,38,22
+21,QAOA MaxCut 12Q,12,10000,qaoa,FakeSherbrooke,0.457,0.569,none,,MARGINAL,83,0
+21,QAOA MaxCut 12Q,12,10000,qaoa,FakeTorino,0.3218,0.7393,none,,MARGINAL,114,0
+22,QML Image Class 14Q,14,400,qml,FakeAlgiers,0.96,0.0016,none,,FAIL,44,26
+22,QML Image Class 14Q,14,400,qml,FakeGuadalupeV2,0.98,0.0004,none,,FAIL,59,35
+22,QML Image Class 14Q,14,400,qml,FakeSherbrooke,0.9775,0.0005,none,,FAIL,98,0
+22,QML Image Class 14Q,14,400,qml,FakeTorino,0.9675,0.0011,none,,FAIL,134,0
+23,VQE SrH PDM 12Q,12,4000,vqe,FakeAlgiers,0.1855,0.8145,none,,PASS,27,24
+23,VQE SrH PDM 12Q,12,4000,vqe,FakeGuadalupeV2,0.3585,0.6415,none,,MARGINAL,27,24
+23,VQE SrH PDM 12Q,12,4000,vqe,FakeSherbrooke,0.9768,0.0233,none,,FAIL,74,0
+23,VQE SrH PDM 12Q,12,4000,vqe,FakeTorino,0.44,0.56,none,,MARGINAL,96,0
+24,Grover 6Q,6,1024,grover,FakeAlgiers,0.1504,0.9619,grover_amplification,1.5,PASS,76,24
+24,Grover 6Q,6,1024,grover,FakeGuadalupeV2,0.1455,0.9603,grover_amplification,1.1875,PASS,76,24
+24,Grover 6Q,6,1024,grover,FakeLagosV2,0.1611,0.9602,grover_amplification,0.8125,PASS,76,24
+24,Grover 6Q,6,1024,grover,FakeSherbrooke,0.1748,0.9513,grover_amplification,0.625,PASS,298,0
+24,Grover 6Q,6,1024,grover,FakeTorino,0.1396,0.9676,grover_amplification,1.625,PASS,124,0
+25,QSVM Radar 4Q,4,1024,qsvm,FakeAlgiers,0.0635,0.9923,none,,PASS,22,12
+25,QSVM Radar 4Q,4,1024,qsvm,FakeGuadalupeV2,0.0996,0.9843,none,,PASS,22,12
+25,QSVM Radar 4Q,4,1024,qsvm,FakeLagosV2,0.166,0.9669,none,,PASS,22,12
+25,QSVM Radar 4Q,4,1024,qsvm,FakeManilaV2,0.1016,0.984,none,,PASS,22,12
+25,QSVM Radar 4Q,4,1024,qsvm,FakeSherbrooke,0.0811,0.9867,none,,PASS,46,0
+25,QSVM Radar 4Q,4,1024,qsvm,FakeTorino,0.1191,0.9751,none,,PASS,54,0

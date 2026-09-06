@@ -1,0 +1,81 @@
+2026-09-02T01:25:48 REPT cells on C3 with --pool-tables
+2026-09-02T01:25:48 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T01:25:52 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: ok elapsed=328.00736 ms qpu=254.5091 ms
+[c3] phys5 r0: ok elapsed=329.061121 ms qpu=254.5091 ms
+[c3] phys5 r1: ok elapsed=331.702407 ms qpu=254.5091 ms
+[c3] phys5 r2: ok elapsed=328.538346 ms qpu=254.5091 ms
+2026-09-02T01:26:03 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: ok elapsed=2164.930673 ms qpu=2162.4200 ms
+[c3] phys6 r0: ok elapsed=2164.924883 ms qpu=2162.4200 ms
+[c3] phys6 r1: ok elapsed=2164.937153 ms qpu=2162.4200 ms
+[c3] phys6 r2: ok elapsed=2164.930553 ms qpu=2162.4200 ms
+2026-09-02T01:26:05 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: ok elapsed=66.303394 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: ok elapsed=65.704317 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r1: ok elapsed=65.864229 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r2: ok elapsed=65.835668 ms qpu=47.9314 ms
+2026-09-02T01:26:06 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: ok elapsed=131.496555 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: ok elapsed=129.541436 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r1: ok elapsed=129.718127 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r2: ok elapsed=129.89983 ms qpu=47.9416 ms
+2026-09-02T01:26:06 poll-0 sweep (GHZ-3, GHZ-8)
+2026-09-02T01:26:07 dma_server restarted with STRM_POLL_US=0: 
+Traceback (most recent call last):
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/run_stop_campaign.py", line 65, in <module>
+    main()
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/run_stop_campaign.py", line 44, in main
+    if a.set_poll: restart_dma(int(a.poll))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/run_stop_campaign.py", line 39, in restart_dma
+    raise RuntimeError('dma_server did not come up')
+RuntimeError: dma_server did not come up
+2026-09-02T01:26:08 dma_server restarted with STRM_POLL_US=200: 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/yicheng/Desktop/Ant-Q-experiments/scripts/run_stop_campaign.py", line 39, in restart_dma
+    raise RuntimeError('dma_server did not come up')
+RuntimeError: dma_server did not come up
+A phys1 c1 ok n 3 mean 5184.6468 consistent True cnr 
+A phys1 c3 ok n 3 mean 5182.3738 consistent True cnr 0
+A phys1 std capacity n 0 mean  consistent  cnr 
+A phys2 c1 ok n 3 mean 2.6011 consistent  cnr 
+A phys2 c3 ok n 3 mean 0.3589 consistent  cnr 0
+A phys2 std ok n 3 mean 3.4643 consistent  cnr 
+A phys3 c1 ok n 3 mean 100182.6046 consistent True cnr 
+A phys3 c3 ok n 3 mean 100180.3802 consistent True cnr 0
+A phys3 std capacity n 0 mean  consistent  cnr 
+A phys4 c1 ok n 3 mean 73.7149 consistent True cnr 
+A phys4 c3 ok n 3 mean 71.5329 consistent True cnr 0
+A phys4 std capacity n 0 mean  consistent  cnr 
+A phys5 c3 ok n 3 mean 329.7673 consistent  cnr 1
+A phys5_ctrl1800p_cap1802 c3 ok n 6 mean 66.0467 consistent  cnr 1
+A phys5_ctrl1800p_cap902 c3 ok n 3 mean 129.7198 consistent  cnr 1
+A phys6 c3 ok n 3 mean 2164.9309 consistent  cnr 0
+B {'idx': '2', 'n_pairs': 5, 'time_saved_mean': 0.6963, 'time_saved_ci95': '0.6955..0.6971', 'T_full_ms': 97.319, 'T_stop_ms': 29.558, 'stop_at': '2457', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '2475 2474 2474 2476 2484', 'overshoot_mean': 19.6, 'overshoot_range': '17..27', 'cp_step': '819', 'cp_ns_req': '5980', 'delay_actual_ns': '18230 18260 18241 18240 18270', 'fired_k': '3', 'hw_latency_us': '10.93 0.09 9.76 10.66 7.98', 'ps_write_to_record_us': '22.7 25.5 23.4 23.3 26.1', 'strm_poll_us': '200'}
+B {'idx': '9', 'n_pairs': 5, 'time_saved_mean': 0.3894, 'time_saved_ci95': '0.3503..0.4285', 'T_full_ms': 2.807, 'T_stop_ms': 1.714, 'stop_at': '60', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '78 73 78 73 68', 'overshoot_mean': 14, 'overshoot_range': '8..18', 'cp_step': '12', 'cp_ns_req': '3550', 'delay_actual_ns': '18300 18331 18261 18270 18240', 'fired_k': '5', 'hw_latency_us': '20.76 13.77 12.83 20.99 18.05', 'ps_write_to_record_us': '36.5 38.1 36.7 35.2 35.3', 'strm_poll_us': '200'}
+B {'idx': '10', 'n_pairs': 5, 'time_saved_mean': 0.2466, 'time_saved_ci95': '0.1355..0.3576', 'T_full_ms': 0.999, 'T_stop_ms': 0.754, 'stop_at': '12', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '24 24 18 21 18', 'overshoot_mean': 9, 'overshoot_range': '6..12', 'cp_step': '3', 'cp_ns_req': '12838', 'delay_actual_ns': '51801 55820 51830 51911 51851', 'fired_k': '4', 'hw_latency_us': '27.34 8.43 0.94 22.58 11.79', 'ps_write_to_record_us': '41.7 45.5 29.2 46.0 26.4', 'strm_poll_us': '200'}
+B {'idx': '19', 'n_pairs': 5, 'time_saved_mean': 0.6939, 'time_saved_ci95': '0.6932..0.6945', 'T_full_ms': 190.921, 'T_stop_ms': 58.445, 'stop_at': '1227', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1253 1250 1249 1249 1248', 'overshoot_mean': 22.8, 'overshoot_range': '21..26', 'cp_step': '409', 'cp_ns_req': '839658', 'delay_actual_ns': '2693207 2692307 2692516 2692077 2693007', 'fired_k': '3', 'hw_latency_us': '5.14 6.36 15.48 10.99 6.61', 'ps_write_to_record_us': '37.0 22.5 34.4 34.4 21.8', 'strm_poll_us': '200'}
+B {'idx': '22', 'n_pairs': 5, 'time_saved_mean': 0.6308, 'time_saved_ci95': '0.6288..0.6328', 'T_full_ms': 20.278, 'T_stop_ms': 7.486, 'stop_at': '120', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '144 144 144 145 143', 'overshoot_mean': 24, 'overshoot_range': '23..25', 'cp_step': '40', 'cp_ns_req': '823382', 'delay_actual_ns': '2643887 2643545 2642127 2642167 2642547', 'fired_k': '3', 'hw_latency_us': '3.07 10.32 4.64 48.29 38.46', 'ps_write_to_record_us': '26.0 26.4 25.0 94.6 103.8', 'strm_poll_us': '200'}
+B {'idx': '23', 'n_pairs': 5, 'time_saved_mean': 0.6964, 'time_saved_ci95': '0.6955..0.6973', 'T_full_ms': 172.176, 'T_stop_ms': 52.273, 'stop_at': '1200', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1208 1213 1210 1208 1213', 'overshoot_mean': 10.4, 'overshoot_range': '8..13', 'cp_step': '400', 'cp_ns_req': '218474', 'delay_actual_ns': '827868 827438 842817 828718 829518', 'fired_k': '3', 'hw_latency_us': '18.26 16.89 24.04 23.58 3.10', 'ps_write_to_record_us': '36.3 23.1 28.6 33.6 34.8', 'strm_poll_us': '200'}
+phys cells 16 stop circuits 6
+{'k': 10, 'estimand': 'G_stack', 'n_manifests': 10, 'mean': 0.5867, 'ci95_lo_manifest': 0.4865, 'ci95_hi_manifest': 0.687, 'n_blocks': 5, 'block_means': '0.7628 0.4843 0.4265 0.5688 0.6913', 'ci95_lo_block': 0.4129, 'ci95_hi_block': 0.7605, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_sys', 'n_manifests': 10, 'mean': 0.6952, 'ci95_lo_manifest': 0.6059, 'ci95_hi_manifest': 0.7846, 'n_blocks': 5, 'block_means': '0.8361 0.6355 0.5226 0.7163 0.7658', 'ci95_lo_block': 0.5449, 'ci95_hi_block': 0.8455, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_up_native', 'n_manifests': 10, 'mean': 0.4559, 'ci95_lo_manifest': 0.3477, 'ci95_hi_manifest': 0.5642, 'n_blocks': 5, 'block_means': '0.6361 0.3240 0.3201 0.4255 0.5740', 'ci95_lo_block': 0.2769, 'ci95_hi_block': 0.635, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_up_pool', 'n_manifests': 10, 'mean': 0.4996, 'ci95_lo_manifest': 0.3922, 'ci95_hi_manifest': 0.607, 'n_blocks': 5, 'block_means': '0.6831 0.3660 0.3631 0.4748 0.6110', 'ci95_lo_block': 0.3206, 'ci95_hi_block': 0.6786, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_c3_vs_c1pool', 'n_manifests': 10, 'mean': 0.0598, 'ci95_lo_manifest': 0.0358, 'ci95_hi_manifest': 0.0837, 'n_blocks': 5, 'block_means': '0.0472 0.0915 0.0466 0.0638 0.0496', 'ci95_lo_block': 0.036, 'ci95_hi_block': 0.0835, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_stack', 'n_manifests': 10, 'mean': 0.5246, 'ci95_lo_manifest': 0.4882, 'ci95_hi_manifest': 0.5611, 'n_blocks': 5, 'block_means': '0.5087 0.4746 0.5373 0.5508 0.5519', 'ci95_lo_block': 0.4837, 'ci95_hi_block': 0.5656, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_sys', 'n_manifests': 10, 'mean': 0.6299, 'ci95_lo_manifest': 0.5854, 'ci95_hi_manifest': 0.6744, 'n_blocks': 5, 'block_means': '0.6363 0.5493 0.6550 0.6560 0.6530', 'ci95_lo_block': 0.5731, 'ci95_hi_block': 0.6868, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_up_native', 'n_manifests': 10, 'mean': 0.4051, 'ci95_lo_manifest': 0.3721, 'ci95_hi_manifest': 0.4382, 'n_blocks': 5, 'block_means': '0.3833 0.3963 0.3952 0.4295 0.4214', 'ci95_lo_block': 0.381, 'ci95_hi_block': 0.4293, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_up_pool', 'n_manifests': 10, 'mean': 0.4436, 'ci95_lo_manifest': 0.4106, 'ci95_hi_manifest': 0.4767, 'n_blocks': 5, 'block_means': '0.4201 0.4220 0.4357 0.4656 0.4748', 'ci95_lo_block': 0.4124, 'ci95_hi_block': 0.4749, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_c3_vs_c1pool', 'n_manifests': 10, 'mean': 0.0562, 'ci95_lo_manifest': 0.0438, 'ci95_hi_manifest': 0.0686, 'n_blocks': 5, 'block_means': '0.0627 0.0371 0.0704 0.0582 0.0526', 'ci95_lo_block': 0.0407, 'ci95_hi_block': 0.0717, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_stack', 'n_manifests': 10, 'mean': 0.5105, 'ci95_lo_manifest': 0.468, 'ci95_hi_manifest': 0.5531, 'n_blocks': 5, 'block_means': '0.5624 0.5075 0.4962 0.5168 0.4698', 'ci95_lo_block': 0.4685, 'ci95_hi_block': 0.5526, 'all_blocks_positive': True, 'confirmatory': 'YES (k=30, block CI lo > 0)'}
+{'k': 30, 'estimand': 'G_sys', 'n_manifests': 10, 'mean': 0.6002, 'ci95_lo_manifest': 0.557, 'ci95_hi_manifest': 0.6434, 'n_blocks': 5, 'block_means': '0.6534 0.6069 0.5758 0.6071 0.5577', 'ci95_lo_block': 0.5549, 'ci95_hi_block': 0.6455, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_up_native', 'n_manifests': 10, 'mean': 0.4089, 'ci95_lo_manifest': 0.3757, 'ci95_hi_manifest': 0.4422, 'n_blocks': 5, 'block_means': '0.4461 0.4048 0.3980 0.4232 0.3726', 'ci95_lo_block': 0.3747, 'ci95_hi_block': 0.4432, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_up_pool', 'n_manifests': 10, 'mean': 0.4459, 'ci95_lo_manifest': 0.4076, 'ci95_hi_manifest': 0.4842, 'n_blocks': 5, 'block_means': '0.4914 0.4365 0.4370 0.4523 0.4122', 'ci95_lo_block': 0.4096, 'ci95_hi_block': 0.4821, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_c3_vs_c1pool', 'n_manifests': 10, 'mean': 0.0447, 'ci95_lo_manifest': 0.0397, 'ci95_hi_manifest': 0.0496, 'n_blocks': 5, 'block_means': '0.0477 0.0493 0.0411 0.0444 0.0408', 'ci95_lo_block': 0.0399, 'ci95_hi_block': 0.0494, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 'ghz8_x30', 'estimand': 'G_stack', 'n_manifests': 1, 'mean': 3.0817, 'confirmatory': 'secondary (homogeneous)'}
+{'k': 'qaoa12_x30', 'estimand': 'G_stack', 'n_manifests': 1, 'mean': 0.3676, 'confirmatory': 'secondary (homogeneous)'}
+manifests with all 5 configs: 32 / 32
+2026-09-02T01:26:08 AFTER_A2 DONE

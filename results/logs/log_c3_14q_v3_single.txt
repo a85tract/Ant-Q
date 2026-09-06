@@ -1,0 +1,240 @@
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.254s total
+[c3] 1 r-1: ok elapsed=215.187552 ms qpu=210.8621 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.252s total
+[c3] 1 r0: ok elapsed=215.223883 ms qpu=210.8621 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.294s total
+[c3] 1 r1: ok elapsed=215.179932 ms qpu=210.8621 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.252s total
+[c3] 1 r2: ok elapsed=215.152942 ms qpu=210.8621 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.250s total
+[c3] 1 r3: ok elapsed=215.194042 ms qpu=210.8621 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.252s total
+[c3] 1 r4: ok elapsed=215.185002 ms qpu=210.8621 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.147s total
+[c3] 2 r-1: ok elapsed=97.576156 ms qpu=95.9283 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.186s total
+[c3] 2 r0: ok elapsed=97.611447 ms qpu=95.9283 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.189s total
+[c3] 2 r1: ok elapsed=97.565706 ms qpu=95.9283 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.147s total
+[c3] 2 r2: ok elapsed=97.627566 ms qpu=95.9283 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.146s total
+[c3] 2 r3: ok elapsed=97.533805 ms qpu=95.9283 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.146s total
+[c3] 2 r4: ok elapsed=97.628717 ms qpu=95.9283 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.072s total
+[c3] 3 r-1: ok elapsed=35.270892 ms qpu=34.3200 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.114s total
+[c3] 3 r0: ok elapsed=35.325243 ms qpu=34.3200 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.114s total
+[c3] 3 r1: ok elapsed=35.242573 ms qpu=34.3200 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.071s total
+[c3] 3 r2: ok elapsed=35.264273 ms qpu=34.3200 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.112s total
+[c3] 3 r3: ok elapsed=35.250442 ms qpu=34.3200 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 3 r4: ok elapsed=35.308523 ms qpu=34.3200 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.045s total
+[c3] 4 r-1: ok elapsed=9.390954 ms qpu=8.9400 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.085s total
+[c3] 4 r0: ok elapsed=9.361524 ms qpu=8.9400 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.047s total
+[c3] 4 r1: ok elapsed=9.357583 ms qpu=8.9400 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.046s total
+[c3] 4 r2: ok elapsed=9.384293 ms qpu=8.9400 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.086s total
+[c3] 4 r3: ok elapsed=9.392764 ms qpu=8.9400 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.045s total
+[c3] 4 r4: ok elapsed=9.351314 ms qpu=8.9400 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.088s total
+[c3] 5 r-1: ok elapsed=14.96164 ms qpu=14.5000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.088s total
+[c3] 5 r0: ok elapsed=15.01909 ms qpu=14.5000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.090s total
+[c3] 5 r1: ok elapsed=14.96401 ms qpu=14.5000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.089s total
+[c3] 5 r2: ok elapsed=14.913919 ms qpu=14.5000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.091s total
+[c3] 5 r3: ok elapsed=14.99865 ms qpu=14.5000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.089s total
+[c3] 5 r4: ok elapsed=14.958049 ms qpu=14.5000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.090s total
+[c3] 6 r-1: ok elapsed=12.809709 ms qpu=12.3494 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.092s total
+[c3] 6 r0: ok elapsed=12.853628 ms qpu=12.3494 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.090s total
+[c3] 6 r1: ok elapsed=12.802198 ms qpu=12.3494 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.090s total
+[c3] 6 r2: ok elapsed=12.771037 ms qpu=12.3494 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.089s total
+[c3] 6 r3: ok elapsed=12.776848 ms qpu=12.3494 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.090s total
+[c3] 6 r4: ok elapsed=12.796588 ms qpu=12.3494 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.226s total
+[c3] 7 r-1: ok elapsed=123.232903 ms qpu=121.5693 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.185s total
+[c3] 7 r0: ok elapsed=123.156672 ms qpu=121.5693 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.224s total
+[c3] 7 r1: ok elapsed=123.171892 ms qpu=121.5693 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.226s total
+[c3] 7 r2: ok elapsed=123.184982 ms qpu=121.5693 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.227s total
+[c3] 7 r3: ok elapsed=123.169212 ms qpu=121.5693 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.186s total
+[c3] 7 r4: ok elapsed=123.209272 ms qpu=121.5693 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.112s total
+[c3] 8 r-1: ok elapsed=18.810588 ms qpu=18.4013 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 8 r0: ok elapsed=18.819348 ms qpu=18.4013 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 8 r1: ok elapsed=18.891908 ms qpu=18.4013 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 8 r2: ok elapsed=18.801678 ms qpu=18.4013 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 8 r3: ok elapsed=18.893379 ms qpu=18.4013 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.116s total
+[c3] 8 r4: ok elapsed=18.823428 ms qpu=18.4013 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.128s total
+[c3] 9 r-1: ok elapsed=3.123631 ms qpu=2.7008 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.128s total
+[c3] 9 r0: ok elapsed=2.99159 ms qpu=2.7008 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.129s total
+[c3] 9 r1: ok elapsed=3.02752 ms qpu=2.7008 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.168s total
+[c3] 9 r2: ok elapsed=3.024571 ms qpu=2.7008 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.128s total
+[c3] 9 r3: ok elapsed=3.03342 ms qpu=2.7008 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.126s total
+[c3] 9 r4: ok elapsed=3.055581 ms qpu=2.7008 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.151s total
+[c3] 10 r-1: ok elapsed=1.317023 ms qpu=0.8755 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.151s total
+[c3] 10 r0: ok elapsed=1.312723 ms qpu=0.8755 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.151s total
+[c3] 10 r1: ok elapsed=1.333923 ms qpu=0.8755 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.151s total
+[c3] 10 r2: ok elapsed=1.318663 ms qpu=0.8755 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.149s total
+[c3] 10 r3: ok elapsed=1.314733 ms qpu=0.8755 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.149s total
+[c3] 10 r4: ok elapsed=1.281822 ms qpu=0.8755 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.113s total
+[c3] 11 r-1: ok elapsed=19.809388 ms qpu=19.3741 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.113s total
+[c3] 11 r0: ok elapsed=19.816318 ms qpu=19.3741 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.112s total
+[c3] 11 r1: ok elapsed=19.98439 ms qpu=19.3741 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 11 r2: ok elapsed=19.811048 ms qpu=19.3741 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.112s total
+[c3] 11 r3: ok elapsed=19.872428 ms qpu=19.3741 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 11 r4: ok elapsed=19.885109 ms qpu=19.3741 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.080s total
+[c3] 12 r-1: ok elapsed=56.269113 ms qpu=54.3000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.079s total
+[c3] 12 r0: ok elapsed=56.278733 ms qpu=54.3000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.080s total
+[c3] 12 r1: ok elapsed=56.253703 ms qpu=54.3000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.080s total
+[c3] 12 r2: ok elapsed=56.252853 ms qpu=54.3000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.080s total
+[c3] 12 r3: ok elapsed=56.231812 ms qpu=54.3000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.080s total
+[c3] 12 r4: ok elapsed=56.260503 ms qpu=54.3000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.102s total
+[c3] 13 r-1: ok elapsed=13.634417 ms qpu=13.2350 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.101s total
+[c3] 13 r0: ok elapsed=13.585856 ms qpu=13.2350 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.101s total
+[c3] 13 r1: ok elapsed=13.641136 ms qpu=13.2350 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.102s total
+[c3] 13 r2: ok elapsed=13.636556 ms qpu=13.2350 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.100s total
+[c3] 13 r3: ok elapsed=13.626056 ms qpu=13.2350 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.102s total
+[c3] 13 r4: ok elapsed=13.745587 ms qpu=13.2350 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.414s total
+[c3] 19 r-1: ok elapsed=191.127061 ms qpu=190.1363 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.413s total
+[c3] 19 r0: ok elapsed=191.132942 ms qpu=190.1363 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.414s total
+[c3] 19 r1: ok elapsed=191.121311 ms qpu=190.1363 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.415s total
+[c3] 19 r2: ok elapsed=191.136032 ms qpu=190.1363 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.373s total
+[c3] 19 r3: ok elapsed=191.158162 ms qpu=190.1363 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.413s total
+[c3] 19 r4: ok elapsed=191.121451 ms qpu=190.1363 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 20 r-1: ok elapsed=18.131702 ms qpu=17.6600 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.116s total
+[c3] 20 r0: ok elapsed=18.106611 ms qpu=17.6600 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.114s total
+[c3] 20 r1: ok elapsed=18.150161 ms qpu=17.6600 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.114s total
+[c3] 20 r2: ok elapsed=18.113652 ms qpu=17.6600 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.115s total
+[c3] 20 r3: ok elapsed=18.170512 ms qpu=17.6600 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.155s total
+[c3] 20 r4: ok elapsed=18.130931 ms qpu=17.6600 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.634s total
+[c3] 21 r-1: ok elapsed=434.312994 ms qpu=432.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.635s total
+[c3] 21 r0: ok elapsed=434.314824 ms qpu=432.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.589s total
+[c3] 21 r1: ok elapsed=434.371434 ms qpu=432.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.593s total
+[c3] 21 r2: ok elapsed=434.354854 ms qpu=432.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.635s total
+[c3] 21 r3: ok elapsed=434.327893 ms qpu=432.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.594s total
+[c3] 21 r4: ok elapsed=434.314174 ms qpu=432.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.220s total
+[c3] 22 r-1: ok elapsed=20.414304 ms qpu=20.0480 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.220s total
+[c3] 22 r0: ok elapsed=20.372384 ms qpu=20.0480 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.220s total
+[c3] 22 r1: ok elapsed=20.411485 ms qpu=20.0480 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.219s total
+[c3] 22 r2: ok elapsed=20.433795 ms qpu=20.0480 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.220s total
+[c3] 22 r3: ok elapsed=20.416855 ms qpu=20.0480 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.219s total
+[c3] 22 r4: ok elapsed=20.386664 ms qpu=20.0480 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.372s total
+[c3] 23 r-1: ok elapsed=172.318274 ms qpu=171.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.372s total
+[c3] 23 r0: ok elapsed=172.326553 ms qpu=171.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.372s total
+[c3] 23 r1: ok elapsed=172.372764 ms qpu=171.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.372s total
+[c3] 23 r2: ok elapsed=172.344543 ms qpu=171.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.372s total
+[c3] 23 r3: ok elapsed=172.397325 ms qpu=171.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.372s total
+[c3] 23 r4: ok elapsed=172.349593 ms qpu=171.4000 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.146s total
+[c3] 24 r-1: ok elapsed=61.356994 ms qpu=60.9075 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.144s total
+[c3] 24 r0: ok elapsed=61.354564 ms qpu=60.9075 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.165s total
+[c3] 24 r1: ok elapsed=61.404484 ms qpu=60.9075 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.188s total
+[c3] 24 r2: ok elapsed=61.382844 ms qpu=60.9075 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.190s total
+[c3] 24 r3: ok elapsed=61.917179 ms qpu=60.9075 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.189s total
+[c3] 24 r4: ok elapsed=61.347853 ms qpu=60.9075 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.103s total
+[c3] 25 r-1: ok elapsed=17.9947 ms qpu=17.5309 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.102s total
+[c3] 25 r0: ok elapsed=18.00721 ms qpu=17.5309 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.101s total
+[c3] 25 r1: ok elapsed=17.96475 ms qpu=17.5309 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.103s total
+[c3] 25 r2: ok elapsed=18.00195 ms qpu=17.5309 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.103s total
+[c3] 25 r3: ok elapsed=18.02209 ms qpu=17.5309 ms
+[DDR batch] 1 circuit(s) ran SEAMLESSLY (no boundary waits), 0.104s total
+[c3] 25 r4: ok elapsed=18.02298 ms qpu=17.5309 ms

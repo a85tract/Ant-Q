@@ -1,0 +1,47 @@
+2026-09-03T19:12:55 service restarted; Sep 04 01:44:43 veneno start_qubic_server.sh[330962]: 2026-09-04 01:44:43,146 INFO: loading bitfile: 63329aaf
+218254 ./std_server 330928 /home/xilinx/software/scripts/dma_server 330960 /home/xilinx/software/scripts/batch_server
+2026-09-03T19:12:56 image already C3 (xsa_commit: '63329aaf')
+2026-09-03T19:23:03 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r59: ok elapsed=47.117062 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r60: ok elapsed=47.116191 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r61: ok elapsed=47.129922 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r62: ok elapsed=47.123221 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r63: ok elapsed=47.113851 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r64: ok elapsed=47.122511 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r65: timeout elapsed=None ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r65: data_mismatch elapsed=None ms qpu=46.8080 ms
+!! phys5_ctrl1800p_cap1802_R1000_prefill16: second failure, stopping this workload
+2026-09-03T19:23:36 service restarted; Sep 04 01:55:24 veneno start_qubic_server.sh[331387]: 2026-09-04 01:55:24,188 INFO: loading bitfile: 63329aaf
+218254 ./std_server 331354 /home/xilinx/software/scripts/dma_server 331385 /home/xilinx/software/scripts/batch_server
+2026-09-03T19:23:48 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r91: ok elapsed=47.122471 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r92: ok elapsed=47.118481 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r93: ok elapsed=47.118601 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r94: ok elapsed=47.111701 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r95: ok elapsed=47.137682 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r96: ok elapsed=47.116832 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r97: ok elapsed=47.122981 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r98: ok elapsed=47.117232 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r99: ok elapsed=47.120542 ms qpu=46.8080 ms
+2026-09-03T19:23:59 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r91: ok elapsed=47.119311 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r92: ok elapsed=47.124611 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r93: ok elapsed=47.123541 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r94: ok elapsed=47.122132 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r95: ok elapsed=47.116061 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r96: ok elapsed=47.119262 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r97: ok elapsed=47.116092 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r98: ok elapsed=47.119091 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r99: ok elapsed=47.125392 ms qpu=46.8080 ms
+2026-09-03T19:24:02 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_prefill16 r-1: ok elapsed=255.407975 ms qpu=254.5091 ms
+[c3] phys5_prefill16 r0: ok elapsed=255.383024 ms qpu=254.5091 ms
+[c3] phys5_prefill16 r1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5_prefill16 r1: ok elapsed=255.393814 ms qpu=254.5091 ms
+[c3] phys5_prefill16 r2: ok elapsed=255.388324 ms qpu=254.5091 ms
+2026-09-03T19:24:14 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_prefill16 r-1: ok elapsed=2164.894342 ms qpu=2162.4200 ms
+[c3] phys6_prefill16 r0: ok elapsed=2164.904423 ms qpu=2162.4200 ms
+[c3] phys6_prefill16 r1: ok elapsed=2164.898502 ms qpu=2162.4200 ms
+[c3] phys6_prefill16 r2: ok elapsed=2164.904533 ms qpu=2162.4200 ms
+2026-09-03T19:24:14 START THRESHOLD DONE

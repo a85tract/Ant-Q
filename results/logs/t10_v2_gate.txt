@@ -1,0 +1,12 @@
+WARNING:distproc.ir.passes:Z-phase resolution inside loops not supported, be careful!
+WARNING:distproc.ir.passes:Z-phase resolution inside loops not supported, be careful!
+WARNING:distproc.ir.passes:Z-phase resolution inside loops not supported, be careful!
+[DDR batch] circuit 1: FIRED after 135 shots (stop_after=50, overshoot=85, hw latency 203 dsp cycles)
+[DDR batch] 3 circuit(s) ran SEAMLESSLY (no boundary waits), 0.319s total
+stops: [{'cid': 1, 'kind': 2, 'result': 'FIRED', 'actual': 135, 'latency_cycles': 203, 't_decision_ns': 331006107272186, 't_write_ns': 331006107272686, 't_event_ps_ns': 331006107297476, 'flags': 0, 'delay_actual_ns': 0, 'send_block_us_max': 112, 'stop_after': 50, 'cp_step': 0, 'cp_ns': 0, 'overshoot': 85}]
+STRUCT OK: [(200, 1), (135, 1), (300, 1)]
+T10 PASS: circuit 1 stopped after 135 shots (stop_after 50, overshoot 85, hw latency 203 dsp cycles = 0.41 us, PS decision->write 0.5 us, write->record 24.8 us, send_block_us_max 112)
+[DDR batch] circuit 1: stop NOT_ISSUED_LATE (ran the nominal shots)
+[DDR batch] 3 circuit(s) ran SEAMLESSLY (no boundary waits), 0.287s total
+stops v2: {'cid': 1, 'kind': 0, 'result': 'NOT_ISSUED_LATE', 'actual': 400, 'latency_cycles': 0, 't_decision_ns': 331006404023894, 't_write_ns': 0, 't_event_ps_ns': 331006404024514, 'flags': 1, 'delay_actual_ns': 430375, 'send_block_us_max': 155, 'stop_after': 50, 'cp_step': 40, 'cp_ns': 150000, 'overshoot': None, 'fired_k': 2}
+T10v2 PASS: NOT_ISSUED_LATE actual=400 delay_actual=430 us (2 x 150 us requested)

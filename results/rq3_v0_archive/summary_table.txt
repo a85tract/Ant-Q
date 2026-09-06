@@ -1,0 +1,29 @@
+  # Circuit                        |     FakeManilaV2 |      FakeLagosV2 |  FakeGuadalupeV2 |      FakeAlgiers |   FakeSherbrooke |       FakeTorino
+----------------------------------------------------------------------------------------------------------------------------------------------------
+  1 Bell state (GHZ-2)             |             PASS |             PASS |             PASS |             PASS |             PASS |             PASS
+  2 GHZ-3                          |             PASS |             FAIL |             PASS |             PASS |             PASS |             PASS
+  3 VQE HeH+ 2Q                    |             PASS |             PASS |             PASS |             PASS |             PASS |             PASS
+  4 GHZ-4                          |             PASS |         MARGINAL |             PASS |             PASS |             PASS |             PASS
+  5 GHZ-5                          |             PASS |         MARGINAL |             PASS |             PASS |             PASS |             PASS
+  6 GHZ-6                          |                — |             FAIL |             PASS |             PASS |             PASS |             PASS
+  7 GHZ-8                          |                — |                — |             PASS |             PASS |             FAIL |         MARGINAL
+  8 QFT 4Q                         |             PASS |             PASS |             PASS |             PASS |             PASS |             PASS
+  9 VQE Hubbard 16Q                |                — |                — |             FAIL |             FAIL |             FAIL |             FAIL
+ 10 Grover Lights-Out 16Q          |                — |                — |             FAIL |             FAIL |             FAIL |             FAIL
+ 11 QSVM Kernel 15Q (LHC)          |                — |                — |             FAIL |             FAIL |             FAIL |             FAIL
+ 12 QML Kernel 17Q (Supernova)     |                — |                — |                — |             FAIL |             FAIL |             FAIL
+ 13 QAOA MaxCut 16Q                |                — |                — |             FAIL |             FAIL |             FAIL |             FAIL
+ 14 VQE BeH2 14Q                   |                — |                — |             FAIL |             FAIL |             FAIL |             FAIL
+ 15 Shor N=15 5Q                   |             PASS |         MARGINAL |             PASS |             PASS |             PASS |             PASS
+ 16 QAOA 2Q p=1                    |             PASS |             PASS |             PASS |             PASS |             PASS |             PASS
+ 17 Quantum teleportation 3Q       |             PASS |             PASS |             PASS |             PASS |             PASS |             PASS
+ 18 Deutsch-Jozsa 3Q               |             PASS |         MARGINAL |             PASS |             PASS |             PASS |             PASS
+ 19 Bernstein-Vazirani 5Q          |             PASS |         MARGINAL |             PASS |             PASS |             PASS |             PASS
+ 20 VQE 1Q eigensolver             |             PASS |             PASS |             PASS |             PASS |             PASS |             PASS
+ 21 QAOA MaxCut 12Q                |                — |                — |         MARGINAL |         MARGINAL |         MARGINAL |         MARGINAL
+ 22 QML Image Class 14Q            |                — |                — |             FAIL |             FAIL |             FAIL |             FAIL
+ 23 VQE SrH PDM 12Q                |                — |                — |         MARGINAL |             PASS |             FAIL |         MARGINAL
+ 24 Grover 6Q                      |                — |             PASS |             PASS |             PASS |             PASS |             PASS
+ 25 QSVM Radar 4Q                  |             PASS |             PASS |             PASS |             PASS |             PASS |             PASS
+----------------------------------------------------------------------------------------------------------------------------------------------------
+PASS: 84/127 (66%)

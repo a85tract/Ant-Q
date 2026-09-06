@@ -1,0 +1,169 @@
+2026-09-02T00:26:24 dma_server restarted with STRM_POLL_US=200: 
+2026-09-02T00:26:25 idx 2 stop_at 0 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:26:25 idx 2 stop_at 2457 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:26:26 idx 9 stop_at 0 pair  -> FAIL | [c3] 9 r-1: data_mismatch elapsed=None ms qpu=2.7013 ms
+2026-09-02T00:26:26 idx 9 stop_at 60 pair  -> FAIL | [c3] 9 r-1: data_mismatch elapsed=None ms qpu=2.7013 ms
+2026-09-02T00:26:27 idx 10 stop_at 0 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:26:28 idx 10 stop_at 12 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:26:29 idx 19 stop_at 0 pair  -> FAIL | [c3] 19 r-1: data_mismatch elapsed=None ms qpu=190.1199 ms
+2026-09-02T00:26:29 idx 19 stop_at 1227 pair  -> FAIL | [c3] 19 r-1: data_mismatch elapsed=None ms qpu=190.1199 ms
+2026-09-02T00:26:30 idx 22 stop_at 0 pair  -> FAIL | [c3] 22 r-1: data_mismatch elapsed=None ms qpu=20.0496 ms
+2026-09-02T00:26:31 idx 22 stop_at 120 pair  -> FAIL | [c3] 22 r-1: data_mismatch elapsed=None ms qpu=20.0496 ms
+2026-09-02T00:26:32 idx 23 stop_at 0 pair  -> FAIL | [c3] 23 r-1: data_mismatch elapsed=None ms qpu=171.4080 ms
+2026-09-02T00:26:33 idx 23 stop_at 1200 pair  -> FAIL | [c3] 23 r-1: data_mismatch elapsed=None ms qpu=171.4080 ms
+2026-09-02T00:26:33 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:26:33 pair 2_p0 attempt 1 failed -> restart services and re-run BOTH members
+2026-09-02T00:27:15 idx 2 stop_at 2457 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=29.518705 ms qpu=95.9611 ms
+2026-09-02T00:27:16 idx 2 stop_at 0 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=97.321153 ms qpu=95.9611 ms
+2026-09-02T00:27:16 idx 2 stop_at 2457 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=29.586376 ms qpu=95.9611 ms
+2026-09-02T00:27:17 idx 2 stop_at 0 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=97.320184 ms qpu=95.9611 ms
+2026-09-02T00:27:17 idx 2 stop_at 0 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=97.319053 ms qpu=95.9611 ms
+2026-09-02T00:27:18 idx 2 stop_at 2457 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=29.504455 ms qpu=95.9611 ms
+2026-09-02T00:27:19 idx 2 stop_at 2457 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=29.526606 ms qpu=95.9611 ms
+2026-09-02T00:27:19 idx 2 stop_at 0 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=97.315343 ms qpu=95.9611 ms
+2026-09-02T00:27:20 idx 2 stop_at 0 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=97.319084 ms qpu=95.9611 ms
+2026-09-02T00:27:20 idx 2 stop_at 2457 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=29.651646 ms qpu=95.9611 ms
+2026-09-02T00:27:21 idx 9 stop_at 0 pair 9_p0 -> ok | [c3] 9 r0: ok elapsed=2.814138 ms qpu=2.7013 ms
+2026-09-02T00:27:22 idx 9 stop_at 60 pair 9_p0 -> ok | [c3] 9 r0: ok elapsed=1.792948 ms qpu=2.7013 ms
+2026-09-02T00:27:22 idx 9 stop_at 60 pair 9_p1 -> ok | [c3] 9 r0: ok elapsed=1.704358 ms qpu=2.7013 ms
+2026-09-02T00:27:23 idx 9 stop_at 0 pair 9_p1 -> ok | [c3] 9 r0: ok elapsed=2.801458 ms qpu=2.7013 ms
+2026-09-02T00:27:23 idx 9 stop_at 60 pair 9_p2 -> ok | [c3] 9 r0: ok elapsed=1.804928 ms qpu=2.7013 ms
+2026-09-02T00:27:24 idx 9 stop_at 0 pair 9_p2 -> ok | [c3] 9 r0: ok elapsed=2.811788 ms qpu=2.7013 ms
+2026-09-02T00:27:25 idx 9 stop_at 0 pair 9_p3 -> ok | [c3] 9 r0: ok elapsed=2.804638 ms qpu=2.7013 ms
+2026-09-02T00:27:25 idx 9 stop_at 60 pair 9_p3 -> ok | [c3] 9 r0: ok elapsed=1.688387 ms qpu=2.7013 ms
+2026-09-02T00:27:26 idx 9 stop_at 0 pair 9_p4 -> ok | [c3] 9 r0: ok elapsed=2.802218 ms qpu=2.7013 ms
+2026-09-02T00:27:27 idx 9 stop_at 60 pair 9_p4 -> ok | [c3] 9 r0: ok elapsed=1.579296 ms qpu=2.7013 ms
+2026-09-02T00:27:27 idx 10 stop_at 12 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.814849 ms qpu=0.8756 ms
+2026-09-02T00:27:28 idx 10 stop_at 0 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.99388 ms qpu=0.8756 ms
+2026-09-02T00:27:29 idx 10 stop_at 12 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.902349 ms qpu=0.8756 ms
+2026-09-02T00:27:29 idx 10 stop_at 0 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=1.04852 ms qpu=0.8756 ms
+2026-09-02T00:27:30 idx 10 stop_at 0 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.99525 ms qpu=0.8756 ms
+2026-09-02T00:27:31 idx 10 stop_at 12 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.659297 ms qpu=0.8756 ms
+2026-09-02T00:27:32 idx 10 stop_at 0 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.97655 ms qpu=0.8756 ms
+2026-09-02T00:27:32 idx 10 stop_at 12 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.741297 ms qpu=0.8756 ms
+2026-09-02T00:27:33 idx 10 stop_at 0 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.98068 ms qpu=0.8756 ms
+2026-09-02T00:27:34 idx 10 stop_at 12 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.652256 ms qpu=0.8756 ms
+2026-09-02T00:27:35 idx 19 stop_at 1227 pair 19_p0 -> ok | [c3] 19 r0: ok elapsed=58.607906 ms qpu=190.1199 ms
+2026-09-02T00:27:36 idx 19 stop_at 0 pair 19_p0 -> ok | [c3] 19 r0: ok elapsed=190.916869 ms qpu=190.1199 ms
+2026-09-02T00:27:37 idx 19 stop_at 1227 pair 19_p1 -> ok | [c3] 19 r0: ok elapsed=58.446105 ms qpu=190.1199 ms
+2026-09-02T00:27:38 idx 19 stop_at 0 pair 19_p1 -> ok | [c3] 19 r0: ok elapsed=190.92802 ms qpu=190.1199 ms
+2026-09-02T00:27:39 idx 19 stop_at 1227 pair 19_p2 -> ok | [c3] 19 r0: ok elapsed=58.404975 ms qpu=190.1199 ms
+2026-09-02T00:27:40 idx 19 stop_at 0 pair 19_p2 -> ok | [c3] 19 r0: ok elapsed=190.918989 ms qpu=190.1199 ms
+2026-09-02T00:27:41 idx 19 stop_at 0 pair 19_p3 -> ok | [c3] 19 r0: ok elapsed=190.920429 ms qpu=190.1199 ms
+2026-09-02T00:27:42 idx 19 stop_at 1227 pair 19_p3 -> ok | [c3] 19 r0: ok elapsed=58.408615 ms qpu=190.1199 ms
+2026-09-02T00:27:43 idx 19 stop_at 0 pair 19_p4 -> ok | [c3] 19 r0: ok elapsed=190.920229 ms qpu=190.1199 ms
+2026-09-02T00:27:44 idx 19 stop_at 1227 pair 19_p4 -> ok | [c3] 19 r0: ok elapsed=58.355554 ms qpu=190.1199 ms
+2026-09-02T00:27:45 idx 22 stop_at 0 pair 22_p0 -> ok | [c3] 22 r0: ok elapsed=20.278923 ms qpu=20.0496 ms
+2026-09-02T00:27:46 idx 22 stop_at 120 pair 22_p0 -> ok | [c3] 22 r0: ok elapsed=7.472965 ms qpu=20.0496 ms
+2026-09-02T00:27:47 idx 22 stop_at 0 pair 22_p1 -> ok | [c3] 22 r0: ok elapsed=20.279173 ms qpu=20.0496 ms
+2026-09-02T00:27:48 idx 22 stop_at 120 pair 22_p1 -> ok | [c3] 22 r0: ok elapsed=7.495545 ms qpu=20.0496 ms
+2026-09-02T00:27:49 idx 22 stop_at 120 pair 22_p2 -> ok | [c3] 22 r0: ok elapsed=7.469405 ms qpu=20.0496 ms
+2026-09-02T00:27:50 idx 22 stop_at 0 pair 22_p2 -> ok | [c3] 22 r0: ok elapsed=20.275643 ms qpu=20.0496 ms
+2026-09-02T00:27:51 idx 22 stop_at 120 pair 22_p3 -> ok | [c3] 22 r0: ok elapsed=7.539186 ms qpu=20.0496 ms
+2026-09-02T00:27:52 idx 22 stop_at 0 pair 22_p3 -> ok | [c3] 22 r0: ok elapsed=20.278533 ms qpu=20.0496 ms
+2026-09-02T00:27:53 idx 22 stop_at 120 pair 22_p4 -> ok | [c3] 22 r0: ok elapsed=7.453895 ms qpu=20.0496 ms
+2026-09-02T00:27:53 idx 22 stop_at 0 pair 22_p4 -> ok | [c3] 22 r0: ok elapsed=20.275243 ms qpu=20.0496 ms
+2026-09-02T00:27:54 idx 23 stop_at 0 pair 23_p0 -> ok | [c3] 23 r0: ok elapsed=172.175572 ms qpu=171.4080 ms
+2026-09-02T00:27:55 idx 23 stop_at 1200 pair 23_p0 -> ok | [c3] 23 r0: ok elapsed=52.178112 ms qpu=171.4080 ms
+2026-09-02T00:27:56 idx 23 stop_at 1200 pair 23_p1 -> ok | [c3] 23 r0: ok elapsed=52.370033 ms qpu=171.4080 ms
+2026-09-02T00:27:57 idx 23 stop_at 0 pair 23_p1 -> ok | [c3] 23 r0: ok elapsed=172.178072 ms qpu=171.4080 ms
+2026-09-02T00:27:58 idx 23 stop_at 0 pair 23_p2 -> ok | [c3] 23 r0: ok elapsed=172.175572 ms qpu=171.4080 ms
+2026-09-02T00:27:59 idx 23 stop_at 1200 pair 23_p2 -> ok | [c3] 23 r0: ok elapsed=52.226452 ms qpu=171.4080 ms
+2026-09-02T00:28:00 idx 23 stop_at 0 pair 23_p3 -> ok | [c3] 23 r0: ok elapsed=172.179272 ms qpu=171.4080 ms
+2026-09-02T00:28:01 idx 23 stop_at 1200 pair 23_p3 -> ok | [c3] 23 r0: ok elapsed=52.158722 ms qpu=171.4080 ms
+2026-09-02T00:28:02 idx 23 stop_at 1200 pair 23_p4 -> ok | [c3] 23 r0: ok elapsed=52.432074 ms qpu=171.4080 ms
+2026-09-02T00:28:03 idx 23 stop_at 0 pair 23_p4 -> ok | [c3] 23 r0: ok elapsed=172.169962 ms qpu=171.4080 ms
+2026-09-02T00:28:03 stop campaign done
+2026-09-02T00:28:04 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T00:28:04 idx 2 stop_at 0 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:28:05 idx 2 stop_at 2457 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:28:05 idx 10 stop_at 0 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:28:06 idx 10 stop_at 12 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:28:07 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:28:07 pair 2_p0 attempt 1 failed -> restart services and re-run BOTH members
+2026-09-02T00:28:48 idx 2 stop_at 2457 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=29.645577 ms qpu=95.9611 ms
+2026-09-02T00:28:49 idx 2 stop_at 0 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=97.331024 ms qpu=95.9611 ms
+2026-09-02T00:28:49 idx 2 stop_at 2457 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=30.358563 ms qpu=95.9611 ms
+2026-09-02T00:28:50 idx 2 stop_at 0 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=97.322364 ms qpu=95.9611 ms
+2026-09-02T00:28:51 idx 2 stop_at 0 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=97.337523 ms qpu=95.9611 ms
+2026-09-02T00:28:51 idx 2 stop_at 2457 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=29.621686 ms qpu=95.9611 ms
+2026-09-02T00:28:52 idx 2 stop_at 2457 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=29.636686 ms qpu=95.9611 ms
+2026-09-02T00:28:52 idx 2 stop_at 0 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=97.314383 ms qpu=95.9611 ms
+2026-09-02T00:28:53 idx 2 stop_at 0 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=97.313173 ms qpu=95.9611 ms
+2026-09-02T00:28:53 idx 2 stop_at 2457 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=29.640987 ms qpu=95.9611 ms
+2026-09-02T00:28:54 idx 10 stop_at 12 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.562055 ms qpu=0.8756 ms
+2026-09-02T00:28:55 idx 10 stop_at 0 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.982079 ms qpu=0.8756 ms
+2026-09-02T00:28:55 idx 10 stop_at 12 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.558576 ms qpu=0.8756 ms
+2026-09-02T00:28:56 idx 10 stop_at 0 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.97473 ms qpu=0.8756 ms
+2026-09-02T00:28:57 idx 10 stop_at 0 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.98174 ms qpu=0.8756 ms
+2026-09-02T00:28:57 idx 10 stop_at 12 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.688847 ms qpu=0.8756 ms
+2026-09-02T00:28:58 idx 10 stop_at 0 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.97593 ms qpu=0.8756 ms
+2026-09-02T00:28:59 idx 10 stop_at 12 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.667697 ms qpu=0.8756 ms
+2026-09-02T00:28:59 idx 10 stop_at 0 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.98276 ms qpu=0.8756 ms
+2026-09-02T00:29:00 idx 10 stop_at 12 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.642066 ms qpu=0.8756 ms
+2026-09-02T00:29:00 stop campaign done
+2026-09-02T00:29:01 dma_server restarted with STRM_POLL_US=200: 
+2026-09-02T01:22:26 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T01:22:27 idx 2 stop_at 0 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:22:28 idx 2 stop_at 2457 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:22:28 idx 10 stop_at 0 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T01:22:29 idx 10 stop_at 12 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T01:22:29 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:22:29 pair 2_p0 attempt 1 failed -> restart services and re-run BOTH members
+2026-09-02T01:23:14 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T01:23:15 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:23:15 pair 2_p0 attempt 2 failed -> restart services and re-run BOTH members
+2026-09-02T01:24:00 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T01:24:00 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:24:00 pair 2_p0 attempt 3 failed -> restart services and re-run BOTH members
+2026-09-02T01:26:07 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T01:26:08 dma_server restarted with STRM_POLL_US=200: 
+2026-09-02T01:27:57 dma_server restarted with STRM_POLL_US=0: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+224775 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...
+2026-09-02T01:27:58 idx 2 stop_at 0 pair  -> ok | [c3] 2 r-1: ok elapsed=97.320284 ms qpu=95.9611 ms
+2026-09-02T01:27:59 idx 2 stop_at 2457 pair  -> ok | [c3] 2 r-1: ok elapsed=29.482105 ms qpu=95.9611 ms
+2026-09-02T01:27:59 idx 10 stop_at 0 pair  -> ok | [c3] 10 r-1: ok elapsed=0.98293 ms qpu=0.8756 ms
+2026-09-02T01:28:00 idx 10 stop_at 12 pair  -> ok | [c3] 10 r-1: ok elapsed=0.562246 ms qpu=0.8756 ms
+2026-09-02T01:28:01 idx 2 stop_at 2457 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=29.480455 ms qpu=95.9611 ms
+2026-09-02T01:28:01 idx 2 stop_at 0 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=97.709248 ms qpu=95.9611 ms
+2026-09-02T01:28:02 idx 2 stop_at 2457 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=29.477524 ms qpu=95.9611 ms
+2026-09-02T01:28:03 idx 2 stop_at 0 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=97.327704 ms qpu=95.9611 ms
+2026-09-02T01:28:03 idx 2 stop_at 0 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=97.339243 ms qpu=95.9611 ms
+2026-09-02T01:28:04 idx 2 stop_at 2457 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=29.578045 ms qpu=95.9611 ms
+2026-09-02T01:28:04 idx 2 stop_at 2457 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=29.547175 ms qpu=95.9611 ms
+2026-09-02T01:28:05 idx 2 stop_at 0 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=97.331554 ms qpu=95.9611 ms
+2026-09-02T01:28:05 idx 2 stop_at 0 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=97.427784 ms qpu=95.9611 ms
+2026-09-02T01:28:06 idx 2 stop_at 2457 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=29.577475 ms qpu=95.9611 ms
+2026-09-02T01:28:07 idx 10 stop_at 12 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.686127 ms qpu=0.8756 ms
+2026-09-02T01:28:07 idx 10 stop_at 0 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.986879 ms qpu=0.8756 ms
+2026-09-02T01:28:08 idx 10 stop_at 12 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.797598 ms qpu=0.8756 ms
+2026-09-02T01:28:09 idx 10 stop_at 0 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=1.046521 ms qpu=0.8756 ms
+2026-09-02T01:28:09 idx 10 stop_at 0 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=1.01529 ms qpu=0.8756 ms
+2026-09-02T01:28:10 idx 10 stop_at 12 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=1.291583 ms qpu=0.8756 ms
+2026-09-02T01:28:11 idx 10 stop_at 0 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.976829 ms qpu=0.8756 ms
+2026-09-02T01:28:12 idx 10 stop_at 12 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.677047 ms qpu=0.8756 ms
+2026-09-02T01:28:12 idx 10 stop_at 0 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.9817 ms qpu=0.8756 ms
+2026-09-02T01:28:13 idx 10 stop_at 12 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.694927 ms qpu=0.8756 ms
+2026-09-02T01:28:13 stop campaign done
+2026-09-02T01:28:17 dma_server restarted with STRM_POLL_US=200: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+224863 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...
+2026-09-03T22:32:49 dma_server restarted with STRM_POLL_US=0: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+332391 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...
+2026-09-03T22:34:54 dma_server restarted with STRM_POLL_US=200: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+332479 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...
+2026-09-03T22:37:57 dma_server restarted with STRM_POLL_US=0: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+332568 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...
+2026-09-03T22:39:09 dma_server restarted with STRM_POLL_US=200: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+332821 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...

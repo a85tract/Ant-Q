@@ -1,0 +1,121 @@
+idx,name,backend,n,skip,PASS,MARGINAL,FAIL,stops,stop_on_PASS,stop_on_MARGINAL,stop_on_FAIL,missed_FAIL,stop_cp_min,stop_cp_median,stop_cp_max,stops_tvd_only,stop_on_PASS_tvd_only,tvd_mean,hf_mean
+1,Bell state (GHZ-2),FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.061,0.939
+1,Bell state (GHZ-2),FakeLagosV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.263,0.737
+1,Bell state (GHZ-2),FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.042,0.958
+1,Bell state (GHZ-2),FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.018,0.982
+1,Bell state (GHZ-2),FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.04,0.96
+1,Bell state (GHZ-2),FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.185,0.815
+2,GHZ-3,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.16,0.84
+2,GHZ-3,FakeLagosV2,20,0,0,3,17,18,0,1,17,0,3,3.0,9,18,0,0.606,0.394
+2,GHZ-3,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.072,0.928
+2,GHZ-3,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.032,0.968
+2,GHZ-3,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.07,0.93
+2,GHZ-3,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.232,0.768
+3,VQE HeH+ 2Q,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.065,0.935
+3,VQE HeH+ 2Q,FakeLagosV2,20,0,19,1,0,0,0,0,0,0,,,,0,0,0.29,0.71
+3,VQE HeH+ 2Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.044,0.956
+3,VQE HeH+ 2Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.02,0.98
+3,VQE HeH+ 2Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.044,0.956
+3,VQE HeH+ 2Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.19,0.81
+4,GHZ-4,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.173,0.827
+4,GHZ-4,FakeLagosV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.409,0.591
+4,GHZ-4,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.113,0.887
+4,GHZ-4,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.048,0.952
+4,GHZ-4,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.088,0.911
+4,GHZ-4,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.246,0.754
+5,GHZ-5,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.193,0.807
+5,GHZ-5,FakeLagosV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.512,0.488
+5,GHZ-5,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.108,0.891
+5,GHZ-5,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.058,0.945
+5,GHZ-5,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.115,0.885
+5,GHZ-5,FakeTorino,20,0,14,6,0,0,0,0,0,0,,,,0,0,0.299,0.7
+6,GHZ-6,FakeManilaV2,20,1,,,,,,,,,,,,,,,
+6,GHZ-6,FakeLagosV2,20,0,0,0,20,20,0,0,20,0,3,4.0,7,20,0,0.746,0.248
+6,GHZ-6,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.197,0.806
+6,GHZ-6,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.11,0.91
+6,GHZ-6,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.199,0.802
+6,GHZ-6,FakeTorino,20,0,10,10,0,0,0,0,0,0,,,,0,0,0.311,0.686
+7,GHZ-8,FakeManilaV2,20,1,,,,,,,,,,,,,,,
+7,GHZ-8,FakeLagosV2,20,1,,,,,,,,,,,,,,,
+7,GHZ-8,FakeGuadalupeV2,20,0,18,2,0,0,0,0,0,0,,,,0,0,0.241,0.766
+7,GHZ-8,FakeAlgiers,20,0,18,2,0,0,0,0,0,0,,,,0,0,0.186,0.859
+7,GHZ-8,FakeSherbrooke,20,0,0,0,20,20,0,0,20,0,3,6.0,10,20,0,0.794,0.196
+7,GHZ-8,FakeTorino,20,0,0,20,0,2,0,2,0,0,4,4.5,5,2,0,0.436,0.558
+8,QFT 4Q,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.097,0.984
+8,QFT 4Q,FakeLagosV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.099,0.984
+8,QFT 4Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.098,0.985
+8,QFT 4Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.103,0.984
+8,QFT 4Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.099,0.984
+8,QFT 4Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.098,0.985
+14,VQE BeH2 14Q,FakeManilaV2,20,1,,,,,,,,,,,,,,,
+14,VQE BeH2 14Q,FakeLagosV2,20,1,,,,,,,,,,,,,,,
+14,VQE BeH2 14Q,FakeGuadalupeV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.321,0.731
+14,VQE BeH2 14Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.228,0.811
+14,VQE BeH2 14Q,FakeSherbrooke,20,0,0,0,20,20,0,0,20,0,3,3.0,3,20,0,0.893,0.05
+14,VQE BeH2 14Q,FakeTorino,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.411,0.638
+15,Shor N=15 5Q,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.128,0.873
+15,Shor N=15 5Q,FakeLagosV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.487,0.511
+15,Shor N=15 5Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.077,0.93
+15,Shor N=15 5Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.045,0.971
+15,Shor N=15 5Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.072,0.935
+15,Shor N=15 5Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.126,0.875
+16,QAOA 2Q p=1,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.029,0.999
+16,QAOA 2Q p=1,FakeLagosV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.031,0.999
+16,QAOA 2Q p=1,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.03,0.998
+16,QAOA 2Q p=1,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.029,0.999
+16,QAOA 2Q p=1,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.029,0.999
+16,QAOA 2Q p=1,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.03,0.998
+17,Quantum teleportation 3Q,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.09,0.916
+17,Quantum teleportation 3Q,FakeLagosV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.17,0.829
+17,Quantum teleportation 3Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.056,0.96
+17,Quantum teleportation 3Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.041,0.974
+17,Quantum teleportation 3Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.042,0.974
+17,Quantum teleportation 3Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.048,0.972
+18,Deutsch-Jozsa 3Q,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.148,0.852
+18,Deutsch-Jozsa 3Q,FakeLagosV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.544,0.455
+18,Deutsch-Jozsa 3Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.069,0.932
+18,Deutsch-Jozsa 3Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.035,0.973
+18,Deutsch-Jozsa 3Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.068,0.933
+18,Deutsch-Jozsa 3Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.082,0.917
+19,Bernstein-Vazirani 5Q,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.203,0.796
+19,Bernstein-Vazirani 5Q,FakeLagosV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.45,0.55
+19,Bernstein-Vazirani 5Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.129,0.871
+19,Bernstein-Vazirani 5Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.071,0.93
+19,Bernstein-Vazirani 5Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.124,0.875
+19,Bernstein-Vazirani 5Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.16,0.839
+20,VQE 1Q eigensolver,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.006,1.0
+20,VQE 1Q eigensolver,FakeLagosV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.006,1.0
+20,VQE 1Q eigensolver,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.007,1.0
+20,VQE 1Q eigensolver,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.006,1.0
+20,VQE 1Q eigensolver,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.006,1.0
+20,VQE 1Q eigensolver,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.006,1.0
+21,QAOA MaxCut 12Q,FakeManilaV2,20,1,,,,,,,,,,,,,,,
+21,QAOA MaxCut 12Q,FakeLagosV2,20,1,,,,,,,,,,,,,,,
+21,QAOA MaxCut 12Q,FakeGuadalupeV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.322,0.734
+21,QAOA MaxCut 12Q,FakeAlgiers,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.311,0.749
+21,QAOA MaxCut 12Q,FakeSherbrooke,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.458,0.565
+21,QAOA MaxCut 12Q,FakeTorino,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.324,0.732
+22,QML Image Class 14Q,FakeManilaV2,20,1,,,,,,,,,,,,,,,
+22,QML Image Class 14Q,FakeLagosV2,20,1,,,,,,,,,,,,,,,
+22,QML Image Class 14Q,FakeGuadalupeV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.483,0.56
+22,QML Image Class 14Q,FakeAlgiers,20,0,19,1,0,0,0,0,0,0,,,,0,0,0.272,0.78
+22,QML Image Class 14Q,FakeSherbrooke,20,0,0,0,20,20,0,0,20,0,3,3.0,4,20,0,0.921,0.041
+22,QML Image Class 14Q,FakeTorino,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.457,0.595
+23,VQE SrH PDM 12Q,FakeManilaV2,20,1,,,,,,,,,,,,,,,
+23,VQE SrH PDM 12Q,FakeLagosV2,20,1,,,,,,,,,,,,,,,
+23,VQE SrH PDM 12Q,FakeGuadalupeV2,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.364,0.636
+23,VQE SrH PDM 12Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.191,0.809
+23,VQE SrH PDM 12Q,FakeSherbrooke,20,0,0,0,20,20,0,0,20,0,3,3.0,3,20,0,0.975,0.025
+23,VQE SrH PDM 12Q,FakeTorino,20,0,0,20,0,0,0,0,0,0,,,,0,0,0.446,0.554
+24,Grover 6Q,FakeManilaV2,20,1,,,,,,,,,,,,,,,
+24,Grover 6Q,FakeLagosV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.141,0.969
+24,Grover 6Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.138,0.969
+24,Grover 6Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.14,0.968
+24,Grover 6Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.142,0.968
+24,Grover 6Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.139,0.969
+25,QSVM Radar 4Q,FakeManilaV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.105,0.984
+25,QSVM Radar 4Q,FakeLagosV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.175,0.959
+25,QSVM Radar 4Q,FakeGuadalupeV2,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.084,0.988
+25,QSVM Radar 4Q,FakeAlgiers,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.07,0.991
+25,QSVM Radar 4Q,FakeSherbrooke,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.081,0.989
+25,QSVM Radar 4Q,FakeTorino,20,0,20,0,0,0,0,0,0,0,,,,0,0,0.131,0.973

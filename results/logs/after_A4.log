@@ -1,0 +1,60 @@
+2026-09-02T01:27:53 poll-0 sweep (GHZ-3, GHZ-8), tag c3_14q_stop_poll0d
+2026-09-02T01:27:57 dma_server restarted with STRM_POLL_US=0: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+224775 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...
+2026-09-02T01:27:58 idx 2 stop_at 0 pair  -> ok | [c3] 2 r-1: ok elapsed=97.320284 ms qpu=95.9611 ms
+2026-09-02T01:27:59 idx 2 stop_at 2457 pair  -> ok | [c3] 2 r-1: ok elapsed=29.482105 ms qpu=95.9611 ms
+2026-09-02T01:27:59 idx 10 stop_at 0 pair  -> ok | [c3] 10 r-1: ok elapsed=0.98293 ms qpu=0.8756 ms
+2026-09-02T01:28:00 idx 10 stop_at 12 pair  -> ok | [c3] 10 r-1: ok elapsed=0.562246 ms qpu=0.8756 ms
+2026-09-02T01:28:01 idx 2 stop_at 2457 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=29.480455 ms qpu=95.9611 ms
+2026-09-02T01:28:01 idx 2 stop_at 0 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=97.709248 ms qpu=95.9611 ms
+2026-09-02T01:28:02 idx 2 stop_at 2457 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=29.477524 ms qpu=95.9611 ms
+2026-09-02T01:28:03 idx 2 stop_at 0 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=97.327704 ms qpu=95.9611 ms
+2026-09-02T01:28:03 idx 2 stop_at 0 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=97.339243 ms qpu=95.9611 ms
+2026-09-02T01:28:04 idx 2 stop_at 2457 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=29.578045 ms qpu=95.9611 ms
+2026-09-02T01:28:04 idx 2 stop_at 2457 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=29.547175 ms qpu=95.9611 ms
+2026-09-02T01:28:05 idx 2 stop_at 0 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=97.331554 ms qpu=95.9611 ms
+2026-09-02T01:28:05 idx 2 stop_at 0 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=97.427784 ms qpu=95.9611 ms
+2026-09-02T01:28:06 idx 2 stop_at 2457 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=29.577475 ms qpu=95.9611 ms
+2026-09-02T01:28:07 idx 10 stop_at 12 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.686127 ms qpu=0.8756 ms
+2026-09-02T01:28:07 idx 10 stop_at 0 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.986879 ms qpu=0.8756 ms
+2026-09-02T01:28:08 idx 10 stop_at 12 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.797598 ms qpu=0.8756 ms
+2026-09-02T01:28:09 idx 10 stop_at 0 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=1.046521 ms qpu=0.8756 ms
+2026-09-02T01:28:09 idx 10 stop_at 0 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=1.01529 ms qpu=0.8756 ms
+2026-09-02T01:28:10 idx 10 stop_at 12 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=1.291583 ms qpu=0.8756 ms
+2026-09-02T01:28:11 idx 10 stop_at 0 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.976829 ms qpu=0.8756 ms
+2026-09-02T01:28:12 idx 10 stop_at 12 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.677047 ms qpu=0.8756 ms
+2026-09-02T01:28:12 idx 10 stop_at 0 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.9817 ms qpu=0.8756 ms
+2026-09-02T01:28:13 idx 10 stop_at 12 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.694927 ms qpu=0.8756 ms
+2026-09-02T01:28:13 stop campaign done
+2026-09-02T01:28:17 dma_server restarted with STRM_POLL_US=200: LISTEN 0      3            0.0.0.0:8080       0.0.0.0:*          
+224863 /home/xilinx/software/scripts/dma_server
+
+>>> Waiting for connection...
+A phys1 c1 ok n 3 mean 5184.6468 consistent True cnr 
+A phys1 c3 ok n 3 mean 5182.3738 consistent True cnr 0
+A phys1 std capacity n 0 mean  consistent  cnr 
+A phys2 c1 ok n 3 mean 2.6011 consistent  cnr 
+A phys2 c3 ok n 3 mean 0.3589 consistent  cnr 0
+A phys2 std ok n 3 mean 3.4643 consistent  cnr 
+A phys3 c1 ok n 3 mean 100182.6046 consistent True cnr 
+A phys3 c3 ok n 3 mean 100180.3802 consistent True cnr 0
+A phys3 std capacity n 0 mean  consistent  cnr 
+A phys4 c1 ok n 3 mean 73.7149 consistent True cnr 
+A phys4 c3 ok n 3 mean 71.5329 consistent True cnr 0
+A phys4 std capacity n 0 mean  consistent  cnr 
+A phys5 c3 ok n 6 mean 328.1531 consistent  cnr 1
+A phys5_ctrl1800p_cap1802 c3 ok n 9 mean 65.7332 consistent  cnr 1
+A phys5_ctrl1800p_cap902 c3 ok n 6 mean 130.8191 consistent  cnr 1
+A phys6 c3 ok n 6 mean 2164.9325 consistent  cnr 0
+B {'idx': '2', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6963, 'time_saved_ci95': '0.6955..0.6971', 'T_full_ms': 97.319, 'T_stop_ms': 29.558, 'stop_at': '2457', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '2475 2474 2474 2476 2484', 'overshoot_mean': 19.6, 'overshoot_range': '17..27', 'cp_step': '819', 'cp_ns_req': '5980', 'delay_actual_ns': '18230 18260 18241 18240 18270', 'fired_k': '3', 'hw_latency_us': '10.93 0.09 9.76 10.66 7.98', 'ps_write_to_record_us': '22.7 25.5 23.4 23.3 26.1', 'strm_poll_us': '200'}
+B {'idx': '2', 'tag': 'c3_14q_stop_poll0d', 'n_pairs': 5, 'time_saved_mean': 0.6969, 'time_saved_ci95': '0.6958..0.6980', 'T_full_ms': 97.427, 'T_stop_ms': 29.532, 'stop_at': '2457', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '2467 2467 2472 2469 2468', 'overshoot_mean': 11.6, 'overshoot_range': '10..15', 'cp_step': '819', 'cp_ns_req': '5980', 'delay_actual_ns': '18240 18260 32550 18200 18200', 'fired_k': '3', 'hw_latency_us': '4.89 0.90 8.80 0.33 1.17', 'ps_write_to_record_us': '22.7 22.6 28.7 27.9 27.8', 'strm_poll_us': '0'}
+B {'idx': '9', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.3894, 'time_saved_ci95': '0.3503..0.4285', 'T_full_ms': 2.807, 'T_stop_ms': 1.714, 'stop_at': '60', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '78 73 78 73 68', 'overshoot_mean': 14, 'overshoot_range': '8..18', 'cp_step': '12', 'cp_ns_req': '3550', 'delay_actual_ns': '18300 18331 18261 18270 18240', 'fired_k': '5', 'hw_latency_us': '20.76 13.77 12.83 20.99 18.05', 'ps_write_to_record_us': '36.5 38.1 36.7 35.2 35.3', 'strm_poll_us': '200'}
+B {'idx': '10', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.2466, 'time_saved_ci95': '0.1355..0.3576', 'T_full_ms': 0.999, 'T_stop_ms': 0.754, 'stop_at': '12', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '24 24 18 21 18', 'overshoot_mean': 9, 'overshoot_range': '6..12', 'cp_step': '3', 'cp_ns_req': '12838', 'delay_actual_ns': '51801 55820 51830 51911 51851', 'fired_k': '4', 'hw_latency_us': '27.34 8.43 0.94 22.58 11.79', 'ps_write_to_record_us': '41.7 45.5 29.2 46.0 26.4', 'strm_poll_us': '200'}
+B {'idx': '10', 'tag': 'c3_14q_stop_poll0d', 'n_pairs': 5, 'time_saved_mean': 0.1739, 'time_saved_ci95': '-0.1376..0.4854', 'T_full_ms': 1.001, 'T_stop_ms': 0.829, 'stop_at': '12', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '15 21 22 17 16', 'overshoot_mean': 6.2, 'overshoot_range': '3..10', 'cp_step': '3', 'cp_ns_req': '12838', 'delay_actual_ns': '70060 236902 51851 114351 82141', 'fired_k': '4', 'hw_latency_us': '9.72 6.07 0.53 11.08 10.36', 'ps_write_to_record_us': '24.9 28.8 52.7 24.2 27.5', 'strm_poll_us': '0'}
+B {'idx': '19', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6939, 'time_saved_ci95': '0.6932..0.6945', 'T_full_ms': 190.921, 'T_stop_ms': 58.445, 'stop_at': '1227', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1253 1250 1249 1249 1248', 'overshoot_mean': 22.8, 'overshoot_range': '21..26', 'cp_step': '409', 'cp_ns_req': '839658', 'delay_actual_ns': '2693207 2692307 2692516 2692077 2693007', 'fired_k': '3', 'hw_latency_us': '5.14 6.36 15.48 10.99 6.61', 'ps_write_to_record_us': '37.0 22.5 34.4 34.4 21.8', 'strm_poll_us': '200'}
+B {'idx': '22', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6308, 'time_saved_ci95': '0.6288..0.6328', 'T_full_ms': 20.278, 'T_stop_ms': 7.486, 'stop_at': '120', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '144 144 144 145 143', 'overshoot_mean': 24, 'overshoot_range': '23..25', 'cp_step': '40', 'cp_ns_req': '823382', 'delay_actual_ns': '2643887 2643545 2642127 2642167 2642547', 'fired_k': '3', 'hw_latency_us': '3.07 10.32 4.64 48.29 38.46', 'ps_write_to_record_us': '26.0 26.4 25.0 94.6 103.8', 'strm_poll_us': '200'}
+B {'idx': '23', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6964, 'time_saved_ci95': '0.6955..0.6973', 'T_full_ms': 172.176, 'T_stop_ms': 52.273, 'stop_at': '1200', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1208 1213 1210 1208 1213', 'overshoot_mean': 10.4, 'overshoot_range': '8..13', 'cp_step': '400', 'cp_ns_req': '218474', 'delay_actual_ns': '827868 827438 842817 828718 829518', 'fired_k': '3', 'hw_latency_us': '18.26 16.89 24.04 23.58 3.10', 'ps_write_to_record_us': '36.3 23.1 28.6 33.6 34.8', 'strm_poll_us': '200'}
+phys cells 16 stop circuits 8
+2026-09-02T01:28:17 AFTER_A4 DONE

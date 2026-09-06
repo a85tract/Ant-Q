@@ -1,0 +1,21 @@
+idx,name,n_qubits,per_shot_us,table_shots_before,source_shots,rerun_shots,provenance,changed,note,source,url
+1,Bell state (GHZ-2),2,8.58,24576,24576,24576,verbatim,no,"Baumer et al. 2021: ""24576 shots (N=2)""","Bäumer, Gisin & Tavakoli, npj Quantum Inf. 7, 117 (2021)",https://www.nature.com/articles/s41534-021-00450-x
+2,GHZ-3,3,11.71,8192,8192,8192,verbatim,no,"""8192 shots (N=3,4)""","Bäumer, Gisin & Tavakoli, npj Quantum Inf. 7, 117 (2021)",https://www.nature.com/articles/s41534-021-00450-x
+3,VQE HeH+ 2Q,2,8.58,4000,4000,4000,verbatim,no,"Liang et al. 2024: ""maximum budget of N=4000 shots for HeH+""","Liang et al., Chem. Phys. Rev. 5, 041403 (2024)",https://pubs.aip.org/aip/cpr/article/5/4/041403/3318382
+4,QAOA 2Q p=1,2,8.94,1000,1000,1000,verbatim,no,OQD QAOA tutorial: 1000 shots,Open Quantum Design QAOA tutorial,https://docs.openquantumdesign.org/examples/qaoa.html
+5,Quantum teleportation 3Q,3,14.50,1024,1000,1000,verbatim,YES,"IBM teleportation lesson code: ""nshots = 1000"" -> table value 1024 was WRONG, corrected to 1000",IBM Quantum Learning / Qiskit textbook,https://quantum.cloud.ibm.com/learning/courses/utility-scale-quantum-computing/teleportation
+6,Deutsch-Jozsa 3Q,3,12.06,1024,1,1024,comparability choice,no,"IBM lesson code runs AerSimulator().run(qc, shots=1) (deterministic algorithm); 1024 = Qiskit Aer default (AerSimulator / Aer SamplerV2 default_shots=1024), kept for comparability with the QCE tables",Deutsch & Jozsa / Qiskit textbook,https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/quantum-query-algorithms
+7,GHZ-4,4,14.84,8192,8192,8192,verbatim,no,"""8192 shots (N=3,4)""","Bäumer, Gisin & Tavakoli, npj Quantum Inf. 7, 117 (2021)",https://www.nature.com/articles/s41534-021-00450-x
+8,GHZ-5,5,17.97,1024,1024,1024,verbatim,no,"""1024 shots (N=5)""","Bäumer, Gisin & Tavakoli, npj Quantum Inf. 7, 117 (2021)",https://www.nature.com/articles/s41534-021-00450-x
+9,GHZ-6,6,21.10,128,128,128,verbatim,no,"""128 shots (N=6)""","Bäumer, Gisin & Tavakoli, npj Quantum Inf. 7, 117 (2021)",https://www.nature.com/articles/s41534-021-00450-x
+10,GHZ-8,8,27.36,32,32,32,verbatim,no,"""32 shots (N=7,8)""","Bäumer, Gisin & Tavakoli, npj Quantum Inf. 7, 117 (2021)",https://www.nature.com/articles/s41534-021-00450-x
+11,Bernstein-Vazirani 5Q,5,18.92,1024,1,1024,comparability choice,no,"same IBM lesson as Deutsch-Jozsa: shots=1 in the code; 1024 = Qiskit Aer default, kept for comparability",Bernstein & Vazirani (1993) / Qiskit textbook,https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/quantum-query-algorithms
+12,VQE 1Q eigensolver,1,5.43,10000,10000,10000,verbatim,no,Grove VQE docs: 10000 samples,Grove VQE documentation (Rigetti),https://grove-docs.readthedocs.io/en/latest/vqe.html
+13,QFT 4Q,4,26.47,500,500,500,verbatim,no,"Teegarden et al. 2026: ""All jobs executed 500 shots.""","Teegarden et al., arXiv:2601.09943 (2026)",https://arxiv.org/abs/2601.09943
+19,VQE BeH2 14Q,14,46.42,4096,4096,4096,verbatim,no,"Belaloui et al. 2025: ""each energy measurement is obtained using 4096 shots""","Belaloui et al., JCTC 21, 6777 (2025)",https://pubs.acs.org/doi/10.1021/acs.jctc.4c01657
+20,Shor N=15 5Q,5,17.66,1000,1000,1000,verbatim,no,"Amico et al. 2019: ""run 1000 times for each base""","Amico, Saleem & Kumph, Phys. Rev. A 100, 012305 (2019)",https://arxiv.org/abs/1903.00768
+21,QAOA MaxCut 12Q,12,43.24,10000,10000,10000,verbatim,no,"Hao et al. 2024: 10,000 shots","Hao et al., arXiv:2408.00557 (2024)",https://arxiv.org/abs/2408.00557
+22,QML Image Class 14Q,14,50.12,400,400,400,verbatim,no,Gharibyan et al. 2025: 400 shots,"Gharibyan et al., arXiv:2504.10595 (2025)",https://arxiv.org/abs/2504.10595
+23,VQE SrH PDM 12Q,12,42.85,4000,4000,4000,verbatim,no,"Chawla et al. 2024: ""each with 4000 shots""","Chawla et al., arXiv:2406.04992 (2024)",https://arxiv.org/abs/2406.04992
+24,Grover 6Q,6,59.48,1024,1024,1024,verbatim,no,"Vemula et al. 2022: ""iterated 1024 times""","Vemula et al., arXiv:2205.00117 (2022)",https://arxiv.org/abs/2205.00117
+25,QSVM Radar 4Q,4,17.12,1024,1024,1024,verbatim,no,"Agnihotri et al. 2026: ""from 1,024 to 8,096"" -> 1024","Agnihotri, Kaur & Kaushik, arXiv:2601.22194 (2026)",https://arxiv.org/abs/2601.22194

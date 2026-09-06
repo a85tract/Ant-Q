@@ -1,0 +1,20 @@
+idx  1 Bell state (GHZ-2)            2q shots  24576 outcomes     2 max_p/uniform      2.0 collision   2.000 entropy   1.00/2 broad
+idx  2 GHZ-3                         3q shots   8192 outcomes     2 max_p/uniform      4.0 collision   4.000 entropy   1.00/3 peaked
+idx  3 VQE HeH+ 2Q                   2q shots   4000 outcomes     1 max_p/uniform      4.0 collision   4.000 entropy   0.00/2 peaked
+idx  4 GHZ-4                         4q shots   8192 outcomes     2 max_p/uniform      8.0 collision   8.000 entropy   1.00/4 peaked
+idx  5 GHZ-5                         5q shots   1024 outcomes     2 max_p/uniform     16.0 collision  16.000 entropy   1.00/5 peaked
+idx  6 GHZ-6                         6q shots    128 outcomes     2 max_p/uniform     32.0 collision  32.000 entropy   1.00/6 peaked
+idx  7 GHZ-8                         8q shots     32 outcomes     2 max_p/uniform    128.0 collision 128.000 entropy   1.00/8 peaked
+idx  8 QFT 4Q                        4q shots    500 outcomes    16 max_p/uniform      1.0 collision   1.000 entropy   4.00/4 UNIFORM (no information)
+idx 14 VQE BeH2 14Q                 14q shots   4096 outcomes 14386 max_p/uniform   8599.3 collision 4708.089 entropy   3.92/14 peaked
+idx 15 Shor N=15 5Q                  5q shots   1000 outcomes     4 max_p/uniform      8.0 collision   8.000 entropy   2.00/5 peaked
+idx 16 QAOA 2Q p=1                   2q shots   1000 outcomes     4 max_p/uniform      1.0 collision   1.000 entropy   2.00/2 UNIFORM (no information)
+idx 17 Quantum teleportation 3Q      3q shots   1024 outcomes     4 max_p/uniform      2.0 collision   2.000 entropy   2.00/3 broad
+idx 18 Deutsch-Jozsa 3Q              3q shots   1024 outcomes     2 max_p/uniform      4.0 collision   4.000 entropy   1.00/3 peaked
+idx 19 Bernstein-Vazirani 5Q         5q shots   1024 outcomes     2 max_p/uniform     16.0 collision  16.000 entropy   1.00/5 peaked
+idx 20 VQE 1Q eigensolver            1q shots  10000 outcomes     2 max_p/uniform      1.0 collision   1.000 entropy   1.00/1 UNIFORM (no information)
+idx 21 QAOA MaxCut 12Q              12q shots  10000 outcomes  4096 max_p/uniform      7.3 collision   2.079 entropy  11.32/12 broad
+idx 22 QML Image Class 14Q          14q shots    400 outcomes  1487 max_p/uniform  12708.9 collision 9934.192 entropy   1.66/14 peaked
+idx 23 VQE SrH PDM 12Q              12q shots   4000 outcomes     1 max_p/uniform   4098.4 collision 4096.000 entropy  -0.00/12 peaked
+idx 24 Grover 6Q                     6q shots   1024 outcomes    64 max_p/uniform      1.1 collision   1.010 entropy   5.99/6 UNIFORM (no information)
+idx 25 QSVM Radar 4Q                 4q shots   1024 outcomes    16 max_p/uniform      6.1 collision   2.812 entropy   3.27/4 broad

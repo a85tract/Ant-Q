@@ -1,0 +1,123 @@
+2026-09-02T11:54:10 deploying batch_server 6e7888b (MM2S completion poll without usleep)
+2026-09-02T11:54:50 service restarted; Sep 02 18:26:31 veneno start_qubic_server.sh[285114]: 2026-09-02 18:26:31,327 INFO: loading bitfile: 63329aaf
+218254 ./std_server 285076 /home/xilinx/software/scripts/dma_server 285112 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:54:51 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T11:54:52 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: ok elapsed=48.157712 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: ok elapsed=48.150812 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r1: ok elapsed=48.264242 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r2: ok elapsed=48.175482 ms qpu=47.9314 ms
+2026-09-02T11:54:53 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: ok elapsed=48.314524 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: ok elapsed=48.545706 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r1: ok elapsed=48.313793 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r2: ok elapsed=48.315114 ms qpu=47.9416 ms
+2026-09-02T11:54:57 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: ok elapsed=255.314323 ms qpu=254.5091 ms
+[c3] phys5 r0: ok elapsed=255.322104 ms qpu=254.5091 ms
+[c3] phys5 r1: ok elapsed=255.295894 ms qpu=254.5091 ms
+[c3] phys5 r2: ok elapsed=255.339044 ms qpu=254.5091 ms
+2026-09-02T11:55:08 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: ok elapsed=2164.754651 ms qpu=2162.4200 ms
+[c3] phys6 r0: ok elapsed=2164.739231 ms qpu=2162.4200 ms
+[c3] phys6 r1: ok elapsed=2164.730531 ms qpu=2162.4200 ms
+[c3] phys6 r2: ok elapsed=2164.73405 ms qpu=2162.4200 ms
+2026-09-02T11:55:17 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:55:52 service restarted; Sep 02 18:27:38 veneno start_qubic_server.sh[285584]: 2026-09-02 18:27:38,236 INFO: loading bitfile: 63329aaf
+218254 ./std_server 285546 /home/xilinx/software/scripts/dma_server 285582 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:55:54 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:56:28 service restarted; Sep 02 18:28:14 veneno start_qubic_server.sh[285951]: 2026-09-02 18:28:14,586 INFO: loading bitfile: 63329aaf
+218254 ./std_server 285913 /home/xilinx/software/scripts/dma_server 285949 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:56:30 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:57:03 service restarted; Sep 02 18:28:50 veneno start_qubic_server.sh[286320]: 2026-09-02 18:28:50,980 INFO: loading bitfile: 63329aaf
+218254 ./std_server 286282 /home/xilinx/software/scripts/dma_server 286318 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:57:03 short singles with the fixed feeder (tag c3_14q_real3)
+[c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+[c3] 10 r0: data_mismatch elapsed=None ms qpu=0.8756 ms
+[c3] 10 r0: data_mismatch elapsed=None ms qpu=0.8756 ms
+[c3] 9 r-1: data_mismatch elapsed=None ms qpu=2.7013 ms
+[c3] 9 r0: data_mismatch elapsed=None ms qpu=2.7013 ms
+[c3] 9 r0: data_mismatch elapsed=None ms qpu=2.7013 ms
+[c3] 1 r-1: data_mismatch elapsed=None ms qpu=210.9604 ms
+[c3] 1 r0: data_mismatch elapsed=None ms qpu=210.9604 ms
+[c3] 1 r0: data_mismatch elapsed=None ms qpu=210.9604 ms
+[c3] 4 r-1: ok elapsed=9.146822 ms qpu=8.9400 ms
+[c3] 4 r0: ok elapsed=9.135142 ms qpu=8.9400 ms
+[c3] 4 r1: ok elapsed=9.139201 ms qpu=8.9400 ms
+[c3] 4 r2: ok elapsed=9.134051 ms qpu=8.9400 ms
+[c3] 4 r3: ok elapsed=9.136552 ms qpu=8.9400 ms
+[c3] 4 r4: ok elapsed=9.131011 ms qpu=8.9400 ms
+[c3] 5 r-1: ok elapsed=14.708377 ms qpu=14.4960 ms
+[c3] 5 r0: ok elapsed=14.699107 ms qpu=14.4960 ms
+[c3] 5 r1: ok elapsed=14.696797 ms qpu=14.4960 ms
+[c3] 5 r2: ok elapsed=14.696807 ms qpu=14.4960 ms
+[c3] 5 r3: ok elapsed=14.698077 ms qpu=14.4960 ms
+[c3] 5 r4: ok elapsed=14.697427 ms qpu=14.4960 ms
+[c3] 6 r-1: ok elapsed=12.624067 ms qpu=12.3515 ms
+[c3] 6 r0: ok elapsed=12.560475 ms qpu=12.3515 ms
+[c3] 6 r1: ok elapsed=12.565045 ms qpu=12.3515 ms
+[c3] 6 r2: ok elapsed=12.564875 ms qpu=12.3515 ms
+[c3] 6 r3: ok elapsed=12.811558 ms qpu=12.3515 ms
+[c3] 6 r4: ok elapsed=19.912309 ms qpu=12.3515 ms
+[c3] 8 r-1: ok elapsed=18.646537 ms qpu=18.4054 ms
+[c3] 8 r0: ok elapsed=18.642726 ms qpu=18.4054 ms
+[c3] 8 r1: ok elapsed=18.631826 ms qpu=18.4054 ms
+[c3] 8 r2: ok elapsed=18.637006 ms qpu=18.4054 ms
+[c3] 8 r3: ok elapsed=18.643806 ms qpu=18.4054 ms
+[c3] 8 r4: ok elapsed=18.637067 ms qpu=18.4054 ms
+[c3] ghz8_x30 r-1: ok elapsed=26.645536 ms qpu=26.2694 ms
+[c3] ghz8_x30 r0: ok elapsed=26.863659 ms qpu=26.2694 ms
+[c3] ghz8_x30 r1: ok elapsed=26.642666 ms qpu=26.2694 ms
+[c3] ghz8_x30 r2: ok elapsed=26.647576 ms qpu=26.2694 ms
+[c3] ghz8_x30 r3: ok elapsed=26.653976 ms qpu=26.2694 ms
+[c3] ghz8_x30 r4: ok elapsed=26.657277 ms qpu=26.2694 ms
+[c3] rand30_t4 r-1: ok elapsed=8978.926443 ms qpu=2271.1510 ms
+[c3] rand30_t4 r0: data_mismatch elapsed=None ms qpu=2271.1510 ms
+[c3] rand30_t4 r0: ok elapsed=9027.139246 ms qpu=2271.1510 ms
+[c3] rand30_t4 r1: ok elapsed=9025.882843 ms qpu=2271.1510 ms
+[c3] rand30_t4 r2: ok elapsed=8898.922843 ms qpu=2271.1510 ms
+[c3] rand30_t4 r3: ok elapsed=8997.738931 ms qpu=2271.1510 ms
+[c3] rand30_t4 r4: ok elapsed=9138.315127 ms qpu=2271.1510 ms
+A phys1 c1 ok n 3 mean 5184.6468 consistent True cnr 
+A phys1 c3 ok n 3 mean 5182.3738 consistent True cnr 0
+A phys1 std capacity n 0 mean  consistent  cnr 
+A phys2 c1 ok n 3 mean 2.6011 consistent  cnr 
+A phys2 c3 ok n 3 mean 0.3589 consistent  cnr 0
+A phys2 std ok n 3 mean 3.4643 consistent  cnr 
+A phys3 c1 ok n 3 mean 100182.6046 consistent True cnr 
+A phys3 c3 ok n 3 mean 100180.3802 consistent True cnr 0
+A phys3 std capacity n 0 mean  consistent  cnr 
+A phys4 c1 ok n 3 mean 73.7149 consistent True cnr 
+A phys4 c3 ok n 3 mean 71.5329 consistent True cnr 0
+A phys4 std capacity n 0 mean  consistent  cnr 
+A phys5 c3 ok n 9 mean 303.8751 consistent  cnr 0
+A phys5_ctrl1800p_cap1802 c3 ok n 12 mean 61.3491 consistent  cnr 0
+A phys5_ctrl1800p_cap1802_mask0 c3 ok n 3 mean 130.433 consistent  cnr 1
+A phys5_ctrl1800p_cap1802_mask3f80 c3 ok n 3 mean 66.485 consistent  cnr 1
+A phys5_ctrl1800p_cap1802_mask3ffc c3 ok n 3 mean 65.7528 consistent  cnr 1
+A phys5_ctrl1800p_cap902 c3 ok n 9 mean 103.3432 consistent  cnr 0
+A phys6 c3 ok n 9 mean 2164.8665 consistent  cnr 0
+A phys6_cap1000 c3 data_mismatch n 2 mean 2237.999 consistent  cnr 
+A phys6_cap500 c3 data_mismatch n 2 mean 4179.786 consistent  cnr 
+B {'idx': '2', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6963, 'time_saved_ci95': '0.6955..0.6971', 'T_full_ms': 97.319, 'T_stop_ms': 29.558, 'stop_at': '2457', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '2475 2474 2474 2476 2484', 'overshoot_mean': 19.6, 'overshoot_range': '17..27', 'cp_step': '819', 'cp_ns_req': '5980', 'delay_actual_ns': '18230 18260 18241 18240 18270', 'fired_k': '3', 'hw_latency_us': '10.93 0.09 9.76 10.66 7.98', 'ps_write_to_record_us': '22.7 25.5 23.4 23.3 26.1', 'strm_poll_us': '200'}
+B {'idx': '2', 'tag': 'c3_14q_stop_poll0d', 'n_pairs': 5, 'time_saved_mean': 0.6969, 'time_saved_ci95': '0.6958..0.6980', 'T_full_ms': 97.427, 'T_stop_ms': 29.532, 'stop_at': '2457', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '2467 2467 2472 2469 2468', 'overshoot_mean': 11.6, 'overshoot_range': '10..15', 'cp_step': '819', 'cp_ns_req': '5980', 'delay_actual_ns': '18240 18260 32550 18200 18200', 'fired_k': '3', 'hw_latency_us': '4.89 0.90 8.80 0.33 1.17', 'ps_write_to_record_us': '22.7 22.6 28.7 27.9 27.8', 'strm_poll_us': '0'}
+B {'idx': '9', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.3894, 'time_saved_ci95': '0.3503..0.4285', 'T_full_ms': 2.807, 'T_stop_ms': 1.714, 'stop_at': '60', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '78 73 78 73 68', 'overshoot_mean': 14, 'overshoot_range': '8..18', 'cp_step': '12', 'cp_ns_req': '3550', 'delay_actual_ns': '18300 18331 18261 18270 18240', 'fired_k': '5', 'hw_latency_us': '20.76 13.77 12.83 20.99 18.05', 'ps_write_to_record_us': '36.5 38.1 36.7 35.2 35.3', 'strm_poll_us': '200'}
+B {'idx': '10', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.2466, 'time_saved_ci95': '0.1355..0.3576', 'T_full_ms': 0.999, 'T_stop_ms': 0.754, 'stop_at': '12', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '24 24 18 21 18', 'overshoot_mean': 9, 'overshoot_range': '6..12', 'cp_step': '3', 'cp_ns_req': '12838', 'delay_actual_ns': '51801 55820 51830 51911 51851', 'fired_k': '4', 'hw_latency_us': '27.34 8.43 0.94 22.58 11.79', 'ps_write_to_record_us': '41.7 45.5 29.2 46.0 26.4', 'strm_poll_us': '200'}
+B {'idx': '10', 'tag': 'c3_14q_stop_poll0d', 'n_pairs': 5, 'time_saved_mean': 0.1739, 'time_saved_ci95': '-0.1376..0.4854', 'T_full_ms': 1.001, 'T_stop_ms': 0.829, 'stop_at': '12', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '15 21 22 17 16', 'overshoot_mean': 6.2, 'overshoot_range': '3..10', 'cp_step': '3', 'cp_ns_req': '12838', 'delay_actual_ns': '70060 236902 51851 114351 82141', 'fired_k': '4', 'hw_latency_us': '9.72 6.07 0.53 11.08 10.36', 'ps_write_to_record_us': '24.9 28.8 52.7 24.2 27.5', 'strm_poll_us': '0'}
+B {'idx': '19', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6939, 'time_saved_ci95': '0.6932..0.6945', 'T_full_ms': 190.921, 'T_stop_ms': 58.445, 'stop_at': '1227', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1253 1250 1249 1249 1248', 'overshoot_mean': 22.8, 'overshoot_range': '21..26', 'cp_step': '409', 'cp_ns_req': '839658', 'delay_actual_ns': '2693207 2692307 2692516 2692077 2693007', 'fired_k': '3', 'hw_latency_us': '5.14 6.36 15.48 10.99 6.61', 'ps_write_to_record_us': '37.0 22.5 34.4 34.4 21.8', 'strm_poll_us': '200'}
+B {'idx': '22', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6308, 'time_saved_ci95': '0.6288..0.6328', 'T_full_ms': 20.278, 'T_stop_ms': 7.486, 'stop_at': '120', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '144 144 144 145 143', 'overshoot_mean': 24, 'overshoot_range': '23..25', 'cp_step': '40', 'cp_ns_req': '823382', 'delay_actual_ns': '2643887 2643545 2642127 2642167 2642547', 'fired_k': '3', 'hw_latency_us': '3.07 10.32 4.64 48.29 38.46', 'ps_write_to_record_us': '26.0 26.4 25.0 94.6 103.8', 'strm_poll_us': '200'}
+B {'idx': '23', 'tag': 'c3_14q_stop1', 'n_pairs': 5, 'time_saved_mean': 0.6964, 'time_saved_ci95': '0.6955..0.6973', 'T_full_ms': 172.176, 'T_stop_ms': 52.273, 'stop_at': '1200', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1208 1213 1210 1208 1213', 'overshoot_mean': 10.4, 'overshoot_range': '8..13', 'cp_step': '400', 'cp_ns_req': '218474', 'delay_actual_ns': '827868 827438 842817 828718 829518', 'fired_k': '3', 'hw_latency_us': '18.26 16.89 24.04 23.58 3.10', 'ps_write_to_record_us': '36.3 23.1 28.6 33.6 34.8', 'strm_poll_us': '200'}
+phys cells 21 stop circuits 8
+2026-09-02T11:58:15 FLOOR FIX DONE

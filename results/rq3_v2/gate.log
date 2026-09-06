@@ -1,0 +1,20 @@
+idx  1 Bell state (GHZ-2)           shots  24576: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.012 HF05 1.0; full TVD95 0.007 HF05 1.0
+idx  2 GHZ-3                        shots   8192: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.019 HF05 1.0; full TVD95 0.01 HF05 1.0
+idx  3 VQE HeH+ 2Q                  shots   4000: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.0 HF05 1.0; full TVD95 0.0 HF05 1.0
+idx  4 GHZ-4                        shots   8192: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.019 HF05 1.0; full TVD95 0.011 HF05 1.0
+idx  5 GHZ-5                        shots   1024: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.062 HF05 0.996; full TVD95 0.032 HF05 0.999
+idx  6 GHZ-6                        shots    128: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.167 HF05 0.971; full TVD95 0.102 HF05 0.99
+idx  7 GHZ-8                        shots     32: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.278 HF05 0.916; full TVD95 0.188 HF05 0.964
+idx  8 QFT 4Q                       shots    500: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.169 HF05 0.951; full TVD95 0.09 HF05 0.988
+idx 14 VQE BeH2 14Q                 shots   4096: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.125 HF05 0.886; full TVD95 0.078 HF05 0.937
+idx 15 Shor N=15 5Q                 shots   1000: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.07 HF05 0.993; full TVD95 0.037 HF05 0.998
+idx 16 QAOA 2Q p=1                  shots   1000: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.07 HF05 0.993; full TVD95 0.037 HF05 0.998
+idx 17 Quantum teleportation 3Q     shots   1024: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.069 HF05 0.993; full TVD95 0.041 HF05 0.998
+idx 18 Deutsch-Jozsa 3Q             shots   1024: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.052 HF05 0.997; full TVD95 0.032 HF05 0.999
+idx 19 Bernstein-Vazirani 5Q        shots   1024: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.062 HF05 0.996; full TVD95 0.032 HF05 0.999
+idx 20 VQE 1Q eigensolver           shots  10000: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.017 HF05 1.0; full TVD95 0.009 HF05 1.0
+idx 21 QAOA MaxCut 12Q              shots  10000: evaluable checkpoints [6, 7, 8, 9, 10]; cp3 TVD95 0.404 HF05 0.61; full TVD95 0.23 HF05 0.859
+idx 22 QML Image Class 14Q          shots    400: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.128 HF05 0.898; full TVD95 0.073 HF05 0.955
+idx 23 VQE SrH PDM 12Q              shots   4000: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.0 HF05 1.0; full TVD95 0.0 HF05 1.0
+idx 24 Grover 6Q                    shots   1024: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.209 HF05 0.915; full TVD95 0.112 HF05 0.98
+idx 25 QSVM Radar 4Q                shots   1024: evaluable checkpoints [3, 4, 5, 6, 7, 8, 9, 10]; cp3 TVD95 0.104 HF05 0.975; full TVD95 0.058 HF05 0.994

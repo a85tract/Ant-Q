@@ -1,0 +1,360 @@
+2026-09-02T00:25:49 campaign C done -> pool tables
+{'k': 10, 'estimand': 'G_stack', 'n_manifests': 10, 'mean': 0.5867, 'ci95_lo_manifest': 0.4865, 'ci95_hi_manifest': 0.687, 'n_blocks': 5, 'block_means': '0.7628 0.4843 0.4265 0.5688 0.6913', 'ci95_lo_block': 0.4129, 'ci95_hi_block': 0.7605, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_sys', 'n_manifests': 10, 'mean': 0.6952, 'ci95_lo_manifest': 0.6059, 'ci95_hi_manifest': 0.7846, 'n_blocks': 5, 'block_means': '0.8361 0.6355 0.5226 0.7163 0.7658', 'ci95_lo_block': 0.5449, 'ci95_hi_block': 0.8455, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_up_native', 'n_manifests': 10, 'mean': 0.4559, 'ci95_lo_manifest': 0.3477, 'ci95_hi_manifest': 0.5642, 'n_blocks': 5, 'block_means': '0.6361 0.3240 0.3201 0.4255 0.5740', 'ci95_lo_block': 0.2769, 'ci95_hi_block': 0.635, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_up_pool', 'n_manifests': 10, 'mean': 0.4996, 'ci95_lo_manifest': 0.3922, 'ci95_hi_manifest': 0.607, 'n_blocks': 5, 'block_means': '0.6831 0.3660 0.3631 0.4748 0.6110', 'ci95_lo_block': 0.3206, 'ci95_hi_block': 0.6786, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 10, 'estimand': 'G_c3_vs_c1pool', 'n_manifests': 10, 'mean': 0.0598, 'ci95_lo_manifest': 0.0358, 'ci95_hi_manifest': 0.0837, 'n_blocks': 5, 'block_means': '0.0472 0.0915 0.0466 0.0638 0.0496', 'ci95_lo_block': 0.036, 'ci95_hi_block': 0.0835, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_stack', 'n_manifests': 10, 'mean': 0.5246, 'ci95_lo_manifest': 0.4882, 'ci95_hi_manifest': 0.5611, 'n_blocks': 5, 'block_means': '0.5087 0.4746 0.5373 0.5508 0.5519', 'ci95_lo_block': 0.4837, 'ci95_hi_block': 0.5656, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_sys', 'n_manifests': 10, 'mean': 0.6299, 'ci95_lo_manifest': 0.5854, 'ci95_hi_manifest': 0.6744, 'n_blocks': 5, 'block_means': '0.6363 0.5493 0.6550 0.6560 0.6530', 'ci95_lo_block': 0.5731, 'ci95_hi_block': 0.6868, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_up_native', 'n_manifests': 10, 'mean': 0.4051, 'ci95_lo_manifest': 0.3721, 'ci95_hi_manifest': 0.4382, 'n_blocks': 5, 'block_means': '0.3833 0.3963 0.3952 0.4295 0.4214', 'ci95_lo_block': 0.381, 'ci95_hi_block': 0.4293, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_up_pool', 'n_manifests': 10, 'mean': 0.4436, 'ci95_lo_manifest': 0.4106, 'ci95_hi_manifest': 0.4767, 'n_blocks': 5, 'block_means': '0.4201 0.4220 0.4357 0.4656 0.4748', 'ci95_lo_block': 0.4124, 'ci95_hi_block': 0.4749, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 20, 'estimand': 'G_c3_vs_c1pool', 'n_manifests': 10, 'mean': 0.0562, 'ci95_lo_manifest': 0.0438, 'ci95_hi_manifest': 0.0686, 'n_blocks': 5, 'block_means': '0.0627 0.0371 0.0704 0.0582 0.0526', 'ci95_lo_block': 0.0407, 'ci95_hi_block': 0.0717, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_stack', 'n_manifests': 10, 'mean': 0.5105, 'ci95_lo_manifest': 0.468, 'ci95_hi_manifest': 0.5531, 'n_blocks': 5, 'block_means': '0.5624 0.5075 0.4962 0.5168 0.4698', 'ci95_lo_block': 0.4685, 'ci95_hi_block': 0.5526, 'all_blocks_positive': True, 'confirmatory': 'YES (k=30, block CI lo > 0)'}
+{'k': 30, 'estimand': 'G_sys', 'n_manifests': 10, 'mean': 0.6002, 'ci95_lo_manifest': 0.557, 'ci95_hi_manifest': 0.6434, 'n_blocks': 5, 'block_means': '0.6534 0.6069 0.5758 0.6071 0.5577', 'ci95_lo_block': 0.5549, 'ci95_hi_block': 0.6455, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_up_native', 'n_manifests': 10, 'mean': 0.4089, 'ci95_lo_manifest': 0.3757, 'ci95_hi_manifest': 0.4422, 'n_blocks': 5, 'block_means': '0.4461 0.4048 0.3980 0.4232 0.3726', 'ci95_lo_block': 0.3747, 'ci95_hi_block': 0.4432, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_up_pool', 'n_manifests': 10, 'mean': 0.4459, 'ci95_lo_manifest': 0.4076, 'ci95_hi_manifest': 0.4842, 'n_blocks': 5, 'block_means': '0.4914 0.4365 0.4370 0.4523 0.4122', 'ci95_lo_block': 0.4096, 'ci95_hi_block': 0.4821, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 30, 'estimand': 'G_c3_vs_c1pool', 'n_manifests': 10, 'mean': 0.0447, 'ci95_lo_manifest': 0.0397, 'ci95_hi_manifest': 0.0496, 'n_blocks': 5, 'block_means': '0.0477 0.0493 0.0411 0.0444 0.0408', 'ci95_lo_block': 0.0399, 'ci95_hi_block': 0.0494, 'all_blocks_positive': True, 'confirmatory': 'exploratory'}
+{'k': 'ghz8_x30', 'estimand': 'G_stack', 'n_manifests': 1, 'mean': 3.0817, 'confirmatory': 'secondary (homogeneous)'}
+{'k': 'qaoa12_x30', 'estimand': 'G_stack', 'n_manifests': 1, 'mean': 0.3676, 'confirmatory': 'secondary (homogeneous)'}
+manifests with all 5 configs: 32 / 32
+2026-09-02T00:25:49 deploying v2 servers
+[sudo] password for xilinx: deployed 00:26:22
+2026-09-02T00:26:22 T10 + T10v2 gate
+[DDR batch] circuit 1: stop NOT_ISSUED_LATE (ran the nominal shots)
+[DDR batch] 3 circuit(s) ran SEAMLESSLY (no boundary waits), 0.287s total
+stops v2: {'cid': 1, 'kind': 0, 'result': 'NOT_ISSUED_LATE', 'actual': 400, 'latency_cycles': 0, 't_decision_ns': 331006404023894, 't_write_ns': 0, 't_event_ps_ns': 331006404024514, 'flags': 1, 'delay_actual_ns': 430375, 'send_block_us_max': 155, 'stop_after': 50, 'cp_step': 40, 'cp_ns': 150000, 'overshoot': None, 'fired_k': 2}
+T10v2 PASS: NOT_ISSUED_LATE actual=400 delay_actual=430 us (2 x 150 us requested)
+2026-09-02T00:26:23 stop campaign (STRM_POLL_US=200)
+2026-09-02T00:26:24 dma_server restarted with STRM_POLL_US=200: 
+2026-09-02T00:26:25 idx 2 stop_at 0 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:26:25 idx 2 stop_at 2457 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:26:26 idx 9 stop_at 0 pair  -> FAIL | [c3] 9 r-1: data_mismatch elapsed=None ms qpu=2.7013 ms
+2026-09-02T00:26:26 idx 9 stop_at 60 pair  -> FAIL | [c3] 9 r-1: data_mismatch elapsed=None ms qpu=2.7013 ms
+2026-09-02T00:26:27 idx 10 stop_at 0 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:26:28 idx 10 stop_at 12 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:26:29 idx 19 stop_at 0 pair  -> FAIL | [c3] 19 r-1: data_mismatch elapsed=None ms qpu=190.1199 ms
+2026-09-02T00:26:29 idx 19 stop_at 1227 pair  -> FAIL | [c3] 19 r-1: data_mismatch elapsed=None ms qpu=190.1199 ms
+2026-09-02T00:26:30 idx 22 stop_at 0 pair  -> FAIL | [c3] 22 r-1: data_mismatch elapsed=None ms qpu=20.0496 ms
+2026-09-02T00:26:31 idx 22 stop_at 120 pair  -> FAIL | [c3] 22 r-1: data_mismatch elapsed=None ms qpu=20.0496 ms
+2026-09-02T00:26:32 idx 23 stop_at 0 pair  -> FAIL | [c3] 23 r-1: data_mismatch elapsed=None ms qpu=171.4080 ms
+2026-09-02T00:26:33 idx 23 stop_at 1200 pair  -> FAIL | [c3] 23 r-1: data_mismatch elapsed=None ms qpu=171.4080 ms
+2026-09-02T00:26:33 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:26:33 pair 2_p0 attempt 1 failed -> restart services and re-run BOTH members
+2026-09-02T00:27:15 idx 2 stop_at 2457 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=29.518705 ms qpu=95.9611 ms
+2026-09-02T00:27:16 idx 2 stop_at 0 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=97.321153 ms qpu=95.9611 ms
+2026-09-02T00:27:16 idx 2 stop_at 2457 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=29.586376 ms qpu=95.9611 ms
+2026-09-02T00:27:17 idx 2 stop_at 0 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=97.320184 ms qpu=95.9611 ms
+2026-09-02T00:27:17 idx 2 stop_at 0 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=97.319053 ms qpu=95.9611 ms
+2026-09-02T00:27:18 idx 2 stop_at 2457 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=29.504455 ms qpu=95.9611 ms
+2026-09-02T00:27:19 idx 2 stop_at 2457 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=29.526606 ms qpu=95.9611 ms
+2026-09-02T00:27:19 idx 2 stop_at 0 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=97.315343 ms qpu=95.9611 ms
+2026-09-02T00:27:20 idx 2 stop_at 0 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=97.319084 ms qpu=95.9611 ms
+2026-09-02T00:27:20 idx 2 stop_at 2457 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=29.651646 ms qpu=95.9611 ms
+2026-09-02T00:27:21 idx 9 stop_at 0 pair 9_p0 -> ok | [c3] 9 r0: ok elapsed=2.814138 ms qpu=2.7013 ms
+2026-09-02T00:27:22 idx 9 stop_at 60 pair 9_p0 -> ok | [c3] 9 r0: ok elapsed=1.792948 ms qpu=2.7013 ms
+2026-09-02T00:27:22 idx 9 stop_at 60 pair 9_p1 -> ok | [c3] 9 r0: ok elapsed=1.704358 ms qpu=2.7013 ms
+2026-09-02T00:27:23 idx 9 stop_at 0 pair 9_p1 -> ok | [c3] 9 r0: ok elapsed=2.801458 ms qpu=2.7013 ms
+2026-09-02T00:27:23 idx 9 stop_at 60 pair 9_p2 -> ok | [c3] 9 r0: ok elapsed=1.804928 ms qpu=2.7013 ms
+2026-09-02T00:27:24 idx 9 stop_at 0 pair 9_p2 -> ok | [c3] 9 r0: ok elapsed=2.811788 ms qpu=2.7013 ms
+2026-09-02T00:27:25 idx 9 stop_at 0 pair 9_p3 -> ok | [c3] 9 r0: ok elapsed=2.804638 ms qpu=2.7013 ms
+2026-09-02T00:27:25 idx 9 stop_at 60 pair 9_p3 -> ok | [c3] 9 r0: ok elapsed=1.688387 ms qpu=2.7013 ms
+2026-09-02T00:27:26 idx 9 stop_at 0 pair 9_p4 -> ok | [c3] 9 r0: ok elapsed=2.802218 ms qpu=2.7013 ms
+2026-09-02T00:27:27 idx 9 stop_at 60 pair 9_p4 -> ok | [c3] 9 r0: ok elapsed=1.579296 ms qpu=2.7013 ms
+2026-09-02T00:27:27 idx 10 stop_at 12 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.814849 ms qpu=0.8756 ms
+2026-09-02T00:27:28 idx 10 stop_at 0 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.99388 ms qpu=0.8756 ms
+2026-09-02T00:27:29 idx 10 stop_at 12 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.902349 ms qpu=0.8756 ms
+2026-09-02T00:27:29 idx 10 stop_at 0 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=1.04852 ms qpu=0.8756 ms
+2026-09-02T00:27:30 idx 10 stop_at 0 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.99525 ms qpu=0.8756 ms
+2026-09-02T00:27:31 idx 10 stop_at 12 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.659297 ms qpu=0.8756 ms
+2026-09-02T00:27:32 idx 10 stop_at 0 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.97655 ms qpu=0.8756 ms
+2026-09-02T00:27:32 idx 10 stop_at 12 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.741297 ms qpu=0.8756 ms
+2026-09-02T00:27:33 idx 10 stop_at 0 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.98068 ms qpu=0.8756 ms
+2026-09-02T00:27:34 idx 10 stop_at 12 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.652256 ms qpu=0.8756 ms
+2026-09-02T00:27:35 idx 19 stop_at 1227 pair 19_p0 -> ok | [c3] 19 r0: ok elapsed=58.607906 ms qpu=190.1199 ms
+2026-09-02T00:27:36 idx 19 stop_at 0 pair 19_p0 -> ok | [c3] 19 r0: ok elapsed=190.916869 ms qpu=190.1199 ms
+2026-09-02T00:27:37 idx 19 stop_at 1227 pair 19_p1 -> ok | [c3] 19 r0: ok elapsed=58.446105 ms qpu=190.1199 ms
+2026-09-02T00:27:38 idx 19 stop_at 0 pair 19_p1 -> ok | [c3] 19 r0: ok elapsed=190.92802 ms qpu=190.1199 ms
+2026-09-02T00:27:39 idx 19 stop_at 1227 pair 19_p2 -> ok | [c3] 19 r0: ok elapsed=58.404975 ms qpu=190.1199 ms
+2026-09-02T00:27:40 idx 19 stop_at 0 pair 19_p2 -> ok | [c3] 19 r0: ok elapsed=190.918989 ms qpu=190.1199 ms
+2026-09-02T00:27:41 idx 19 stop_at 0 pair 19_p3 -> ok | [c3] 19 r0: ok elapsed=190.920429 ms qpu=190.1199 ms
+2026-09-02T00:27:42 idx 19 stop_at 1227 pair 19_p3 -> ok | [c3] 19 r0: ok elapsed=58.408615 ms qpu=190.1199 ms
+2026-09-02T00:27:43 idx 19 stop_at 0 pair 19_p4 -> ok | [c3] 19 r0: ok elapsed=190.920229 ms qpu=190.1199 ms
+2026-09-02T00:27:44 idx 19 stop_at 1227 pair 19_p4 -> ok | [c3] 19 r0: ok elapsed=58.355554 ms qpu=190.1199 ms
+2026-09-02T00:27:45 idx 22 stop_at 0 pair 22_p0 -> ok | [c3] 22 r0: ok elapsed=20.278923 ms qpu=20.0496 ms
+2026-09-02T00:27:46 idx 22 stop_at 120 pair 22_p0 -> ok | [c3] 22 r0: ok elapsed=7.472965 ms qpu=20.0496 ms
+2026-09-02T00:27:47 idx 22 stop_at 0 pair 22_p1 -> ok | [c3] 22 r0: ok elapsed=20.279173 ms qpu=20.0496 ms
+2026-09-02T00:27:48 idx 22 stop_at 120 pair 22_p1 -> ok | [c3] 22 r0: ok elapsed=7.495545 ms qpu=20.0496 ms
+2026-09-02T00:27:49 idx 22 stop_at 120 pair 22_p2 -> ok | [c3] 22 r0: ok elapsed=7.469405 ms qpu=20.0496 ms
+2026-09-02T00:27:50 idx 22 stop_at 0 pair 22_p2 -> ok | [c3] 22 r0: ok elapsed=20.275643 ms qpu=20.0496 ms
+2026-09-02T00:27:51 idx 22 stop_at 120 pair 22_p3 -> ok | [c3] 22 r0: ok elapsed=7.539186 ms qpu=20.0496 ms
+2026-09-02T00:27:52 idx 22 stop_at 0 pair 22_p3 -> ok | [c3] 22 r0: ok elapsed=20.278533 ms qpu=20.0496 ms
+2026-09-02T00:27:53 idx 22 stop_at 120 pair 22_p4 -> ok | [c3] 22 r0: ok elapsed=7.453895 ms qpu=20.0496 ms
+2026-09-02T00:27:53 idx 22 stop_at 0 pair 22_p4 -> ok | [c3] 22 r0: ok elapsed=20.275243 ms qpu=20.0496 ms
+2026-09-02T00:27:54 idx 23 stop_at 0 pair 23_p0 -> ok | [c3] 23 r0: ok elapsed=172.175572 ms qpu=171.4080 ms
+2026-09-02T00:27:55 idx 23 stop_at 1200 pair 23_p0 -> ok | [c3] 23 r0: ok elapsed=52.178112 ms qpu=171.4080 ms
+2026-09-02T00:27:56 idx 23 stop_at 1200 pair 23_p1 -> ok | [c3] 23 r0: ok elapsed=52.370033 ms qpu=171.4080 ms
+2026-09-02T00:27:57 idx 23 stop_at 0 pair 23_p1 -> ok | [c3] 23 r0: ok elapsed=172.178072 ms qpu=171.4080 ms
+2026-09-02T00:27:58 idx 23 stop_at 0 pair 23_p2 -> ok | [c3] 23 r0: ok elapsed=172.175572 ms qpu=171.4080 ms
+2026-09-02T00:27:59 idx 23 stop_at 1200 pair 23_p2 -> ok | [c3] 23 r0: ok elapsed=52.226452 ms qpu=171.4080 ms
+2026-09-02T00:28:00 idx 23 stop_at 0 pair 23_p3 -> ok | [c3] 23 r0: ok elapsed=172.179272 ms qpu=171.4080 ms
+2026-09-02T00:28:01 idx 23 stop_at 1200 pair 23_p3 -> ok | [c3] 23 r0: ok elapsed=52.158722 ms qpu=171.4080 ms
+2026-09-02T00:28:02 idx 23 stop_at 1200 pair 23_p4 -> ok | [c3] 23 r0: ok elapsed=52.432074 ms qpu=171.4080 ms
+2026-09-02T00:28:03 idx 23 stop_at 0 pair 23_p4 -> ok | [c3] 23 r0: ok elapsed=172.169962 ms qpu=171.4080 ms
+2026-09-02T00:28:03 stop campaign done
+2026-09-02T00:28:03 stop sweep (STRM_POLL_US=0, idx 2,10)
+2026-09-02T00:28:04 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T00:28:04 idx 2 stop_at 0 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:28:05 idx 2 stop_at 2457 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:28:05 idx 10 stop_at 0 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:28:06 idx 10 stop_at 12 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T00:28:07 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T00:28:07 pair 2_p0 attempt 1 failed -> restart services and re-run BOTH members
+2026-09-02T00:28:48 idx 2 stop_at 2457 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=29.645577 ms qpu=95.9611 ms
+2026-09-02T00:28:49 idx 2 stop_at 0 pair 2_p0 -> ok | [c3] 2 r0: ok elapsed=97.331024 ms qpu=95.9611 ms
+2026-09-02T00:28:49 idx 2 stop_at 2457 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=30.358563 ms qpu=95.9611 ms
+2026-09-02T00:28:50 idx 2 stop_at 0 pair 2_p1 -> ok | [c3] 2 r0: ok elapsed=97.322364 ms qpu=95.9611 ms
+2026-09-02T00:28:51 idx 2 stop_at 0 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=97.337523 ms qpu=95.9611 ms
+2026-09-02T00:28:51 idx 2 stop_at 2457 pair 2_p2 -> ok | [c3] 2 r0: ok elapsed=29.621686 ms qpu=95.9611 ms
+2026-09-02T00:28:52 idx 2 stop_at 2457 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=29.636686 ms qpu=95.9611 ms
+2026-09-02T00:28:52 idx 2 stop_at 0 pair 2_p3 -> ok | [c3] 2 r0: ok elapsed=97.314383 ms qpu=95.9611 ms
+2026-09-02T00:28:53 idx 2 stop_at 0 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=97.313173 ms qpu=95.9611 ms
+2026-09-02T00:28:53 idx 2 stop_at 2457 pair 2_p4 -> ok | [c3] 2 r0: ok elapsed=29.640987 ms qpu=95.9611 ms
+2026-09-02T00:28:54 idx 10 stop_at 12 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.562055 ms qpu=0.8756 ms
+2026-09-02T00:28:55 idx 10 stop_at 0 pair 10_p0 -> ok | [c3] 10 r0: ok elapsed=0.982079 ms qpu=0.8756 ms
+2026-09-02T00:28:55 idx 10 stop_at 12 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.558576 ms qpu=0.8756 ms
+2026-09-02T00:28:56 idx 10 stop_at 0 pair 10_p1 -> ok | [c3] 10 r0: ok elapsed=0.97473 ms qpu=0.8756 ms
+2026-09-02T00:28:57 idx 10 stop_at 0 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.98174 ms qpu=0.8756 ms
+2026-09-02T00:28:57 idx 10 stop_at 12 pair 10_p2 -> ok | [c3] 10 r0: ok elapsed=0.688847 ms qpu=0.8756 ms
+2026-09-02T00:28:58 idx 10 stop_at 0 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.97593 ms qpu=0.8756 ms
+2026-09-02T00:28:59 idx 10 stop_at 12 pair 10_p3 -> ok | [c3] 10 r0: ok elapsed=0.667697 ms qpu=0.8756 ms
+2026-09-02T00:28:59 idx 10 stop_at 0 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.98276 ms qpu=0.8756 ms
+2026-09-02T00:29:00 idx 10 stop_at 12 pair 10_p4 -> ok | [c3] 10 r0: ok elapsed=0.642066 ms qpu=0.8756 ms
+2026-09-02T00:29:00 stop campaign done
+2026-09-02T00:29:01 dma_server restarted with STRM_POLL_US=200: 
+B {'idx': '2', 'n_pairs': 5, 'time_saved_mean': 0.6963, 'time_saved_ci95': '0.6955..0.6971', 'T_full_ms': 97.319, 'T_stop_ms': 29.558, 'stop_at': '2457', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '2475 2474 2474 2476 2484', 'overshoot_mean': 19.6, 'overshoot_range': '17..27', 'cp_step': '819', 'cp_ns_req': '5980', 'delay_actual_ns': '18230 18260 18241 18240 18270', 'fired_k': '3', 'hw_latency_us': '10.93 0.09 9.76 10.66 7.98', 'ps_write_to_record_us': '22.7 25.5 23.4 23.3 26.1', 'strm_poll_us': '200'}
+B {'idx': '9', 'n_pairs': 5, 'time_saved_mean': 0.3894, 'time_saved_ci95': '0.3503..0.4285', 'T_full_ms': 2.807, 'T_stop_ms': 1.714, 'stop_at': '60', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '78 73 78 73 68', 'overshoot_mean': 14, 'overshoot_range': '8..18', 'cp_step': '12', 'cp_ns_req': '3550', 'delay_actual_ns': '18300 18331 18261 18270 18240', 'fired_k': '5', 'hw_latency_us': '20.76 13.77 12.83 20.99 18.05', 'ps_write_to_record_us': '36.5 38.1 36.7 35.2 35.3', 'strm_poll_us': '200'}
+B {'idx': '10', 'n_pairs': 5, 'time_saved_mean': 0.2466, 'time_saved_ci95': '0.1355..0.3576', 'T_full_ms': 0.999, 'T_stop_ms': 0.754, 'stop_at': '12', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '24 24 18 21 18', 'overshoot_mean': 9, 'overshoot_range': '6..12', 'cp_step': '3', 'cp_ns_req': '12838', 'delay_actual_ns': '51801 55820 51830 51911 51851', 'fired_k': '4', 'hw_latency_us': '27.34 8.43 0.94 22.58 11.79', 'ps_write_to_record_us': '41.7 45.5 29.2 46.0 26.4', 'strm_poll_us': '200'}
+B {'idx': '19', 'n_pairs': 5, 'time_saved_mean': 0.6939, 'time_saved_ci95': '0.6932..0.6945', 'T_full_ms': 190.921, 'T_stop_ms': 58.445, 'stop_at': '1227', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1253 1250 1249 1249 1248', 'overshoot_mean': 22.8, 'overshoot_range': '21..26', 'cp_step': '409', 'cp_ns_req': '839658', 'delay_actual_ns': '2693207 2692307 2692516 2692077 2693007', 'fired_k': '3', 'hw_latency_us': '5.14 6.36 15.48 10.99 6.61', 'ps_write_to_record_us': '37.0 22.5 34.4 34.4 21.8', 'strm_poll_us': '200'}
+B {'idx': '22', 'n_pairs': 5, 'time_saved_mean': 0.6308, 'time_saved_ci95': '0.6288..0.6328', 'T_full_ms': 20.278, 'T_stop_ms': 7.486, 'stop_at': '120', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '144 144 144 145 143', 'overshoot_mean': 24, 'overshoot_range': '23..25', 'cp_step': '40', 'cp_ns_req': '823382', 'delay_actual_ns': '2643887 2643545 2642127 2642167 2642547', 'fired_k': '3', 'hw_latency_us': '3.07 10.32 4.64 48.29 38.46', 'ps_write_to_record_us': '26.0 26.4 25.0 94.6 103.8', 'strm_poll_us': '200'}
+B {'idx': '23', 'n_pairs': 5, 'time_saved_mean': 0.6964, 'time_saved_ci95': '0.6955..0.6973', 'T_full_ms': 172.176, 'T_stop_ms': 52.273, 'stop_at': '1200', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1208 1213 1210 1208 1213', 'overshoot_mean': 10.4, 'overshoot_range': '8..13', 'cp_step': '400', 'cp_ns_req': '218474', 'delay_actual_ns': '827868 827438 842817 828718 829518', 'fired_k': '3', 'hw_latency_us': '18.26 16.89 24.04 23.58 3.10', 'ps_write_to_record_us': '36.3 23.1 28.6 33.6 34.8', 'strm_poll_us': '200'}
+phys cells 0 stop circuits 6
+2026-09-02T00:29:01 phys campaign
+2026-09-02T00:29:02 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T00:29:02 C3 c3 phys1 attempt 1 rc=0
+[c3] phys1 r-1: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c3] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c3] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+!! phys1: second failure, stopping this workload
+2026-09-02T00:29:40 service restarted; Sep 02 07:01:23 veneno start_qubic_server.sh[210276]: 2026-09-02 07:01:23,187 INFO: loading bitfile: 63329aaf
+210232 /home/xilinx/software/scripts/dma_server 210268 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:30:01 C3 c3 phys1 attempt 2 rc=0
+[c3] phys1 r-1: ok elapsed=5182.373012 ms qpu=5182.4000 ms
+[c3] phys1 r0: ok elapsed=5182.376852 ms qpu=5182.4000 ms
+[c3] phys1 r1: ok elapsed=5182.372091 ms qpu=5182.4000 ms
+[c3] phys1 r2: ok elapsed=5182.372502 ms qpu=5182.4000 ms
+2026-09-02T00:30:02 C3 c3 phys2 attempt 1 rc=0
+[c3] phys2 r-1: ok elapsed=0.489635 ms qpu=0.1889 ms
+[c3] phys2 r0: ok elapsed=0.331294 ms qpu=0.1889 ms
+[c3] phys2 r1: ok elapsed=0.340093 ms qpu=0.1889 ms
+[c3] phys2 r2: ok elapsed=0.405334 ms qpu=0.1889 ms
+2026-09-02T00:36:43 C3 c3 phys3 attempt 1 rc=0
+[c3] phys3 r-1: ok elapsed=100180.38003 ms qpu=100182.4000 ms
+[c3] phys3 r0: ok elapsed=100180.37529 ms qpu=100182.4000 ms
+[c3] phys3 r1: ok elapsed=100180.38039 ms qpu=100182.4000 ms
+[c3] phys3 r2: ok elapsed=100180.38486 ms qpu=100182.4000 ms
+2026-09-02T00:36:44 C3 c3 phys4 attempt 1 rc=0
+[c3] phys4 r-1: ok elapsed=71.534655 ms qpu=71.4560 ms
+[c3] phys4 r0: ok elapsed=71.542656 ms qpu=71.4560 ms
+[c3] phys4 r1: ok elapsed=71.527335 ms qpu=71.4560 ms
+[c3] phys4 r2: ok elapsed=71.528616 ms qpu=71.4560 ms
+2026-09-02T00:37:05 C3 c3 phys1_n101000 attempt 1 rc=0
+[c3] phys1_n101000 r-1: ok elapsed=10468.420691 ms qpu=10468.4480 ms
+[c3] phys1_n101000 r0: ok elapsed=10468.417231 ms qpu=10468.4480 ms
+2026-09-02T00:37:16 C3 c3 phys1_n51000 attempt 1 rc=0
+[c3] phys1_n51000 r-1: ok elapsed=5286.025139 ms qpu=5286.0480 ms
+[c3] phys1_n51000 r0: ok elapsed=5286.083529 ms qpu=5286.0480 ms
+2026-09-02T00:37:17 C3 c3 phys1_n1000 attempt 1 rc=0
+[c3] phys1_n1000 r-1: ok elapsed=103.627126 ms qpu=103.6480 ms
+[c3] phys1_n1000 r0: ok elapsed=103.632366 ms qpu=103.6480 ms
+2026-09-02T00:37:28 C3 c3 phys1_n51000 attempt 1 rc=0
+[c3] phys1_n51000 r-1: ok elapsed=5286.020369 ms qpu=5286.0480 ms
+[c3] phys1_n51000 r0: ok elapsed=5286.019789 ms qpu=5286.0480 ms
+2026-09-02T00:37:50 C3 c3 phys1_n101000 attempt 1 rc=0
+[c3] phys1_n101000 r-1: ok elapsed=10468.415761 ms qpu=10468.4480 ms
+[c3] phys1_n101000 r0: ok elapsed=10468.41995 ms qpu=10468.4480 ms
+2026-09-02T00:37:50 C3 c3 phys1_n1000 attempt 1 rc=0
+[c3] phys1_n1000 r-1: ok elapsed=103.634347 ms qpu=103.6480 ms
+[c3] phys1_n1000 r0: ok elapsed=104.01699 ms qpu=103.6480 ms
+2026-09-02T00:38:01 C3 c3 phys1_n51000 attempt 1 rc=0
+[c3] phys1_n51000 r-1: ok elapsed=5286.023538 ms qpu=5286.0480 ms
+[c3] phys1_n51000 r0: ok elapsed=5287.689495 ms qpu=5286.0480 ms
+2026-09-02T00:38:02 C3 c3 phys1_n1000 attempt 1 rc=0
+[c3] phys1_n1000 r-1: ok elapsed=103.632537 ms qpu=103.6480 ms
+[c3] phys1_n1000 r0: ok elapsed=103.627407 ms qpu=103.6480 ms
+2026-09-02T00:38:23 C3 c3 phys1_n101000 attempt 1 rc=0
+[c3] phys1_n101000 r-1: ok elapsed=10468.41769 ms qpu=10468.4480 ms
+[c3] phys1_n101000 r0: ok elapsed=10468.38586 ms qpu=10468.4480 ms
+2026-09-02T00:38:40 C3 c3 phys3_n3970 attempt 1 rc=0
+[c3] phys3_n3970 r-1: ok elapsed=7952.550748 ms qpu=7954.4826 ms
+[c3] phys3_n3970 r0: ok elapsed=7952.558078 ms qpu=7954.4826 ms
+2026-09-02T00:38:44 C3 c3 phys3_n1000 attempt 1 rc=0
+[c3] phys3_n1000 r-1: ok elapsed=2001.762171 ms qpu=2003.6480 ms
+[c3] phys3_n1000 r0: ok elapsed=2001.752761 ms qpu=2003.6480 ms
+2026-09-02T00:39:13 C3 c3 phys3_n6941 attempt 1 rc=0
+[c3] phys3_n6941 r-1: ok elapsed=13905.408236 ms qpu=13907.3208 ms
+[c3] phys3_n6941 r0: ok elapsed=13905.402255 ms qpu=13907.3208 ms
+2026-09-02T00:39:29 C3 c3 phys3_n3970 attempt 1 rc=0
+[c3] phys3_n3970 r-1: ok elapsed=7952.558808 ms qpu=7954.4826 ms
+[c3] phys3_n3970 r0: ok elapsed=7952.558088 ms qpu=7954.4826 ms
+2026-09-02T00:39:57 C3 c3 phys3_n6941 attempt 1 rc=0
+[c3] phys3_n6941 r-1: ok elapsed=13905.427326 ms qpu=13907.3208 ms
+[c3] phys3_n6941 r0: ok elapsed=13905.405885 ms qpu=13907.3208 ms
+2026-09-02T00:40:02 C3 c3 phys3_n1000 attempt 1 rc=0
+[c3] phys3_n1000 r-1: ok elapsed=2001.76497 ms qpu=2003.6480 ms
+[c3] phys3_n1000 r0: ok elapsed=2001.74327 ms qpu=2003.6480 ms
+2026-09-02T00:40:30 C3 c3 phys3_n6941 attempt 1 rc=0
+[c3] phys3_n6941 r-1: ok elapsed=13905.408646 ms qpu=13907.3208 ms
+[c3] phys3_n6941 r0: ok elapsed=13905.399925 ms qpu=13907.3208 ms
+2026-09-02T00:40:35 C3 c3 phys3_n1000 attempt 1 rc=0
+[c3] phys3_n1000 r-1: ok elapsed=2001.874862 ms qpu=2003.6480 ms
+[c3] phys3_n1000 r0: ok elapsed=2001.7575 ms qpu=2003.6480 ms
+2026-09-02T00:40:51 C3 c3 phys3_n3970 attempt 1 rc=0
+[c3] phys3_n3970 r-1: ok elapsed=7952.554058 ms qpu=7954.4826 ms
+[c3] phys3_n3970 r0: ok elapsed=7952.559858 ms qpu=7954.4826 ms
+2026-09-02T00:40:56 C3 c3 phys4_n231769 attempt 1 rc=0
+[c3] phys4_n231769 r-1: ok elapsed=2070.230526 ms qpu=2070.1607 ms
+[c3] phys4_n231769 r0: ok elapsed=2070.230715 ms qpu=2070.1607 ms
+2026-09-02T00:41:05 C3 c3 phys4_n462539 attempt 1 rc=0
+[c3] phys4_n462539 r-1: ok elapsed=4131.466051 ms qpu=4131.3983 ms
+[c3] phys4_n462539 r0: ok elapsed=4131.470341 ms qpu=4131.3983 ms
+2026-09-02T00:41:05 C3 c3 phys4_n1000 attempt 1 rc=0
+[c3] phys4_n1000 r-1: ok elapsed=9.01607 ms qpu=8.9320 ms
+[c3] phys4_n1000 r0: ok elapsed=9.0025 ms qpu=8.9320 ms
+2026-09-02T00:41:06 C3 c3 phys4_n1000 attempt 1 rc=0
+[c3] phys4_n1000 r-1: ok elapsed=9.00543 ms qpu=8.9320 ms
+[c3] phys4_n1000 r0: ok elapsed=9.01099 ms qpu=8.9320 ms
+2026-09-02T00:41:10 C3 c3 phys4_n231769 attempt 1 rc=0
+[c3] phys4_n231769 r-1: ok elapsed=2070.259516 ms qpu=2070.1607 ms
+[c3] phys4_n231769 r0: ok elapsed=2070.236385 ms qpu=2070.1607 ms
+2026-09-02T00:41:19 C3 c3 phys4_n462539 attempt 1 rc=0
+[c3] phys4_n462539 r-1: ok elapsed=4131.466271 ms qpu=4131.3983 ms
+[c3] phys4_n462539 r0: ok elapsed=4132.681923 ms qpu=4131.3983 ms
+2026-09-02T00:41:20 C3 c3 phys4_n1000 attempt 1 rc=0
+[c3] phys4_n1000 r-1: ok elapsed=9.00522 ms qpu=8.9320 ms
+[c3] phys4_n1000 r0: ok elapsed=9.00705 ms qpu=8.9320 ms
+2026-09-02T00:41:25 C3 c3 phys4_n231769 attempt 1 rc=0
+[c3] phys4_n231769 r-1: ok elapsed=2070.232186 ms qpu=2070.1607 ms
+[c3] phys4_n231769 r0: ok elapsed=2070.235796 ms qpu=2070.1607 ms
+2026-09-02T00:41:33 C3 c3 phys4_n462539 attempt 1 rc=0
+[c3] phys4_n462539 r-1: ok elapsed=4131.475701 ms qpu=4131.3983 ms
+[c3] phys4_n462539 r0: ok elapsed=4131.470711 ms qpu=4131.3983 ms
+2026-09-02T00:41:35 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T00:42:06 service restarted; Sep 02 07:13:55 veneno start_qubic_server.sh[211853]: 2026-09-02 07:13:55,961 INFO: loading bitfile: 63329aaf
+211812 /home/xilinx/software/scripts/dma_server 211845 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:42:08 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T00:42:38 service restarted; Sep 02 07:14:28 veneno start_qubic_server.sh[212213]: 2026-09-02 07:14:28,656 INFO: loading bitfile: 63329aaf
+212175 /home/xilinx/software/scripts/dma_server 212211 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:42:39 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T00:43:15 service restarted; Sep 02 07:15:00 veneno start_qubic_server.sh[212556]: 2026-09-02 07:15:00,425 INFO: loading bitfile: 63329aaf
+212518 /home/xilinx/software/scripts/dma_server 212548 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:43:16 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T00:43:47 service restarted; Sep 02 07:15:37 veneno start_qubic_server.sh[212921]: 2026-09-02 07:15:37,379 INFO: loading bitfile: 63329aaf
+212883 /home/xilinx/software/scripts/dma_server 212919 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:43:49 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T00:44:21 service restarted; Sep 02 07:16:10 veneno start_qubic_server.sh[213280]: 2026-09-02 07:16:10,100 INFO: loading bitfile: 63329aaf
+213242 /home/xilinx/software/scripts/dma_server 213278 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:44:23 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T00:44:54 service restarted; Sep 02 07:16:43 veneno start_qubic_server.sh[213639]: 2026-09-02 07:16:43,525 INFO: loading bitfile: 63329aaf
+213601 /home/xilinx/software/scripts/dma_server 213637 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:44:54 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+!! phys5_ctrl1800p_cap1802: second failure, stopping this workload
+2026-09-02T00:45:26 service restarted; Sep 02 07:17:15 veneno start_qubic_server.sh[214008]: 2026-09-02 07:17:15,539 INFO: loading bitfile: 63329aaf
+213969 /home/xilinx/software/scripts/dma_server 214006 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:45:27 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+!! phys5_ctrl1800p_cap1802: second failure, stopping this workload
+2026-09-02T00:45:58 service restarted; Sep 02 07:17:47 veneno start_qubic_server.sh[214367]: 2026-09-02 07:17:47,638 INFO: loading bitfile: 63329aaf
+214329 /home/xilinx/software/scripts/dma_server 214365 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:45:59 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+!! phys5_ctrl1800p_cap1802: second failure, stopping this workload
+2026-09-02T00:46:28 service restarted; Sep 02 07:18:19 veneno start_qubic_server.sh[214725]: 2026-09-02 07:18:19,537 INFO: loading bitfile: 63329aaf
+214687 /home/xilinx/software/scripts/dma_server 214723 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:46:29 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T00:47:08 service restarted; Sep 02 07:18:49 veneno start_qubic_server.sh[215067]: 2026-09-02 07:18:49,992 INFO: loading bitfile: 63329aaf
+215029 /home/xilinx/software/scripts/dma_server 215065 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:47:08 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T00:47:40 service restarted; Sep 02 07:19:29 veneno start_qubic_server.sh[215440]: 2026-09-02 07:19:29,461 INFO: loading bitfile: 63329aaf
+215402 /home/xilinx/software/scripts/dma_server 215438 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:47:40 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T00:48:12 service restarted; Sep 02 07:20:01 veneno start_qubic_server.sh[215800]: 2026-09-02 07:20:01,402 INFO: loading bitfile: 63329aaf
+215762 /home/xilinx/software/scripts/dma_server 215798 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:48:13 switching image -> C1 (0071783e_14q)
+2026-09-02T00:48:44 service restarted; Sep 02 07:20:33 veneno start_qubic_server.sh[216191]: 2026-09-02 07:20:33,651 INFO: loading bitfile: 0071783e_14q
+216153 /home/xilinx/software/scripts/dma_server 216189 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:56:14 C1 c1 phys1 attempt 1 rc=0
+[c1] phys1 r-1: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c1] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c1] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+!! phys1: second failure, stopping this workload
+2026-09-02T00:56:46 service restarted; Sep 02 07:28:35 veneno start_qubic_server.sh[217265]: 2026-09-02 07:28:35,593 INFO: loading bitfile: 0071783e_14q
+217226 /home/xilinx/software/scripts/dma_server 217263 /home/xilinx/software/scripts/batch_server
+A phys1 c1 data_mismatch n 0 mean  consistent  cnr 
+A phys1 c3 ok n 3 mean 5182.3738 consistent True cnr 0
+A phys2 c3 ok n 3 mean 0.3589 consistent  cnr 0
+A phys3 c3 ok n 3 mean 100180.3802 consistent True cnr 0
+A phys4 c3 ok n 3 mean 71.5329 consistent True cnr 0
+A phys5 c3 data_mismatch n 0 mean  consistent  cnr 
+A phys5_ctrl1800p_cap1802 c3 data_mismatch n 0 mean  consistent  cnr 
+A phys5_ctrl1800p_cap902 c3 data_mismatch n 0 mean  consistent  cnr 
+A phys6 c3 data_mismatch n 0 mean  consistent  cnr 
+B {'idx': '2', 'n_pairs': 5, 'time_saved_mean': 0.6963, 'time_saved_ci95': '0.6955..0.6971', 'T_full_ms': 97.319, 'T_stop_ms': 29.558, 'stop_at': '2457', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '2475 2474 2474 2476 2484', 'overshoot_mean': 19.6, 'overshoot_range': '17..27', 'cp_step': '819', 'cp_ns_req': '5980', 'delay_actual_ns': '18230 18260 18241 18240 18270', 'fired_k': '3', 'hw_latency_us': '10.93 0.09 9.76 10.66 7.98', 'ps_write_to_record_us': '22.7 25.5 23.4 23.3 26.1', 'strm_poll_us': '200'}
+B {'idx': '9', 'n_pairs': 5, 'time_saved_mean': 0.3894, 'time_saved_ci95': '0.3503..0.4285', 'T_full_ms': 2.807, 'T_stop_ms': 1.714, 'stop_at': '60', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '78 73 78 73 68', 'overshoot_mean': 14, 'overshoot_range': '8..18', 'cp_step': '12', 'cp_ns_req': '3550', 'delay_actual_ns': '18300 18331 18261 18270 18240', 'fired_k': '5', 'hw_latency_us': '20.76 13.77 12.83 20.99 18.05', 'ps_write_to_record_us': '36.5 38.1 36.7 35.2 35.3', 'strm_poll_us': '200'}
+B {'idx': '10', 'n_pairs': 5, 'time_saved_mean': 0.2466, 'time_saved_ci95': '0.1355..0.3576', 'T_full_ms': 0.999, 'T_stop_ms': 0.754, 'stop_at': '12', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '24 24 18 21 18', 'overshoot_mean': 9, 'overshoot_range': '6..12', 'cp_step': '3', 'cp_ns_req': '12838', 'delay_actual_ns': '51801 55820 51830 51911 51851', 'fired_k': '4', 'hw_latency_us': '27.34 8.43 0.94 22.58 11.79', 'ps_write_to_record_us': '41.7 45.5 29.2 46.0 26.4', 'strm_poll_us': '200'}
+B {'idx': '19', 'n_pairs': 5, 'time_saved_mean': 0.6939, 'time_saved_ci95': '0.6932..0.6945', 'T_full_ms': 190.921, 'T_stop_ms': 58.445, 'stop_at': '1227', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1253 1250 1249 1249 1248', 'overshoot_mean': 22.8, 'overshoot_range': '21..26', 'cp_step': '409', 'cp_ns_req': '839658', 'delay_actual_ns': '2693207 2692307 2692516 2692077 2693007', 'fired_k': '3', 'hw_latency_us': '5.14 6.36 15.48 10.99 6.61', 'ps_write_to_record_us': '37.0 22.5 34.4 34.4 21.8', 'strm_poll_us': '200'}
+B {'idx': '22', 'n_pairs': 5, 'time_saved_mean': 0.6308, 'time_saved_ci95': '0.6288..0.6328', 'T_full_ms': 20.278, 'T_stop_ms': 7.486, 'stop_at': '120', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '144 144 144 145 143', 'overshoot_mean': 24, 'overshoot_range': '23..25', 'cp_step': '40', 'cp_ns_req': '823382', 'delay_actual_ns': '2643887 2643545 2642127 2642167 2642547', 'fired_k': '3', 'hw_latency_us': '3.07 10.32 4.64 48.29 38.46', 'ps_write_to_record_us': '26.0 26.4 25.0 94.6 103.8', 'strm_poll_us': '200'}
+B {'idx': '23', 'n_pairs': 5, 'time_saved_mean': 0.6964, 'time_saved_ci95': '0.6955..0.6973', 'T_full_ms': 172.176, 'T_stop_ms': 52.273, 'stop_at': '1200', 'results': 'FIRED FIRED FIRED FIRED FIRED', 'actual_shots': '1208 1213 1210 1208 1213', 'overshoot_mean': 10.4, 'overshoot_range': '8..13', 'cp_step': '400', 'cp_ns_req': '218474', 'delay_actual_ns': '827868 827438 842817 828718 829518', 'fired_k': '3', 'hw_latency_us': '18.26 16.89 24.04 23.58 3.10', 'ps_write_to_record_us': '36.3 23.1 28.6 33.6 34.8', 'strm_poll_us': '200'}
+phys cells 9 stop circuits 6

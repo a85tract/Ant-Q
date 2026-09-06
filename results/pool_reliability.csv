@@ -1,0 +1,6 @@
+config,attempts,failed_attempts,complete_manifests
+std_native,160,0,32
+std_pool,160,0,32
+c1_native,166,6,32
+c1_pool,168,6,32
+c3_pool,165,2,32

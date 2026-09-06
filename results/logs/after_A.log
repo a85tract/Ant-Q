@@ -1,0 +1,84 @@
+2026-09-02T01:16:40 phys campaign done -> REPT cells on C3
+2026-09-02T01:16:40 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T01:16:43 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T01:17:17 service restarted; Sep 02 07:49:04 veneno start_qubic_server.sh[219935]: 2026-09-02 07:49:04,190 INFO: loading bitfile: 63329aaf
+218254 ./std_server 219897 /home/xilinx/software/scripts/dma_server 219933 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:17:20 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T01:17:54 service restarted; Sep 02 07:49:40 veneno start_qubic_server.sh[220292]: 2026-09-02 07:49:40,633 INFO: loading bitfile: 63329aaf
+218254 ./std_server 220254 /home/xilinx/software/scripts/dma_server 220290 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:17:57 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T01:18:30 service restarted; Sep 02 07:50:17 veneno start_qubic_server.sh[220677]: 2026-09-02 07:50:17,765 INFO: loading bitfile: 63329aaf
+218254 ./std_server 220639 /home/xilinx/software/scripts/dma_server 220669 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:18:38 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T01:19:13 service restarted; Sep 02 07:50:59 veneno start_qubic_server.sh[221056]: 2026-09-02 07:50:59,487 INFO: loading bitfile: 63329aaf
+218254 ./std_server 221018 /home/xilinx/software/scripts/dma_server 221054 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:19:20 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T01:19:54 service restarted; Sep 02 07:51:41 veneno start_qubic_server.sh[221439]: 2026-09-02 07:51:41,342 INFO: loading bitfile: 63329aaf
+218254 ./std_server 221401 /home/xilinx/software/scripts/dma_server 221431 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:20:02 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T01:20:36 service restarted; Sep 02 07:52:23 veneno start_qubic_server.sh[221817]: 2026-09-02 07:52:23,064 INFO: loading bitfile: 63329aaf
+218254 ./std_server 221779 /home/xilinx/software/scripts/dma_server 221815 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:20:38 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: ok elapsed=65.690947 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: ok elapsed=67.349883 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r1: ok elapsed=65.507966 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r2: ok elapsed=66.01823 ms qpu=47.9314 ms
+2026-09-02T01:20:39 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T01:21:12 service restarted; Sep 02 07:52:59 veneno start_qubic_server.sh[222194]: 2026-09-02 07:52:59,977 INFO: loading bitfile: 63329aaf
+218254 ./std_server 222156 /home/xilinx/software/scripts/dma_server 222192 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:21:14 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T01:21:48 service restarted; Sep 02 07:53:36 veneno start_qubic_server.sh[222570]: 2026-09-02 07:53:36,070 INFO: loading bitfile: 63329aaf
+218254 ./std_server 222531 /home/xilinx/software/scripts/dma_server 222568 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:21:50 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T01:22:23 service restarted; Sep 02 07:54:10 veneno start_qubic_server.sh[222945]: 2026-09-02 07:54:10,858 INFO: loading bitfile: 63329aaf
+218254 ./std_server 222907 /home/xilinx/software/scripts/dma_server 222943 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:22:23 poll-0 sweep re-run (GHZ-3, GHZ-8)
+2026-09-02T01:22:26 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T01:22:27 idx 2 stop_at 0 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:22:28 idx 2 stop_at 2457 pair  -> FAIL | [c3] 2 r-1: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:22:28 idx 10 stop_at 0 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T01:22:29 idx 10 stop_at 12 pair  -> FAIL | [c3] 10 r-1: data_mismatch elapsed=None ms qpu=0.8756 ms
+2026-09-02T01:22:29 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:22:29 pair 2_p0 attempt 1 failed -> restart services and re-run BOTH members
+2026-09-02T01:23:14 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T01:23:15 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:23:15 pair 2_p0 attempt 2 failed -> restart services and re-run BOTH members
+2026-09-02T01:24:00 dma_server restarted with STRM_POLL_US=0: 
+2026-09-02T01:24:00 idx 2 stop_at 2457 pair 2_p0 -> FAIL | [c3] 2 r0: data_mismatch elapsed=None ms qpu=95.9611 ms
+2026-09-02T01:24:00 pair 2_p0 attempt 3 failed -> restart services and re-run BOTH members

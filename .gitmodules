@@ -3,9 +3,9 @@
 	url = https://gitlab.com/yguang1/benchmark_qce.git
 [submodule "gateware"]
 	path = gateware
-	url = https://gitlab.com/lbl-qubic/gateware.git
-	branch = feat/ddr_mem
+	url = https://gitlab.com/yguang1/gateware.git
+	branch = c3-stop-ce
 [submodule "software"]
 	path = software
-	url = https://gitlab.com/lbl-qubic/software.git
-	branch = feat/ddr_mem
+	url = https://gitlab.com/yguang1/software.git
+	branch = ddr-stop-c3

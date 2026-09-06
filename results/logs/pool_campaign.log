@@ -1,0 +1,1472 @@
+2026-09-01T22:10:04 DRY RUN: one manifest per config, 1 repeat, tag dryrun_pool
+2026-09-01T22:10:05 image already C3 (xsa_commit: '63329aaf')
+2026-09-01T22:10:06 DRY C3 c3_pool rc=0
+[c3] rand10_t5 r-1: ok elapsed=188.282273 ms qpu=186.5717 ms
+[c3] rand10_t5 r0: ok elapsed=188.291013 ms qpu=186.5717 ms
+STDERR_TAIL: 
+2026-09-01T22:10:08 switching image -> C1 (0071783e_14q)
+2026-09-01T22:16:38 DRY RUN 2 (C1 image cells): 1 repeat, tag dryrun_pool
+2026-09-01T22:16:39 image already C1 (xsa_commit: '0071783e_14q')
+2026-09-01T22:16:41 DRY C1 std_pool rc=0
+[std] rand10_t5 r-1: ok elapsed=268.399114 ms qpu=186.5717 ms
+[std] rand10_t5 r0: ok elapsed=268.560936 ms qpu=186.5717 ms
+STDERR_TAIL: 
+2026-09-01T22:16:42 DRY C1 c1_pool rc=0
+[c1] rand10_t5 r-1: ok elapsed=219.380824 ms qpu=186.5717 ms
+[c1] rand10_t5 r0: ok elapsed=217.00352 ms qpu=186.5717 ms
+STDERR_TAIL: 
+2026-09-01T22:16:43 DRY C1 std_native rc=0
+[std] rand10_t5 r-1: ok elapsed=313.9947 ms qpu=186.5717 ms
+[std] rand10_t5 r0: ok elapsed=313.590217 ms qpu=186.5717 ms
+STDERR_TAIL: 
+2026-09-01T22:19:17 campaign start: 160 cells, from cell 0
+2026-09-01T22:19:18 switching image -> C3 (63329aaf)
+2026-09-01T22:19:59 service restarted; Sep 02 04:51:40 veneno start_qubic_server.sh[191841]: 2026-09-02 04:51:40,009 INFO: loading bitfile: 63329aaf
+10012 sudo -S nohup ./std_server 10014 ./std_server 191802 /home/xilinx/software/scripts/dma_server 191839 /home/xilinx/software/scripts/batch_server
+2026-09-01T22:19:59 --- cell 0/160: block 0 C3 c3_pool rand30_t4
+2026-09-01T22:20:17 C3 c3_pool rand30_t4 block 0 attempt 1 rc=0
+[c3] rand30_t4 r-1: ok elapsed=2286.58213 ms qpu=2271.1510 ms
+[c3] rand30_t4 r0: ok elapsed=2286.568789 ms qpu=2271.1510 ms
+[c3] rand30_t4 r1: ok elapsed=2286.57853 ms qpu=2271.1510 ms
+[c3] rand30_t4 r2: ok elapsed=2286.56164 ms qpu=2271.1510 ms
+[c3] rand30_t4 r3: ok elapsed=2286.61655 ms qpu=2271.1510 ms
+[c3] rand30_t4 r4: ok elapsed=2288.488589 ms qpu=2271.1510 ms
+2026-09-01T22:20:17 --- cell 1/160: block 0 C3 c3_pool rand10_t1
+2026-09-01T22:20:24 C3 c3_pool rand10_t1 block 0 attempt 1 rc=0
+[c3] rand10_t1 r-1: ok elapsed=596.614087 ms qpu=586.1906 ms
+[c3] rand10_t1 r0: ok elapsed=596.622577 ms qpu=586.1906 ms
+[c3] rand10_t1 r1: ok elapsed=596.619348 ms qpu=586.1906 ms
+[c3] rand10_t1 r2: ok elapsed=596.610297 ms qpu=586.1906 ms
+[c3] rand10_t1 r3: ok elapsed=597.206773 ms qpu=586.1906 ms
+[c3] rand10_t1 r4: ok elapsed=596.620158 ms qpu=586.1906 ms
+2026-09-01T22:20:24 --- cell 2/160: block 0 C3 c3_pool rand30_t6
+2026-09-01T22:20:42 C3 c3_pool rand30_t6 block 0 attempt 1 rc=0
+[c3] rand30_t6 r-1: ok elapsed=2219.743771 ms qpu=2193.9864 ms
+[c3] rand30_t6 r0: ok elapsed=2219.730681 ms qpu=2193.9864 ms
+[c3] rand30_t6 r1: ok elapsed=2220.521268 ms qpu=2193.9864 ms
+[c3] rand30_t6 r2: ok elapsed=2219.745421 ms qpu=2193.9864 ms
+[c3] rand30_t6 r3: ok elapsed=2219.731161 ms qpu=2193.9864 ms
+[c3] rand30_t6 r4: ok elapsed=2219.732421 ms qpu=2193.9864 ms
+2026-09-01T22:20:42 --- cell 3/160: block 0 C3 c3_pool rand20_t8
+2026-09-01T22:20:54 C3 c3_pool rand20_t8 block 0 attempt 1 rc=0
+[c3] rand20_t8 r-1: ok elapsed=1317.642408 ms qpu=1306.0361 ms
+[c3] rand20_t8 r0: ok elapsed=1317.626878 ms qpu=1306.0361 ms
+[c3] rand20_t8 r1: ok elapsed=1317.644018 ms qpu=1306.0361 ms
+[c3] rand20_t8 r2: ok elapsed=1317.639078 ms qpu=1306.0361 ms
+[c3] rand20_t8 r3: ok elapsed=1317.626088 ms qpu=1306.0361 ms
+[c3] rand20_t8 r4: ok elapsed=1317.620599 ms qpu=1306.0361 ms
+2026-09-01T22:20:54 --- cell 4/160: block 0 C3 c3_pool rand10_t8
+2026-09-01T22:21:01 C3 c3_pool rand10_t8 block 0 attempt 1 rc=0
+[c3] rand10_t8 r-1: ok elapsed=679.102043 ms qpu=669.0893 ms
+[c3] rand10_t8 r0: ok elapsed=679.101482 ms qpu=669.0893 ms
+[c3] rand10_t8 r1: ok elapsed=679.069812 ms qpu=669.0893 ms
+[c3] rand10_t8 r2: ok elapsed=679.067312 ms qpu=669.0893 ms
+[c3] rand10_t8 r3: ok elapsed=679.082152 ms qpu=669.0893 ms
+[c3] rand10_t8 r4: ok elapsed=679.066422 ms qpu=669.0893 ms
+2026-09-01T22:21:01 --- cell 5/160: block 0 C3 c3_pool rand20_t5
+2026-09-01T22:21:11 C3 c3_pool rand20_t5 block 0 attempt 1 rc=0
+[c3] rand20_t5 r-1: ok elapsed=840.761779 ms qpu=834.0339 ms
+[c3] rand20_t5 r0: ok elapsed=840.778289 ms qpu=834.0339 ms
+[c3] rand20_t5 r1: ok elapsed=840.787609 ms qpu=834.0339 ms
+[c3] rand20_t5 r2: ok elapsed=840.787019 ms qpu=834.0339 ms
+[c3] rand20_t5 r3: ok elapsed=840.783479 ms qpu=834.0339 ms
+[c3] rand20_t5 r4: ok elapsed=840.779739 ms qpu=834.0339 ms
+2026-09-01T22:21:12 switching image -> C1 (0071783e_14q)
+2026-09-01T22:21:44 service restarted; Sep 02 04:53:32 veneno start_qubic_server.sh[192415]: 2026-09-02 04:53:32,131 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 192376 /home/xilinx/software/scripts/dma_server 192392 /home/xilinx/software/scripts/batch_server
+2026-09-01T22:21:44 --- cell 6/160: block 0 C1 std_native rand10_t8
+2026-09-01T22:21:52 C1 std_native rand10_t8 block 0 attempt 1 rc=0
+[std] rand10_t8 r-1: ok elapsed=1201.874501 ms qpu=669.0893 ms
+[std] rand10_t8 r0: ok elapsed=1199.872861 ms qpu=669.0893 ms
+[std] rand10_t8 r1: ok elapsed=1201.499966 ms qpu=669.0893 ms
+[std] rand10_t8 r2: ok elapsed=1199.564477 ms qpu=669.0893 ms
+[std] rand10_t8 r3: ok elapsed=1199.044542 ms qpu=669.0893 ms
+[std] rand10_t8 r4: ok elapsed=1200.983262 ms qpu=669.0893 ms
+2026-09-01T22:21:52 --- cell 7/160: block 0 C1 std_native rand10_t1
+2026-09-01T22:22:00 C1 std_native rand10_t1 block 0 attempt 1 rc=0
+[std] rand10_t1 r-1: ok elapsed=1136.77064 ms qpu=586.1906 ms
+[std] rand10_t1 r0: ok elapsed=1136.418956 ms qpu=586.1906 ms
+[std] rand10_t1 r1: ok elapsed=1138.000672 ms qpu=586.1906 ms
+[std] rand10_t1 r2: ok elapsed=1136.635898 ms qpu=586.1906 ms
+[std] rand10_t1 r3: ok elapsed=1135.160214 ms qpu=586.1906 ms
+[std] rand10_t1 r4: ok elapsed=1136.882061 ms qpu=586.1906 ms
+2026-09-01T22:22:00 --- cell 8/160: block 0 C1 std_native rand20_t8
+2026-09-01T22:22:16 C1 std_native rand20_t8 block 0 attempt 1 rc=0
+[std] rand20_t8 r-1: ok elapsed=2171.075384 ms qpu=1306.0361 ms
+[std] rand20_t8 r0: ok elapsed=2171.65904 ms qpu=1306.0361 ms
+[std] rand20_t8 r1: ok elapsed=2171.007884 ms qpu=1306.0361 ms
+[std] rand20_t8 r2: ok elapsed=2170.60821 ms qpu=1306.0361 ms
+[std] rand20_t8 r3: ok elapsed=2170.040664 ms qpu=1306.0361 ms
+[std] rand20_t8 r4: ok elapsed=2171.339777 ms qpu=1306.0361 ms
+2026-09-01T22:22:16 --- cell 9/160: block 0 C1 std_native rand30_t6
+2026-09-01T22:22:41 C1 std_native rand30_t6 block 0 attempt 1 rc=0
+[std] rand30_t6 r-1: ok elapsed=3822.553011 ms qpu=2193.9864 ms
+[std] rand30_t6 r0: ok elapsed=3821.587652 ms qpu=2193.9864 ms
+[std] rand30_t6 r1: ok elapsed=3821.621612 ms qpu=2193.9864 ms
+[std] rand30_t6 r2: ok elapsed=3822.385379 ms qpu=2193.9864 ms
+[std] rand30_t6 r3: ok elapsed=3823.47745 ms qpu=2193.9864 ms
+[std] rand30_t6 r4: ok elapsed=3823.505921 ms qpu=2193.9864 ms
+2026-09-01T22:22:41 --- cell 10/160: block 0 C1 std_native rand20_t5
+2026-09-01T22:22:51 C1 std_native rand20_t5 block 0 attempt 1 rc=0
+[std] rand20_t5 r-1: ok elapsed=1367.092403 ms qpu=834.0339 ms
+[std] rand20_t5 r0: ok elapsed=1365.883401 ms qpu=834.0339 ms
+[std] rand20_t5 r1: ok elapsed=1367.683189 ms qpu=834.0339 ms
+[std] rand20_t5 r2: ok elapsed=1365.807601 ms qpu=834.0339 ms
+[std] rand20_t5 r3: ok elapsed=1365.825001 ms qpu=834.0339 ms
+[std] rand20_t5 r4: ok elapsed=1366.441396 ms qpu=834.0339 ms
+2026-09-01T22:22:51 --- cell 11/160: block 0 C1 std_native rand30_t4
+2026-09-01T22:23:15 C1 std_native rand30_t4 block 0 attempt 1 rc=0
+[std] rand30_t4 r-1: ok elapsed=3624.073206 ms qpu=2271.1510 ms
+[std] rand30_t4 r0: ok elapsed=3625.985206 ms qpu=2271.1510 ms
+[std] rand30_t4 r1: ok elapsed=3624.631282 ms qpu=2271.1510 ms
+[std] rand30_t4 r2: ok elapsed=3622.236208 ms qpu=2271.1510 ms
+[std] rand30_t4 r3: ok elapsed=3624.548272 ms qpu=2271.1510 ms
+[std] rand30_t4 r4: ok elapsed=3625.510181 ms qpu=2271.1510 ms
+2026-09-01T22:23:15 --- cell 12/160: block 0 C1 std_pool rand20_t5
+2026-09-01T22:23:26 C1 std_pool rand20_t5 block 0 attempt 1 rc=0
+[std] rand20_t5 r-1: ok elapsed=1245.374116 ms qpu=834.0339 ms
+[std] rand20_t5 r0: ok elapsed=1245.213664 ms qpu=834.0339 ms
+[std] rand20_t5 r1: ok elapsed=1245.127653 ms qpu=834.0339 ms
+[std] rand20_t5 r2: ok elapsed=1245.109873 ms qpu=834.0339 ms
+[std] rand20_t5 r3: ok elapsed=1245.270744 ms qpu=834.0339 ms
+[std] rand20_t5 r4: ok elapsed=1246.028252 ms qpu=834.0339 ms
+2026-09-01T22:23:26 --- cell 13/160: block 0 C1 std_pool rand30_t6
+2026-09-01T22:23:52 C1 std_pool rand30_t6 block 0 attempt 1 rc=0
+[std] rand30_t6 r-1: ok elapsed=3653.072797 ms qpu=2193.9864 ms
+[std] rand30_t6 r0: ok elapsed=3655.840704 ms qpu=2193.9864 ms
+[std] rand30_t6 r1: ok elapsed=3651.554411 ms qpu=2193.9864 ms
+[std] rand30_t6 r2: ok elapsed=3654.553281 ms qpu=2193.9864 ms
+[std] rand30_t6 r3: ok elapsed=3651.176598 ms qpu=2193.9864 ms
+[std] rand30_t6 r4: ok elapsed=3653.043186 ms qpu=2193.9864 ms
+2026-09-01T22:23:52 --- cell 14/160: block 0 C1 std_pool rand10_t1
+2026-09-01T22:24:02 C1 std_pool rand10_t1 block 0 attempt 1 rc=0
+[std] rand10_t1 r-1: ok elapsed=1088.282615 ms qpu=586.1906 ms
+[std] rand10_t1 r0: ok elapsed=1088.540187 ms qpu=586.1906 ms
+[std] rand10_t1 r1: ok elapsed=1090.150123 ms qpu=586.1906 ms
+[std] rand10_t1 r2: ok elapsed=1088.007302 ms qpu=586.1906 ms
+[std] rand10_t1 r3: ok elapsed=1086.978782 ms qpu=586.1906 ms
+[std] rand10_t1 r4: ok elapsed=1087.564067 ms qpu=586.1906 ms
+2026-09-01T22:24:02 --- cell 15/160: block 0 C1 std_pool rand10_t8
+2026-09-01T22:24:12 C1 std_pool rand10_t8 block 0 attempt 1 rc=0
+[std] rand10_t8 r-1: ok elapsed=1158.282505 ms qpu=669.0893 ms
+[std] rand10_t8 r0: ok elapsed=1156.028462 ms qpu=669.0893 ms
+[std] rand10_t8 r1: ok elapsed=1155.79713 ms qpu=669.0893 ms
+[std] rand10_t8 r2: ok elapsed=1155.87205 ms qpu=669.0893 ms
+[std] rand10_t8 r3: ok elapsed=1154.750389 ms qpu=669.0893 ms
+[std] rand10_t8 r4: ok elapsed=1156.016742 ms qpu=669.0893 ms
+2026-09-01T22:24:12 --- cell 16/160: block 0 C1 std_pool rand30_t4
+2026-09-01T22:24:37 C1 std_pool rand30_t4 block 0 attempt 1 rc=0
+[std] rand30_t4 r-1: ok elapsed=3382.302288 ms qpu=2271.1510 ms
+[std] rand30_t4 r0: ok elapsed=3384.500581 ms qpu=2271.1510 ms
+[std] rand30_t4 r1: ok elapsed=3382.007445 ms qpu=2271.1510 ms
+[std] rand30_t4 r2: ok elapsed=3380.46517 ms qpu=2271.1510 ms
+[std] rand30_t4 r3: ok elapsed=3384.892154 ms qpu=2271.1510 ms
+[std] rand30_t4 r4: ok elapsed=3380.893484 ms qpu=2271.1510 ms
+2026-09-01T22:24:37 --- cell 17/160: block 0 C1 std_pool rand20_t8
+2026-09-01T22:24:52 C1 std_pool rand20_t8 block 0 attempt 1 rc=0
+[std] rand20_t8 r-1: ok elapsed=2025.068174 ms qpu=1306.0361 ms
+[std] rand20_t8 r0: ok elapsed=2023.572859 ms qpu=1306.0361 ms
+[std] rand20_t8 r1: ok elapsed=2023.538218 ms qpu=1306.0361 ms
+[std] rand20_t8 r2: ok elapsed=2025.346857 ms qpu=1306.0361 ms
+[std] rand20_t8 r3: ok elapsed=2023.967553 ms qpu=1306.0361 ms
+[std] rand20_t8 r4: ok elapsed=2024.803321 ms qpu=1306.0361 ms
+2026-09-01T22:24:52 --- cell 18/160: block 0 C1 c1_native rand20_t8
+2026-09-01T22:25:05 C1 c1_native rand20_t8 block 0 attempt 1 rc=0
+[c1] rand20_t8 r-1: ok elapsed=1504.696329 ms qpu=1306.0361 ms
+[c1] rand20_t8 r0: ok elapsed=1502.489037 ms qpu=1306.0361 ms
+[c1] rand20_t8 r1: ok elapsed=1510.933922 ms qpu=1306.0361 ms
+[c1] rand20_t8 r2: ok elapsed=1527.636679 ms qpu=1306.0361 ms
+[c1] rand20_t8 r3: ok elapsed=1525.991272 ms qpu=1306.0361 ms
+[c1] rand20_t8 r4: ok elapsed=1515.78365 ms qpu=1306.0361 ms
+2026-09-01T22:25:05 --- cell 19/160: block 0 C1 c1_native rand30_t4
+2026-09-01T22:35:20 C1 c1_native rand30_t4 block 0 attempt 1 rc=0
+[c1] rand30_t4 r-1: data_mismatch elapsed=None ms qpu=2271.1510 ms
+[c1] rand30_t4 r0: ok elapsed=2682.213986 ms qpu=2271.1510 ms
+[c1] rand30_t4 r1: ok elapsed=2620.424929 ms qpu=2271.1510 ms
+[c1] rand30_t4 r2: ok elapsed=2627.782022 ms qpu=2271.1510 ms
+[c1] rand30_t4 r3: ok elapsed=2621.578859 ms qpu=2271.1510 ms
+[c1] rand30_t4 r4: ok elapsed=2624.820322 ms qpu=2271.1510 ms
+2026-09-01T22:35:20 --- cell 20/160: block 0 C1 c1_native rand10_t1
+2026-09-01T22:35:25 C1 c1_native rand10_t1 block 0 attempt 1 rc=0
+[c1] rand10_t1 r-1: ok elapsed=670.814509 ms qpu=586.1906 ms
+[c1] rand10_t1 r0: ok elapsed=672.703498 ms qpu=586.1906 ms
+[c1] rand10_t1 r1: ok elapsed=672.787639 ms qpu=586.1906 ms
+[c1] rand10_t1 r2: ok elapsed=670.527666 ms qpu=586.1906 ms
+[c1] rand10_t1 r3: ok elapsed=671.765348 ms qpu=586.1906 ms
+[c1] rand10_t1 r4: ok elapsed=671.684868 ms qpu=586.1906 ms
+2026-09-01T22:35:25 --- cell 21/160: block 0 C1 c1_native rand20_t5
+2026-09-01T22:35:32 C1 c1_native rand20_t5 block 0 attempt 1 rc=0
+[c1] rand20_t5 r-1: ok elapsed=1017.76978 ms qpu=834.0339 ms
+[c1] rand20_t5 r0: ok elapsed=1033.567687 ms qpu=834.0339 ms
+[c1] rand20_t5 r1: ok elapsed=1031.214803 ms qpu=834.0339 ms
+[c1] rand20_t5 r2: ok elapsed=1016.673758 ms qpu=834.0339 ms
+[c1] rand20_t5 r3: ok elapsed=1018.81156 ms qpu=834.0339 ms
+[c1] rand20_t5 r4: ok elapsed=1016.644858 ms qpu=834.0339 ms
+2026-09-01T22:35:32 --- cell 22/160: block 0 C1 c1_native rand30_t6
+2026-09-01T22:35:49 C1 c1_native rand30_t6 block 0 attempt 1 rc=0
+[c1] rand30_t6 r-1: ok elapsed=2476.566249 ms qpu=2193.9864 ms
+[c1] rand30_t6 r0: ok elapsed=2522.63867 ms qpu=2193.9864 ms
+[c1] rand30_t6 r1: ok elapsed=2519.890243 ms qpu=2193.9864 ms
+[c1] rand30_t6 r2: ok elapsed=2518.672071 ms qpu=2193.9864 ms
+[c1] rand30_t6 r3: ok elapsed=2518.511759 ms qpu=2193.9864 ms
+[c1] rand30_t6 r4: ok elapsed=2520.5622 ms qpu=2193.9864 ms
+2026-09-01T22:35:49 --- cell 23/160: block 0 C1 c1_native rand10_t8
+2026-09-01T22:35:55 C1 c1_native rand10_t8 block 0 attempt 1 rc=0
+[c1] rand10_t8 r-1: ok elapsed=758.965491 ms qpu=669.0893 ms
+[c1] rand10_t8 r0: ok elapsed=758.644817 ms qpu=669.0893 ms
+[c1] rand10_t8 r1: ok elapsed=760.449746 ms qpu=669.0893 ms
+[c1] rand10_t8 r2: ok elapsed=758.661658 ms qpu=669.0893 ms
+[c1] rand10_t8 r3: ok elapsed=759.350285 ms qpu=669.0893 ms
+[c1] rand10_t8 r4: ok elapsed=759.785929 ms qpu=669.0893 ms
+2026-09-01T22:35:55 --- cell 24/160: block 0 C1 c1_pool rand10_t1
+2026-09-01T22:36:02 C1 c1_pool rand10_t1 block 0 attempt 1 rc=0
+[c1] rand10_t1 r-1: ok elapsed=627.173563 ms qpu=586.1906 ms
+[c1] rand10_t1 r0: ok elapsed=628.265693 ms qpu=586.1906 ms
+[c1] rand10_t1 r1: ok elapsed=626.8671 ms qpu=586.1906 ms
+[c1] rand10_t1 r2: ok elapsed=627.992521 ms qpu=586.1906 ms
+[c1] rand10_t1 r3: ok elapsed=627.001161 ms qpu=586.1906 ms
+[c1] rand10_t1 r4: ok elapsed=626.991481 ms qpu=586.1906 ms
+2026-09-01T22:36:02 --- cell 25/160: block 0 C1 c1_pool rand30_t6
+2026-09-01T22:36:19 C1 c1_pool rand30_t6 block 0 attempt 1 rc=0
+[c1] rand30_t6 r-1: ok elapsed=2321.687881 ms qpu=2193.9864 ms
+[c1] rand30_t6 r0: ok elapsed=2324.254396 ms qpu=2193.9864 ms
+[c1] rand30_t6 r1: ok elapsed=2320.025914 ms qpu=2193.9864 ms
+[c1] rand30_t6 r2: ok elapsed=2323.370757 ms qpu=2193.9864 ms
+[c1] rand30_t6 r3: ok elapsed=2320.097294 ms qpu=2193.9864 ms
+[c1] rand30_t6 r4: ok elapsed=2323.382277 ms qpu=2193.9864 ms
+2026-09-01T22:36:19 --- cell 26/160: block 0 C1 c1_pool rand10_t8
+2026-09-01T22:36:41 campaign start: 160 cells, from cell 26
+2026-09-01T22:36:42 image already C1 (xsa_commit: '0071783e_14q')
+2026-09-01T22:36:42 --- cell 26/160: block 0 C1 c1_pool rand10_t8
+2026-09-01T22:46:49 C1 c1_pool rand10_t8 block 0 attempt 1 rc=0
+[c1] rand10_t8 r-1: ok elapsed=715.161793 ms qpu=669.0893 ms
+[c1] rand10_t8 r0: data_mismatch elapsed=None ms qpu=669.0893 ms
+[c1] rand10_t8 r0: ok elapsed=712.994421 ms qpu=669.0893 ms
+[c1] rand10_t8 r1: ok elapsed=707.284564 ms qpu=669.0893 ms
+[c1] rand10_t8 r2: ok elapsed=706.707218 ms qpu=669.0893 ms
+[c1] rand10_t8 r3: ok elapsed=706.520607 ms qpu=669.0893 ms
+[c1] rand10_t8 r4: ok elapsed=707.958251 ms qpu=669.0893 ms
+2026-09-01T22:46:49 --- cell 27/160: block 0 C1 c1_pool rand20_t8
+2026-09-01T22:57:03 C1 c1_pool rand20_t8 block 0 attempt 1 rc=0
+[c1] rand20_t8 r-1: ok elapsed=1380.068483 ms qpu=1306.0361 ms
+[c1] rand20_t8 r0: data_mismatch elapsed=None ms qpu=1306.0361 ms
+[c1] rand20_t8 r0: ok elapsed=1380.456867 ms qpu=1306.0361 ms
+[c1] rand20_t8 r1: ok elapsed=1379.699149 ms qpu=1306.0361 ms
+[c1] rand20_t8 r2: ok elapsed=1386.394236 ms qpu=1306.0361 ms
+[c1] rand20_t8 r3: ok elapsed=1388.353136 ms qpu=1306.0361 ms
+[c1] rand20_t8 r4: ok elapsed=1386.904451 ms qpu=1306.0361 ms
+2026-09-01T22:57:03 --- cell 28/160: block 0 C1 c1_pool rand30_t4
+2026-09-01T23:07:22 C1 c1_pool rand30_t4 block 0 attempt 1 rc=0
+[c1] rand30_t4 r-1: ok elapsed=2395.724191 ms qpu=2271.1510 ms
+[c1] rand30_t4 r0: ok elapsed=2396.724761 ms qpu=2271.1510 ms
+[c1] rand30_t4 r1: data_mismatch elapsed=None ms qpu=2271.1510 ms
+[c1] rand30_t4 r1: ok elapsed=2399.242436 ms qpu=2271.1510 ms
+[c1] rand30_t4 r2: ok elapsed=2398.869142 ms qpu=2271.1510 ms
+[c1] rand30_t4 r3: ok elapsed=2400.064155 ms qpu=2271.1510 ms
+[c1] rand30_t4 r4: ok elapsed=2403.288666 ms qpu=2271.1510 ms
+2026-09-01T23:07:22 --- cell 29/160: block 0 C1 c1_pool rand20_t5
+2026-09-01T23:07:31 C1 c1_pool rand20_t5 block 0 attempt 1 rc=0
+[c1] rand20_t5 r-1: ok elapsed=903.477736 ms qpu=834.0339 ms
+[c1] rand20_t5 r0: ok elapsed=903.550087 ms qpu=834.0339 ms
+[c1] rand20_t5 r1: ok elapsed=903.147063 ms qpu=834.0339 ms
+[c1] rand20_t5 r2: ok elapsed=904.373116 ms qpu=834.0339 ms
+[c1] rand20_t5 r3: ok elapsed=903.091082 ms qpu=834.0339 ms
+[c1] rand20_t5 r4: ok elapsed=904.310284 ms qpu=834.0339 ms
+2026-09-01T23:07:31 mode change c1 -> std: restarting services
+2026-09-01T23:08:02 service restarted; Sep 02 05:39:51 veneno start_qubic_server.sh[197155]: 2026-09-02 05:39:51,534 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 197116 /home/xilinx/software/scripts/dma_server 197152 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:08:02 --- cell 30/160: block 1 C1 std_pool rand10_t6
+2026-09-01T23:08:16 C1 std_pool rand10_t6 block 1 attempt 1 rc=0
+[std] rand10_t6 r-1: ok elapsed=1667.498158 ms qpu=1087.0463 ms
+[std] rand10_t6 r0: ok elapsed=1691.983962 ms qpu=1087.0463 ms
+[std] rand10_t6 r1: ok elapsed=1691.294896 ms qpu=1087.0463 ms
+[std] rand10_t6 r2: ok elapsed=1692.216265 ms qpu=1087.0463 ms
+[std] rand10_t6 r3: ok elapsed=1691.414306 ms qpu=1087.0463 ms
+[std] rand10_t6 r4: ok elapsed=1692.469337 ms qpu=1087.0463 ms
+2026-09-01T23:08:16 --- cell 31/160: block 1 C1 std_pool rand30_t5
+2026-09-01T23:08:40 C1 std_pool rand30_t5 block 1 attempt 1 rc=0
+[std] rand30_t5 r-1: ok elapsed=3311.47264 ms qpu=2272.7094 ms
+[std] rand30_t5 r0: ok elapsed=3313.134557 ms qpu=2272.7094 ms
+[std] rand30_t5 r1: ok elapsed=3314.617481 ms qpu=2272.7094 ms
+[std] rand30_t5 r2: ok elapsed=3311.518291 ms qpu=2272.7094 ms
+[std] rand30_t5 r3: ok elapsed=3311.986515 ms qpu=2272.7094 ms
+[std] rand30_t5 r4: ok elapsed=3310.925054 ms qpu=2272.7094 ms
+2026-09-01T23:08:40 --- cell 32/160: block 1 C1 std_pool rand10_t5
+2026-09-01T23:08:44 C1 std_pool rand10_t5 block 1 attempt 1 rc=0
+[std] rand10_t5 r-1: ok elapsed=268.461345 ms qpu=186.5717 ms
+[std] rand10_t5 r0: ok elapsed=269.431855 ms qpu=186.5717 ms
+[std] rand10_t5 r1: ok elapsed=268.373024 ms qpu=186.5717 ms
+[std] rand10_t5 r2: ok elapsed=268.335104 ms qpu=186.5717 ms
+[std] rand10_t5 r3: ok elapsed=268.322064 ms qpu=186.5717 ms
+[std] rand10_t5 r4: ok elapsed=268.358584 ms qpu=186.5717 ms
+2026-09-01T23:08:44 --- cell 33/160: block 1 C1 std_pool rand20_t3
+2026-09-01T23:09:00 C1 std_pool rand20_t3 block 1 attempt 1 rc=0
+[std] rand20_t3 r-1: ok elapsed=2051.265286 ms qpu=1385.1216 ms
+[std] rand20_t3 r0: ok elapsed=2048.478748 ms qpu=1385.1216 ms
+[std] rand20_t3 r1: ok elapsed=2051.091674 ms qpu=1385.1216 ms
+[std] rand20_t3 r2: ok elapsed=2049.421157 ms qpu=1385.1216 ms
+[std] rand20_t3 r3: ok elapsed=2049.63986 ms qpu=1385.1216 ms
+[std] rand20_t3 r4: ok elapsed=2049.807241 ms qpu=1385.1216 ms
+2026-09-01T23:09:00 --- cell 34/160: block 1 C1 std_pool rand20_t1
+2026-09-01T23:09:33 C1 std_pool rand20_t1 block 1 attempt 1 rc=0
+[std] rand20_t1 r-1: ok elapsed=4833.522693 ms qpu=3241.2445 ms
+[std] rand20_t1 r0: ok elapsed=4830.536113 ms qpu=3241.2445 ms
+[std] rand20_t1 r1: ok elapsed=4829.652684 ms qpu=3241.2445 ms
+[std] rand20_t1 r2: ok elapsed=4839.869516 ms qpu=3241.2445 ms
+[std] rand20_t1 r3: ok elapsed=4829.22187 ms qpu=3241.2445 ms
+[std] rand20_t1 r4: ok elapsed=4832.33945 ms qpu=3241.2445 ms
+2026-09-01T23:09:33 --- cell 35/160: block 1 C1 std_pool ghz8_x30
+2026-09-01T23:09:36 C1 std_pool ghz8_x30 block 1 attempt 1 rc=0
+[std] ghz8_x30 r-1: ok elapsed=108.96837 ms qpu=26.2694 ms
+[std] ghz8_x30 r0: ok elapsed=109.076201 ms qpu=26.2694 ms
+[std] ghz8_x30 r1: ok elapsed=108.907239 ms qpu=26.2694 ms
+[std] ghz8_x30 r2: ok elapsed=109.027571 ms qpu=26.2694 ms
+[std] ghz8_x30 r3: ok elapsed=108.95638 ms qpu=26.2694 ms
+[std] ghz8_x30 r4: ok elapsed=108.95838 ms qpu=26.2694 ms
+2026-09-01T23:09:36 --- cell 36/160: block 1 C1 std_pool rand30_t2
+2026-09-01T23:09:58 C1 std_pool rand30_t2 block 1 attempt 1 rc=0
+[std] rand30_t2 r-1: ok elapsed=3044.734722 ms qpu=1925.6799 ms
+[std] rand30_t2 r0: ok elapsed=3047.143966 ms qpu=1925.6799 ms
+[std] rand30_t2 r1: ok elapsed=3044.368108 ms qpu=1925.6799 ms
+[std] rand30_t2 r2: ok elapsed=3044.035715 ms qpu=1925.6799 ms
+[std] rand30_t2 r3: ok elapsed=3044.719281 ms qpu=1925.6799 ms
+[std] rand30_t2 r4: ok elapsed=3045.738432 ms qpu=1925.6799 ms
+2026-09-01T23:09:58 mode change std -> c1: restarting services
+2026-09-01T23:10:29 service restarted; Sep 02 05:42:18 veneno start_qubic_server.sh[197693]: 2026-09-02 05:42:18,099 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 197655 /home/xilinx/software/scripts/dma_server 197691 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:10:29 --- cell 37/160: block 1 C1 c1_native rand10_t6
+2026-09-01T23:13:08 C1 c1_native rand10_t6 block 1 attempt 1 rc=0
+[c1] rand10_t6 r-1: ok elapsed=1217.551008 ms qpu=1087.0463 ms
+[c1] rand10_t6 r0: ok elapsed=1220.264295 ms qpu=1087.0463 ms
+[c1] rand10_t6 r1: ok elapsed=1220.965972 ms qpu=1087.0463 ms
+[c1] rand10_t6 r2: ok elapsed=1218.564427 ms qpu=1087.0463 ms
+[c1] rand10_t6 r3: data_mismatch elapsed=None ms qpu=1087.0463 ms
+[c1] rand10_t6 r3: ok elapsed=1216.330025 ms qpu=1087.0463 ms
+[c1] rand10_t6 r4: ok elapsed=1214.305605 ms qpu=1087.0463 ms
+2026-09-01T23:13:08 --- cell 38/160: block 1 C1 c1_native rand10_t5
+2026-09-01T23:13:11 C1 c1_native rand10_t5 block 1 attempt 1 rc=0
+[c1] rand10_t5 r-1: ok elapsed=262.303153 ms qpu=186.5717 ms
+[c1] rand10_t5 r0: ok elapsed=262.495765 ms qpu=186.5717 ms
+[c1] rand10_t5 r1: ok elapsed=261.360644 ms qpu=186.5717 ms
+[c1] rand10_t5 r2: ok elapsed=260.207563 ms qpu=186.5717 ms
+[c1] rand10_t5 r3: ok elapsed=260.569817 ms qpu=186.5717 ms
+[c1] rand10_t5 r4: ok elapsed=260.579496 ms qpu=186.5717 ms
+2026-09-01T23:13:11 --- cell 39/160: block 1 C1 c1_native rand20_t3
+2026-09-01T23:13:22 C1 c1_native rand20_t3 block 1 attempt 1 rc=0
+[c1] rand20_t3 r-1: ok elapsed=1593.76474 ms qpu=1385.1216 ms
+[c1] rand20_t3 r0: ok elapsed=1606.920402 ms qpu=1385.1216 ms
+[c1] rand20_t3 r1: ok elapsed=1625.79139 ms qpu=1385.1216 ms
+[c1] rand20_t3 r2: ok elapsed=1618.329756 ms qpu=1385.1216 ms
+[c1] rand20_t3 r3: ok elapsed=1593.638079 ms qpu=1385.1216 ms
+[c1] rand20_t3 r4: ok elapsed=1592.839091 ms qpu=1385.1216 ms
+2026-09-01T23:13:22 --- cell 40/160: block 1 C1 c1_native ghz8_x30
+2026-09-01T23:13:25 C1 c1_native ghz8_x30 block 1 attempt 1 rc=0
+[c1] ghz8_x30 r-1: ok elapsed=103.00541 ms qpu=26.2694 ms
+[c1] ghz8_x30 r0: ok elapsed=120.254573 ms qpu=26.2694 ms
+[c1] ghz8_x30 r1: ok elapsed=102.856908 ms qpu=26.2694 ms
+[c1] ghz8_x30 r2: ok elapsed=102.871249 ms qpu=26.2694 ms
+[c1] ghz8_x30 r3: ok elapsed=102.846719 ms qpu=26.2694 ms
+[c1] ghz8_x30 r4: ok elapsed=102.870899 ms qpu=26.2694 ms
+2026-09-01T23:13:25 --- cell 41/160: block 1 C1 c1_native rand30_t5
+2026-09-01T23:16:15 C1 c1_native rand30_t5 block 1 attempt 1 rc=0
+[c1] rand30_t5 r-1: ok elapsed=2617.680371 ms qpu=2272.7094 ms
+[c1] rand30_t5 r0: ok elapsed=2591.928474 ms qpu=2272.7094 ms
+[c1] rand30_t5 r1: ok elapsed=2620.519859 ms qpu=2272.7094 ms
+[c1] rand30_t5 r2: data_mismatch elapsed=None ms qpu=2272.7094 ms
+[c1] rand30_t5 r2: ok elapsed=2578.059195 ms qpu=2272.7094 ms
+[c1] rand30_t5 r3: ok elapsed=2577.749422 ms qpu=2272.7094 ms
+[c1] rand30_t5 r4: ok elapsed=2576.858382 ms qpu=2272.7094 ms
+2026-09-01T23:16:15 --- cell 42/160: block 1 C1 c1_native rand20_t1
+2026-09-01T23:16:39 C1 c1_native rand20_t1 block 1 attempt 1 rc=0
+[c1] rand20_t1 r-1: ok elapsed=3551.375859 ms qpu=3241.2445 ms
+[c1] rand20_t1 r0: ok elapsed=3488.953405 ms qpu=3241.2445 ms
+[c1] rand20_t1 r1: ok elapsed=3489.561421 ms qpu=3241.2445 ms
+[c1] rand20_t1 r2: ok elapsed=3488.836194 ms qpu=3241.2445 ms
+[c1] rand20_t1 r3: ok elapsed=3495.43256 ms qpu=3241.2445 ms
+[c1] rand20_t1 r4: ok elapsed=3488.707802 ms qpu=3241.2445 ms
+2026-09-01T23:16:39 --- cell 43/160: block 1 C1 c1_native rand30_t2
+2026-09-01T23:19:25 C1 c1_native rand30_t2 block 1 attempt 1 rc=0
+[c1] rand30_t2 r-1: ok elapsed=2261.732251 ms qpu=1925.6799 ms
+[c1] rand30_t2 r0: ok elapsed=2233.013834 ms qpu=1925.6799 ms
+[c1] rand30_t2 r1: ok elapsed=2231.307537 ms qpu=1925.6799 ms
+[c1] rand30_t2 r2: ok elapsed=2231.933823 ms qpu=1925.6799 ms
+[c1] rand30_t2 r3: data_mismatch elapsed=None ms qpu=1925.6799 ms
+[c1] rand30_t2 r3: ok elapsed=2260.005614 ms qpu=1925.6799 ms
+[c1] rand30_t2 r4: ok elapsed=2270.095415 ms qpu=1925.6799 ms
+2026-09-01T23:19:25 --- cell 44/160: block 1 C1 c1_pool rand20_t1
+2026-09-01T23:22:19 C1 c1_pool rand20_t1 block 1 attempt 1 rc=0
+[c1] rand20_t1 r-1: ok elapsed=3350.333448 ms qpu=3241.2445 ms
+[c1] rand20_t1 r0: ok elapsed=3347.679792 ms qpu=3241.2445 ms
+[c1] rand20_t1 r1: ok elapsed=3340.093876 ms qpu=3241.2445 ms
+[c1] rand20_t1 r2: ok elapsed=3340.647142 ms qpu=3241.2445 ms
+[c1] rand20_t1 r3: data_mismatch elapsed=None ms qpu=3241.2445 ms
+[c1] rand20_t1 r3: ok elapsed=3340.660552 ms qpu=3241.2445 ms
+[c1] rand20_t1 r4: ok elapsed=3352.695712 ms qpu=3241.2445 ms
+2026-09-01T23:22:19 --- cell 45/160: block 1 C1 c1_pool rand30_t2
+2026-09-01T23:22:35 C1 c1_pool rand30_t2 block 1 attempt 1 rc=0
+[c1] rand30_t2 r-1: ok elapsed=2047.66357 ms qpu=1925.6799 ms
+[c1] rand30_t2 r0: ok elapsed=2049.475188 ms qpu=1925.6799 ms
+[c1] rand30_t2 r1: ok elapsed=2050.341747 ms qpu=1925.6799 ms
+[c1] rand30_t2 r2: ok elapsed=2046.588979 ms qpu=1925.6799 ms
+[c1] rand30_t2 r3: ok elapsed=2048.887722 ms qpu=1925.6799 ms
+[c1] rand30_t2 r4: ok elapsed=2047.75581 ms qpu=1925.6799 ms
+2026-09-01T23:22:35 --- cell 46/160: block 1 C1 c1_pool rand20_t3
+2026-09-01T23:22:47 C1 c1_pool rand20_t3 block 1 attempt 1 rc=0
+[c1] rand20_t3 r-1: ok elapsed=1466.78522 ms qpu=1385.1216 ms
+[c1] rand20_t3 r0: ok elapsed=1463.045953 ms qpu=1385.1216 ms
+[c1] rand20_t3 r1: ok elapsed=1464.477737 ms qpu=1385.1216 ms
+[c1] rand20_t3 r2: ok elapsed=1464.919471 ms qpu=1385.1216 ms
+[c1] rand20_t3 r3: ok elapsed=1465.142954 ms qpu=1385.1216 ms
+[c1] rand20_t3 r4: ok elapsed=1467.054793 ms qpu=1385.1216 ms
+2026-09-01T23:22:47 --- cell 47/160: block 1 C1 c1_pool ghz8_x30
+2026-09-01T23:25:21 C1 c1_pool ghz8_x30 block 1 attempt 1 rc=0
+[c1] ghz8_x30 r-1: ok elapsed=103.843459 ms qpu=26.2694 ms
+[c1] ghz8_x30 r0: data_mismatch elapsed=None ms qpu=26.2694 ms
+[c1] ghz8_x30 r0: ok elapsed=103.98 ms qpu=26.2694 ms
+[c1] ghz8_x30 r1: ok elapsed=103.752348 ms qpu=26.2694 ms
+[c1] ghz8_x30 r2: ok elapsed=103.772448 ms qpu=26.2694 ms
+[c1] ghz8_x30 r3: ok elapsed=103.796318 ms qpu=26.2694 ms
+[c1] ghz8_x30 r4: ok elapsed=103.93351 ms qpu=26.2694 ms
+2026-09-01T23:25:21 --- cell 48/160: block 1 C1 c1_pool rand10_t5
+2026-09-01T23:25:24 C1 c1_pool rand10_t5 block 1 attempt 1 rc=0
+[c1] rand10_t5 r-1: ok elapsed=217.750118 ms qpu=186.5717 ms
+[c1] rand10_t5 r0: ok elapsed=216.154022 ms qpu=186.5717 ms
+[c1] rand10_t5 r1: ok elapsed=215.920509 ms qpu=186.5717 ms
+[c1] rand10_t5 r2: ok elapsed=216.00555 ms qpu=186.5717 ms
+[c1] rand10_t5 r3: ok elapsed=215.766828 ms qpu=186.5717 ms
+[c1] rand10_t5 r4: ok elapsed=215.714137 ms qpu=186.5717 ms
+2026-09-01T23:25:24 --- cell 49/160: block 1 C1 c1_pool rand30_t5
+2026-09-01T23:28:14 C1 c1_pool rand30_t5 block 1 attempt 1 rc=0
+[c1] rand30_t5 r-1: ok elapsed=2382.148775 ms qpu=2272.7094 ms
+[c1] rand30_t5 r0: ok elapsed=2380.256866 ms qpu=2272.7094 ms
+[c1] rand30_t5 r1: data_mismatch elapsed=None ms qpu=2272.7094 ms
+[c1] rand30_t5 r1: ok elapsed=2386.291147 ms qpu=2272.7094 ms
+[c1] rand30_t5 r2: ok elapsed=2390.022394 ms qpu=2272.7094 ms
+[c1] rand30_t5 r3: ok elapsed=2396.091285 ms qpu=2272.7094 ms
+[c1] rand30_t5 r4: ok elapsed=2392.894453 ms qpu=2272.7094 ms
+2026-09-01T23:28:14 --- cell 50/160: block 1 C1 c1_pool rand10_t6
+2026-09-01T23:28:24 C1 c1_pool rand10_t6 block 1 attempt 1 rc=0
+[c1] rand10_t6 r-1: ok elapsed=1137.403016 ms qpu=1087.0463 ms
+[c1] rand10_t6 r0: ok elapsed=1136.763299 ms qpu=1087.0463 ms
+[c1] rand10_t6 r1: ok elapsed=1135.508687 ms qpu=1087.0463 ms
+[c1] rand10_t6 r2: ok elapsed=1137.332505 ms qpu=1087.0463 ms
+[c1] rand10_t6 r3: ok elapsed=1138.612638 ms qpu=1087.0463 ms
+[c1] rand10_t6 r4: ok elapsed=1136.671008 ms qpu=1087.0463 ms
+2026-09-01T23:28:24 mode change c1 -> std: restarting services
+2026-09-01T23:28:56 service restarted; Sep 02 06:00:44 veneno start_qubic_server.sh[199717]: 2026-09-02 06:00:44,351 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 199679 /home/xilinx/software/scripts/dma_server 199715 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:28:56 --- cell 51/160: block 1 C1 std_native rand10_t6
+2026-09-01T23:29:08 C1 std_native rand10_t6 block 1 attempt 1 rc=0
+[std] rand10_t6 r-1: ok elapsed=1764.495378 ms qpu=1087.0463 ms
+[std] rand10_t6 r0: ok elapsed=1764.009973 ms qpu=1087.0463 ms
+[std] rand10_t6 r1: ok elapsed=1767.432537 ms qpu=1087.0463 ms
+[std] rand10_t6 r2: ok elapsed=1765.811651 ms qpu=1087.0463 ms
+[std] rand10_t6 r3: ok elapsed=1764.829911 ms qpu=1087.0463 ms
+[std] rand10_t6 r4: ok elapsed=1765.019023 ms qpu=1087.0463 ms
+2026-09-01T23:29:08 --- cell 52/160: block 1 C1 std_native rand30_t5
+2026-09-01T23:29:33 C1 std_native rand30_t5 block 1 attempt 1 rc=0
+[std] rand30_t5 r-1: ok elapsed=3516.936405 ms qpu=2272.7094 ms
+[std] rand30_t5 r0: ok elapsed=3518.149097 ms qpu=2272.7094 ms
+[std] rand30_t5 r1: ok elapsed=3521.359419 ms qpu=2272.7094 ms
+[std] rand30_t5 r2: ok elapsed=3521.292528 ms qpu=2272.7094 ms
+[std] rand30_t5 r3: ok elapsed=3596.764893 ms qpu=2272.7094 ms
+[std] rand30_t5 r4: ok elapsed=3520.507671 ms qpu=2272.7094 ms
+2026-09-01T23:29:33 --- cell 53/160: block 1 C1 std_native rand10_t5
+2026-09-01T23:29:36 C1 std_native rand10_t5 block 1 attempt 1 rc=0
+[std] rand10_t5 r-1: ok elapsed=313.666437 ms qpu=186.5717 ms
+[std] rand10_t5 r0: ok elapsed=312.724677 ms qpu=186.5717 ms
+[std] rand10_t5 r1: ok elapsed=312.89774 ms qpu=186.5717 ms
+[std] rand10_t5 r2: ok elapsed=312.95616 ms qpu=186.5717 ms
+[std] rand10_t5 r3: ok elapsed=312.893809 ms qpu=186.5717 ms
+[std] rand10_t5 r4: ok elapsed=313.016151 ms qpu=186.5717 ms
+2026-09-01T23:29:36 --- cell 54/160: block 1 C1 std_native ghz8_x30
+2026-09-01T23:29:39 C1 std_native ghz8_x30 block 1 attempt 1 rc=0
+[std] ghz8_x30 r-1: ok elapsed=109.218002 ms qpu=26.2694 ms
+[std] ghz8_x30 r0: ok elapsed=108.94403 ms qpu=26.2694 ms
+[std] ghz8_x30 r1: ok elapsed=108.96804 ms qpu=26.2694 ms
+[std] ghz8_x30 r2: ok elapsed=109.119191 ms qpu=26.2694 ms
+[std] ghz8_x30 r3: ok elapsed=109.00027 ms qpu=26.2694 ms
+[std] ghz8_x30 r4: ok elapsed=108.96318 ms qpu=26.2694 ms
+2026-09-01T23:29:39 --- cell 55/160: block 1 C1 std_native rand20_t3
+2026-09-01T23:29:53 C1 std_native rand20_t3 block 1 attempt 1 rc=0
+[std] rand20_t3 r-1: ok elapsed=2191.60922 ms qpu=1385.1216 ms
+[std] rand20_t3 r0: ok elapsed=2189.341916 ms qpu=1385.1216 ms
+[std] rand20_t3 r1: ok elapsed=2191.128405 ms qpu=1385.1216 ms
+[std] rand20_t3 r2: ok elapsed=2189.609209 ms qpu=1385.1216 ms
+[std] rand20_t3 r3: ok elapsed=2188.690101 ms qpu=1385.1216 ms
+[std] rand20_t3 r4: ok elapsed=2191.341067 ms qpu=1385.1216 ms
+2026-09-01T23:29:53 --- cell 56/160: block 1 C1 std_native rand30_t2
+2026-09-01T23:30:15 C1 std_native rand30_t2 block 1 attempt 1 rc=0
+[std] rand30_t2 r-1: ok elapsed=3241.948414 ms qpu=1925.6799 ms
+[std] rand30_t2 r0: ok elapsed=3243.911514 ms qpu=1925.6799 ms
+[std] rand30_t2 r1: ok elapsed=3240.671572 ms qpu=1925.6799 ms
+[std] rand30_t2 r2: ok elapsed=3240.43259 ms qpu=1925.6799 ms
+[std] rand30_t2 r3: ok elapsed=3243.695692 ms qpu=1925.6799 ms
+[std] rand30_t2 r4: ok elapsed=3241.159417 ms qpu=1925.6799 ms
+2026-09-01T23:30:15 --- cell 57/160: block 1 C1 std_native rand20_t1
+2026-09-01T23:30:49 C1 std_native rand20_t1 block 1 attempt 1 rc=0
+[std] rand20_t1 r-1: ok elapsed=4998.108949 ms qpu=3241.2445 ms
+[std] rand20_t1 r0: ok elapsed=4991.327291 ms qpu=3241.2445 ms
+[std] rand20_t1 r1: ok elapsed=4992.972888 ms qpu=3241.2445 ms
+[std] rand20_t1 r2: ok elapsed=4994.635434 ms qpu=3241.2445 ms
+[std] rand20_t1 r3: ok elapsed=4989.592174 ms qpu=3241.2445 ms
+[std] rand20_t1 r4: ok elapsed=4990.035888 ms qpu=3241.2445 ms
+2026-09-01T23:30:50 switching image -> C3 (63329aaf)
+2026-09-01T23:31:24 service restarted; Sep 02 06:03:10 veneno start_qubic_server.sh[200290]: 2026-09-02 06:03:10,278 INFO: loading bitfile: 63329aaf
+10012 sudo -S nohup ./std_server 10014 ./std_server 200252 /home/xilinx/software/scripts/dma_server 200288 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:31:24 --- cell 58/160: block 1 C3 c3_pool rand30_t2
+2026-09-01T23:31:40 C3 c3_pool rand30_t2 block 1 attempt 1 rc=0
+[c3] rand30_t2 r-1: ok elapsed=1943.833001 ms qpu=1925.6799 ms
+[c3] rand30_t2 r0: ok elapsed=1943.827161 ms qpu=1925.6799 ms
+[c3] rand30_t2 r1: ok elapsed=1943.814441 ms qpu=1925.6799 ms
+[c3] rand30_t2 r2: ok elapsed=1943.823041 ms qpu=1925.6799 ms
+[c3] rand30_t2 r3: ok elapsed=1943.838312 ms qpu=1925.6799 ms
+[c3] rand30_t2 r4: ok elapsed=1943.814701 ms qpu=1925.6799 ms
+2026-09-01T23:31:40 --- cell 59/160: block 1 C3 c3_pool rand10_t5
+2026-09-01T23:31:43 C3 c3_pool rand10_t5 block 1 attempt 1 rc=0
+[c3] rand10_t5 r-1: ok elapsed=188.362104 ms qpu=186.5717 ms
+[c3] rand10_t5 r0: ok elapsed=188.372984 ms qpu=186.5717 ms
+[c3] rand10_t5 r1: ok elapsed=188.295594 ms qpu=186.5717 ms
+[c3] rand10_t5 r2: ok elapsed=188.349314 ms qpu=186.5717 ms
+[c3] rand10_t5 r3: ok elapsed=188.284673 ms qpu=186.5717 ms
+[c3] rand10_t5 r4: ok elapsed=188.300733 ms qpu=186.5717 ms
+2026-09-01T23:31:43 --- cell 60/160: block 1 C3 c3_pool ghz8_x30
+2026-09-01T23:31:46 C3 c3_pool ghz8_x30 block 1 attempt 1 rc=0
+[c3] ghz8_x30 r-1: ok elapsed=27.190952 ms qpu=26.2694 ms
+[c3] ghz8_x30 r0: ok elapsed=26.706028 ms qpu=26.2694 ms
+[c3] ghz8_x30 r1: ok elapsed=26.710328 ms qpu=26.2694 ms
+[c3] ghz8_x30 r2: ok elapsed=26.693107 ms qpu=26.2694 ms
+[c3] ghz8_x30 r3: ok elapsed=26.697727 ms qpu=26.2694 ms
+[c3] ghz8_x30 r4: ok elapsed=26.696207 ms qpu=26.2694 ms
+2026-09-01T23:31:46 --- cell 61/160: block 1 C3 c3_pool rand20_t3
+2026-09-01T23:31:59 C3 c3_pool rand20_t3 block 1 attempt 1 rc=0
+[c3] rand20_t3 r-1: ok elapsed=1395.388276 ms qpu=1385.1216 ms
+[c3] rand20_t3 r0: ok elapsed=1395.376776 ms qpu=1385.1216 ms
+[c3] rand20_t3 r1: ok elapsed=1395.371746 ms qpu=1385.1216 ms
+[c3] rand20_t3 r2: ok elapsed=1395.388406 ms qpu=1385.1216 ms
+[c3] rand20_t3 r3: ok elapsed=1395.388806 ms qpu=1385.1216 ms
+[c3] rand20_t3 r4: ok elapsed=1395.373376 ms qpu=1385.1216 ms
+2026-09-01T23:31:59 --- cell 62/160: block 1 C3 c3_pool rand10_t6
+2026-09-01T23:32:09 C3 c3_pool rand10_t6 block 1 attempt 1 rc=0
+[c3] rand10_t6 r-1: ok elapsed=1096.87409 ms qpu=1087.0463 ms
+[c3] rand10_t6 r0: ok elapsed=1096.909681 ms qpu=1087.0463 ms
+[c3] rand10_t6 r1: ok elapsed=1096.86973 ms qpu=1087.0463 ms
+[c3] rand10_t6 r2: ok elapsed=1096.881491 ms qpu=1087.0463 ms
+[c3] rand10_t6 r3: ok elapsed=1096.901941 ms qpu=1087.0463 ms
+[c3] rand10_t6 r4: ok elapsed=1096.87496 ms qpu=1087.0463 ms
+2026-09-01T23:32:09 --- cell 63/160: block 1 C3 c3_pool rand20_t1
+2026-09-01T23:32:33 C3 c3_pool rand20_t1 block 1 attempt 1 rc=0
+[c3] rand20_t1 r-1: ok elapsed=3264.515521 ms qpu=3241.2445 ms
+[c3] rand20_t1 r0: ok elapsed=3264.52297 ms qpu=3241.2445 ms
+[c3] rand20_t1 r1: ok elapsed=3264.52225 ms qpu=3241.2445 ms
+[c3] rand20_t1 r2: ok elapsed=3264.51522 ms qpu=3241.2445 ms
+[c3] rand20_t1 r3: ok elapsed=3264.5076 ms qpu=3241.2445 ms
+[c3] rand20_t1 r4: ok elapsed=3264.515961 ms qpu=3241.2445 ms
+2026-09-01T23:32:33 --- cell 64/160: block 1 C3 c3_pool rand30_t5
+2026-09-01T23:32:51 C3 c3_pool rand30_t5 block 1 attempt 1 rc=0
+[c3] rand30_t5 r-1: ok elapsed=2286.986654 ms qpu=2272.7094 ms
+[c3] rand30_t5 r0: ok elapsed=2286.990454 ms qpu=2272.7094 ms
+[c3] rand30_t5 r1: ok elapsed=2286.985023 ms qpu=2272.7094 ms
+[c3] rand30_t5 r2: ok elapsed=2286.984444 ms qpu=2272.7094 ms
+[c3] rand30_t5 r3: ok elapsed=2286.991503 ms qpu=2272.7094 ms
+[c3] rand30_t5 r4: ok elapsed=2287.024694 ms qpu=2272.7094 ms
+2026-09-01T23:32:51 --- cell 65/160: block 2 C3 c3_pool rand10_t9
+2026-09-01T23:33:00 C3 c3_pool rand10_t9 block 2 attempt 1 rc=0
+[c3] rand10_t9 r-1: data_mismatch elapsed=None ms qpu=822.8857 ms
+[c3] rand10_t9 r0: ok elapsed=828.039461 ms qpu=822.8857 ms
+[c3] rand10_t9 r1: ok elapsed=828.048602 ms qpu=822.8857 ms
+[c3] rand10_t9 r2: ok elapsed=828.045532 ms qpu=822.8857 ms
+[c3] rand10_t9 r3: ok elapsed=828.097022 ms qpu=822.8857 ms
+[c3] rand10_t9 r4: ok elapsed=828.093442 ms qpu=822.8857 ms
+2026-09-01T23:33:00 --- cell 66/160: block 2 C3 c3_pool rand10_t7
+2026-09-01T23:33:08 C3 c3_pool rand10_t7 block 2 attempt 1 rc=0
+[c3] rand10_t7 r-1: ok elapsed=669.386675 ms qpu=665.5613 ms
+[c3] rand10_t7 r0: ok elapsed=670.305024 ms qpu=665.5613 ms
+[c3] rand10_t7 r1: ok elapsed=670.024132 ms qpu=665.5613 ms
+[c3] rand10_t7 r2: ok elapsed=669.398675 ms qpu=665.5613 ms
+[c3] rand10_t7 r3: ok elapsed=669.406325 ms qpu=665.5613 ms
+[c3] rand10_t7 r4: ok elapsed=669.396515 ms qpu=665.5613 ms
+2026-09-01T23:33:08 --- cell 67/160: block 2 C3 c3_pool rand30_t7
+2026-09-01T23:33:36 C3 c3_pool rand30_t7 block 2 attempt 1 rc=0
+[c3] rand30_t7 r-1: ok elapsed=4068.775694 ms qpu=4041.8606 ms
+[c3] rand30_t7 r0: ok elapsed=4068.740094 ms qpu=4041.8606 ms
+[c3] rand30_t7 r1: ok elapsed=4068.732093 ms qpu=4041.8606 ms
+[c3] rand30_t7 r2: ok elapsed=4068.768184 ms qpu=4041.8606 ms
+[c3] rand30_t7 r3: ok elapsed=4068.769554 ms qpu=4041.8606 ms
+[c3] rand30_t7 r4: ok elapsed=4068.755933 ms qpu=4041.8606 ms
+2026-09-01T23:33:36 --- cell 68/160: block 2 C3 c3_pool rand20_t7
+2026-09-01T23:33:48 C3 c3_pool rand20_t7 block 2 attempt 1 rc=0
+[c3] rand20_t7 r-1: ok elapsed=1284.212245 ms qpu=1274.4202 ms
+[c3] rand20_t7 r0: ok elapsed=1284.206894 ms qpu=1274.4202 ms
+[c3] rand20_t7 r1: ok elapsed=1284.206094 ms qpu=1274.4202 ms
+[c3] rand20_t7 r2: ok elapsed=1284.217785 ms qpu=1274.4202 ms
+[c3] rand20_t7 r3: ok elapsed=1284.227214 ms qpu=1274.4202 ms
+[c3] rand20_t7 r4: ok elapsed=1284.210275 ms qpu=1274.4202 ms
+2026-09-01T23:33:48 --- cell 69/160: block 2 C3 c3_pool rand30_t9
+2026-09-01T23:34:05 C3 c3_pool rand30_t9 block 2 attempt 1 rc=0
+[c3] rand30_t9 r-1: ok elapsed=2096.856852 ms qpu=2079.8393 ms
+[c3] rand30_t9 r0: ok elapsed=2096.845231 ms qpu=2079.8393 ms
+[c3] rand30_t9 r1: ok elapsed=2096.853432 ms qpu=2079.8393 ms
+[c3] rand30_t9 r2: ok elapsed=2096.858212 ms qpu=2079.8393 ms
+[c3] rand30_t9 r3: ok elapsed=2096.864182 ms qpu=2079.8393 ms
+[c3] rand30_t9 r4: ok elapsed=2096.853732 ms qpu=2079.8393 ms
+2026-09-01T23:34:05 --- cell 70/160: block 2 C3 c3_pool rand20_t2
+2026-09-01T23:34:13 C3 c3_pool rand20_t2 block 2 attempt 1 rc=0
+[c3] rand20_t2 r-1: ok elapsed=708.504866 ms qpu=700.9111 ms
+[c3] rand20_t2 r0: ok elapsed=708.550007 ms qpu=700.9111 ms
+[c3] rand20_t2 r1: ok elapsed=708.499476 ms qpu=700.9111 ms
+[c3] rand20_t2 r2: ok elapsed=708.502656 ms qpu=700.9111 ms
+[c3] rand20_t2 r3: ok elapsed=708.578937 ms qpu=700.9111 ms
+[c3] rand20_t2 r4: ok elapsed=708.521107 ms qpu=700.9111 ms
+2026-09-01T23:34:14 switching image -> C1 (0071783e_14q)
+2026-09-01T23:34:45 service restarted; Sep 02 06:06:34 veneno start_qubic_server.sh[201021]: 2026-09-02 06:06:34,170 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 200983 /home/xilinx/software/scripts/dma_server 201019 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:34:45 --- cell 71/160: block 2 C1 c1_native rand20_t2
+2026-09-01T23:34:53 C1 c1_native rand20_t2 block 2 attempt 1 rc=0
+[c1] rand20_t2 r-1: ok elapsed=870.321225 ms qpu=700.9111 ms
+[c1] rand20_t2 r0: ok elapsed=875.654158 ms qpu=700.9111 ms
+[c1] rand20_t2 r1: ok elapsed=865.475536 ms qpu=700.9111 ms
+[c1] rand20_t2 r2: ok elapsed=867.096532 ms qpu=700.9111 ms
+[c1] rand20_t2 r3: ok elapsed=882.182983 ms qpu=700.9111 ms
+[c1] rand20_t2 r4: ok elapsed=874.591568 ms qpu=700.9111 ms
+2026-09-01T23:34:53 --- cell 72/160: block 2 C1 c1_native rand10_t9
+2026-09-01T23:34:59 C1 c1_native rand10_t9 block 2 attempt 1 rc=0
+[c1] rand10_t9 r-1: ok elapsed=937.962801 ms qpu=822.8857 ms
+[c1] rand10_t9 r0: ok elapsed=934.972442 ms qpu=822.8857 ms
+[c1] rand10_t9 r1: ok elapsed=933.80221 ms qpu=822.8857 ms
+[c1] rand10_t9 r2: ok elapsed=938.367865 ms qpu=822.8857 ms
+[c1] rand10_t9 r3: ok elapsed=938.100482 ms qpu=822.8857 ms
+[c1] rand10_t9 r4: ok elapsed=937.477426 ms qpu=822.8857 ms
+2026-09-01T23:34:59 --- cell 73/160: block 2 C1 c1_native rand30_t7
+2026-09-01T23:37:59 C1 c1_native rand30_t7 block 2 attempt 1 rc=0
+[c1] rand30_t7 r-1: ok elapsed=4469.467422 ms qpu=4041.8606 ms
+[c1] rand30_t7 r0: ok elapsed=4404.439251 ms qpu=4041.8606 ms
+[c1] rand30_t7 r1: ok elapsed=4469.853696 ms qpu=4041.8606 ms
+[c1] rand30_t7 r2: data_mismatch elapsed=None ms qpu=4041.8606 ms
+[c1] rand30_t7 r2: ok elapsed=4471.508222 ms qpu=4041.8606 ms
+[c1] rand30_t7 r3: ok elapsed=4480.307171 ms qpu=4041.8606 ms
+[c1] rand30_t7 r4: ok elapsed=4421.705144 ms qpu=4041.8606 ms
+2026-09-01T23:37:59 --- cell 74/160: block 2 C1 c1_native rand20_t7
+2026-09-01T23:38:10 C1 c1_native rand20_t7 block 2 attempt 1 rc=0
+[c1] rand20_t7 r-1: ok elapsed=1481.093383 ms qpu=1274.4202 ms
+[c1] rand20_t7 r0: ok elapsed=1468.203904 ms qpu=1274.4202 ms
+[c1] rand20_t7 r1: ok elapsed=1460.75874 ms qpu=1274.4202 ms
+[c1] rand20_t7 r2: ok elapsed=1461.731519 ms qpu=1274.4202 ms
+[c1] rand20_t7 r3: ok elapsed=1460.916151 ms qpu=1274.4202 ms
+[c1] rand20_t7 r4: ok elapsed=1461.78024 ms qpu=1274.4202 ms
+2026-09-01T23:38:10 --- cell 75/160: block 2 C1 c1_native rand30_t9
+2026-09-01T23:38:26 C1 c1_native rand30_t9 block 2 attempt 1 rc=0
+[c1] rand30_t9 r-1: ok elapsed=2416.315256 ms qpu=2079.8393 ms
+[c1] rand30_t9 r0: ok elapsed=2414.189136 ms qpu=2079.8393 ms
+[c1] rand30_t9 r1: ok elapsed=2419.396438 ms qpu=2079.8393 ms
+[c1] rand30_t9 r2: ok elapsed=2441.920063 ms qpu=2079.8393 ms
+[c1] rand30_t9 r3: ok elapsed=2441.62844 ms qpu=2079.8393 ms
+[c1] rand30_t9 r4: ok elapsed=2451.447178 ms qpu=2079.8393 ms
+2026-09-01T23:38:26 --- cell 76/160: block 2 C1 c1_native rand10_t7
+2026-09-01T23:38:32 C1 c1_native rand10_t7 block 2 attempt 1 rc=0
+[c1] rand10_t7 r-1: ok elapsed=788.069292 ms qpu=665.5613 ms
+[c1] rand10_t7 r0: ok elapsed=788.171673 ms qpu=665.5613 ms
+[c1] rand10_t7 r1: ok elapsed=788.598157 ms qpu=665.5613 ms
+[c1] rand10_t7 r2: ok elapsed=787.325724 ms qpu=665.5613 ms
+[c1] rand10_t7 r3: ok elapsed=787.488596 ms qpu=665.5613 ms
+[c1] rand10_t7 r4: ok elapsed=788.435976 ms qpu=665.5613 ms
+2026-09-01T23:38:32 --- cell 77/160: block 2 C1 c1_pool rand30_t9
+2026-09-01T23:38:49 C1 c1_pool rand30_t9 block 2 attempt 1 rc=0
+[c1] rand30_t9 r-1: ok elapsed=2201.161185 ms qpu=2079.8393 ms
+[c1] rand30_t9 r0: ok elapsed=2198.801012 ms qpu=2079.8393 ms
+[c1] rand30_t9 r1: ok elapsed=2200.290366 ms qpu=2079.8393 ms
+[c1] rand30_t9 r2: ok elapsed=2199.119395 ms qpu=2079.8393 ms
+[c1] rand30_t9 r3: ok elapsed=2231.543359 ms qpu=2079.8393 ms
+[c1] rand30_t9 r4: ok elapsed=2205.097164 ms qpu=2079.8393 ms
+2026-09-01T23:38:49 --- cell 78/160: block 2 C1 c1_pool rand10_t9
+2026-09-01T23:38:57 C1 c1_pool rand10_t9 block 2 attempt 1 rc=0
+[c1] rand10_t9 r-1: ok elapsed=859.182023 ms qpu=822.8857 ms
+[c1] rand10_t9 r0: ok elapsed=864.082922 ms qpu=822.8857 ms
+[c1] rand10_t9 r1: ok elapsed=860.809639 ms qpu=822.8857 ms
+[c1] rand10_t9 r2: ok elapsed=861.485597 ms qpu=822.8857 ms
+[c1] rand10_t9 r3: ok elapsed=861.279734 ms qpu=822.8857 ms
+[c1] rand10_t9 r4: ok elapsed=863.772479 ms qpu=822.8857 ms
+2026-09-01T23:38:57 --- cell 79/160: block 2 C1 c1_pool rand10_t7
+2026-09-01T23:39:05 C1 c1_pool rand10_t7 block 2 attempt 1 rc=0
+[c1] rand10_t7 r-1: ok elapsed=704.422576 ms qpu=665.5613 ms
+[c1] rand10_t7 r0: ok elapsed=704.951081 ms qpu=665.5613 ms
+[c1] rand10_t7 r1: ok elapsed=704.005181 ms qpu=665.5613 ms
+[c1] rand10_t7 r2: ok elapsed=703.721938 ms qpu=665.5613 ms
+[c1] rand10_t7 r3: ok elapsed=703.983621 ms qpu=665.5613 ms
+[c1] rand10_t7 r4: ok elapsed=705.282214 ms qpu=665.5613 ms
+2026-09-01T23:39:05 --- cell 80/160: block 2 C1 c1_pool rand30_t7
+2026-09-01T23:39:34 C1 c1_pool rand30_t7 block 2 attempt 1 rc=0
+[c1] rand30_t7 r-1: ok elapsed=4187.642373 ms qpu=4041.8606 ms
+[c1] rand30_t7 r0: ok elapsed=4187.926016 ms qpu=4041.8606 ms
+[c1] rand30_t7 r1: ok elapsed=4196.30172 ms qpu=4041.8606 ms
+[c1] rand30_t7 r2: ok elapsed=4189.035077 ms qpu=4041.8606 ms
+[c1] rand30_t7 r3: ok elapsed=4188.755334 ms qpu=4041.8606 ms
+[c1] rand30_t7 r4: ok elapsed=4187.230789 ms qpu=4041.8606 ms
+2026-09-01T23:39:34 --- cell 81/160: block 2 C1 c1_pool rand20_t7
+2026-09-01T23:39:45 C1 c1_pool rand20_t7 block 2 attempt 1 rc=0
+[c1] rand20_t7 r-1: ok elapsed=1350.386206 ms qpu=1274.4202 ms
+[c1] rand20_t7 r0: ok elapsed=1352.611318 ms qpu=1274.4202 ms
+[c1] rand20_t7 r1: ok elapsed=1352.78978 ms qpu=1274.4202 ms
+[c1] rand20_t7 r2: ok elapsed=1351.517807 ms qpu=1274.4202 ms
+[c1] rand20_t7 r3: ok elapsed=1352.78048 ms qpu=1274.4202 ms
+[c1] rand20_t7 r4: ok elapsed=1350.407526 ms qpu=1274.4202 ms
+2026-09-01T23:39:45 --- cell 82/160: block 2 C1 c1_pool rand20_t2
+2026-09-01T23:39:53 C1 c1_pool rand20_t2 block 2 attempt 1 rc=0
+[c1] rand20_t2 r-1: ok elapsed=770.803999 ms qpu=700.9111 ms
+[c1] rand20_t2 r0: ok elapsed=769.600338 ms qpu=700.9111 ms
+[c1] rand20_t2 r1: ok elapsed=768.703389 ms qpu=700.9111 ms
+[c1] rand20_t2 r2: ok elapsed=770.346755 ms qpu=700.9111 ms
+[c1] rand20_t2 r3: ok elapsed=772.222114 ms qpu=700.9111 ms
+[c1] rand20_t2 r4: ok elapsed=773.286134 ms qpu=700.9111 ms
+2026-09-01T23:39:53 mode change c1 -> std: restarting services
+2026-09-01T23:40:22 service restarted; Sep 02 06:12:13 veneno start_qubic_server.sh[201856]: 2026-09-02 06:12:13,537 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 201818 /home/xilinx/software/scripts/dma_server 201854 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:40:22 --- cell 83/160: block 2 C1 std_native rand30_t7
+2026-09-01T23:41:02 C1 std_native rand30_t7 block 2 attempt 1 rc=0
+[std] rand30_t7 r-1: ok elapsed=6221.510914 ms qpu=4041.8606 ms
+[std] rand30_t7 r0: ok elapsed=6217.776807 ms qpu=4041.8606 ms
+[std] rand30_t7 r1: ok elapsed=6217.07636 ms qpu=4041.8606 ms
+[std] rand30_t7 r2: ok elapsed=6214.413564 ms qpu=4041.8606 ms
+[std] rand30_t7 r3: ok elapsed=6217.239372 ms qpu=4041.8606 ms
+[std] rand30_t7 r4: ok elapsed=6213.694276 ms qpu=4041.8606 ms
+2026-09-01T23:41:02 --- cell 84/160: block 2 C1 std_native rand20_t7
+2026-09-01T23:41:16 C1 std_native rand20_t7 block 2 attempt 1 rc=0
+[std] rand20_t7 r-1: ok elapsed=2011.900022 ms qpu=1274.4202 ms
+[std] rand20_t7 r0: ok elapsed=2012.514298 ms qpu=1274.4202 ms
+[std] rand20_t7 r1: ok elapsed=2012.324946 ms qpu=1274.4202 ms
+[std] rand20_t7 r2: ok elapsed=2015.783041 ms qpu=1274.4202 ms
+[std] rand20_t7 r3: ok elapsed=2013.386357 ms qpu=1274.4202 ms
+[std] rand20_t7 r4: ok elapsed=2011.916552 ms qpu=1274.4202 ms
+2026-09-01T23:41:16 --- cell 85/160: block 2 C1 std_native rand20_t2
+2026-09-01T23:41:26 C1 std_native rand20_t2 block 2 attempt 1 rc=0
+[std] rand20_t2 r-1: ok elapsed=1233.888051 ms qpu=700.9111 ms
+[std] rand20_t2 r0: ok elapsed=1233.90019 ms qpu=700.9111 ms
+[std] rand20_t2 r1: ok elapsed=1233.267264 ms qpu=700.9111 ms
+[std] rand20_t2 r2: ok elapsed=1235.187944 ms qpu=700.9111 ms
+[std] rand20_t2 r3: ok elapsed=1232.883321 ms qpu=700.9111 ms
+[std] rand20_t2 r4: ok elapsed=1237.393885 ms qpu=700.9111 ms
+2026-09-01T23:41:26 --- cell 86/160: block 2 C1 std_native rand10_t7
+2026-09-01T23:41:33 C1 std_native rand10_t7 block 2 attempt 1 rc=0
+[std] rand10_t7 r-1: ok elapsed=1022.435496 ms qpu=665.5613 ms
+[std] rand10_t7 r0: ok elapsed=1021.992141 ms qpu=665.5613 ms
+[std] rand10_t7 r1: ok elapsed=1023.78905 ms qpu=665.5613 ms
+[std] rand10_t7 r2: ok elapsed=1021.658458 ms qpu=665.5613 ms
+[std] rand10_t7 r3: ok elapsed=1022.266214 ms qpu=665.5613 ms
+[std] rand10_t7 r4: ok elapsed=1021.610768 ms qpu=665.5613 ms
+2026-09-01T23:41:33 --- cell 87/160: block 2 C1 std_native rand10_t9
+2026-09-01T23:41:42 C1 std_native rand10_t9 block 2 attempt 1 rc=0
+[std] rand10_t9 r-1: ok elapsed=1257.250995 ms qpu=822.8857 ms
+[std] rand10_t9 r0: ok elapsed=1256.82197 ms qpu=822.8857 ms
+[std] rand10_t9 r1: ok elapsed=1259.055882 ms qpu=822.8857 ms
+[std] rand10_t9 r2: ok elapsed=1256.476637 ms qpu=822.8857 ms
+[std] rand10_t9 r3: ok elapsed=1257.83307 ms qpu=822.8857 ms
+[std] rand10_t9 r4: ok elapsed=1257.871621 ms qpu=822.8857 ms
+2026-09-01T23:41:42 --- cell 88/160: block 2 C1 std_native rand30_t9
+2026-09-01T23:42:04 C1 std_native rand30_t9 block 2 attempt 1 rc=0
+[std] rand30_t9 r-1: ok elapsed=3403.47684 ms qpu=2079.8393 ms
+[std] rand30_t9 r0: ok elapsed=3402.443409 ms qpu=2079.8393 ms
+[std] rand30_t9 r1: ok elapsed=3405.056986 ms qpu=2079.8393 ms
+[std] rand30_t9 r2: ok elapsed=3403.797853 ms qpu=2079.8393 ms
+[std] rand30_t9 r3: ok elapsed=3403.072876 ms qpu=2079.8393 ms
+[std] rand30_t9 r4: ok elapsed=3409.818993 ms qpu=2079.8393 ms
+2026-09-01T23:42:04 --- cell 89/160: block 2 C1 std_pool rand30_t7
+2026-09-01T23:42:45 C1 std_pool rand30_t7 block 2 attempt 1 rc=0
+[std] rand30_t7 r-1: ok elapsed=5992.00516 ms qpu=4041.8606 ms
+[std] rand30_t7 r0: ok elapsed=5993.701977 ms qpu=4041.8606 ms
+[std] rand30_t7 r1: ok elapsed=5997.282262 ms qpu=4041.8606 ms
+[std] rand30_t7 r2: ok elapsed=5995.02492 ms qpu=4041.8606 ms
+[std] rand30_t7 r3: ok elapsed=5992.775077 ms qpu=4041.8606 ms
+[std] rand30_t7 r4: ok elapsed=5993.471574 ms qpu=4041.8606 ms
+2026-09-01T23:42:45 --- cell 90/160: block 2 C1 std_pool rand10_t9
+2026-09-01T23:42:55 C1 std_pool rand10_t9 block 2 attempt 1 rc=0
+[std] rand10_t9 r-1: ok elapsed=1190.676779 ms qpu=822.8857 ms
+[std] rand10_t9 r0: ok elapsed=1191.297964 ms qpu=822.8857 ms
+[std] rand10_t9 r1: ok elapsed=1189.640048 ms qpu=822.8857 ms
+[std] rand10_t9 r2: ok elapsed=1190.73162 ms qpu=822.8857 ms
+[std] rand10_t9 r3: ok elapsed=1190.369056 ms qpu=822.8857 ms
+[std] rand10_t9 r4: ok elapsed=1189.968621 ms qpu=822.8857 ms
+2026-09-01T23:42:55 --- cell 91/160: block 2 C1 std_pool rand20_t2
+2026-09-01T23:43:05 C1 std_pool rand20_t2 block 2 attempt 1 rc=0
+[std] rand20_t2 r-1: ok elapsed=1130.778209 ms qpu=700.9111 ms
+[std] rand20_t2 r0: ok elapsed=1130.695789 ms qpu=700.9111 ms
+[std] rand20_t2 r1: ok elapsed=1132.118963 ms qpu=700.9111 ms
+[std] rand20_t2 r2: ok elapsed=1131.029782 ms qpu=700.9111 ms
+[std] rand20_t2 r3: ok elapsed=1130.781109 ms qpu=700.9111 ms
+[std] rand20_t2 r4: ok elapsed=1131.598238 ms qpu=700.9111 ms
+2026-09-01T23:43:05 --- cell 92/160: block 2 C1 std_pool rand10_t7
+2026-09-01T23:43:14 C1 std_pool rand10_t7 block 2 attempt 1 rc=0
+[std] rand10_t7 r-1: ok elapsed=946.520587 ms qpu=665.5613 ms
+[std] rand10_t7 r0: ok elapsed=949.889391 ms qpu=665.5613 ms
+[std] rand10_t7 r1: ok elapsed=947.386765 ms qpu=665.5613 ms
+[std] rand10_t7 r2: ok elapsed=946.500806 ms qpu=665.5613 ms
+[std] rand10_t7 r3: ok elapsed=947.642168 ms qpu=665.5613 ms
+[std] rand10_t7 r4: ok elapsed=948.242623 ms qpu=665.5613 ms
+2026-09-01T23:43:14 --- cell 93/160: block 2 C1 std_pool rand30_t9
+2026-09-01T23:43:37 C1 std_pool rand30_t9 block 2 attempt 1 rc=0
+[std] rand30_t9 r-1: ok elapsed=3185.127566 ms qpu=2079.8393 ms
+[std] rand30_t9 r0: ok elapsed=3186.080126 ms qpu=2079.8393 ms
+[std] rand30_t9 r1: ok elapsed=3185.50675 ms qpu=2079.8393 ms
+[std] rand30_t9 r2: ok elapsed=3185.855884 ms qpu=2079.8393 ms
+[std] rand30_t9 r3: ok elapsed=3184.434809 ms qpu=2079.8393 ms
+[std] rand30_t9 r4: ok elapsed=3185.388739 ms qpu=2079.8393 ms
+2026-09-01T23:43:37 --- cell 94/160: block 2 C1 std_pool rand20_t7
+2026-09-01T23:43:52 C1 std_pool rand20_t7 block 2 attempt 1 rc=0
+[std] rand20_t7 r-1: ok elapsed=1894.73337 ms qpu=1274.4202 ms
+[std] rand20_t7 r0: ok elapsed=1894.248675 ms qpu=1274.4202 ms
+[std] rand20_t7 r1: ok elapsed=1893.889842 ms qpu=1274.4202 ms
+[std] rand20_t7 r2: ok elapsed=1912.947002 ms qpu=1274.4202 ms
+[std] rand20_t7 r3: ok elapsed=1894.273625 ms qpu=1274.4202 ms
+[std] rand20_t7 r4: ok elapsed=1894.789981 ms qpu=1274.4202 ms
+2026-09-01T23:43:52 mode change std -> c1: restarting services
+2026-09-01T23:44:24 service restarted; Sep 02 06:16:12 veneno start_qubic_server.sh[202528]: 2026-09-02 06:16:12,765 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 202490 /home/xilinx/software/scripts/dma_server 202526 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:44:24 --- cell 95/160: block 3 C1 c1_pool rand20_t6
+2026-09-01T23:44:35 C1 c1_pool rand20_t6 block 3 attempt 1 rc=0
+[c1] rand20_t6 r-1: ok elapsed=1207.164964 ms qpu=1127.9741 ms
+[c1] rand20_t6 r0: ok elapsed=1209.645598 ms qpu=1127.9741 ms
+[c1] rand20_t6 r1: ok elapsed=1210.950621 ms qpu=1127.9741 ms
+[c1] rand20_t6 r2: ok elapsed=1203.421546 ms qpu=1127.9741 ms
+[c1] rand20_t6 r3: ok elapsed=1208.479287 ms qpu=1127.9741 ms
+[c1] rand20_t6 r4: ok elapsed=1203.496627 ms qpu=1127.9741 ms
+2026-09-01T23:44:35 --- cell 96/160: block 3 C1 c1_pool rand20_t4
+2026-09-01T23:44:45 C1 c1_pool rand20_t4 block 3 attempt 1 rc=0
+[c1] rand20_t4 r-1: ok elapsed=1165.7458 ms qpu=1095.5217 ms
+[c1] rand20_t4 r0: ok elapsed=1165.83099 ms qpu=1095.5217 ms
+[c1] rand20_t4 r1: ok elapsed=1166.362775 ms qpu=1095.5217 ms
+[c1] rand20_t4 r2: ok elapsed=1166.82297 ms qpu=1095.5217 ms
+[c1] rand20_t4 r3: ok elapsed=1171.701189 ms qpu=1095.5217 ms
+[c1] rand20_t4 r4: ok elapsed=1174.340695 ms qpu=1095.5217 ms
+2026-09-01T23:44:45 --- cell 97/160: block 3 C1 c1_pool qaoa12_x30
+2026-09-01T23:46:08 C1 c1_pool qaoa12_x30 block 3 attempt 1 rc=0
+[c1] qaoa12_x30 r-1: ok elapsed=13208.9271 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r0: ok elapsed=13208.96202 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r1: ok elapsed=13211.984501 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r2: ok elapsed=13208.039411 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r3: ok elapsed=13201.0131 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r4: ok elapsed=13200.98691 ms qpu=12972.0000 ms
+2026-09-01T23:46:08 --- cell 98/160: block 3 C1 c1_pool rand30_t8
+2026-09-01T23:46:27 C1 c1_pool rand30_t8 block 3 attempt 1 rc=0
+[c1] rand30_t8 r-1: ok elapsed=2621.111725 ms qpu=2492.0956 ms
+[c1] rand30_t8 r0: ok elapsed=2621.56006 ms qpu=2492.0956 ms
+[c1] rand30_t8 r1: ok elapsed=2620.370268 ms qpu=2492.0956 ms
+[c1] rand30_t8 r2: ok elapsed=2621.274017 ms qpu=2492.0956 ms
+[c1] rand30_t8 r3: ok elapsed=2620.809042 ms qpu=2492.0956 ms
+[c1] rand30_t8 r4: ok elapsed=2621.350408 ms qpu=2492.0956 ms
+2026-09-01T23:46:27 --- cell 99/160: block 3 C1 c1_pool rand10_t3
+2026-09-01T23:46:33 C1 c1_pool rand10_t3 block 3 attempt 1 rc=0
+[c1] rand10_t3 r-1: ok elapsed=442.996681 ms qpu=406.3136 ms
+[c1] rand10_t3 r0: ok elapsed=442.549126 ms qpu=406.3136 ms
+[c1] rand10_t3 r1: ok elapsed=443.377155 ms qpu=406.3136 ms
+[c1] rand10_t3 r2: ok elapsed=443.9818 ms qpu=406.3136 ms
+[c1] rand10_t3 r3: ok elapsed=442.853309 ms qpu=406.3136 ms
+[c1] rand10_t3 r4: ok elapsed=442.752829 ms qpu=406.3136 ms
+2026-09-01T23:46:33 --- cell 100/160: block 3 C1 c1_pool rand30_t3
+2026-09-01T23:46:52 C1 c1_pool rand30_t3 block 3 attempt 1 rc=0
+[c1] rand30_t3 r-1: ok elapsed=2594.212586 ms qpu=2465.2663 ms
+[c1] rand30_t3 r0: ok elapsed=2597.120265 ms qpu=2465.2663 ms
+[c1] rand30_t3 r1: ok elapsed=2600.940784 ms qpu=2465.2663 ms
+[c1] rand30_t3 r2: ok elapsed=2595.119375 ms qpu=2465.2663 ms
+[c1] rand30_t3 r3: ok elapsed=2596.168815 ms qpu=2465.2663 ms
+[c1] rand30_t3 r4: ok elapsed=2599.5386 ms qpu=2465.2663 ms
+2026-09-01T23:46:52 --- cell 101/160: block 3 C1 c1_pool rand10_t2
+2026-09-01T23:47:00 C1 c1_pool rand10_t2 block 3 attempt 1 rc=0
+[c1] rand10_t2 r-1: ok elapsed=746.900321 ms qpu=705.0523 ms
+[c1] rand10_t2 r0: ok elapsed=746.87466 ms qpu=705.0523 ms
+[c1] rand10_t2 r1: ok elapsed=747.060322 ms qpu=705.0523 ms
+[c1] rand10_t2 r2: ok elapsed=749.012641 ms qpu=705.0523 ms
+[c1] rand10_t2 r3: ok elapsed=746.329945 ms qpu=705.0523 ms
+[c1] rand10_t2 r4: ok elapsed=747.655728 ms qpu=705.0523 ms
+2026-09-01T23:47:00 mode change c1 -> std: restarting services
+2026-09-01T23:47:35 service restarted; Sep 02 06:19:20 veneno start_qubic_server.sh[203196]: 2026-09-02 06:19:20,469 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 203158 /home/xilinx/software/scripts/dma_server 203194 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:47:35 --- cell 102/160: block 3 C1 std_native rand30_t8
+2026-09-01T23:48:03 C1 std_native rand30_t8 block 3 attempt 1 rc=0
+[std] rand30_t8 r-1: ok elapsed=4017.264089 ms qpu=2492.0956 ms
+[std] rand30_t8 r0: ok elapsed=4018.262539 ms qpu=2492.0956 ms
+[std] rand30_t8 r1: ok elapsed=4015.899295 ms qpu=2492.0956 ms
+[std] rand30_t8 r2: ok elapsed=4014.996396 ms qpu=2492.0956 ms
+[std] rand30_t8 r3: ok elapsed=4014.897925 ms qpu=2492.0956 ms
+[std] rand30_t8 r4: ok elapsed=4019.706493 ms qpu=2492.0956 ms
+2026-09-01T23:48:03 --- cell 103/160: block 3 C1 std_native rand10_t2
+2026-09-01T23:48:14 C1 std_native rand10_t2 block 3 attempt 1 rc=0
+[std] rand10_t2 r-1: ok elapsed=1182.626988 ms qpu=705.0523 ms
+[std] rand10_t2 r0: ok elapsed=1183.376095 ms qpu=705.0523 ms
+[std] rand10_t2 r1: ok elapsed=1183.930492 ms qpu=705.0523 ms
+[std] rand10_t2 r2: ok elapsed=1182.988932 ms qpu=705.0523 ms
+[std] rand10_t2 r3: ok elapsed=1183.037332 ms qpu=705.0523 ms
+[std] rand10_t2 r4: ok elapsed=1182.301885 ms qpu=705.0523 ms
+2026-09-01T23:48:14 --- cell 104/160: block 3 C1 std_native rand30_t3
+2026-09-01T23:48:40 C1 std_native rand30_t3 block 3 attempt 1 rc=0
+[std] rand30_t3 r-1: ok elapsed=4017.31685 ms qpu=2465.2663 ms
+[std] rand30_t3 r0: ok elapsed=4012.114378 ms qpu=2465.2663 ms
+[std] rand30_t3 r1: ok elapsed=4014.459311 ms qpu=2465.2663 ms
+[std] rand30_t3 r2: ok elapsed=4015.930925 ms qpu=2465.2663 ms
+[std] rand30_t3 r3: ok elapsed=4014.662763 ms qpu=2465.2663 ms
+[std] rand30_t3 r4: ok elapsed=4012.315169 ms qpu=2465.2663 ms
+2026-09-01T23:48:40 --- cell 105/160: block 3 C1 std_native rand10_t3
+2026-09-01T23:48:48 C1 std_native rand10_t3 block 3 attempt 1 rc=0
+[std] rand10_t3 r-1: ok elapsed=728.069522 ms qpu=406.3136 ms
+[std] rand10_t3 r0: ok elapsed=727.89604 ms qpu=406.3136 ms
+[std] rand10_t3 r1: ok elapsed=728.115982 ms qpu=406.3136 ms
+[std] rand10_t3 r2: ok elapsed=727.915781 ms qpu=406.3136 ms
+[std] rand10_t3 r3: ok elapsed=728.152253 ms qpu=406.3136 ms
+[std] rand10_t3 r4: ok elapsed=727.787309 ms qpu=406.3136 ms
+2026-09-01T23:48:48 --- cell 106/160: block 3 C1 std_native rand20_t4
+2026-09-01T23:49:01 C1 std_native rand20_t4 block 3 attempt 1 rc=0
+[std] rand20_t4 r-1: ok elapsed=1798.66911 ms qpu=1095.5217 ms
+[std] rand20_t4 r0: ok elapsed=1800.179144 ms qpu=1095.5217 ms
+[std] rand20_t4 r1: ok elapsed=1797.625649 ms qpu=1095.5217 ms
+[std] rand20_t4 r2: ok elapsed=1800.410597 ms qpu=1095.5217 ms
+[std] rand20_t4 r3: ok elapsed=1798.164275 ms qpu=1095.5217 ms
+[std] rand20_t4 r4: ok elapsed=1800.347206 ms qpu=1095.5217 ms
+2026-09-01T23:49:01 --- cell 107/160: block 3 C1 std_native rand20_t6
+2026-09-01T23:49:14 C1 std_native rand20_t6 block 3 attempt 1 rc=0
+[std] rand20_t6 r-1: ok elapsed=1921.534529 ms qpu=1127.9741 ms
+[std] rand20_t6 r0: ok elapsed=1919.382426 ms qpu=1127.9741 ms
+[std] rand20_t6 r1: ok elapsed=1921.832281 ms qpu=1127.9741 ms
+[std] rand20_t6 r2: ok elapsed=1919.498398 ms qpu=1127.9741 ms
+[std] rand20_t6 r3: ok elapsed=1921.351756 ms qpu=1127.9741 ms
+[std] rand20_t6 r4: ok elapsed=1920.302836 ms qpu=1127.9741 ms
+2026-09-01T23:49:14 --- cell 108/160: block 3 C1 std_native qaoa12_x30
+2026-09-01T23:51:07 C1 std_native qaoa12_x30 block 3 attempt 1 rc=0
+[std] qaoa12_x30 r-1: ok elapsed=17798.702615 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r0: ok elapsed=17797.686485 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r1: ok elapsed=17803.061588 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r2: ok elapsed=17807.054508 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r3: ok elapsed=17807.825246 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r4: ok elapsed=17806.447182 ms qpu=12972.0000 ms
+2026-09-01T23:51:07 --- cell 109/160: block 3 C1 std_pool rand10_t3
+2026-09-01T23:51:14 C1 std_pool rand10_t3 block 3 attempt 1 rc=0
+[std] rand10_t3 r-1: ok elapsed=652.492886 ms qpu=406.3136 ms
+[std] rand10_t3 r0: ok elapsed=652.800039 ms qpu=406.3136 ms
+[std] rand10_t3 r1: ok elapsed=651.582947 ms qpu=406.3136 ms
+[std] rand10_t3 r2: ok elapsed=652.279664 ms qpu=406.3136 ms
+[std] rand10_t3 r3: ok elapsed=652.564257 ms qpu=406.3136 ms
+[std] rand10_t3 r4: ok elapsed=652.478406 ms qpu=406.3136 ms
+2026-09-01T23:51:14 --- cell 110/160: block 3 C1 std_pool rand10_t2
+2026-09-01T23:51:24 C1 std_pool rand10_t2 block 3 attempt 1 rc=0
+[std] rand10_t2 r-1: ok elapsed=1104.516627 ms qpu=705.0523 ms
+[std] rand10_t2 r0: ok elapsed=1103.429166 ms qpu=705.0523 ms
+[std] rand10_t2 r1: ok elapsed=1105.103643 ms qpu=705.0523 ms
+[std] rand10_t2 r2: ok elapsed=1104.139933 ms qpu=705.0523 ms
+[std] rand10_t2 r3: ok elapsed=1103.296605 ms qpu=705.0523 ms
+[std] rand10_t2 r4: ok elapsed=1104.614618 ms qpu=705.0523 ms
+2026-09-01T23:51:24 --- cell 111/160: block 3 C1 std_pool rand20_t4
+2026-09-01T23:51:38 C1 std_pool rand20_t4 block 3 attempt 1 rc=0
+[std] rand20_t4 r-1: ok elapsed=1661.534428 ms qpu=1095.5217 ms
+[std] rand20_t4 r0: ok elapsed=1663.033053 ms qpu=1095.5217 ms
+[std] rand20_t4 r1: ok elapsed=1661.966152 ms qpu=1095.5217 ms
+[std] rand20_t4 r2: ok elapsed=1661.75282 ms qpu=1095.5217 ms
+[std] rand20_t4 r3: ok elapsed=1660.455027 ms qpu=1095.5217 ms
+[std] rand20_t4 r4: ok elapsed=1664.966862 ms qpu=1095.5217 ms
+2026-09-01T23:51:38 --- cell 112/160: block 3 C1 std_pool rand20_t6
+2026-09-01T23:51:53 C1 std_pool rand20_t6 block 3 attempt 1 rc=0
+[std] rand20_t6 r-1: ok elapsed=1821.175534 ms qpu=1127.9741 ms
+[std] rand20_t6 r0: ok elapsed=1820.599269 ms qpu=1127.9741 ms
+[std] rand20_t6 r1: ok elapsed=1822.320956 ms qpu=1127.9741 ms
+[std] rand20_t6 r2: ok elapsed=1820.7429 ms qpu=1127.9741 ms
+[std] rand20_t6 r3: ok elapsed=1821.034443 ms qpu=1127.9741 ms
+[std] rand20_t6 r4: ok elapsed=1823.884201 ms qpu=1127.9741 ms
+2026-09-01T23:51:53 --- cell 113/160: block 3 C1 std_pool qaoa12_x30
+2026-09-01T23:53:46 C1 std_pool qaoa12_x30 block 3 attempt 1 rc=0
+[std] qaoa12_x30 r-1: ok elapsed=17802.27212 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r0: ok elapsed=17800.939807 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r1: ok elapsed=17808.357392 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r2: ok elapsed=17806.669164 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r3: ok elapsed=17806.355111 ms qpu=12972.0000 ms
+[std] qaoa12_x30 r4: ok elapsed=17804.944697 ms qpu=12972.0000 ms
+2026-09-01T23:53:46 --- cell 114/160: block 3 C1 std_pool rand30_t3
+2026-09-01T23:54:12 C1 std_pool rand30_t3 block 3 attempt 1 rc=0
+[std] rand30_t3 r-1: ok elapsed=3800.589522 ms qpu=2465.2663 ms
+[std] rand30_t3 r0: ok elapsed=3801.110958 ms qpu=2465.2663 ms
+[std] rand30_t3 r1: ok elapsed=3799.586712 ms qpu=2465.2663 ms
+[std] rand30_t3 r2: ok elapsed=3803.431701 ms qpu=2465.2663 ms
+[std] rand30_t3 r3: ok elapsed=3798.923755 ms qpu=2465.2663 ms
+[std] rand30_t3 r4: ok elapsed=3801.917605 ms qpu=2465.2663 ms
+2026-09-01T23:54:12 --- cell 115/160: block 3 C1 std_pool rand30_t8
+2026-09-01T23:54:39 C1 std_pool rand30_t8 block 3 attempt 1 rc=0
+[std] rand30_t8 r-1: ok elapsed=3775.600372 ms qpu=2492.0956 ms
+[std] rand30_t8 r0: ok elapsed=3776.006456 ms qpu=2492.0956 ms
+[std] rand30_t8 r1: ok elapsed=3778.543731 ms qpu=2492.0956 ms
+[std] rand30_t8 r2: ok elapsed=3778.582952 ms qpu=2492.0956 ms
+[std] rand30_t8 r3: ok elapsed=3778.47282 ms qpu=2492.0956 ms
+[std] rand30_t8 r4: ok elapsed=3778.236448 ms qpu=2492.0956 ms
+2026-09-01T23:54:39 mode change std -> c1: restarting services
+2026-09-01T23:55:12 service restarted; Sep 02 06:26:59 veneno start_qubic_server.sh[204236]: 2026-09-02 06:26:59,770 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 204198 /home/xilinx/software/scripts/dma_server 204219 /home/xilinx/software/scripts/batch_server
+2026-09-01T23:55:12 --- cell 116/160: block 3 C1 c1_native rand20_t4
+2026-09-01T23:55:21 C1 c1_native rand20_t4 block 3 attempt 1 rc=0
+[c1] rand20_t4 r-1: ok elapsed=1320.691749 ms qpu=1095.5217 ms
+[c1] rand20_t4 r0: ok elapsed=1298.406386 ms qpu=1095.5217 ms
+[c1] rand20_t4 r1: ok elapsed=1297.374075 ms qpu=1095.5217 ms
+[c1] rand20_t4 r2: ok elapsed=1297.375066 ms qpu=1095.5217 ms
+[c1] rand20_t4 r3: ok elapsed=1297.042733 ms qpu=1095.5217 ms
+[c1] rand20_t4 r4: ok elapsed=1298.852691 ms qpu=1095.5217 ms
+2026-09-01T23:55:21 --- cell 117/160: block 3 C1 c1_native rand20_t6
+2026-09-01T23:55:30 C1 c1_native rand20_t6 block 3 attempt 1 rc=0
+[c1] rand20_t6 r-1: ok elapsed=1295.375925 ms qpu=1127.9741 ms
+[c1] rand20_t6 r0: ok elapsed=1294.509547 ms qpu=1127.9741 ms
+[c1] rand20_t6 r1: ok elapsed=1316.263955 ms qpu=1127.9741 ms
+[c1] rand20_t6 r2: ok elapsed=1317.669428 ms qpu=1127.9741 ms
+[c1] rand20_t6 r3: ok elapsed=1296.211844 ms qpu=1127.9741 ms
+[c1] rand20_t6 r4: ok elapsed=1295.980901 ms qpu=1127.9741 ms
+2026-09-01T23:55:30 --- cell 118/160: block 3 C1 c1_native rand30_t8
+2026-09-01T23:58:23 C1 c1_native rand30_t8 block 3 attempt 1 rc=0
+[c1] rand30_t8 r-1: ok elapsed=2838.120056 ms qpu=2492.0956 ms
+[c1] rand30_t8 r0: ok elapsed=2836.479229 ms qpu=2492.0956 ms
+[c1] rand30_t8 r1: ok elapsed=2834.52109 ms qpu=2492.0956 ms
+[c1] rand30_t8 r2: ok elapsed=2835.230816 ms qpu=2492.0956 ms
+[c1] rand30_t8 r3: ok elapsed=2836.841922 ms qpu=2492.0956 ms
+[c1] rand30_t8 r4: data_mismatch elapsed=None ms qpu=2492.0956 ms
+[c1] rand30_t8 r4: ok elapsed=2850.58861 ms qpu=2492.0956 ms
+2026-09-01T23:58:23 --- cell 119/160: block 3 C1 c1_native rand10_t2
+2026-09-01T23:58:32 C1 c1_native rand10_t2 block 3 attempt 1 rc=0
+[c1] rand10_t2 r-1: ok elapsed=824.492646 ms qpu=705.0523 ms
+[c1] rand10_t2 r0: ok elapsed=820.431055 ms qpu=705.0523 ms
+[c1] rand10_t2 r1: ok elapsed=821.381405 ms qpu=705.0523 ms
+[c1] rand10_t2 r2: ok elapsed=819.517687 ms qpu=705.0523 ms
+[c1] rand10_t2 r3: ok elapsed=819.332955 ms qpu=705.0523 ms
+[c1] rand10_t2 r4: ok elapsed=819.731198 ms qpu=705.0523 ms
+2026-09-01T23:58:32 --- cell 120/160: block 3 C1 c1_native rand30_t3
+2026-09-01T23:58:50 C1 c1_native rand30_t3 block 3 attempt 1 rc=0
+[c1] rand30_t3 r-1: ok elapsed=2803.539759 ms qpu=2465.2663 ms
+[c1] rand30_t3 r0: ok elapsed=2796.802072 ms qpu=2465.2663 ms
+[c1] rand30_t3 r1: ok elapsed=2798.595751 ms qpu=2465.2663 ms
+[c1] rand30_t3 r2: ok elapsed=2820.851333 ms qpu=2465.2663 ms
+[c1] rand30_t3 r3: ok elapsed=2811.727661 ms qpu=2465.2663 ms
+[c1] rand30_t3 r4: ok elapsed=2792.258977 ms qpu=2465.2663 ms
+2026-09-01T23:58:50 --- cell 121/160: block 3 C1 c1_native rand10_t3
+2026-09-01T23:58:57 C1 c1_native rand10_t3 block 3 attempt 1 rc=0
+[c1] rand10_t3 r-1: ok elapsed=518.502276 ms qpu=406.3136 ms
+[c1] rand10_t3 r0: ok elapsed=519.421175 ms qpu=406.3136 ms
+[c1] rand10_t3 r1: ok elapsed=519.86991 ms qpu=406.3136 ms
+[c1] rand10_t3 r2: ok elapsed=515.479196 ms qpu=406.3136 ms
+[c1] rand10_t3 r3: ok elapsed=515.496506 ms qpu=406.3136 ms
+[c1] rand10_t3 r4: ok elapsed=514.437635 ms qpu=406.3136 ms
+2026-09-01T23:58:57 --- cell 122/160: block 3 C1 c1_native qaoa12_x30
+2026-09-02T00:00:19 C1 c1_native qaoa12_x30 block 3 attempt 1 rc=0
+[c1] qaoa12_x30 r-1: ok elapsed=13195.194833 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r0: ok elapsed=13195.703568 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r1: ok elapsed=13194.464725 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r2: ok elapsed=13220.870929 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r3: ok elapsed=13181.698628 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r4: ok elapsed=13247.406414 ms qpu=12972.0000 ms
+2026-09-02T00:00:20 switching image -> C3 (63329aaf)
+2026-09-02T00:00:49 service restarted; Sep 02 06:32:40 veneno start_qubic_server.sh[205111]: 2026-09-02 06:32:40,690 INFO: loading bitfile: 63329aaf
+10012 sudo -S nohup ./std_server 10014 ./std_server 205073 /home/xilinx/software/scripts/dma_server 205109 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:00:49 --- cell 123/160: block 3 C3 c3_pool rand20_t4
+2026-09-02T00:10:58 C3 c3_pool rand20_t4 block 3 attempt 1 rc=0
+[c3] rand20_t4 r-1: ok elapsed=1104.557268 ms qpu=1095.5217 ms
+[c3] rand20_t4 r0: ok elapsed=1104.551947 ms qpu=1095.5217 ms
+[c3] rand20_t4 r1: ok elapsed=1104.548197 ms qpu=1095.5217 ms
+[c3] rand20_t4 r2: ok elapsed=1104.550877 ms qpu=1095.5217 ms
+[c3] rand20_t4 r3: timeout elapsed=None ms qpu=1095.5217 ms
+[c3] rand20_t4 r3: data_mismatch elapsed=None ms qpu=1095.5217 ms
+!! rand20_t4: second failure, stopping this workload
+2026-09-02T00:10:58 cell failed -> restart services and retry
+2026-09-02T00:11:32 service restarted; Sep 02 06:43:18 veneno start_qubic_server.sh[206401]: 2026-09-02 06:43:18,441 INFO: loading bitfile: 63329aaf
+10012 sudo -S nohup ./std_server 10014 ./std_server 206361 /home/xilinx/software/scripts/dma_server 206399 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:11:42 C3 c3_pool rand20_t4 block 3 attempt 2 rc=0
+[c3] rand20_t4 r-1: ok elapsed=1104.550597 ms qpu=1095.5217 ms
+[c3] rand20_t4 r0: ok elapsed=1104.548517 ms qpu=1095.5217 ms
+[c3] rand20_t4 r1: ok elapsed=1104.561968 ms qpu=1095.5217 ms
+[c3] rand20_t4 r2: ok elapsed=1104.549298 ms qpu=1095.5217 ms
+[c3] rand20_t4 r3: ok elapsed=1104.546477 ms qpu=1095.5217 ms
+[c3] rand20_t4 r4: ok elapsed=1104.550448 ms qpu=1095.5217 ms
+2026-09-02T00:11:42 --- cell 124/160: block 3 C3 c3_pool rand10_t3
+2026-09-02T00:11:49 C3 c3_pool rand10_t3 block 3 attempt 1 rc=0
+[c3] rand10_t3 r-1: ok elapsed=411.236373 ms qpu=406.3136 ms
+[c3] rand10_t3 r0: ok elapsed=411.238673 ms qpu=406.3136 ms
+[c3] rand10_t3 r1: ok elapsed=411.232423 ms qpu=406.3136 ms
+[c3] rand10_t3 r2: ok elapsed=411.244794 ms qpu=406.3136 ms
+[c3] rand10_t3 r3: ok elapsed=411.228673 ms qpu=406.3136 ms
+[c3] rand10_t3 r4: ok elapsed=411.238623 ms qpu=406.3136 ms
+2026-09-02T00:11:49 --- cell 125/160: block 3 C3 c3_pool qaoa12_x30
+2026-09-02T00:13:11 C3 c3_pool qaoa12_x30 block 3 attempt 1 rc=0
+[c3] qaoa12_x30 r-1: ok elapsed=13019.315433 ms qpu=12972.0000 ms
+[c3] qaoa12_x30 r0: ok elapsed=13019.312553 ms qpu=12972.0000 ms
+[c3] qaoa12_x30 r1: ok elapsed=13019.323494 ms qpu=12972.0000 ms
+[c3] qaoa12_x30 r2: ok elapsed=13019.319954 ms qpu=12972.0000 ms
+[c3] qaoa12_x30 r3: ok elapsed=13019.320774 ms qpu=12972.0000 ms
+[c3] qaoa12_x30 r4: ok elapsed=13020.545425 ms qpu=12972.0000 ms
+2026-09-02T00:13:11 --- cell 126/160: block 3 C3 c3_pool rand30_t3
+2026-09-02T00:13:31 C3 c3_pool rand30_t3 block 3 attempt 1 rc=0
+[c3] rand30_t3 r-1: ok elapsed=2486.207606 ms qpu=2465.2663 ms
+[c3] rand30_t3 r0: ok elapsed=2486.203646 ms qpu=2465.2663 ms
+[c3] rand30_t3 r1: ok elapsed=2486.185366 ms qpu=2465.2663 ms
+[c3] rand30_t3 r2: ok elapsed=2486.202486 ms qpu=2465.2663 ms
+[c3] rand30_t3 r3: ok elapsed=2486.193656 ms qpu=2465.2663 ms
+[c3] rand30_t3 r4: ok elapsed=2486.188515 ms qpu=2465.2663 ms
+2026-09-02T00:13:31 --- cell 127/160: block 3 C3 c3_pool rand10_t2
+2026-09-02T00:13:39 C3 c3_pool rand10_t2 block 3 attempt 1 rc=0
+[c3] rand10_t2 r-1: ok elapsed=711.717128 ms qpu=705.0523 ms
+[c3] rand10_t2 r0: ok elapsed=711.724188 ms qpu=705.0523 ms
+[c3] rand10_t2 r1: ok elapsed=711.737948 ms qpu=705.0523 ms
+[c3] rand10_t2 r2: ok elapsed=711.729988 ms qpu=705.0523 ms
+[c3] rand10_t2 r3: ok elapsed=711.735038 ms qpu=705.0523 ms
+[c3] rand10_t2 r4: ok elapsed=711.724248 ms qpu=705.0523 ms
+2026-09-02T00:13:39 --- cell 128/160: block 3 C3 c3_pool rand30_t8
+2026-09-02T00:13:58 C3 c3_pool rand30_t8 block 3 attempt 1 rc=0
+[c3] rand30_t8 r-1: ok elapsed=2510.669531 ms qpu=2492.0956 ms
+[c3] rand30_t8 r0: ok elapsed=2510.673831 ms qpu=2492.0956 ms
+[c3] rand30_t8 r1: ok elapsed=2510.676051 ms qpu=2492.0956 ms
+[c3] rand30_t8 r2: ok elapsed=2511.051794 ms qpu=2492.0956 ms
+[c3] rand30_t8 r3: ok elapsed=2510.681011 ms qpu=2492.0956 ms
+[c3] rand30_t8 r4: ok elapsed=2510.66373 ms qpu=2492.0956 ms
+2026-09-02T00:13:58 --- cell 129/160: block 3 C3 c3_pool rand20_t6
+2026-09-02T00:14:09 C3 c3_pool rand20_t6 block 3 attempt 1 rc=0
+[c3] rand20_t6 r-1: ok elapsed=1141.055222 ms qpu=1127.9741 ms
+[c3] rand20_t6 r0: ok elapsed=1141.055802 ms qpu=1127.9741 ms
+[c3] rand20_t6 r1: ok elapsed=1141.057073 ms qpu=1127.9741 ms
+[c3] rand20_t6 r2: ok elapsed=1141.048212 ms qpu=1127.9741 ms
+[c3] rand20_t6 r3: ok elapsed=1141.046802 ms qpu=1127.9741 ms
+[c3] rand20_t6 r4: ok elapsed=1141.201643 ms qpu=1127.9741 ms
+2026-09-02T00:14:09 --- cell 130/160: block 4 C3 c3_pool rand30_t1
+2026-09-02T00:14:27 C3 c3_pool rand30_t1 block 4 attempt 1 rc=0
+[c3] rand30_t1 r-1: ok elapsed=2261.943893 ms qpu=2245.8436 ms
+[c3] rand30_t1 r0: ok elapsed=2261.942363 ms qpu=2245.8436 ms
+[c3] rand30_t1 r1: ok elapsed=2261.947423 ms qpu=2245.8436 ms
+[c3] rand30_t1 r2: ok elapsed=2261.948313 ms qpu=2245.8436 ms
+[c3] rand30_t1 r3: ok elapsed=2261.945763 ms qpu=2245.8436 ms
+[c3] rand30_t1 r4: ok elapsed=2261.970094 ms qpu=2245.8436 ms
+2026-09-02T00:14:27 --- cell 131/160: block 4 C3 c3_pool rand20_t9
+2026-09-02T00:14:40 C3 c3_pool rand20_t9 block 4 attempt 1 rc=0
+[c3] rand20_t9 r-1: ok elapsed=1488.139713 ms qpu=1472.5207 ms
+[c3] rand20_t9 r0: ok elapsed=1488.136414 ms qpu=1472.5207 ms
+[c3] rand20_t9 r1: ok elapsed=1488.128664 ms qpu=1472.5207 ms
+[c3] rand20_t9 r2: ok elapsed=1488.133354 ms qpu=1472.5207 ms
+[c3] rand20_t9 r3: ok elapsed=1488.129153 ms qpu=1472.5207 ms
+[c3] rand20_t9 r4: ok elapsed=1488.142363 ms qpu=1472.5207 ms
+2026-09-02T00:14:40 --- cell 132/160: block 4 C3 c3_pool rand20_t0
+2026-09-02T00:14:50 C3 c3_pool rand20_t0 block 4 attempt 1 rc=0
+[c3] rand20_t0 r-1: ok elapsed=1019.8267 ms qpu=1011.2963 ms
+[c3] rand20_t0 r0: ok elapsed=1019.81997 ms qpu=1011.2963 ms
+[c3] rand20_t0 r1: ok elapsed=1020.002162 ms qpu=1011.2963 ms
+[c3] rand20_t0 r2: ok elapsed=1019.82741 ms qpu=1011.2963 ms
+[c3] rand20_t0 r3: ok elapsed=1019.82415 ms qpu=1011.2963 ms
+[c3] rand20_t0 r4: ok elapsed=1019.83559 ms qpu=1011.2963 ms
+2026-09-02T00:14:50 --- cell 133/160: block 4 C3 c3_pool rand30_t0
+2026-09-02T00:15:13 C3 c3_pool rand30_t0 block 4 attempt 1 rc=0
+[c3] rand30_t0 r-1: ok elapsed=3046.779003 ms qpu=3027.4219 ms
+[c3] rand30_t0 r0: ok elapsed=3046.770032 ms qpu=3027.4219 ms
+[c3] rand30_t0 r1: ok elapsed=3046.777553 ms qpu=3027.4219 ms
+[c3] rand30_t0 r2: ok elapsed=3046.780693 ms qpu=3027.4219 ms
+[c3] rand30_t0 r3: ok elapsed=3047.160216 ms qpu=3027.4219 ms
+[c3] rand30_t0 r4: ok elapsed=3046.772492 ms qpu=3027.4219 ms
+2026-09-02T00:15:13 --- cell 134/160: block 4 C3 c3_pool rand10_t4
+2026-09-02T00:15:17 C3 c3_pool rand10_t4 block 4 attempt 1 rc=0
+[c3] rand10_t4 r-1: ok elapsed=451.294964 ms qpu=444.2518 ms
+[c3] rand10_t4 r0: ok elapsed=451.289734 ms qpu=444.2518 ms
+[c3] rand10_t4 r1: ok elapsed=451.336714 ms qpu=444.2518 ms
+[c3] rand10_t4 r2: ok elapsed=451.498955 ms qpu=444.2518 ms
+[c3] rand10_t4 r3: ok elapsed=451.293514 ms qpu=444.2518 ms
+[c3] rand10_t4 r4: ok elapsed=451.328294 ms qpu=444.2518 ms
+2026-09-02T00:15:17 --- cell 135/160: block 4 C3 c3_pool rand10_t0
+2026-09-02T00:15:27 C3 c3_pool rand10_t0 block 4 attempt 1 rc=0
+[c3] rand10_t0 r-1: ok elapsed=950.922881 ms qpu=939.8526 ms
+[c3] rand10_t0 r0: ok elapsed=950.89914 ms qpu=939.8526 ms
+[c3] rand10_t0 r1: ok elapsed=950.90579 ms qpu=939.8526 ms
+[c3] rand10_t0 r2: ok elapsed=950.9017 ms qpu=939.8526 ms
+[c3] rand10_t0 r3: ok elapsed=950.91114 ms qpu=939.8526 ms
+[c3] rand10_t0 r4: ok elapsed=950.901511 ms qpu=939.8526 ms
+2026-09-02T00:15:28 switching image -> C1 (0071783e_14q)
+2026-09-02T00:16:04 service restarted; Sep 02 06:47:48 veneno start_qubic_server.sh[207237]: 2026-09-02 06:47:48,683 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 207199 /home/xilinx/software/scripts/dma_server 207214 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:16:04 --- cell 136/160: block 4 C1 std_native rand30_t0
+2026-09-02T00:16:35 C1 std_native rand30_t0 block 4 attempt 1 rc=0
+[std] rand30_t0 r-1: ok elapsed=4689.085968 ms qpu=3027.4219 ms
+[std] rand30_t0 r0: ok elapsed=4692.22269 ms qpu=3027.4219 ms
+[std] rand30_t0 r1: ok elapsed=4690.896946 ms qpu=3027.4219 ms
+[std] rand30_t0 r2: ok elapsed=4689.932356 ms qpu=3027.4219 ms
+[std] rand30_t0 r3: ok elapsed=4689.032818 ms qpu=3027.4219 ms
+[std] rand30_t0 r4: ok elapsed=4689.153959 ms qpu=3027.4219 ms
+2026-09-02T00:16:35 --- cell 137/160: block 4 C1 std_native rand20_t0
+2026-09-02T00:16:46 C1 std_native rand20_t0 block 4 attempt 1 rc=0
+[std] rand20_t0 r-1: ok elapsed=1673.109384 ms qpu=1011.2963 ms
+[std] rand20_t0 r0: ok elapsed=1672.971583 ms qpu=1011.2963 ms
+[std] rand20_t0 r1: ok elapsed=1674.548268 ms qpu=1011.2963 ms
+[std] rand20_t0 r2: ok elapsed=1674.129224 ms qpu=1011.2963 ms
+[std] rand20_t0 r3: ok elapsed=1676.076903 ms qpu=1011.2963 ms
+[std] rand20_t0 r4: ok elapsed=1675.7712 ms qpu=1011.2963 ms
+2026-09-02T00:16:46 --- cell 138/160: block 4 C1 std_native rand10_t0
+2026-09-02T00:16:58 C1 std_native rand10_t0 block 4 attempt 1 rc=0
+[std] rand10_t0 r-1: ok elapsed=1624.505958 ms qpu=939.8526 ms
+[std] rand10_t0 r0: ok elapsed=1624.050473 ms qpu=939.8526 ms
+[std] rand10_t0 r1: ok elapsed=1627.74392 ms qpu=939.8526 ms
+[std] rand10_t0 r2: ok elapsed=1623.492807 ms qpu=939.8526 ms
+[std] rand10_t0 r3: ok elapsed=1625.932102 ms qpu=939.8526 ms
+[std] rand10_t0 r4: ok elapsed=1623.595808 ms qpu=939.8526 ms
+2026-09-02T00:16:58 --- cell 139/160: block 4 C1 std_native rand10_t4
+2026-09-02T00:17:04 C1 std_native rand10_t4 block 4 attempt 1 rc=0
+[std] rand10_t4 r-1: ok elapsed=822.85802 ms qpu=444.2518 ms
+[std] rand10_t4 r0: ok elapsed=822.654758 ms qpu=444.2518 ms
+[std] rand10_t4 r1: ok elapsed=823.114233 ms qpu=444.2518 ms
+[std] rand10_t4 r2: ok elapsed=822.88305 ms qpu=444.2518 ms
+[std] rand10_t4 r3: ok elapsed=822.701338 ms qpu=444.2518 ms
+[std] rand10_t4 r4: ok elapsed=821.936601 ms qpu=444.2518 ms
+2026-09-02T00:17:04 --- cell 140/160: block 4 C1 std_native rand20_t9
+2026-09-02T00:17:21 C1 std_native rand20_t9 block 4 attempt 1 rc=0
+[std] rand20_t9 r-1: ok elapsed=2478.61936 ms qpu=1472.5207 ms
+[std] rand20_t9 r0: ok elapsed=2475.760792 ms qpu=1472.5207 ms
+[std] rand20_t9 r1: ok elapsed=2477.327677 ms qpu=1472.5207 ms
+[std] rand20_t9 r2: ok elapsed=2474.489189 ms qpu=1472.5207 ms
+[std] rand20_t9 r3: ok elapsed=2475.465958 ms qpu=1472.5207 ms
+[std] rand20_t9 r4: ok elapsed=2477.232456 ms qpu=1472.5207 ms
+2026-09-02T00:17:21 --- cell 141/160: block 4 C1 std_native rand30_t1
+2026-09-02T00:17:46 C1 std_native rand30_t1 block 4 attempt 1 rc=0
+[std] rand30_t1 r-1: ok elapsed=3563.283858 ms qpu=2245.8436 ms
+[std] rand30_t1 r0: ok elapsed=3563.273609 ms qpu=2245.8436 ms
+[std] rand30_t1 r1: ok elapsed=3565.507361 ms qpu=2245.8436 ms
+[std] rand30_t1 r2: ok elapsed=3563.289029 ms qpu=2245.8436 ms
+[std] rand30_t1 r3: ok elapsed=3569.39957 ms qpu=2245.8436 ms
+[std] rand30_t1 r4: ok elapsed=3563.236387 ms qpu=2245.8436 ms
+2026-09-02T00:17:46 --- cell 142/160: block 4 C1 std_pool rand20_t0
+2026-09-02T00:17:59 C1 std_pool rand20_t0 block 4 attempt 1 rc=0
+[std] rand20_t0 r-1: ok elapsed=1549.496708 ms qpu=1011.2963 ms
+[std] rand20_t0 r0: ok elapsed=1552.449466 ms qpu=1011.2963 ms
+[std] rand20_t0 r1: ok elapsed=1550.961322 ms qpu=1011.2963 ms
+[std] rand20_t0 r2: ok elapsed=1550.086154 ms qpu=1011.2963 ms
+[std] rand20_t0 r3: ok elapsed=1551.869421 ms qpu=1011.2963 ms
+[std] rand20_t0 r4: ok elapsed=1552.970873 ms qpu=1011.2963 ms
+2026-09-02T00:17:59 --- cell 143/160: block 4 C1 std_pool rand10_t0
+2026-09-02T00:18:12 C1 std_pool rand10_t0 block 4 attempt 1 rc=0
+[std] rand10_t0 r-1: ok elapsed=1560.710789 ms qpu=939.8526 ms
+[std] rand10_t0 r0: ok elapsed=1560.867341 ms qpu=939.8526 ms
+[std] rand10_t0 r1: ok elapsed=1561.268025 ms qpu=939.8526 ms
+[std] rand10_t0 r2: ok elapsed=1561.897691 ms qpu=939.8526 ms
+[std] rand10_t0 r3: ok elapsed=1560.419137 ms qpu=939.8526 ms
+[std] rand10_t0 r4: ok elapsed=1560.577769 ms qpu=939.8526 ms
+2026-09-02T00:18:12 --- cell 144/160: block 4 C1 std_pool rand30_t1
+2026-09-02T00:18:36 C1 std_pool rand30_t1 block 4 attempt 1 rc=0
+[std] rand30_t1 r-1: ok elapsed=3357.058436 ms qpu=2245.8436 ms
+[std] rand30_t1 r0: ok elapsed=3360.199077 ms qpu=2245.8436 ms
+[std] rand30_t1 r1: ok elapsed=3359.089716 ms qpu=2245.8436 ms
+[std] rand30_t1 r2: ok elapsed=3358.557511 ms qpu=2245.8436 ms
+[std] rand30_t1 r3: ok elapsed=3358.150337 ms qpu=2245.8436 ms
+[std] rand30_t1 r4: ok elapsed=3357.282778 ms qpu=2245.8436 ms
+2026-09-02T00:18:36 --- cell 145/160: block 4 C1 std_pool rand20_t9
+2026-09-02T00:18:54 C1 std_pool rand20_t9 block 4 attempt 1 rc=0
+[std] rand20_t9 r-1: ok elapsed=2354.394077 ms qpu=1472.5207 ms
+[std] rand20_t9 r0: ok elapsed=2354.889373 ms qpu=1472.5207 ms
+[std] rand20_t9 r1: ok elapsed=2357.185525 ms qpu=1472.5207 ms
+[std] rand20_t9 r2: ok elapsed=2352.895923 ms qpu=1472.5207 ms
+[std] rand20_t9 r3: ok elapsed=2353.275737 ms qpu=1472.5207 ms
+[std] rand20_t9 r4: ok elapsed=2355.002173 ms qpu=1472.5207 ms
+2026-09-02T00:18:54 --- cell 146/160: block 4 C1 std_pool rand30_t0
+2026-09-02T00:19:25 C1 std_pool rand30_t0 block 4 attempt 1 rc=0
+[std] rand30_t0 r-1: ok elapsed=4435.183768 ms qpu=3027.4219 ms
+[std] rand30_t0 r0: ok elapsed=4432.080208 ms qpu=3027.4219 ms
+[std] rand30_t0 r1: ok elapsed=4431.055958 ms qpu=3027.4219 ms
+[std] rand30_t0 r2: ok elapsed=4433.29699 ms qpu=3027.4219 ms
+[std] rand30_t0 r3: ok elapsed=4432.599693 ms qpu=3027.4219 ms
+[std] rand30_t0 r4: ok elapsed=4433.877146 ms qpu=3027.4219 ms
+2026-09-02T00:19:25 --- cell 147/160: block 4 C1 std_pool rand10_t4
+2026-09-02T00:19:31 C1 std_pool rand10_t4 block 4 attempt 1 rc=0
+[std] rand10_t4 r-1: ok elapsed=785.807409 ms qpu=444.2518 ms
+[std] rand10_t4 r0: ok elapsed=785.744429 ms qpu=444.2518 ms
+[std] rand10_t4 r1: ok elapsed=785.639777 ms qpu=444.2518 ms
+[std] rand10_t4 r2: ok elapsed=787.627808 ms qpu=444.2518 ms
+[std] rand10_t4 r3: ok elapsed=785.187593 ms qpu=444.2518 ms
+[std] rand10_t4 r4: ok elapsed=784.805099 ms qpu=444.2518 ms
+2026-09-02T00:19:31 mode change std -> c1: restarting services
+2026-09-02T00:20:01 service restarted; Sep 02 06:51:51 veneno start_qubic_server.sh[207924]: 2026-09-02 06:51:51,669 INFO: loading bitfile: 0071783e_14q
+10012 sudo -S nohup ./std_server 10014 ./std_server 207885 /home/xilinx/software/scripts/dma_server 207922 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:20:01 --- cell 148/160: block 4 C1 c1_native rand10_t0
+2026-09-02T00:20:08 C1 c1_native rand10_t0 block 4 attempt 1 rc=0
+[c1] rand10_t0 r-1: ok elapsed=1039.826479 ms qpu=939.8526 ms
+[c1] rand10_t0 r0: ok elapsed=1042.405876 ms qpu=939.8526 ms
+[c1] rand10_t0 r1: ok elapsed=1044.018992 ms qpu=939.8526 ms
+[c1] rand10_t0 r2: ok elapsed=1040.568457 ms qpu=939.8526 ms
+[c1] rand10_t0 r3: ok elapsed=1042.077583 ms qpu=939.8526 ms
+[c1] rand10_t0 r4: ok elapsed=1043.84865 ms qpu=939.8526 ms
+2026-09-02T00:20:08 --- cell 149/160: block 4 C1 c1_native rand30_t1
+2026-09-02T00:20:27 C1 c1_native rand30_t1 block 4 attempt 1 rc=0
+[c1] rand30_t1 r-1: ok elapsed=2583.767411 ms qpu=2245.8436 ms
+[c1] rand30_t1 r0: ok elapsed=2586.511869 ms qpu=2245.8436 ms
+[c1] rand30_t1 r1: ok elapsed=2585.179996 ms qpu=2245.8436 ms
+[c1] rand30_t1 r2: ok elapsed=2585.888282 ms qpu=2245.8436 ms
+[c1] rand30_t1 r3: ok elapsed=2583.58178 ms qpu=2245.8436 ms
+[c1] rand30_t1 r4: ok elapsed=2563.135515 ms qpu=2245.8436 ms
+2026-09-02T00:20:27 --- cell 150/160: block 4 C1 c1_native rand20_t9
+2026-09-02T00:20:39 C1 c1_native rand20_t9 block 4 attempt 1 rc=0
+[c1] rand20_t9 r-1: ok elapsed=1697.912812 ms qpu=1472.5207 ms
+[c1] rand20_t9 r0: ok elapsed=1686.301316 ms qpu=1472.5207 ms
+[c1] rand20_t9 r1: ok elapsed=1666.72373 ms qpu=1472.5207 ms
+[c1] rand20_t9 r2: ok elapsed=1688.76014 ms qpu=1472.5207 ms
+[c1] rand20_t9 r3: ok elapsed=1690.412576 ms qpu=1472.5207 ms
+[c1] rand20_t9 r4: ok elapsed=1688.083103 ms qpu=1472.5207 ms
+2026-09-02T00:20:39 --- cell 151/160: block 4 C1 c1_native rand30_t0
+2026-09-02T00:21:02 C1 c1_native rand30_t0 block 4 attempt 1 rc=0
+[c1] rand30_t0 r-1: ok elapsed=3448.045526 ms qpu=3027.4219 ms
+[c1] rand30_t0 r0: ok elapsed=3452.102327 ms qpu=3027.4219 ms
+[c1] rand30_t0 r1: ok elapsed=3451.263068 ms qpu=3027.4219 ms
+[c1] rand30_t0 r2: ok elapsed=3423.073626 ms qpu=3027.4219 ms
+[c1] rand30_t0 r3: ok elapsed=3416.627682 ms qpu=3027.4219 ms
+[c1] rand30_t0 r4: ok elapsed=3450.620511 ms qpu=3027.4219 ms
+2026-09-02T00:21:02 --- cell 152/160: block 4 C1 c1_native rand20_t0
+2026-09-02T00:23:41 C1 c1_native rand20_t0 block 4 attempt 1 rc=0
+[c1] rand20_t0 r-1: ok elapsed=1221.255934 ms qpu=1011.2963 ms
+[c1] rand20_t0 r0: ok elapsed=1220.466727 ms qpu=1011.2963 ms
+[c1] rand20_t0 r1: ok elapsed=1220.78511 ms qpu=1011.2963 ms
+[c1] rand20_t0 r2: ok elapsed=1221.448757 ms qpu=1011.2963 ms
+[c1] rand20_t0 r3: data_mismatch elapsed=None ms qpu=1011.2963 ms
+[c1] rand20_t0 r3: ok elapsed=1217.400546 ms qpu=1011.2963 ms
+[c1] rand20_t0 r4: ok elapsed=1221.176513 ms qpu=1011.2963 ms
+2026-09-02T00:23:41 --- cell 153/160: block 4 C1 c1_native rand10_t4
+2026-09-02T00:23:46 C1 c1_native rand10_t4 block 4 attempt 1 rc=0
+[c1] rand10_t4 r-1: ok elapsed=523.337165 ms qpu=444.2518 ms
+[c1] rand10_t4 r0: ok elapsed=522.304013 ms qpu=444.2518 ms
+[c1] rand10_t4 r1: ok elapsed=522.567317 ms qpu=444.2518 ms
+[c1] rand10_t4 r2: ok elapsed=514.464385 ms qpu=444.2518 ms
+[c1] rand10_t4 r3: ok elapsed=514.649597 ms qpu=444.2518 ms
+[c1] rand10_t4 r4: ok elapsed=513.977931 ms qpu=444.2518 ms
+2026-09-02T00:23:46 --- cell 154/160: block 4 C1 c1_pool rand20_t0
+2026-09-02T00:23:56 C1 c1_pool rand20_t0 block 4 attempt 1 rc=0
+[c1] rand20_t0 r-1: ok elapsed=1087.099692 ms qpu=1011.2963 ms
+[c1] rand20_t0 r0: ok elapsed=1080.153413 ms qpu=1011.2963 ms
+[c1] rand20_t0 r1: ok elapsed=1080.544537 ms qpu=1011.2963 ms
+[c1] rand20_t0 r2: ok elapsed=1079.890831 ms qpu=1011.2963 ms
+[c1] rand20_t0 r3: ok elapsed=1084.728769 ms qpu=1011.2963 ms
+[c1] rand20_t0 r4: ok elapsed=1095.185403 ms qpu=1011.2963 ms
+2026-09-02T00:23:56 --- cell 155/160: block 4 C1 c1_pool rand10_t0
+2026-09-02T00:24:05 C1 c1_pool rand10_t0 block 4 attempt 1 rc=0
+[c1] rand10_t0 r-1: ok elapsed=981.595797 ms qpu=939.8526 ms
+[c1] rand10_t0 r0: ok elapsed=980.899961 ms qpu=939.8526 ms
+[c1] rand10_t0 r1: ok elapsed=980.940601 ms qpu=939.8526 ms
+[c1] rand10_t0 r2: ok elapsed=981.564038 ms qpu=939.8526 ms
+[c1] rand10_t0 r3: ok elapsed=980.586117 ms qpu=939.8526 ms
+[c1] rand10_t0 r4: ok elapsed=982.285584 ms qpu=939.8526 ms
+2026-09-02T00:24:05 --- cell 156/160: block 4 C1 c1_pool rand10_t4
+2026-09-02T00:24:10 C1 c1_pool rand10_t4 block 4 attempt 1 rc=0
+[c1] rand10_t4 r-1: ok elapsed=479.770008 ms qpu=444.2518 ms
+[c1] rand10_t4 r0: ok elapsed=482.89717 ms qpu=444.2518 ms
+[c1] rand10_t4 r1: ok elapsed=482.667187 ms qpu=444.2518 ms
+[c1] rand10_t4 r2: ok elapsed=481.651188 ms qpu=444.2518 ms
+[c1] rand10_t4 r3: ok elapsed=482.395845 ms qpu=444.2518 ms
+[c1] rand10_t4 r4: ok elapsed=479.181272 ms qpu=444.2518 ms
+2026-09-02T00:24:10 --- cell 157/160: block 4 C1 c1_pool rand20_t9
+2026-09-02T00:24:22 C1 c1_pool rand20_t9 block 4 attempt 1 rc=0
+[c1] rand20_t9 r-1: ok elapsed=1549.524457 ms qpu=1472.5207 ms
+[c1] rand20_t9 r0: ok elapsed=1550.501557 ms qpu=1472.5207 ms
+[c1] rand20_t9 r1: ok elapsed=1549.874571 ms qpu=1472.5207 ms
+[c1] rand20_t9 r2: ok elapsed=1551.213674 ms qpu=1472.5207 ms
+[c1] rand20_t9 r3: ok elapsed=1551.412917 ms qpu=1472.5207 ms
+[c1] rand20_t9 r4: ok elapsed=1551.326085 ms qpu=1472.5207 ms
+2026-09-02T00:24:22 --- cell 158/160: block 4 C1 c1_pool rand30_t1
+2026-09-02T00:24:40 C1 c1_pool rand30_t1 block 4 attempt 1 rc=0
+[c1] rand30_t1 r-1: ok elapsed=2371.062004 ms qpu=2245.8436 ms
+[c1] rand30_t1 r0: ok elapsed=2358.893623 ms qpu=2245.8436 ms
+[c1] rand30_t1 r1: ok elapsed=2359.677801 ms qpu=2245.8436 ms
+[c1] rand30_t1 r2: ok elapsed=2359.250716 ms qpu=2245.8436 ms
+[c1] rand30_t1 r3: ok elapsed=2359.843342 ms qpu=2245.8436 ms
+[c1] rand30_t1 r4: ok elapsed=2358.476058 ms qpu=2245.8436 ms
+2026-09-02T00:24:40 --- cell 159/160: block 4 C1 c1_pool rand30_t0
+2026-09-02T00:25:03 C1 c1_pool rand30_t0 block 4 attempt 1 rc=0
+[c1] rand30_t0 r-1: ok elapsed=3152.704242 ms qpu=3027.4219 ms
+[c1] rand30_t0 r0: ok elapsed=3170.595941 ms qpu=3027.4219 ms
+[c1] rand30_t0 r1: ok elapsed=3165.649731 ms qpu=3027.4219 ms
+[c1] rand30_t0 r2: ok elapsed=3160.860134 ms qpu=3027.4219 ms
+[c1] rand30_t0 r3: ok elapsed=3160.973125 ms qpu=3027.4219 ms
+[c1] rand30_t0 r4: ok elapsed=3163.815003 ms qpu=3027.4219 ms
+2026-09-02T00:25:03 campaign done; leaving the board on C3
+2026-09-02T00:25:04 switching image -> C3 (63329aaf)
+2026-09-02T00:25:33 service restarted; Sep 02 06:57:23 veneno start_qubic_server.sh[208760]: 2026-09-02 06:57:23,904 INFO: loading bitfile: 63329aaf
+10012 sudo -S nohup ./std_server 10014 ./std_server 208721 /home/xilinx/software/scripts/dma_server 208758 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:29:02 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T00:29:40 service restarted; Sep 02 07:01:23 veneno start_qubic_server.sh[210276]: 2026-09-02 07:01:23,187 INFO: loading bitfile: 63329aaf
+210232 /home/xilinx/software/scripts/dma_server 210268 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:42:06 service restarted; Sep 02 07:13:55 veneno start_qubic_server.sh[211853]: 2026-09-02 07:13:55,961 INFO: loading bitfile: 63329aaf
+211812 /home/xilinx/software/scripts/dma_server 211845 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:42:38 service restarted; Sep 02 07:14:28 veneno start_qubic_server.sh[212213]: 2026-09-02 07:14:28,656 INFO: loading bitfile: 63329aaf
+212175 /home/xilinx/software/scripts/dma_server 212211 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:43:15 service restarted; Sep 02 07:15:00 veneno start_qubic_server.sh[212556]: 2026-09-02 07:15:00,425 INFO: loading bitfile: 63329aaf
+212518 /home/xilinx/software/scripts/dma_server 212548 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:43:47 service restarted; Sep 02 07:15:37 veneno start_qubic_server.sh[212921]: 2026-09-02 07:15:37,379 INFO: loading bitfile: 63329aaf
+212883 /home/xilinx/software/scripts/dma_server 212919 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:44:21 service restarted; Sep 02 07:16:10 veneno start_qubic_server.sh[213280]: 2026-09-02 07:16:10,100 INFO: loading bitfile: 63329aaf
+213242 /home/xilinx/software/scripts/dma_server 213278 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:44:54 service restarted; Sep 02 07:16:43 veneno start_qubic_server.sh[213639]: 2026-09-02 07:16:43,525 INFO: loading bitfile: 63329aaf
+213601 /home/xilinx/software/scripts/dma_server 213637 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:45:26 service restarted; Sep 02 07:17:15 veneno start_qubic_server.sh[214008]: 2026-09-02 07:17:15,539 INFO: loading bitfile: 63329aaf
+213969 /home/xilinx/software/scripts/dma_server 214006 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:45:58 service restarted; Sep 02 07:17:47 veneno start_qubic_server.sh[214367]: 2026-09-02 07:17:47,638 INFO: loading bitfile: 63329aaf
+214329 /home/xilinx/software/scripts/dma_server 214365 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:46:28 service restarted; Sep 02 07:18:19 veneno start_qubic_server.sh[214725]: 2026-09-02 07:18:19,537 INFO: loading bitfile: 63329aaf
+214687 /home/xilinx/software/scripts/dma_server 214723 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:47:08 service restarted; Sep 02 07:18:49 veneno start_qubic_server.sh[215067]: 2026-09-02 07:18:49,992 INFO: loading bitfile: 63329aaf
+215029 /home/xilinx/software/scripts/dma_server 215065 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:47:40 service restarted; Sep 02 07:19:29 veneno start_qubic_server.sh[215440]: 2026-09-02 07:19:29,461 INFO: loading bitfile: 63329aaf
+215402 /home/xilinx/software/scripts/dma_server 215438 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:48:12 service restarted; Sep 02 07:20:01 veneno start_qubic_server.sh[215800]: 2026-09-02 07:20:01,402 INFO: loading bitfile: 63329aaf
+215762 /home/xilinx/software/scripts/dma_server 215798 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:48:13 switching image -> C1 (0071783e_14q)
+2026-09-02T00:48:44 service restarted; Sep 02 07:20:33 veneno start_qubic_server.sh[216191]: 2026-09-02 07:20:33,651 INFO: loading bitfile: 0071783e_14q
+216153 /home/xilinx/software/scripts/dma_server 216189 /home/xilinx/software/scripts/batch_server
+2026-09-02T00:56:46 service restarted; Sep 02 07:28:35 veneno start_qubic_server.sh[217265]: 2026-09-02 07:28:35,593 INFO: loading bitfile: 0071783e_14q
+217226 /home/xilinx/software/scripts/dma_server 217263 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:04:06 image already C1 (xsa_commit: '0071783e_14q')
+2026-09-02T01:16:03 switching image -> C3 (63329aaf)
+2026-09-02T01:16:37 service restarted; Sep 02 07:48:24 veneno start_qubic_server.sh[219539]: 2026-09-02 07:48:24,255 INFO: loading bitfile: 63329aaf
+218254 ./std_server 219501 /home/xilinx/software/scripts/dma_server 219537 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:16:40 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T01:17:17 service restarted; Sep 02 07:49:04 veneno start_qubic_server.sh[219935]: 2026-09-02 07:49:04,190 INFO: loading bitfile: 63329aaf
+218254 ./std_server 219897 /home/xilinx/software/scripts/dma_server 219933 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:17:54 service restarted; Sep 02 07:49:40 veneno start_qubic_server.sh[220292]: 2026-09-02 07:49:40,633 INFO: loading bitfile: 63329aaf
+218254 ./std_server 220254 /home/xilinx/software/scripts/dma_server 220290 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:18:30 service restarted; Sep 02 07:50:17 veneno start_qubic_server.sh[220677]: 2026-09-02 07:50:17,765 INFO: loading bitfile: 63329aaf
+218254 ./std_server 220639 /home/xilinx/software/scripts/dma_server 220669 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:19:13 service restarted; Sep 02 07:50:59 veneno start_qubic_server.sh[221056]: 2026-09-02 07:50:59,487 INFO: loading bitfile: 63329aaf
+218254 ./std_server 221018 /home/xilinx/software/scripts/dma_server 221054 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:19:54 service restarted; Sep 02 07:51:41 veneno start_qubic_server.sh[221439]: 2026-09-02 07:51:41,342 INFO: loading bitfile: 63329aaf
+218254 ./std_server 221401 /home/xilinx/software/scripts/dma_server 221431 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:20:36 service restarted; Sep 02 07:52:23 veneno start_qubic_server.sh[221817]: 2026-09-02 07:52:23,064 INFO: loading bitfile: 63329aaf
+218254 ./std_server 221779 /home/xilinx/software/scripts/dma_server 221815 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:21:12 service restarted; Sep 02 07:52:59 veneno start_qubic_server.sh[222194]: 2026-09-02 07:52:59,977 INFO: loading bitfile: 63329aaf
+218254 ./std_server 222156 /home/xilinx/software/scripts/dma_server 222192 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:21:48 service restarted; Sep 02 07:53:36 veneno start_qubic_server.sh[222570]: 2026-09-02 07:53:36,070 INFO: loading bitfile: 63329aaf
+218254 ./std_server 222531 /home/xilinx/software/scripts/dma_server 222568 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:22:23 service restarted; Sep 02 07:54:10 veneno start_qubic_server.sh[222945]: 2026-09-02 07:54:10,858 INFO: loading bitfile: 63329aaf
+218254 ./std_server 222907 /home/xilinx/software/scripts/dma_server 222943 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:25:48 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T01:27:31 service restarted; Sep 02 07:59:19 veneno start_qubic_server.sh[224392]: 2026-09-02 07:59:19,441 INFO: loading bitfile: 63329aaf
+218254 ./std_server 224353 /home/xilinx/software/scripts/dma_server 224387 /home/xilinx/software/scripts/batch_server
+2026-09-02T01:27:31 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T11:42:55 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T11:43:58 service restarted; Sep 02 18:15:44 veneno start_qubic_server.sh[282177]: 2026-09-02 18:15:44,562 INFO: loading bitfile: 63329aaf
+218254 ./std_server 282138 /home/xilinx/software/scripts/dma_server 282175 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:44:48 service restarted; Sep 02 18:16:34 veneno start_qubic_server.sh[282567]: 2026-09-02 18:16:34,293 INFO: loading bitfile: 63329aaf
+218254 ./std_server 282529 /home/xilinx/software/scripts/dma_server 282565 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:45:46 service restarted; Sep 02 18:17:33 veneno start_qubic_server.sh[282987]: 2026-09-02 18:17:33,101 INFO: loading bitfile: 63329aaf
+218254 ./std_server 282949 /home/xilinx/software/scripts/dma_server 282985 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:46:29 service restarted; Sep 02 18:18:15 veneno start_qubic_server.sh[283372]: 2026-09-02 18:18:15,871 INFO: loading bitfile: 63329aaf
+218254 ./std_server 283332 /home/xilinx/software/scripts/dma_server 283364 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:47:11 service restarted; Sep 02 18:18:58 veneno start_qubic_server.sh[283750]: 2026-09-02 18:18:58,397 INFO: loading bitfile: 63329aaf
+218254 ./std_server 283712 /home/xilinx/software/scripts/dma_server 283748 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:48:01 service restarted; Sep 02 18:19:48 veneno start_qubic_server.sh[284148]: 2026-09-02 18:19:48,958 INFO: loading bitfile: 63329aaf
+218254 ./std_server 284110 /home/xilinx/software/scripts/dma_server 284146 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:54:50 service restarted; Sep 02 18:26:31 veneno start_qubic_server.sh[285114]: 2026-09-02 18:26:31,327 INFO: loading bitfile: 63329aaf
+218254 ./std_server 285076 /home/xilinx/software/scripts/dma_server 285112 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:54:51 image already C3 (xsa_commit: '63329aaf')
+2026-09-02T11:55:52 service restarted; Sep 02 18:27:38 veneno start_qubic_server.sh[285584]: 2026-09-02 18:27:38,236 INFO: loading bitfile: 63329aaf
+218254 ./std_server 285546 /home/xilinx/software/scripts/dma_server 285582 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:56:28 service restarted; Sep 02 18:28:14 veneno start_qubic_server.sh[285951]: 2026-09-02 18:28:14,586 INFO: loading bitfile: 63329aaf
+218254 ./std_server 285913 /home/xilinx/software/scripts/dma_server 285949 /home/xilinx/software/scripts/batch_server
+2026-09-02T11:57:03 service restarted; Sep 02 18:28:50 veneno start_qubic_server.sh[286320]: 2026-09-02 18:28:50,980 INFO: loading bitfile: 63329aaf
+218254 ./std_server 286282 /home/xilinx/software/scripts/dma_server 286318 /home/xilinx/software/scripts/batch_server
+2026-09-03T18:41:10 service restarted; Sep 04 01:12:58 veneno start_qubic_server.sh[328685]: 2026-09-04 01:12:58,293 INFO: loading bitfile: 63329aaf
+218254 ./std_server 328652 /home/xilinx/software/scripts/dma_server 328683 /home/xilinx/software/scripts/batch_server
+2026-09-03T18:41:11 image already C3 (xsa_commit: '63329aaf')
+2026-09-03T18:50:50 service restarted; Sep 04 01:22:32 veneno start_qubic_server.sh[329604]: 2026-09-04 01:22:32,532 INFO: loading bitfile: 63329aaf
+218254 ./std_server 329555 /home/xilinx/software/scripts/dma_server 329602 /home/xilinx/software/scripts/batch_server
+2026-09-03T18:50:50 service restarted; Sep 04 01:22:32 veneno start_qubic_server.sh[329604]: 2026-09-04 01:22:32,532 INFO: loading bitfile: 63329aaf
+218254 ./std_server 329555 /home/xilinx/software/scripts/dma_server 329602 /home/xilinx/software/scripts/batch_server
+2026-09-03T18:50:51 image already C3 (xsa_commit: '63329aaf')
+2026-09-03T19:01:46 service restarted; Sep 04 01:33:33 veneno start_qubic_server.sh[330316]: 2026-09-04 01:33:33,728 INFO: loading bitfile: 63329aaf
+218254 ./std_server 330283 /home/xilinx/software/scripts/dma_server 330314 /home/xilinx/software/scripts/batch_server
+2026-09-03T19:12:55 service restarted; Sep 04 01:44:43 veneno start_qubic_server.sh[330962]: 2026-09-04 01:44:43,146 INFO: loading bitfile: 63329aaf
+218254 ./std_server 330928 /home/xilinx/software/scripts/dma_server 330960 /home/xilinx/software/scripts/batch_server
+2026-09-03T19:12:56 image already C3 (xsa_commit: '63329aaf')
+2026-09-03T19:23:36 service restarted; Sep 04 01:55:24 veneno start_qubic_server.sh[331387]: 2026-09-04 01:55:24,188 INFO: loading bitfile: 63329aaf
+218254 ./std_server 331354 /home/xilinx/software/scripts/dma_server 331385 /home/xilinx/software/scripts/batch_server
+2026-09-03T22:32:45 service restarted; Sep 04 05:04:32 veneno start_qubic_server.sh[332137]: 2026-09-04 05:04:32,058 INFO: loading bitfile: 63329aaf
+218254 ./std_server 332104 /home/xilinx/software/scripts/dma_server 332135 /home/xilinx/software/scripts/batch_server

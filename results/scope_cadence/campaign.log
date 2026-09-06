@@ -1,0 +1,40 @@
+2026-09-04T18:51:32 CAMPAIGN START
+[c3] phys5_prefill16 r0: ok elapsed=256.91925 ms qpu=254.5091 ms
+[0] 5000000 pts, dt 80.0 ns, window 400.00 ms, |v| max 6.4 mV, transfer 1.0 s
+captured 1 records
+[c3] phys5_prefill16 r0: ok elapsed=255.391005 ms qpu=254.5091 ms
+[0] 5000000 pts, dt 80.0 ns, window 400.00 ms, |v| max 6.4 mV, transfer 1.0 s
+captured 1 records
+[c3] phys5_prefill16 r0: ok elapsed=255.431205 ms qpu=254.5091 ms
+[0] 5000000 pts, dt 80.0 ns, window 400.00 ms, |v| max 5.6 mV, transfer 1.0 s
+captured 1 records
+[c3] phys4_prefill16 r0: ok elapsed=71.490425 ms qpu=71.4560 ms
+[0] 1250000 pts, dt 80.0 ns, window 100.00 ms, |v| max 60.0 mV, transfer 0.6 s
+captured 1 records
+[c3] phys4_prefill16 r0: ok elapsed=71.476955 ms qpu=71.4560 ms
+[0] 1250000 pts, dt 80.0 ns, window 100.00 ms, |v| max 60.0 mV, transfer 0.6 s
+captured 1 records
+[c3] phys4_prefill16 r0: ok elapsed=71.480785 ms qpu=71.4560 ms
+[0] 1250000 pts, dt 80.0 ns, window 100.00 ms, |v| max 59.2 mV, transfer 0.6 s
+captured 1 records
+[c3] phys3_prefill16 r0: ok elapsed=100180.349099 ms qpu=100182.4000 ms
+[0] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.6 s
+[1] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.8 s
+[2] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.6 s
+[3] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.8 s
+[4] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.7 s
+[5] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.8 s
+[6] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 58.4 mV, transfer 1.6 s
+[7] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 58.4 mV, transfer 1.8 s
+[8] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.6 s
+[9] 12500000 pts, dt 80.0 ns, window 1000.00 ms, |v| max 59.2 mV, transfer 1.8 s
+captured 10 records
+2026-09-04T18:55:05 CAMPAIGN DONE
+2026-09-04T18:57:06 PHYS5 RERUN START (spurious-record guard)
+[c3] phys5_prefill16 r0: ok elapsed=255.396804 ms qpu=254.5091 ms
+[0] no trigger before max-s ()
+captured 0 records
+[c3] phys5_prefill16 r0: ok elapsed=255.394085 ms qpu=254.5091 ms
+[0] no trigger before max-s ()
+captured 0 records
+[c3] phys5_prefill16 r0: ok elapsed=255.397474 ms qpu=254.5091 ms

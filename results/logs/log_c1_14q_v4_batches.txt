@@ -1,0 +1,51 @@
+restarted 06:32:40
+[c1] ghz8_x30 r3: ok elapsed=98.905249 ms qpu=26.2656 ms
+[c1] ghz8_x30 r4: ok elapsed=99.219973 ms qpu=26.2656 ms
+[c1] qaoa12_x30 r3: ok elapsed=13095.454125 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r4: ok elapsed=13098.176032 ms qpu=12972.0000 ms
+[c1] rand10_t0 r3: ok elapsed=976.394556 ms qpu=939.6340 ms
+[c1] rand10_t0 r4: ok elapsed=977.056982 ms qpu=939.6340 ms
+[c1] rand10_t1 r3: ok elapsed=622.96972 ms qpu=585.9953 ms
+[c1] rand10_t1 r4: ok elapsed=622.606537 ms qpu=585.9953 ms
+[c1] rand10_t2 r3: ok elapsed=739.122012 ms qpu=704.9334 ms
+[c1] rand10_t2 r4: ok elapsed=739.742588 ms qpu=704.9334 ms
+[c1] rand10_t3 r3: ok elapsed=437.588407 ms qpu=406.2972 ms
+[c1] rand10_t3 r4: ok elapsed=437.350094 ms qpu=406.2972 ms
+[c1] rand10_t4 r3: ok elapsed=475.797369 ms qpu=444.1056 ms
+[c1] rand10_t4 r4: ok elapsed=476.333885 ms qpu=444.1056 ms
+[c1] rand10_t5 r3: ok elapsed=213.265723 ms qpu=186.5695 ms
+[c1] rand10_t5 r4: ok elapsed=213.193912 ms qpu=186.5695 ms
+[c1] rand10_t6 r3: ok elapsed=1122.665838 ms qpu=1086.9310 ms
+[c1] rand10_t6 r4: ok elapsed=1123.212894 ms qpu=1086.9310 ms
+[c1] rand10_t7 r3: ok elapsed=575.450805 ms qpu=665.5469 ms
+[c1] rand10_t7 r4: ok elapsed=597.099192 ms qpu=665.5469 ms
+[c1] rand10_t8 r3: ok elapsed=488.835519 ms qpu=668.9461 ms
+[c1] rand10_t8 r4: ok elapsed=386.817289 ms qpu=668.9461 ms
+[c1] rand10_t9 r3: ok elapsed=660.704798 ms qpu=822.8212 ms
+[c1] rand10_t9 r4: ok elapsed=660.290673 ms qpu=822.8212 ms
+[c1] rand20_t0 r3: ok elapsed=839.339934 ms qpu=1011.1746 ms
+[c1] rand20_t0 r4: ok elapsed=840.596758 ms qpu=1011.1746 ms
+[c1] rand20_t1 r3: ok elapsed=2142.065014 ms qpu=3240.8544 ms
+[c1] rand20_t1 r4: ok elapsed=1999.64626 ms qpu=3240.8544 ms
+[c1] rand20_t2 r3: ok elapsed=486.770198 ms qpu=700.8332 ms
+[c1] rand20_t2 r4: ok elapsed=486.970391 ms qpu=700.8332 ms
+[c1] rand20_t3 r3: ok elapsed=1307.044632 ms qpu=1385.0320 ms
+[c1] rand20_t3 r4: ok elapsed=1449.203175 ms qpu=1385.0320 ms
+[c1] rand20_t4 r3: ok elapsed=714.303054 ms qpu=1095.4322 ms
+[c1] rand20_t4 r4: ok elapsed=780.135573 ms qpu=1095.4322 ms
+[c1] rand20_t5 r3: ok elapsed=761.724809 ms qpu=834.0002 ms
+[c1] rand20_t5 r4: ok elapsed=761.561987 ms qpu=834.0002 ms
+[c1] rand20_t6 r3: ok elapsed=926.780949 ms qpu=1127.8979 ms
+[c1] rand20_t6 r4: ok elapsed=1101.419046 ms qpu=1127.8979 ms
+[c1] rand20_t7 r3: ok elapsed=584.681728 ms qpu=1274.3496 ms
+[c1] rand20_t7 r4: ok elapsed=1023.257314 ms qpu=1274.3496 ms
+[c1] rand20_t8 r3: ok elapsed=1168.388356 ms qpu=1305.8993 ms
+[c1] rand20_t8 r4: ok elapsed=1105.372486 ms qpu=1305.8993 ms
+[c1] rand20_t9 r3: ok elapsed=983.552247 ms qpu=1472.2518 ms
+[c1] rand20_t9 r4: ok elapsed=982.108673 ms qpu=1472.2518 ms
+[c1] rand30_t0 r3: ok elapsed=2311.320706 ms qpu=3027.1680 ms
+[c1] rand30_t0 r4: ok elapsed=2329.246976 ms qpu=3027.1680 ms
+[c1] rand30_t1 r3: data_mismatch elapsed=None ms qpu=2245.6027 ms
+!! rand30_t1: second failure, stopping this workload
+!! rand30_t1 attempt 1 failed -> restart
+restarted 06:49:39

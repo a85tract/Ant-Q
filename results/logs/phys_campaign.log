@@ -1,0 +1,666 @@
+2026-09-02T00:29:02 C3 c3 phys1 attempt 1 rc=0
+[c3] phys1 r-1: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c3] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c3] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+!! phys1: second failure, stopping this workload
+2026-09-02T00:30:01 C3 c3 phys1 attempt 2 rc=0
+[c3] phys1 r-1: ok elapsed=5182.373012 ms qpu=5182.4000 ms
+[c3] phys1 r0: ok elapsed=5182.376852 ms qpu=5182.4000 ms
+[c3] phys1 r1: ok elapsed=5182.372091 ms qpu=5182.4000 ms
+[c3] phys1 r2: ok elapsed=5182.372502 ms qpu=5182.4000 ms
+2026-09-02T00:30:02 C3 c3 phys2 attempt 1 rc=0
+[c3] phys2 r-1: ok elapsed=0.489635 ms qpu=0.1889 ms
+[c3] phys2 r0: ok elapsed=0.331294 ms qpu=0.1889 ms
+[c3] phys2 r1: ok elapsed=0.340093 ms qpu=0.1889 ms
+[c3] phys2 r2: ok elapsed=0.405334 ms qpu=0.1889 ms
+2026-09-02T00:36:43 C3 c3 phys3 attempt 1 rc=0
+[c3] phys3 r-1: ok elapsed=100180.38003 ms qpu=100182.4000 ms
+[c3] phys3 r0: ok elapsed=100180.37529 ms qpu=100182.4000 ms
+[c3] phys3 r1: ok elapsed=100180.38039 ms qpu=100182.4000 ms
+[c3] phys3 r2: ok elapsed=100180.38486 ms qpu=100182.4000 ms
+2026-09-02T00:36:44 C3 c3 phys4 attempt 1 rc=0
+[c3] phys4 r-1: ok elapsed=71.534655 ms qpu=71.4560 ms
+[c3] phys4 r0: ok elapsed=71.542656 ms qpu=71.4560 ms
+[c3] phys4 r1: ok elapsed=71.527335 ms qpu=71.4560 ms
+[c3] phys4 r2: ok elapsed=71.528616 ms qpu=71.4560 ms
+2026-09-02T00:37:05 C3 c3 phys1_n101000 attempt 1 rc=0
+[c3] phys1_n101000 r-1: ok elapsed=10468.420691 ms qpu=10468.4480 ms
+[c3] phys1_n101000 r0: ok elapsed=10468.417231 ms qpu=10468.4480 ms
+2026-09-02T00:37:16 C3 c3 phys1_n51000 attempt 1 rc=0
+[c3] phys1_n51000 r-1: ok elapsed=5286.025139 ms qpu=5286.0480 ms
+[c3] phys1_n51000 r0: ok elapsed=5286.083529 ms qpu=5286.0480 ms
+2026-09-02T00:37:17 C3 c3 phys1_n1000 attempt 1 rc=0
+[c3] phys1_n1000 r-1: ok elapsed=103.627126 ms qpu=103.6480 ms
+[c3] phys1_n1000 r0: ok elapsed=103.632366 ms qpu=103.6480 ms
+2026-09-02T00:37:28 C3 c3 phys1_n51000 attempt 1 rc=0
+[c3] phys1_n51000 r-1: ok elapsed=5286.020369 ms qpu=5286.0480 ms
+[c3] phys1_n51000 r0: ok elapsed=5286.019789 ms qpu=5286.0480 ms
+2026-09-02T00:37:50 C3 c3 phys1_n101000 attempt 1 rc=0
+[c3] phys1_n101000 r-1: ok elapsed=10468.415761 ms qpu=10468.4480 ms
+[c3] phys1_n101000 r0: ok elapsed=10468.41995 ms qpu=10468.4480 ms
+2026-09-02T00:37:50 C3 c3 phys1_n1000 attempt 1 rc=0
+[c3] phys1_n1000 r-1: ok elapsed=103.634347 ms qpu=103.6480 ms
+[c3] phys1_n1000 r0: ok elapsed=104.01699 ms qpu=103.6480 ms
+2026-09-02T00:38:01 C3 c3 phys1_n51000 attempt 1 rc=0
+[c3] phys1_n51000 r-1: ok elapsed=5286.023538 ms qpu=5286.0480 ms
+[c3] phys1_n51000 r0: ok elapsed=5287.689495 ms qpu=5286.0480 ms
+2026-09-02T00:38:02 C3 c3 phys1_n1000 attempt 1 rc=0
+[c3] phys1_n1000 r-1: ok elapsed=103.632537 ms qpu=103.6480 ms
+[c3] phys1_n1000 r0: ok elapsed=103.627407 ms qpu=103.6480 ms
+2026-09-02T00:38:23 C3 c3 phys1_n101000 attempt 1 rc=0
+[c3] phys1_n101000 r-1: ok elapsed=10468.41769 ms qpu=10468.4480 ms
+[c3] phys1_n101000 r0: ok elapsed=10468.38586 ms qpu=10468.4480 ms
+2026-09-02T00:38:40 C3 c3 phys3_n3970 attempt 1 rc=0
+[c3] phys3_n3970 r-1: ok elapsed=7952.550748 ms qpu=7954.4826 ms
+[c3] phys3_n3970 r0: ok elapsed=7952.558078 ms qpu=7954.4826 ms
+2026-09-02T00:38:44 C3 c3 phys3_n1000 attempt 1 rc=0
+[c3] phys3_n1000 r-1: ok elapsed=2001.762171 ms qpu=2003.6480 ms
+[c3] phys3_n1000 r0: ok elapsed=2001.752761 ms qpu=2003.6480 ms
+2026-09-02T00:39:13 C3 c3 phys3_n6941 attempt 1 rc=0
+[c3] phys3_n6941 r-1: ok elapsed=13905.408236 ms qpu=13907.3208 ms
+[c3] phys3_n6941 r0: ok elapsed=13905.402255 ms qpu=13907.3208 ms
+2026-09-02T00:39:29 C3 c3 phys3_n3970 attempt 1 rc=0
+[c3] phys3_n3970 r-1: ok elapsed=7952.558808 ms qpu=7954.4826 ms
+[c3] phys3_n3970 r0: ok elapsed=7952.558088 ms qpu=7954.4826 ms
+2026-09-02T00:39:57 C3 c3 phys3_n6941 attempt 1 rc=0
+[c3] phys3_n6941 r-1: ok elapsed=13905.427326 ms qpu=13907.3208 ms
+[c3] phys3_n6941 r0: ok elapsed=13905.405885 ms qpu=13907.3208 ms
+2026-09-02T00:40:02 C3 c3 phys3_n1000 attempt 1 rc=0
+[c3] phys3_n1000 r-1: ok elapsed=2001.76497 ms qpu=2003.6480 ms
+[c3] phys3_n1000 r0: ok elapsed=2001.74327 ms qpu=2003.6480 ms
+2026-09-02T00:40:30 C3 c3 phys3_n6941 attempt 1 rc=0
+[c3] phys3_n6941 r-1: ok elapsed=13905.408646 ms qpu=13907.3208 ms
+[c3] phys3_n6941 r0: ok elapsed=13905.399925 ms qpu=13907.3208 ms
+2026-09-02T00:40:35 C3 c3 phys3_n1000 attempt 1 rc=0
+[c3] phys3_n1000 r-1: ok elapsed=2001.874862 ms qpu=2003.6480 ms
+[c3] phys3_n1000 r0: ok elapsed=2001.7575 ms qpu=2003.6480 ms
+2026-09-02T00:40:51 C3 c3 phys3_n3970 attempt 1 rc=0
+[c3] phys3_n3970 r-1: ok elapsed=7952.554058 ms qpu=7954.4826 ms
+[c3] phys3_n3970 r0: ok elapsed=7952.559858 ms qpu=7954.4826 ms
+2026-09-02T00:40:56 C3 c3 phys4_n231769 attempt 1 rc=0
+[c3] phys4_n231769 r-1: ok elapsed=2070.230526 ms qpu=2070.1607 ms
+[c3] phys4_n231769 r0: ok elapsed=2070.230715 ms qpu=2070.1607 ms
+2026-09-02T00:41:05 C3 c3 phys4_n462539 attempt 1 rc=0
+[c3] phys4_n462539 r-1: ok elapsed=4131.466051 ms qpu=4131.3983 ms
+[c3] phys4_n462539 r0: ok elapsed=4131.470341 ms qpu=4131.3983 ms
+2026-09-02T00:41:05 C3 c3 phys4_n1000 attempt 1 rc=0
+[c3] phys4_n1000 r-1: ok elapsed=9.01607 ms qpu=8.9320 ms
+[c3] phys4_n1000 r0: ok elapsed=9.0025 ms qpu=8.9320 ms
+2026-09-02T00:41:06 C3 c3 phys4_n1000 attempt 1 rc=0
+[c3] phys4_n1000 r-1: ok elapsed=9.00543 ms qpu=8.9320 ms
+[c3] phys4_n1000 r0: ok elapsed=9.01099 ms qpu=8.9320 ms
+2026-09-02T00:41:10 C3 c3 phys4_n231769 attempt 1 rc=0
+[c3] phys4_n231769 r-1: ok elapsed=2070.259516 ms qpu=2070.1607 ms
+[c3] phys4_n231769 r0: ok elapsed=2070.236385 ms qpu=2070.1607 ms
+2026-09-02T00:41:19 C3 c3 phys4_n462539 attempt 1 rc=0
+[c3] phys4_n462539 r-1: ok elapsed=4131.466271 ms qpu=4131.3983 ms
+[c3] phys4_n462539 r0: ok elapsed=4132.681923 ms qpu=4131.3983 ms
+2026-09-02T00:41:20 C3 c3 phys4_n1000 attempt 1 rc=0
+[c3] phys4_n1000 r-1: ok elapsed=9.00522 ms qpu=8.9320 ms
+[c3] phys4_n1000 r0: ok elapsed=9.00705 ms qpu=8.9320 ms
+2026-09-02T00:41:25 C3 c3 phys4_n231769 attempt 1 rc=0
+[c3] phys4_n231769 r-1: ok elapsed=2070.232186 ms qpu=2070.1607 ms
+[c3] phys4_n231769 r0: ok elapsed=2070.235796 ms qpu=2070.1607 ms
+2026-09-02T00:41:33 C3 c3 phys4_n462539 attempt 1 rc=0
+[c3] phys4_n462539 r-1: ok elapsed=4131.475701 ms qpu=4131.3983 ms
+[c3] phys4_n462539 r0: ok elapsed=4131.470711 ms qpu=4131.3983 ms
+2026-09-02T00:41:35 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T00:42:08 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T00:42:39 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T00:43:16 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T00:43:49 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T00:44:23 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T00:44:54 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+!! phys5_ctrl1800p_cap1802: second failure, stopping this workload
+2026-09-02T00:45:27 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+!! phys5_ctrl1800p_cap1802: second failure, stopping this workload
+2026-09-02T00:45:59 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: data_mismatch elapsed=None ms qpu=47.9314 ms
+!! phys5_ctrl1800p_cap1802: second failure, stopping this workload
+2026-09-02T00:46:29 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T00:47:08 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T00:47:40 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T00:56:14 C1 c1 phys1 attempt 1 rc=0
+[c1] phys1 r-1: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c1] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+[c1] phys1 r0: data_mismatch elapsed=None ms qpu=5182.4000 ms
+!! phys1: second failure, stopping this workload
+2026-09-02T01:04:27 C1 c1 phys1 attempt 1 rc=0
+[c1] phys1 r-1: ok elapsed=5184.687485 ms qpu=5182.4000 ms
+[c1] phys1 r0: ok elapsed=5184.639595 ms qpu=5182.4000 ms
+[c1] phys1 r1: ok elapsed=5184.657025 ms qpu=5182.4000 ms
+[c1] phys1 r2: ok elapsed=5184.643894 ms qpu=5182.4000 ms
+2026-09-02T01:04:28 C1 c1 phys2 attempt 1 rc=0
+[c1] phys2 r-1: ok elapsed=2.606676 ms qpu=0.1889 ms
+[c1] phys2 r0: ok elapsed=2.604426 ms qpu=0.1889 ms
+[c1] phys2 r1: ok elapsed=2.600076 ms qpu=0.1889 ms
+[c1] phys2 r2: ok elapsed=2.598676 ms qpu=0.1889 ms
+2026-09-02T01:11:10 C1 c1 phys3 attempt 1 rc=0
+[c1] phys3 r-1: ok elapsed=100182.609633 ms qpu=100182.4000 ms
+[c1] phys3 r0: ok elapsed=100182.599852 ms qpu=100182.4000 ms
+[c1] phys3 r1: ok elapsed=100182.607252 ms qpu=100182.4000 ms
+[c1] phys3 r2: ok elapsed=100182.606682 ms qpu=100182.4000 ms
+2026-09-02T01:11:10 C1 c1 phys4 attempt 1 rc=0
+[c1] phys4 r-1: ok elapsed=73.717318 ms qpu=71.4560 ms
+[c1] phys4 r0: ok elapsed=73.700377 ms qpu=71.4560 ms
+[c1] phys4 r1: ok elapsed=73.724277 ms qpu=71.4560 ms
+[c1] phys4 r2: ok elapsed=73.719907 ms qpu=71.4560 ms
+2026-09-02T01:11:32 C1 c1 phys1_n101000 attempt 1 rc=0
+[c1] phys1_n101000 r-1: ok elapsed=10470.794234 ms qpu=10468.4480 ms
+[c1] phys1_n101000 r0: ok elapsed=10470.790574 ms qpu=10468.4480 ms
+2026-09-02T01:11:43 C1 c1 phys1_n51000 attempt 1 rc=0
+[c1] phys1_n51000 r-1: ok elapsed=5288.293401 ms qpu=5286.0480 ms
+[c1] phys1_n51000 r0: ok elapsed=5288.295882 ms qpu=5286.0480 ms
+2026-09-02T01:11:44 C1 c1 phys1_n1000 attempt 1 rc=0
+[c1] phys1_n1000 r-1: ok elapsed=105.786879 ms qpu=103.6480 ms
+[c1] phys1_n1000 r0: ok elapsed=105.796928 ms qpu=103.6480 ms
+2026-09-02T01:11:55 C1 c1 phys1_n51000 attempt 1 rc=0
+[c1] phys1_n51000 r-1: ok elapsed=5288.625784 ms qpu=5286.0480 ms
+[c1] phys1_n51000 r0: ok elapsed=5288.263461 ms qpu=5286.0480 ms
+2026-09-02T01:12:16 C1 c1 phys1_n101000 attempt 1 rc=0
+[c1] phys1_n101000 r-1: ok elapsed=10470.791834 ms qpu=10468.4480 ms
+[c1] phys1_n101000 r0: ok elapsed=10470.796155 ms qpu=10468.4480 ms
+2026-09-02T01:12:17 C1 c1 phys1_n1000 attempt 1 rc=0
+[c1] phys1_n1000 r-1: ok elapsed=105.787498 ms qpu=103.6480 ms
+[c1] phys1_n1000 r0: ok elapsed=105.795748 ms qpu=103.6480 ms
+2026-09-02T01:12:28 C1 c1 phys1_n51000 attempt 1 rc=0
+[c1] phys1_n51000 r-1: ok elapsed=5288.297711 ms qpu=5286.0480 ms
+[c1] phys1_n51000 r0: ok elapsed=5288.294631 ms qpu=5286.0480 ms
+2026-09-02T01:12:29 C1 c1 phys1_n1000 attempt 1 rc=0
+[c1] phys1_n1000 r-1: ok elapsed=105.789518 ms qpu=103.6480 ms
+[c1] phys1_n1000 r0: ok elapsed=105.797458 ms qpu=103.6480 ms
+2026-09-02T01:12:50 C1 c1 phys1_n101000 attempt 1 rc=0
+[c1] phys1_n101000 r-1: ok elapsed=10470.800295 ms qpu=10468.4480 ms
+[c1] phys1_n101000 r0: ok elapsed=10470.790055 ms qpu=10468.4480 ms
+2026-09-02T01:13:07 C1 c1 phys3_n3970 attempt 1 rc=0
+[c1] phys3_n3970 r-1: ok elapsed=7954.72565 ms qpu=7954.4826 ms
+[c1] phys3_n3970 r0: ok elapsed=7954.73492 ms qpu=7954.4826 ms
+2026-09-02T01:13:11 C1 c1 phys3_n1000 attempt 1 rc=0
+[c1] phys3_n1000 r-1: ok elapsed=2003.902232 ms qpu=2003.6480 ms
+[c1] phys3_n1000 r0: ok elapsed=2003.891522 ms qpu=2003.6480 ms
+2026-09-02T01:13:39 C1 c1 phys3_n6941 attempt 1 rc=0
+[c1] phys3_n6941 r-1: ok elapsed=13907.580687 ms qpu=13907.3208 ms
+[c1] phys3_n6941 r0: ok elapsed=13907.567737 ms qpu=13907.3208 ms
+2026-09-02T01:13:56 C1 c1 phys3_n3970 attempt 1 rc=0
+[c1] phys3_n3970 r-1: ok elapsed=7954.73037 ms qpu=7954.4826 ms
+[c1] phys3_n3970 r0: ok elapsed=7954.74855 ms qpu=7954.4826 ms
+2026-09-02T01:14:24 C1 c1 phys3_n6941 attempt 1 rc=0
+[c1] phys3_n6941 r-1: ok elapsed=13907.572478 ms qpu=13907.3208 ms
+[c1] phys3_n6941 r0: ok elapsed=13907.595478 ms qpu=13907.3208 ms
+2026-09-02T01:14:29 C1 c1 phys3_n1000 attempt 1 rc=0
+[c1] phys3_n1000 r-1: ok elapsed=2003.910432 ms qpu=2003.6480 ms
+[c1] phys3_n1000 r0: ok elapsed=2003.911462 ms qpu=2003.6480 ms
+2026-09-02T01:14:57 C1 c1 phys3_n6941 attempt 1 rc=0
+[c1] phys3_n6941 r-1: ok elapsed=13907.583217 ms qpu=13907.3208 ms
+[c1] phys3_n6941 r0: ok elapsed=13907.563847 ms qpu=13907.3208 ms
+2026-09-02T01:15:02 C1 c1 phys3_n1000 attempt 1 rc=0
+[c1] phys3_n1000 r-1: ok elapsed=2003.932472 ms qpu=2003.6480 ms
+[c1] phys3_n1000 r0: ok elapsed=2003.910812 ms qpu=2003.6480 ms
+2026-09-02T01:15:18 C1 c1 phys3_n3970 attempt 1 rc=0
+[c1] phys3_n3970 r-1: ok elapsed=7954.72506 ms qpu=7954.4826 ms
+[c1] phys3_n3970 r0: ok elapsed=7954.731029 ms qpu=7954.4826 ms
+2026-09-02T01:15:23 C1 c1 phys4_n231769 attempt 1 rc=0
+[c1] phys4_n231769 r-1: ok elapsed=2072.899562 ms qpu=2070.1607 ms
+[c1] phys4_n231769 r0: ok elapsed=2072.885082 ms qpu=2070.1607 ms
+2026-09-02T01:15:32 C1 c1 phys4_n462539 attempt 1 rc=0
+[c1] phys4_n462539 r-1: ok elapsed=4134.600933 ms qpu=4131.3983 ms
+[c1] phys4_n462539 r0: ok elapsed=4134.607063 ms qpu=4131.3983 ms
+2026-09-02T01:15:32 C1 c1 phys4_n1000 attempt 1 rc=0
+[c1] phys4_n1000 r-1: ok elapsed=11.170821 ms qpu=8.9320 ms
+[c1] phys4_n1000 r0: ok elapsed=11.180952 ms qpu=8.9320 ms
+2026-09-02T01:15:33 C1 c1 phys4_n1000 attempt 1 rc=0
+[c1] phys4_n1000 r-1: ok elapsed=11.203042 ms qpu=8.9320 ms
+[c1] phys4_n1000 r0: ok elapsed=11.179712 ms qpu=8.9320 ms
+2026-09-02T01:15:37 C1 c1 phys4_n231769 attempt 1 rc=0
+[c1] phys4_n231769 r-1: ok elapsed=2072.899362 ms qpu=2070.1607 ms
+[c1] phys4_n231769 r0: ok elapsed=2072.895192 ms qpu=2070.1607 ms
+2026-09-02T01:15:46 C1 c1 phys4_n462539 attempt 1 rc=0
+[c1] phys4_n462539 r-1: ok elapsed=4134.613423 ms qpu=4131.3983 ms
+[c1] phys4_n462539 r0: ok elapsed=4135.175618 ms qpu=4131.3983 ms
+2026-09-02T01:15:47 C1 c1 phys4_n1000 attempt 1 rc=0
+[c1] phys4_n1000 r-1: ok elapsed=11.171432 ms qpu=8.9320 ms
+[c1] phys4_n1000 r0: ok elapsed=11.181552 ms qpu=8.9320 ms
+2026-09-02T01:15:51 C1 c1 phys4_n231769 attempt 1 rc=0
+[c1] phys4_n231769 r-1: ok elapsed=2072.915182 ms qpu=2070.1607 ms
+[c1] phys4_n231769 r0: ok elapsed=2072.908813 ms qpu=2070.1607 ms
+2026-09-02T01:16:00 C1 c1 phys4_n462539 attempt 1 rc=0
+[c1] phys4_n462539 r-1: ok elapsed=4134.590762 ms qpu=4131.3983 ms
+[c1] phys4_n462539 r0: ok elapsed=4134.608892 ms qpu=4131.3983 ms
+2026-09-02T01:16:01 C1 std phys1 attempt 1 rc=0
+[std] phys1 r-1: capacity elapsed=None ms qpu=5182.4000 ms
+[std] phys1 r0: capacity elapsed=None ms qpu=5182.4000 ms
+2026-09-02T01:16:01 C1 std phys2 attempt 1 rc=0
+[std] phys2 r-1: ok elapsed=3.433805 ms qpu=0.1889 ms
+[std] phys2 r0: ok elapsed=3.532925 ms qpu=0.1889 ms
+[std] phys2 r1: ok elapsed=3.433385 ms qpu=0.1889 ms
+[std] phys2 r2: ok elapsed=3.426715 ms qpu=0.1889 ms
+2026-09-02T01:16:02 C1 std phys3 attempt 1 rc=0
+[std] phys3 r-1: capacity elapsed=None ms qpu=100182.4000 ms
+[std] phys3 r0: capacity elapsed=None ms qpu=100182.4000 ms
+2026-09-02T01:16:02 C1 std phys4 attempt 1 rc=0
+[std] phys4 r-1: capacity elapsed=None ms qpu=71.4560 ms
+[std] phys4 r0: capacity elapsed=None ms qpu=71.4560 ms
+2026-09-02T01:16:37 phys campaign done
+2026-09-02T01:16:43 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T01:17:20 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T01:17:57 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5 r-1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5 r0: data_mismatch elapsed=None ms qpu=254.5091 ms
+!! phys5: second failure, stopping this workload
+2026-09-02T01:18:38 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T01:19:20 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T01:20:02 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6 r-1: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+[c3] phys6 r0: data_mismatch elapsed=None ms qpu=2162.4200 ms
+!! phys6: second failure, stopping this workload
+2026-09-02T01:20:38 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: ok elapsed=65.690947 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: ok elapsed=67.349883 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r1: ok elapsed=65.507966 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r2: ok elapsed=66.01823 ms qpu=47.9314 ms
+2026-09-02T01:20:39 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T01:21:14 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T01:21:50 C3 c3 phys5 attempt 3 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: data_mismatch elapsed=None ms qpu=47.9416 ms
+!! phys5_ctrl1800p_cap902: second failure, stopping this workload
+2026-09-02T01:25:52 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: ok elapsed=328.00736 ms qpu=254.5091 ms
+[c3] phys5 r0: ok elapsed=329.061121 ms qpu=254.5091 ms
+[c3] phys5 r1: ok elapsed=331.702407 ms qpu=254.5091 ms
+[c3] phys5 r2: ok elapsed=328.538346 ms qpu=254.5091 ms
+2026-09-02T01:26:03 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: ok elapsed=2164.930673 ms qpu=2162.4200 ms
+[c3] phys6 r0: ok elapsed=2164.924883 ms qpu=2162.4200 ms
+[c3] phys6 r1: ok elapsed=2164.937153 ms qpu=2162.4200 ms
+[c3] phys6 r2: ok elapsed=2164.930553 ms qpu=2162.4200 ms
+2026-09-02T01:26:05 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: ok elapsed=66.303394 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: ok elapsed=65.704317 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r1: ok elapsed=65.864229 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r2: ok elapsed=65.835668 ms qpu=47.9314 ms
+2026-09-02T01:26:06 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: ok elapsed=131.496555 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: ok elapsed=129.541436 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r1: ok elapsed=129.718127 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r2: ok elapsed=129.89983 ms qpu=47.9416 ms
+2026-09-02T01:27:35 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: ok elapsed=328.548586 ms qpu=254.5091 ms
+[c3] phys5 r0: ok elapsed=327.99513 ms qpu=254.5091 ms
+[c3] phys5 r1: ok elapsed=327.95281 ms qpu=254.5091 ms
+[c3] phys5 r2: ok elapsed=323.668648 ms qpu=254.5091 ms
+2026-09-02T01:27:46 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: ok elapsed=2164.926403 ms qpu=2162.4200 ms
+[c3] phys6 r0: ok elapsed=2164.940343 ms qpu=2162.4200 ms
+[c3] phys6 r1: ok elapsed=2164.926203 ms qpu=2162.4200 ms
+[c3] phys6 r2: ok elapsed=2164.935863 ms qpu=2162.4200 ms
+2026-09-02T01:27:48 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: ok elapsed=65.860498 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: ok elapsed=64.823238 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r1: ok elapsed=64.824238 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r2: ok elapsed=65.671296 ms qpu=47.9314 ms
+2026-09-02T01:27:49 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: ok elapsed=130.732558 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: ok elapsed=131.079781 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r1: ok elapsed=131.408884 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r2: ok elapsed=133.266393 ms qpu=47.9416 ms
+2026-09-02T11:42:56 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_mask0 r-1: ok elapsed=131.769458 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask0 r0: ok elapsed=130.417634 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask0 r1: ok elapsed=130.626217 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask0 r2: ok elapsed=130.255193 ms qpu=47.9314 ms
+2026-09-02T11:42:58 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r-1: ok elapsed=66.00315 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r0: ok elapsed=65.931279 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r1: ok elapsed=67.505915 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3f80 r2: ok elapsed=66.01773 ms qpu=47.9314 ms
+2026-09-02T11:42:59 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r-1: ok elapsed=65.105391 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r0: ok elapsed=65.697627 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r1: ok elapsed=65.701167 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802_mask3ffc r2: ok elapsed=65.859649 ms qpu=47.9314 ms
+2026-09-02T11:43:23 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: ok elapsed=4215.656133 ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:44:13 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:45:12 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: ok elapsed=4143.915896 ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:45:55 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_cap1000 r-1: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+!! phys6_cap1000: second failure, stopping this workload
+2026-09-02T11:46:37 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6_cap1000 r-1: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+!! phys6_cap1000: second failure, stopping this workload
+2026-09-02T11:47:28 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6_cap1000 r-1: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r0: ok elapsed=2261.563979 ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r1: ok elapsed=2214.434108 ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r2: data_mismatch elapsed=None ms qpu=2162.6200 ms
+[c3] phys6_cap1000 r2: data_mismatch elapsed=None ms qpu=2162.6200 ms
+!! phys6_cap1000: second failure, stopping this workload
+2026-09-02T11:54:52 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802 r-1: ok elapsed=48.157712 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r0: ok elapsed=48.150812 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r1: ok elapsed=48.264242 ms qpu=47.9314 ms
+[c3] phys5_ctrl1800p_cap1802 r2: ok elapsed=48.175482 ms qpu=47.9314 ms
+2026-09-02T11:54:53 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap902 r-1: ok elapsed=48.314524 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r0: ok elapsed=48.545706 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r1: ok elapsed=48.313793 ms qpu=47.9416 ms
+[c3] phys5_ctrl1800p_cap902 r2: ok elapsed=48.315114 ms qpu=47.9416 ms
+2026-09-02T11:54:57 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5 r-1: ok elapsed=255.314323 ms qpu=254.5091 ms
+[c3] phys5 r0: ok elapsed=255.322104 ms qpu=254.5091 ms
+[c3] phys5 r1: ok elapsed=255.295894 ms qpu=254.5091 ms
+[c3] phys5 r2: ok elapsed=255.339044 ms qpu=254.5091 ms
+2026-09-02T11:55:08 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6 r-1: ok elapsed=2164.754651 ms qpu=2162.4200 ms
+[c3] phys6 r0: ok elapsed=2164.739231 ms qpu=2162.4200 ms
+[c3] phys6 r1: ok elapsed=2164.730531 ms qpu=2162.4200 ms
+[c3] phys6 r2: ok elapsed=2164.73405 ms qpu=2162.4200 ms
+2026-09-02T11:55:17 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:55:54 C3 c3 phys6 attempt 2 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-02T11:56:30 C3 c3 phys6 attempt 3 rc=0
+[c3] phys6_cap500 r-1: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+[c3] phys6_cap500 r0: data_mismatch elapsed=None ms qpu=2162.9200 ms
+!! phys6_cap500: second failure, stopping this workload
+2026-09-03T18:41:14 C3 c3 phys5 attempt 1 rc=0
+ qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r10: ok elapsed=47.046181 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r11: ok elapsed=47.024841 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r12: ok elapsed=47.02745 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r13: ok elapsed=47.086281 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r14: ok elapsed=47.02932 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r15: ok elapsed=47.025061 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r16: ok elapsed=47.02138 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r17: ok elapsed=47.02263 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r18: ok elapsed=47.02703 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r19: ok elapsed=47.045501 ms qpu=46.8080 ms
+2026-09-03T18:41:16 C3 c3 phys5 attempt 1 rc=0
+ed=23.622576 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r10: ok elapsed=23.613787 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r11: ok elapsed=23.614597 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r12: ok elapsed=23.615696 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r13: ok elapsed=23.615666 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r14: ok elapsed=23.620906 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r15: ok elapsed=23.620306 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r16: ok elapsed=23.840989 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r17: ok elapsed=23.628466 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r18: ok elapsed=23.616126 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500 r19: ok elapsed=23.616186 ms qpu=23.4090 ms
+2026-09-03T18:41:19 C3 c3 phys5 attempt 1 rc=0
+020821 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r11: ok elapsed=47.022931 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r12: ok elapsed=47.02884 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r13: ok elapsed=47.02294 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r14: ok elapsed=47.02912 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r15: ok elapsed=47.026961 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r16: ok elapsed=47.0277 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r17: ok elapsed=47.021221 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r18: ok elapsed=47.02188 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r19: ok elapsed=47.02185 ms qpu=46.8080 ms
+2026-09-03T18:41:21 C3 c3 phys5 attempt 1 rc=0
+k elapsed=23.619767 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r11: ok elapsed=23.613836 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r12: ok elapsed=23.93033 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r13: ok elapsed=23.617376 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r14: ok elapsed=24.00175 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r15: ok elapsed=23.613796 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r16: ok elapsed=23.612446 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r17: ok elapsed=23.623846 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r18: ok elapsed=23.619236 ms qpu=23.4090 ms
+[c3] phys5_ctrl1800p_cap902_R500_prefill r19: ok elapsed=23.619546 ms qpu=23.4090 ms
+2026-09-03T18:49:30 C3 c3 phys5 attempt 1 rc=0
+=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r90: ok elapsed=47.096951 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r91: ok elapsed=47.102601 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r92: ok elapsed=47.091021 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r93: ok elapsed=47.106061 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r94: ok elapsed=47.089381 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r95: ok elapsed=47.113732 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r96: ok elapsed=47.656937 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r97: ok elapsed=47.091861 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r98: ok elapsed=47.099721 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r99: ok elapsed=47.02689 ms qpu=46.8080 ms
+2026-09-03T18:49:41 C3 c3 phys5 attempt 1 rc=0
+3071 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r91: ok elapsed=47.02722 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r92: ok elapsed=47.199892 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r93: ok elapsed=47.041771 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r94: ok elapsed=47.190182 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r95: ok elapsed=47.424775 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r96: ok elapsed=47.03164 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r97: ok elapsed=47.02813 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r98: ok elapsed=47.02211 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r99: ok elapsed=47.02382 ms qpu=46.8080 ms
+2026-09-03T18:49:52 C3 c3 phys5 attempt 1 rc=0
+s qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r90: ok elapsed=47.103482 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r91: ok elapsed=47.02949 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r92: ok elapsed=47.028181 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r93: ok elapsed=47.026661 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r94: ok elapsed=47.129202 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r95: ok elapsed=47.03039 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r96: ok elapsed=47.02849 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r97: ok elapsed=47.02457 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r98: ok elapsed=47.02539 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r99: ok elapsed=47.02777 ms qpu=46.8080 ms
+2026-09-03T18:50:10 C3 c3 phys5 attempt 1 rc=-15
+ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r49: ok elapsed=47.157962 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r50: ok elapsed=47.128772 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r51: ok elapsed=47.141751 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r52: ok elapsed=47.096751 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r53: ok elapsed=47.138752 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r54: ok elapsed=47.128032 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r55: ok elapsed=47.128071 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r56: ok elapsed=47.100851 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r57: ok elapsed=47.032491 ms qpu=46.8080 ms
+STDERR: 
+2026-09-03T18:51:10 C3 c3 phys5 attempt 2 rc=0
+ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r91: ok elapsed=57.793928 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r92: ok elapsed=57.319854 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r93: ok elapsed=58.633757 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r94: ok elapsed=60.420154 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r95: ok elapsed=58.702907 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r96: ok elapsed=54.730997 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r97: ok elapsed=54.894989 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r98: ok elapsed=54.888779 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r99: ok elapsed=54.770528 ms qpu=46.8080 ms
+2026-09-03T18:51:11 C3 c3 phys5 attempt 1 rc=0
+ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r90: ok elapsed=47.02464 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r91: ok elapsed=47.02408 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r92: ok elapsed=47.104561 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r93: ok elapsed=47.02442 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r94: ok elapsed=47.020971 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r95: ok elapsed=47.02733 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r96: ok elapsed=47.106211 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r97: ok elapsed=47.098771 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r98: ok elapsed=47.0249 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r99: ok elapsed=47.02589 ms qpu=46.8080 ms
+2026-09-03T19:01:13 C3 c3 phys5 attempt 1 rc=0
+.890829 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r2: ok elapsed=54.883979 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r3: ok elapsed=54.893329 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r4: ok elapsed=54.782318 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r5: ok elapsed=54.859559 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r6: ok elapsed=54.773388 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r7: ok elapsed=54.856669 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r8: timeout elapsed=None ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r8: data_mismatch elapsed=None ms qpu=46.8080 ms
+!! phys5_ctrl1800p_cap1802_R1000_prefill: second failure, stopping this workload
+2026-09-03T19:01:58 C3 c3 phys5 attempt 2 rc=0
+ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r91: ok elapsed=54.878719 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r92: ok elapsed=55.751817 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r93: ok elapsed=54.869519 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r94: ok elapsed=54.788598 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r95: ok elapsed=54.949969 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r96: ok elapsed=54.802228 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r97: ok elapsed=54.829869 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r98: ok elapsed=54.910769 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r99: ok elapsed=54.920919 ms qpu=46.8080 ms
+2026-09-03T19:02:09 C3 c3 phys5 attempt 1 rc=0
+ qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r90: ok elapsed=47.044841 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r91: ok elapsed=47.021421 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r92: ok elapsed=47.032291 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r93: ok elapsed=47.02478 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r94: ok elapsed=47.022611 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r95: ok elapsed=47.02008 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r96: ok elapsed=47.0254 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r97: ok elapsed=47.037171 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r98: ok elapsed=47.03068 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r99: ok elapsed=47.333163 ms qpu=46.8080 ms
+2026-09-03T19:02:21 C3 c3 phys5 attempt 1 rc=0
+ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r91: ok elapsed=54.859259 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r92: ok elapsed=55.167082 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r93: ok elapsed=54.888989 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r94: ok elapsed=54.841539 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r95: ok elapsed=54.836439 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r96: ok elapsed=54.897459 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r97: ok elapsed=54.798048 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r98: ok elapsed=54.825078 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r99: ok elapsed=54.832388 ms qpu=46.8080 ms
+2026-09-03T19:23:03 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r59: ok elapsed=47.117062 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r60: ok elapsed=47.116191 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r61: ok elapsed=47.129922 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r62: ok elapsed=47.123221 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r63: ok elapsed=47.113851 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r64: ok elapsed=47.122511 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r65: timeout elapsed=None ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r65: data_mismatch elapsed=None ms qpu=46.8080 ms
+!! phys5_ctrl1800p_cap1802_R1000_prefill16: second failure, stopping this workload
+2026-09-03T19:23:48 C3 c3 phys5 attempt 2 rc=0
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r91: ok elapsed=47.122471 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r92: ok elapsed=47.118481 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r93: ok elapsed=47.118601 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r94: ok elapsed=47.111701 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r95: ok elapsed=47.137682 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r96: ok elapsed=47.116832 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r97: ok elapsed=47.122981 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r98: ok elapsed=47.117232 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r99: ok elapsed=47.120542 ms qpu=46.8080 ms
+2026-09-03T19:23:59 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r91: ok elapsed=47.119311 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r92: ok elapsed=47.124611 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r93: ok elapsed=47.123541 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r94: ok elapsed=47.122132 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r95: ok elapsed=47.116061 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r96: ok elapsed=47.119262 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r97: ok elapsed=47.116092 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r98: ok elapsed=47.119091 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill16 r99: ok elapsed=47.125392 ms qpu=46.8080 ms
+2026-09-03T19:24:02 C3 c3 phys5 attempt 1 rc=0
+[c3] phys5_prefill16 r-1: ok elapsed=255.407975 ms qpu=254.5091 ms
+[c3] phys5_prefill16 r0: ok elapsed=255.383024 ms qpu=254.5091 ms
+[c3] phys5_prefill16 r1: data_mismatch elapsed=None ms qpu=254.5091 ms
+[c3] phys5_prefill16 r1: ok elapsed=255.393814 ms qpu=254.5091 ms
+[c3] phys5_prefill16 r2: ok elapsed=255.388324 ms qpu=254.5091 ms
+2026-09-03T19:24:14 C3 c3 phys6 attempt 1 rc=0
+[c3] phys6_prefill16 r-1: ok elapsed=2164.894342 ms qpu=2162.4200 ms
+[c3] phys6_prefill16 r0: ok elapsed=2164.904423 ms qpu=2162.4200 ms
+[c3] phys6_prefill16 r1: ok elapsed=2164.898502 ms qpu=2162.4200 ms
+[c3] phys6_prefill16 r2: ok elapsed=2164.904533 ms qpu=2162.4200 ms

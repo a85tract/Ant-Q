@@ -1,0 +1,13 @@
+seq,program,run,condition
+0,bell,0,native
+1,bell,1,pooled
+2,bell,2,pooled
+3,bell,3,native
+4,grover,0,native
+5,grover,1,pooled
+6,grover,2,pooled
+7,grover,3,native
+8,x90cal,0,native
+9,x90cal,1,pooled
+10,x90cal,2,pooled
+11,x90cal,3,native

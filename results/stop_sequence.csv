@@ -1,0 +1,73 @@
+seq,idx,name,shots,stop_at,pair_id,position,condition,run_kind
+0,2,GHZ-3,8192,2457,,0,full,warmup
+1,2,GHZ-3,8192,2457,,0,stop,warmup
+2,2,GHZ-3,8192,2457,2_p0,0,stop,measure
+3,2,GHZ-3,8192,2457,2_p0,1,full,measure
+4,2,GHZ-3,8192,2457,2_p1,0,stop,measure
+5,2,GHZ-3,8192,2457,2_p1,1,full,measure
+6,2,GHZ-3,8192,2457,2_p2,0,full,measure
+7,2,GHZ-3,8192,2457,2_p2,1,stop,measure
+8,2,GHZ-3,8192,2457,2_p3,0,stop,measure
+9,2,GHZ-3,8192,2457,2_p3,1,full,measure
+10,2,GHZ-3,8192,2457,2_p4,0,full,measure
+11,2,GHZ-3,8192,2457,2_p4,1,stop,measure
+12,9,GHZ-6,128,60,,0,full,warmup
+13,9,GHZ-6,128,60,,0,stop,warmup
+14,9,GHZ-6,128,60,9_p0,0,full,measure
+15,9,GHZ-6,128,60,9_p0,1,stop,measure
+16,9,GHZ-6,128,60,9_p1,0,stop,measure
+17,9,GHZ-6,128,60,9_p1,1,full,measure
+18,9,GHZ-6,128,60,9_p2,0,stop,measure
+19,9,GHZ-6,128,60,9_p2,1,full,measure
+20,9,GHZ-6,128,60,9_p3,0,full,measure
+21,9,GHZ-6,128,60,9_p3,1,stop,measure
+22,9,GHZ-6,128,60,9_p4,0,full,measure
+23,9,GHZ-6,128,60,9_p4,1,stop,measure
+24,10,GHZ-8,32,12,,0,full,warmup
+25,10,GHZ-8,32,12,,0,stop,warmup
+26,10,GHZ-8,32,12,10_p0,0,stop,measure
+27,10,GHZ-8,32,12,10_p0,1,full,measure
+28,10,GHZ-8,32,12,10_p1,0,stop,measure
+29,10,GHZ-8,32,12,10_p1,1,full,measure
+30,10,GHZ-8,32,12,10_p2,0,full,measure
+31,10,GHZ-8,32,12,10_p2,1,stop,measure
+32,10,GHZ-8,32,12,10_p3,0,full,measure
+33,10,GHZ-8,32,12,10_p3,1,stop,measure
+34,10,GHZ-8,32,12,10_p4,0,full,measure
+35,10,GHZ-8,32,12,10_p4,1,stop,measure
+36,19,VQE BeH2 14Q,4096,1227,,0,full,warmup
+37,19,VQE BeH2 14Q,4096,1227,,0,stop,warmup
+38,19,VQE BeH2 14Q,4096,1227,19_p0,0,stop,measure
+39,19,VQE BeH2 14Q,4096,1227,19_p0,1,full,measure
+40,19,VQE BeH2 14Q,4096,1227,19_p1,0,stop,measure
+41,19,VQE BeH2 14Q,4096,1227,19_p1,1,full,measure
+42,19,VQE BeH2 14Q,4096,1227,19_p2,0,stop,measure
+43,19,VQE BeH2 14Q,4096,1227,19_p2,1,full,measure
+44,19,VQE BeH2 14Q,4096,1227,19_p3,0,full,measure
+45,19,VQE BeH2 14Q,4096,1227,19_p3,1,stop,measure
+46,19,VQE BeH2 14Q,4096,1227,19_p4,0,full,measure
+47,19,VQE BeH2 14Q,4096,1227,19_p4,1,stop,measure
+48,22,QML Image Class 14Q,400,120,,0,full,warmup
+49,22,QML Image Class 14Q,400,120,,0,stop,warmup
+50,22,QML Image Class 14Q,400,120,22_p0,0,full,measure
+51,22,QML Image Class 14Q,400,120,22_p0,1,stop,measure
+52,22,QML Image Class 14Q,400,120,22_p1,0,full,measure
+53,22,QML Image Class 14Q,400,120,22_p1,1,stop,measure
+54,22,QML Image Class 14Q,400,120,22_p2,0,stop,measure
+55,22,QML Image Class 14Q,400,120,22_p2,1,full,measure
+56,22,QML Image Class 14Q,400,120,22_p3,0,stop,measure
+57,22,QML Image Class 14Q,400,120,22_p3,1,full,measure
+58,22,QML Image Class 14Q,400,120,22_p4,0,stop,measure
+59,22,QML Image Class 14Q,400,120,22_p4,1,full,measure
+60,23,VQE SrH PDM 12Q,4000,1200,,0,full,warmup
+61,23,VQE SrH PDM 12Q,4000,1200,,0,stop,warmup
+62,23,VQE SrH PDM 12Q,4000,1200,23_p0,0,full,measure
+63,23,VQE SrH PDM 12Q,4000,1200,23_p0,1,stop,measure
+64,23,VQE SrH PDM 12Q,4000,1200,23_p1,0,stop,measure
+65,23,VQE SrH PDM 12Q,4000,1200,23_p1,1,full,measure
+66,23,VQE SrH PDM 12Q,4000,1200,23_p2,0,full,measure
+67,23,VQE SrH PDM 12Q,4000,1200,23_p2,1,stop,measure
+68,23,VQE SrH PDM 12Q,4000,1200,23_p3,0,full,measure
+69,23,VQE SrH PDM 12Q,4000,1200,23_p3,1,stop,measure
+70,23,VQE SrH PDM 12Q,4000,1200,23_p4,0,stop,measure
+71,23,VQE SrH PDM 12Q,4000,1200,23_p4,1,full,measure

@@ -1,0 +1,29 @@
+restarted 07:42:21
+[c1] ghz8_x30 r3: ok elapsed=99.693897 ms qpu=26.2656 ms
+[c1] ghz8_x30 r4: ok elapsed=97.149321 ms qpu=26.2656 ms
+[c1] qaoa12_x30 r3: ok elapsed=13103.742928 ms qpu=12972.0000 ms
+[c1] qaoa12_x30 r4: ok elapsed=13099.286593 ms qpu=12972.0000 ms
+[c1] rand10_t0 r3: data_mismatch elapsed=None ms qpu=939.6340 ms
+!! rand10_t0: second failure, stopping this workload
+!! rand10_t0 attempt 1 failed -> restart
+restarted 07:46:19
+[c1] rand10_t0 r3: ok elapsed=976.805779 ms qpu=939.6340 ms
+[c1] rand10_t0 r4: ok elapsed=976.630358 ms qpu=939.6340 ms
+[c1] rand10_t1 r3: ok elapsed=622.944031 ms qpu=585.9953 ms
+[c1] rand10_t1 r4: ok elapsed=621.795939 ms qpu=585.9953 ms
+[c1] rand10_t2 r3: ok elapsed=740.105522 ms qpu=704.9334 ms
+[c1] rand10_t2 r4: ok elapsed=740.074532 ms qpu=704.9334 ms
+[c1] rand10_t3 r4: data_mismatch elapsed=None ms qpu=406.2972 ms
+!! rand10_t3: second failure, stopping this workload
+!! rand10_t3 attempt 1 failed -> restart
+restarted 07:57:11
+[c1] rand10_t3 r0: data_mismatch elapsed=None ms qpu=406.2972 ms
+!! rand10_t3: second failure, stopping this workload
+!! rand10_t3 attempt 2 failed -> restart
+restarted 07:59:52
+[c1] rand10_t4 r3: ok elapsed=476.775259 ms qpu=444.1056 ms
+[c1] rand10_t4 r4: ok elapsed=476.92924 ms qpu=444.1056 ms
+[c1] rand10_t5 r3: ok elapsed=213.744308 ms qpu=186.5695 ms
+[c1] rand10_t5 r4: ok elapsed=213.536776 ms qpu=186.5695 ms
+[c1] rand10_t6 r3: ok elapsed=1123.016302 ms qpu=1086.9310 ms
+[c1] rand10_t6 r4: ok elapsed=1123.593948 ms qpu=1086.9310 ms

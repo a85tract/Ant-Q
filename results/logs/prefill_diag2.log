@@ -1,0 +1,60 @@
+2026-09-03T18:49:30 C3 c3 phys5 attempt 1 rc=0
+=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r90: ok elapsed=47.096951 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r91: ok elapsed=47.102601 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r92: ok elapsed=47.091021 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r93: ok elapsed=47.106061 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r94: ok elapsed=47.089381 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r95: ok elapsed=47.113732 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r96: ok elapsed=47.656937 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r97: ok elapsed=47.091861 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r98: ok elapsed=47.099721 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r99: ok elapsed=47.02689 ms qpu=46.8080 ms
+2026-09-03T18:49:41 C3 c3 phys5 attempt 1 rc=0
+3071 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r91: ok elapsed=47.02722 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r92: ok elapsed=47.199892 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r93: ok elapsed=47.041771 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r94: ok elapsed=47.190182 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r95: ok elapsed=47.424775 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r96: ok elapsed=47.03164 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r97: ok elapsed=47.02813 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r98: ok elapsed=47.02211 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r99: ok elapsed=47.02382 ms qpu=46.8080 ms
+2026-09-03T18:49:52 C3 c3 phys5 attempt 1 rc=0
+s qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r90: ok elapsed=47.103482 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r91: ok elapsed=47.02949 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r92: ok elapsed=47.028181 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r93: ok elapsed=47.026661 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r94: ok elapsed=47.129202 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r95: ok elapsed=47.03039 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r96: ok elapsed=47.02849 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r97: ok elapsed=47.02457 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r98: ok elapsed=47.02539 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000 r99: ok elapsed=47.02777 ms qpu=46.8080 ms
+2026-09-03T18:50:10 C3 c3 phys5 attempt 1 rc=-15
+ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r49: ok elapsed=47.157962 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r50: ok elapsed=47.128772 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r51: ok elapsed=47.141751 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r52: ok elapsed=47.096751 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r53: ok elapsed=47.138752 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r54: ok elapsed=47.128032 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r55: ok elapsed=47.128071 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r56: ok elapsed=47.100851 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r57: ok elapsed=47.032491 ms qpu=46.8080 ms
+STDERR: 
+2026-09-03T18:50:50 service restarted; Sep 04 01:22:32 veneno start_qubic_server.sh[329604]: 2026-09-04 01:22:32,532 INFO: loading bitfile: 63329aaf
+218254 ./std_server 329555 /home/xilinx/software/scripts/dma_server 329602 /home/xilinx/software/scripts/batch_server
+2026-09-03T18:51:10 C3 c3 phys5 attempt 2 rc=0
+ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r91: ok elapsed=57.793928 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r92: ok elapsed=57.319854 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r93: ok elapsed=58.633757 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r94: ok elapsed=60.420154 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r95: ok elapsed=58.702907 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r96: ok elapsed=54.730997 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r97: ok elapsed=54.894989 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r98: ok elapsed=54.888779 ms qpu=46.8080 ms
+[c3] phys5_ctrl1800p_cap1802_R1000_prefill r99: ok elapsed=54.770528 ms qpu=46.8080 ms

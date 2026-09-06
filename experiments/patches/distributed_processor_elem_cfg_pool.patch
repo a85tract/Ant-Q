@@ -1,0 +1,31 @@
+diff --git a/python/distproc/assembler.py b/python/distproc/assembler.py
+index fba27c2..1ced3b3 100644
+--- a/python/distproc/assembler.py
++++ b/python/distproc/assembler.py
+@@ -501,9 +501,13 @@ class GlobalAssembler:
+     Takes a CompiledProgram object and convert to np arrays to be written to FPGA BRAM.
+     """
+ 
+-    def __init__(self, compiled_program, channel_configs, elementconfig_factory):
++    def __init__(self, compiled_program, channel_configs, elementconfig_factory, elem_cfg_pool=None):
+         """
+         channel configs is loaded from json file, using hwconfig.load_channel_configs
++
++        elem_cfg_pool: optional dict {channel name: ElementConfig} shared across programs. When given,
++        every program assembled against the same pool lays out its envelope/frequency tables in one
++        common (pool-wide) order, so a batch of different programs shares identical BRAM tables.
+         """
+         self.assemblers = []
+         self.channel_configs = channel_configs
+@@ -522,7 +526,10 @@ class GlobalAssembler:
+                 chan_cfg = channel_configs[chan]
+                 chan_cfgs[chan] = chan_cfg
+                 elementconfig_class = elementconfig_factory(chan_cfg.elem_type)
+-                elem_cfgs[chan] = elementconfig_class(**chan_cfg.elem_params)
++                if elem_cfg_pool is None:
++                    elem_cfgs[chan] = elementconfig_class(**chan_cfg.elem_params)
++                else:
++                    elem_cfgs[chan] = elem_cfg_pool.setdefault(chan, elementconfig_class(**chan_cfg.elem_params))
+ 
+             self.assemblers.append(SingleCoreAssembler(chan_cfgs, elem_cfgs))
+             self._resolve_fproc_chans(compiled_program.program[proc_group])

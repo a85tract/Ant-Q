@@ -1,0 +1,11 @@
+shots,rep,elapsed_ms,note
+32,0,0.9916,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+32,1,0.9921,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+32,2,0.9844,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+320,0,8.9075,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+320,1,8.9056,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+320,2,8.9042,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+3200,0,88.1635,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+3200,1,88.1606,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+3200,2,88.1650,"GHZ-8 real, c3, closed image 63329aaf, diagnostic sweep"
+fit: F=104.6us slope=27.5181us/shot
