@@ -1,4 +1,4 @@
-# Bitstreams measured in the paper (not in git; available from the authors / release assets)
+# Bitstreams measured in the paper -- published in the benchmark submodule (benchmark/bitstreams/<dir>/), same files
 # sha256  size_bytes  file  (built from gateware commit / config)
 11d0cc2787f92762bc1b703d08d55c07aff1cd1df23c0fd7795471e0e05ae2f7  34437466  psbd_20260830200759_63329aaf.bit  63329aaf_20260830175903 zcu216_14_2
 37ac8ceac50e0f1f88efbb6c26f05d3047e80d41ba804b1dab4cfac1e6f2c1d5  18654593  psbd_20260830200759_63329aaf.xsa  63329aaf_20260830175903 zcu216_14_2
