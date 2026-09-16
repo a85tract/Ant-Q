@@ -353,7 +353,7 @@ class StrmSession:
 # ---------------- modes ----------------
 class Runner:
     def __init__(self, a):
-        from qubic.std_client import StdServerClient
+        from std_client import StdServerClient   # experiments/board/std_client.py (moved out of the software MR)
         self.a = a
         self.bench = load_bench()
         self.progs = Programs(a.gw, a.num_ch, pool_tables=getattr(a, 'pool_tables', False))
