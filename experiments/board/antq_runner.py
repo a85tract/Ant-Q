@@ -97,8 +97,13 @@ class Programs:
     def build_pool(self):
         if self.pool is None or self.pool_ready:
             return
+        nq = {i: b['n_qubits'] for i, b in load_bench().items()}
+        skipped = [i for i in IDX20 if nq.get(i, 0) > self.num_ch]      # programs that do not fit the loaded image
+        if skipped:                                                       # (8-core images: the 12/14-qubit circuits)
+            print(f'[pool] {len(skipped)} of {len(IDX20)} paper circuits need more than {self.num_ch} cores; pool built from the rest: skipped idx {skipped}')
         for i in IDX20:
-            self.real(i)
+            if i not in skipped:
+                self.real(i)
         self.real_cache.clear()
         self.pool_ready = True
 
