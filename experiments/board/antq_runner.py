@@ -159,6 +159,10 @@ class Programs:
             for qn, qv in _qd['Qubits'].items():
                 qv['freq'] = float(os.environ['SCOPE_DRIVE_FREQ'])
             print(f"[scope] drive carrier set to {os.environ['SCOPE_DRIVE_FREQ']} Hz for every qubit (timing unchanged)", flush=True)
+        if os.environ.get('ANTQ_QCHIP_PATCH'):            # device pulses exported from the operator's calibration (qcal):
+            _m = self._load_phys_module()                     # the program module inserts them as gate definitions
+            if hasattr(_m, 'patch_qchip'):
+                _m.patch_qchip(_qd, os.environ['ANTQ_QCHIP_PATCH'], ren0); print(f"[qchip] patched from {os.environ['ANTQ_QCHIP_PATCH']}", flush=True)
         self._real_qchip = qc.QChip(_qd)
 
     def _rename(self, obj, fn=None):
@@ -208,6 +212,21 @@ class Programs:
         return out
 
     # -- physics characterization experiments (plan A, 2026-09-01): benchmark_qce/physic_experiment.py --
+    def _load_phys_module(self):
+        """physic_experiment (benchmark) or the module named by ANTQ_PHYS_MODULE (device programs, same format); cached."""
+        if hasattr(self, '_phys_module'):
+            return self._phys_module
+        sys.path.insert(0, BENCH_DIR)
+        _mod = os.environ.get('ANTQ_PHYS_MODULE')
+        if _mod:
+            import importlib.util
+            _spec = importlib.util.spec_from_file_location('phys_module', _mod); m = importlib.util.module_from_spec(_spec)
+            _spec.loader.exec_module(m); print(f'[phys] programs from {_mod}', flush=True)
+        else:
+            import physic_experiment as m
+        self._phys_module = m
+        return m
+
     def _phys_ids(self):
         if not hasattr(self, '_phys_circuits'):
             try: self.phys(101)
@@ -232,14 +251,7 @@ class Programs:
         if not hasattr(self, '_real_qchip'):
             self._real_init()
         if not hasattr(self, '_phys_circuits'):
-            sys.path.insert(0, BENCH_DIR)
-            _mod = os.environ.get('ANTQ_PHYS_MODULE')          # ANTQ_PHYS_MODULE=/path/to/module.py: another build_circuits()
-            if _mod:                                            # in the physic_experiment format (AQT device programs)
-                import importlib.util
-                _spec = importlib.util.spec_from_file_location('phys_module', _mod); physic_experiment = importlib.util.module_from_spec(_spec)
-                _spec.loader.exec_module(physic_experiment); print(f'[phys] programs from {_mod}', flush=True)
-            else:
-                import physic_experiment
+            physic_experiment = self._load_phys_module()
             self._phys_circuits = {c['idx']: c for c in physic_experiment.build_circuits()}
         c = self._phys_circuits[idx]
         if idx in (5, 6) or c.get('stream'):               # sub-circuit stream (plan A0): programs come from phys_split; 'stream': True marks other oversized programs (AQT RB)
