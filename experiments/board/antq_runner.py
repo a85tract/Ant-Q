@@ -25,8 +25,8 @@ RES = os.environ.get('ANTQ_RESULTS', os.path.join(HERE, '..', '..', 'results')) 
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 BENCH_JSON = os.environ.get('ANTQ_BENCH_JSON', os.path.join(REPO, 'experiments', 'board', 'data', 'benchmark_results_20.json'))   # per-circuit shots / compiled per-shot (surrogate mode)
 BENCH_DIR = os.environ.get('ANTQ_BENCH_DIR', os.path.join(REPO, 'benchmark'))   # the benchmark submodule (--real workload, physics experiments, qchip)
-BOARD = 'localhost'            # SSH tunnels via computerA: 9015->9095 (RPC), 8080, 8081, 8082
-RPC_PORT = 9015
+BOARD = os.environ.get('ANTQ_BOARD', 'localhost')          # SSH tunnels via computerA: 9015->9095 (RPC), 8080, 8081, 8082;
+RPC_PORT = int(os.environ.get('ANTQ_RPC_PORT', '9015'))     # ANTQ_BOARD / ANTQ_RPC_PORT select another board or tunnel (AQT huracan)
 RO_READOUT_S = 1.5e-6          # prototype: delay = per_shot - 1.5 us (readout pulse + settle)
 RAW_FIELDS = ['run_id', 'wall_time', 'mode', 'bitfile', 'wns_ns', 'software_commit', 'workload', 'workload_id',
               'repeat', 'status', 'exclusion_reason', 'n_circuits', 'shots', 'rps', 'n_active_ch', 'per_shot_us',
@@ -97,6 +97,19 @@ class Programs:
     def build_pool(self):
         if self.pool is None or self.pool_ready:
             return
+        if os.environ.get('ANTQ_PHYS_MODULE'):          # device programs (AQT): the pool is that program set itself --
+            self.phys(min(self._phys_ids()))            # pass 1 assembles every program (segments of streams included)
+            import phys_split
+            for i in sorted(self._phys_circuits):
+                if self.phys_is_stream(i):
+                    phys_split.build_segments(self, i, cap=getattr(self, 'seg_cap', None) or phys_split.CAP,
+                                              max_pulses=getattr(self, 'seg_pulses', None), verify=False)
+                else:
+                    self.phys(i)
+            self._seg_cache = {}                        # pass 2 (lazy) re-assembles against the complete pool
+            self.pool_ready = True
+            print(f'[pool] built from the {len(self._phys_circuits)} programs of {os.environ["ANTQ_PHYS_MODULE"]}', flush=True)
+            return
         nq = {i: b['n_qubits'] for i, b in load_bench().items()}
         skipped = [i for i in IDX20 if nq.get(i, 0) > self.num_ch]      # programs that do not fit the loaded image
         if skipped:                                                       # (8-core images: the 12/14-qubit circuits)
@@ -130,7 +143,9 @@ class Programs:
                                                    hold_nclks=fp.fproc_meas_clks)
                              for k in fp.fproc_channels}
         self._real_fpga, self._ren, self._ren0 = fp, ren, ren0
-        _qd = _json.loads(ren0(open(os.path.join(BENCH_DIR, 'qubitcfg_14q_gate.json')).read()))
+        _qchip_path = os.environ.get('ANTQ_QCHIP') or os.path.join(BENCH_DIR, 'qubitcfg_14q_gate.json')   # ANTQ_QCHIP: a device's
+        _qd = _json.loads(ren0(open(_qchip_path).read()))                                                    # calibrated qchip (AQT huracan)
+        if os.environ.get('ANTQ_QCHIP'): print(f'[qchip] {_qchip_path}', flush=True)
         if os.environ.get('SCOPE_READ_AMP'):
             for g, pulses in _qd['Gates'].items():
                 if g.endswith('read'):
@@ -193,6 +208,20 @@ class Programs:
         return out
 
     # -- physics characterization experiments (plan A, 2026-09-01): benchmark_qce/physic_experiment.py --
+    def _phys_ids(self):
+        if not hasattr(self, '_phys_circuits'):
+            try: self.phys(101)
+            except Exception: pass
+        return list(getattr(self, '_phys_circuits', {101: None}))
+
+    def phys_is_stream(self, idx):
+        """True for the sub-circuit-stream programs: physics experiments 5/6 or any program flagged 'stream'."""
+        if not hasattr(self, '_phys_circuits'):
+            try: self.phys(idx)
+            except Exception: pass
+        c = getattr(self, '_phys_circuits', {}).get(idx, {})
+        return idx in (5, 6) or bool(c.get('stream'))
+
     def phys(self, idx, n_cal=None):
         """(exe, b) for physics experiment idx (1-4: one hardware shot with a hardware loop of N reads). n_cal
         overrides the loop count (calibration series, plan A3): only the loop's jump immediate changes, tables
@@ -204,10 +233,16 @@ class Programs:
             self._real_init()
         if not hasattr(self, '_phys_circuits'):
             sys.path.insert(0, BENCH_DIR)
-            import physic_experiment
+            _mod = os.environ.get('ANTQ_PHYS_MODULE')          # ANTQ_PHYS_MODULE=/path/to/module.py: another build_circuits()
+            if _mod:                                            # in the physic_experiment format (AQT device programs)
+                import importlib.util
+                _spec = importlib.util.spec_from_file_location('phys_module', _mod); physic_experiment = importlib.util.module_from_spec(_spec)
+                _spec.loader.exec_module(physic_experiment); print(f'[phys] programs from {_mod}', flush=True)
+            else:
+                import physic_experiment
             self._phys_circuits = {c['idx']: c for c in physic_experiment.build_circuits()}
         c = self._phys_circuits[idx]
-        if idx in (5, 6):                                  # sub-circuit stream (plan A0): programs come from phys_split
+        if idx in (5, 6) or c.get('stream'):               # sub-circuit stream (plan A0): programs come from phys_split; 'stream': True marks other oversized programs (AQT RB)
             import phys_split
             if not hasattr(self, '_seg_cache'): self._seg_cache = {}
             cap = getattr(self, 'seg_cap', None) or phys_split.CAP
@@ -227,10 +262,12 @@ class Programs:
                      cmd_bytes_max=max(m['cmd_bytes_max'] for _, m in segs), n_segments=len(segs))
             return exe0, b
         circ = self._rename(copy.deepcopy(c['circuit']), self._ren)     # physics program: scope offset applies
-        N = int(c['loop_reads_per_shot']) if n_cal is None else int(n_cal)
+        rpi = max(1, int(c['loop_reads_per_shot']) // int(c.get('n_inner', c['loop_reads_per_shot'])))   # reads per loop iteration
+        n_iter = int(c.get('n_inner', c['loop_reads_per_shot'])) if n_cal is None else int(n_cal)          # hardware loop count
+        N = n_iter * rpi                                                                                   # readout records per channel
         loops = [op for op in circ if isinstance(op, dict) and op.get('name') == 'loop']
         assert len(loops) == 1, f'phys {idx}: expected one hardware loop'
-        loops[0]['cond_lhs'] = N
+        loops[0]['cond_lhs'] = n_iter
         qg = {f'qubit_{i}': {f'qubit_{i}.qdrv', f'qubit_{i}.rdrv', f'qubit_{i}.rdlo'} for i in range(self.num_ch)}
         comp = self.tc.run_compile_stage(circ, self._real_fpga, self._real_qchip,
                                          compiler_flags={'schedule': True}, qubit_grouping=qg)
@@ -246,8 +283,8 @@ class Programs:
         P_us = period_clk * 2e-9 * 1e6
         rd = [ch for ch in exe.result_channels if ch.endswith('.rdlo')] or ['qubit_0.rdlo']
         b = dict(idx=idx, name=c['name'], n_qubits=c['n_qubits'], shots=1, rps={ch: N for ch in rd},
-                 per_shot_us=N * P_us, loop_n=N, interval_us=float(c['dt_inter_shot']) * 1e6, period_us=P_us,
-                 period_src='compile', calib_n='' if n_cal is None else N,
+                 per_shot_us=n_iter * P_us, loop_n=n_iter, interval_us=float(c['dt_inter_shot']) * 1e6, period_us=P_us,
+                 period_src='compile', calib_n='' if n_cal is None else n_iter,
                  cmd_bytes_max=max(len(d.data if hasattr(d, 'data') else bytes(d))
                                    for n, d in exe.get_binaries_fromboard().items() if 'command' in n))
         return exe, b
@@ -438,7 +475,7 @@ class Runner:
 
     def run_c3(self, idxs):
         from qubic.rpc_client import CircuitRunnerClient
-        if getattr(self.a, 'phys', False) and idxs[0] in (5, 6):
+        if getattr(self.a, 'phys', False) and self.progs.phys_is_stream(idxs[0]):
             return self.run_c3_segments(idxs[0])
         exes, shots, bs = [], [], []
         for idx in idxs:
@@ -476,11 +513,12 @@ class Runner:
                 if np.asarray(s11._array).size != shots[i] * b['rps'].get(ch, 1):
                     raise RuntimeError(f"circuit {i} {ch}: {np.asarray(s11._array).size} values, "
                                        f"expected {shots[i]}x{b['rps'].get(ch, 1)}")
+        iq_file = self._save_iq(res, idxs) if getattr(self.a, 'save_iq', False) else ''
         # heterogeneous-table batches run as several hardware groups (grouped-reload): the interval
         # spans first send of group 0 .. last read of the last group, reloads included (plan E2)
         gstats = [g['stat'] for g in info['groups']]
         t0, t1 = gstats[0]['t_first_send_ns'], gstats[-1]['t_last_read_ns']
-        return dict(t_start_ns=t0, t_end_ns=t1, elapsed_ms=(t1 - t0) / 1e6,
+        return dict(iq_file=iq_file, t_start_ns=t0, t_end_ns=t1, elapsed_ms=(t1 - t0) / 1e6,
                     cmd_bytes_transferred=sum(g['bytes_submitted'] for g in gstats),
                     send_block_us_max=max(g['send_block_us_max'] for g in gstats),
                     send_block_us_total=sum(g['send_block_us_total'] for g in gstats),
@@ -492,6 +530,16 @@ class Runner:
                     cnr_wait_cycles=max(int(g['cnr_wait_cycles']) for g in info['groups']),
                     cnr_groups=[(g['cnr'], g['cnr_wait_cycles']) for g in info['groups']],
                     **(stop or {}), **({'actual_shots_total': shots[0]} if stop else {}))
+
+    def _save_iq(self, res, idxs):
+        """--save-iq: one compressed npz per run with every returned IQ array (as stored by the client);
+        key c<i>_<channel> = circuit/unit i, readout channel; returns the file path (also printed)."""
+        d = os.path.join(RES, 'iq'); os.makedirs(d, exist_ok=True)
+        fn = os.path.join(d, f"{self.a.tag}_{'-'.join(str(i) for i in idxs)}_{time.time_ns()}.npz")
+        arrays = {f'c{i}_{ch}': np.asarray(s11._array) for i, rr in enumerate(res) for ch, s11 in rr.items()}
+        np.savez_compressed(fn, **arrays)
+        print(f'[iq] saved {len(arrays)} arrays -> {fn}')
+        return fn
 
     def run_c3_segments(self, idx):
         """plan A0: oversized RB experiment idx (5/6) as a sub-circuit stream: K segment images replayed R = shots
@@ -520,13 +568,14 @@ class Runner:
             if m['rps']: n_read_units += 1
         if n_read_units != R:   # R = replay count actually used
             raise RuntimeError(f'{n_read_units} readout units, expected {R}')
+        iq_file = self._save_iq(res, [idx]) if getattr(self.a, 'save_iq', False) else ''
         info = r.last_batch_info
         gstats = [g['stat'] for g in info['groups']]
         if len(gstats) != 1:
             raise RuntimeError(f'segment stream split into {len(gstats)} hardware groups (tables not identical?)')
         t0, t1 = gstats[0]['t_first_send_ns'], gstats[-1]['t_last_read_ns']
         self.last_segments = rep_
-        return dict(t_start_ns=t0, t_end_ns=t1, elapsed_ms=(t1 - t0) / 1e6,
+        return dict(iq_file=iq_file, t_start_ns=t0, t_end_ns=t1, elapsed_ms=(t1 - t0) / 1e6,
                     cmd_bytes_transferred=sum(g['bytes_submitted'] for g in gstats),
                     send_block_us_max=max(g['send_block_us_max'] for g in gstats),
                     send_block_us_total=sum(g['send_block_us_total'] for g in gstats),
@@ -657,6 +706,7 @@ def main():
     p.add_argument('--pair-id', default='', help='plan B: pair identifier shared by the full and stop run')
     p.add_argument('--strm-poll-us', default='', help='plan B: dma_server STRM_POLL_US in effect (recorded)')
     p.add_argument('--decomp', action='store_true', help='fixed-cost decomposition: rows (with the v7 stage timestamps) go to raw_runs_decomp.csv')
+    p.add_argument('--save-iq', action='store_true', help='save every returned IQ array to <results>/iq/<tag>_<idx>_<ns>.npz (keys c<i>_<channel>); needed for the device experiments (readout classification, Ramsey)')
     p.add_argument('--no-warmup', action='store_true', help='plan B pairs: skip the warm-up attempt (the sequence file schedules warm-ups explicitly)')
     a = p.parse_args()
     a.idx = [int(x) for x in a.idx.split(',') if x.strip()]

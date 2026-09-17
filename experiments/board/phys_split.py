@@ -58,9 +58,11 @@ def _first_phase_per_frame(pulses, dests_seen=None):
 
 def build_segments(P, idx, cap=CAP, verify=True, max_pulses=None):
     if not hasattr(P, '_real_qchip'): P._real_init()
-    sys.path.insert(0, antq_runner.BENCH_DIR)
-    import physic_experiment
-    c = {x['idx']: x for x in physic_experiment.build_circuits()}[idx]
+    if not hasattr(P, '_phys_circuits'):                 # the runner loads physic_experiment or ANTQ_PHYS_MODULE
+        sys.path.insert(0, antq_runner.BENCH_DIR)
+        import physic_experiment
+        P._phys_circuits = {x['idx']: x for x in physic_experiment.build_circuits()}
+    c = P._phys_circuits[idx]
     circ = json.loads(P._ren(json.dumps(copy.deepcopy(c['circuit']), default=float)))
     loop = [op for op in circ if op.get('name') == 'loop'][0]
     body = loop['body']; qubits = [P._ren(q) for q in loop['scope']]
@@ -91,7 +93,8 @@ def build_segments(P, idx, cap=CAP, verify=True, max_pulses=None):
         # carry per frame = reference phase of this segment's first pulse in that frame - its zero-carry phase
         carry = {}
         seen_frames = set()
-        drive_frames = {float(P._real_qchip.qubits[q].freq): q for q in P._real_qchip.qubits}   # Hz -> qubit (Z frames)
+        drive_frames = {float(P._real_qchip.qubits[q].freq): q for q in P._real_qchip.qubits
+                        if getattr(P._real_qchip.qubits[q], 'freq', None) is not None}      # Hz -> qubit (Z frames); device qchips also list readout/vna entries without freq
         for dest, fr, ph, st in sorted(seg_pulses, key=lambda t: t[3]):
             if fr in seen_frames or float(fr) not in drive_frames:
                 continue
