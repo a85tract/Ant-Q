@@ -1,4 +1,4 @@
-"""Ant-Q re-measurement runner (plan: ~/agent_journals/antq_rerun_plan_20260829.md, rev 5, APPROVED).
+"""Ant-Q measurement runner.
 
 Modes (all timed on the PS in C, CLOCK_MONOTONIC):
   std : standard QubiC path in C (std_server BATCH): BRAM command MMIO stores + accbuf MMIO reads.
@@ -9,7 +9,7 @@ Modes (all timed on the PS in C, CLOCK_MONOTONIC):
 
 Workload = readout-simulation programs (plan D1): delay(per_shot_us - 1.5 us) + read on n_q qubits;
 per-shot times from the QCE benchmark table, shots from results/shots_verification.csv (rerun_shots).
---real (addendum 2026-08-30, APPROVED): the paper's 20 circuits from benchmark_qce/circuits_le14
+--real: the paper's 20 circuits from benchmark_qce/circuits_le14
 instead of the surrogate; per-shot from the compiled schedule; per-channel reads counted from the
 compiled program; c3 heterogeneous batches run grouped-reload (n_groups + per-group CNR logged).
 
@@ -25,8 +25,8 @@ RES = os.environ.get('ANTQ_RESULTS', os.path.join(HERE, '..', '..', 'results')) 
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 BENCH_JSON = os.environ.get('ANTQ_BENCH_JSON', os.path.join(REPO, 'experiments', 'board', 'data', 'benchmark_results_20.json'))   # per-circuit shots / compiled per-shot (surrogate mode)
 BENCH_DIR = os.environ.get('ANTQ_BENCH_DIR', os.path.join(REPO, 'benchmark'))   # the benchmark submodule (--real workload, physics experiments, qchip)
-BOARD = os.environ.get('ANTQ_BOARD', 'localhost')          # SSH tunnels via computerA: 9015->9095 (RPC), 8080, 8081, 8082;
-RPC_PORT = int(os.environ.get('ANTQ_RPC_PORT', '9015'))     # ANTQ_BOARD / ANTQ_RPC_PORT select another board or tunnel (AQT huracan)
+BOARD = os.environ.get('ANTQ_BOARD', 'localhost')          # host/address of the qubic RPC server and its port;
+RPC_PORT = int(os.environ.get('ANTQ_RPC_PORT', '9095'))     # recampaign_env.sh derives both from site_env.sh
 RO_READOUT_S = 1.5e-6          # prototype: delay = per_shot - 1.5 us (readout pulse + settle)
 RAW_FIELDS = ['run_id', 'wall_time', 'mode', 'bitfile', 'wns_ns', 'software_commit', 'workload', 'workload_id',
               'repeat', 'status', 'exclusion_reason', 'n_circuits', 'shots', 'rps', 'n_active_ch', 'per_shot_us',
@@ -120,7 +120,7 @@ class Programs:
         self.real_cache.clear()
         self.pool_ready = True
 
-    # -- real-mode (plan addendum 2026-08-30): the paper's 20 circuits from benchmark_qce --
+    # -- real mode: the paper's 20 circuits from benchmark_qce --
     def _real_init(self):
         import json as _json, re as _re
         import qubitconfig.qchip as qc
@@ -134,8 +134,6 @@ class Programs:
         ren = lambda s: _re.sub(r'Q(\d+)', lambda m: f'qubit_{int(m.group(1)) + _off}', s)     # physics programs only (scope offset)
         sys.path.insert(0, BENCH_DIR)
         import circuits_le14
-        if '/home/yicheng/Desktop/software' in sys.path:       # circuits_le14 inserts it at import time;
-            sys.path.remove('/home/yicheng/Desktop/software')  # qubic is already bound to software_c3
         self._real_circuits = {c['idx']: c for c in circuits_le14.build_circuits()}
         fp = FPGAConfig()
         fp.fproc_channels = {ren0(k): FPROCChannel(id=(f'{ren0(k).split(".")[0]}.rdlo', 'core_ind'),
@@ -144,7 +142,7 @@ class Programs:
                              for k in fp.fproc_channels}
         self._real_fpga, self._ren, self._ren0 = fp, ren, ren0
         _qchip_path = os.environ.get('ANTQ_QCHIP') or os.path.join(BENCH_DIR, 'qubitcfg_14q_gate.json')   # ANTQ_QCHIP: a device's
-        _qd = _json.loads(ren0(open(_qchip_path).read()))                                                    # calibrated qchip (AQT huracan)
+        _qd = _json.loads(ren0(open(_qchip_path).read()))                                                    # calibrated qchip of a real device (ANTQ_QCHIP)
         if os.environ.get('ANTQ_QCHIP'): print(f'[qchip] {_qchip_path}', flush=True)
         if os.environ.get('SCOPE_READ_AMP'):
             for g, pulses in _qd['Gates'].items():
@@ -417,7 +415,7 @@ class Runner:
         self.progs.repeat_override = getattr(a, 'repeat_override', 0) or 0
         self.std = StdServerClient(BOARD, a.bits)
         self.bits_hash = os.path.basename(os.path.normpath(a.bits))
-        self.sw_commit = subprocess.run(['git', '-C', os.environ.get('SOFTWARE_C3', '/home/yicheng/Desktop/software_c3'),
+        self.sw_commit = subprocess.run(['git', '-C', os.environ.get('ANTQ_SOFTWARE', '.'),
                                          'rev-parse', '--short', 'HEAD'], capture_output=True, text=True).stdout.strip()
         self.order = 0
         os.makedirs(RES, exist_ok=True)
@@ -484,6 +482,83 @@ class Runner:
         info = box['info']
         return dict(t_start_ns=info['t_start_ns'], t_end_ns=t_end, elapsed_ms=(t_end - info['t_start_ns']) / 1e6,
                     cmd_bytes_transferred=4 * info['mmio_words_written'], send_block_us_max=sb_max, send_block_us_total=sb_tot, seamless='')
+
+    def run_rpc(self, idxs):
+        """Stock QubiC path through the board's Python RPC server (upstream run_circuit_batch, unchanged in feat/ddr_mem):
+        a physics/device loop program is submitted as its loop BODY with n_total_shots = loop iterations and
+        reads_per_shot = reads per iteration; the stock runner acquires it in accumulator-sized batches (1024 records)
+        with host round trips in between -- the segmented acquisition of the paper's baseline. Works on any image with the
+        standard command/accumulator memories (stock, C1); NOT on a C3 image (its cores fetch commands from DDR only)."""
+        from qubic.rpc_client import CircuitRunnerClient
+        if not getattr(self.a, 'phys', False):
+            return self.run_rpc_batch(idxs)
+        assert len(idxs) == 1, 'rpc mode: one --phys program per invocation'
+        idx = idxs[0]
+        exe_loop, b = self.progs.phys(idx, getattr(self.a, 'calib_n', None))   # metadata (loop_n, rps); --calib-n shortens
+        c = self.progs._phys_circuits[idx]
+        import copy
+        circ = self.progs._rename(copy.deepcopy(c['circuit']), self.progs._ren)
+        loops = [op for op in circ if isinstance(op, dict) and op.get('name') == 'loop']
+        assert len(loops) == 1, 'rpc mode expects a single hardware loop'
+        body = [op for op in loops[0]['body'] if not (isinstance(op, dict) and op.get('name') == 'alu')]   # drop the counter
+        # a trailing delay has no successor pulse and is dropped by the scheduler in a one-shot program (in the loop it
+        # precedes the jump); the stock stack (qcal) puts the passive-reset wait FIRST -- do the same: rotate trailing
+        # delays to the front so every shot starts with the reset wait and keeps the compiled period
+        tail = []
+        while body and isinstance(body[-1], dict) and body[-1].get('name') == 'delay':
+            tail.insert(0, body.pop())
+        body = tail + body
+        n_iter = int(b['loop_n']); rpi = max(1, int(list(b['rps'].values())[0]) // n_iter)
+        qg = {f'qubit_{i}': {f'qubit_{i}.qdrv', f'qubit_{i}.rdrv', f'qubit_{i}.rdlo'} for i in range(self.a.num_ch)}
+        comp = self.progs.tc.run_compile_stage(body, self.progs._real_fpga, self.progs._real_qchip,
+                                               compiler_flags={'schedule': True}, qubit_grouping=qg)
+        exe = self.progs.tc.run_assemble_stage(comp, self.progs.cc)
+        rd = [ch for ch in exe.result_channels if ch.endswith('.rdlo')]
+        rps = {ch: rpi for ch in rd}
+        r = CircuitRunnerClient(BOARD, RPC_PORT)              # classic client: no ddr_cmd, ddr=False below
+        t0 = time.time_ns()
+        res = r.run_circuit_batch([exe], n_iter, reads_per_shot=rps, ddr=False)
+        t1 = time.time_ns()
+        rr = res[0] if isinstance(res, (list, tuple)) else res
+        for ch in rd:
+            n = np.asarray(rr[ch]._array if hasattr(rr[ch], '_array') else rr[ch]).size
+            if n != n_iter * rpi:
+                raise RuntimeError(f'rpc {ch}: {n} values, expected {n_iter}x{rpi}')
+        iq_file = self._save_iq([rr], [idx]) if getattr(self.a, 'save_iq', False) else ''
+        print(f'[rpc] idx {idx}: {n_iter} shots x {rpi} reads on {rd}, host time {(t1 - t0) / 1e6:.1f} ms (stock batching by accumulator capacity)', flush=True)
+        return dict(iq_file=iq_file, t_start_ns=t0, t_end_ns=t1, elapsed_ms=(t1 - t0) / 1e6, cmd_bytes_transferred='',
+                    send_block_us_max='', send_block_us_total='', seamless='', n_groups='', cnr='', cnr_wait_cycles='')
+
+    def run_rpc_batch(self, idxs):
+        """Stock QubiC path for a benchmark batch: every circuit is its own job --
+        upstream run_circuit_batch([exe], shots, ddr=False) loads the circuit's commands and tables, runs it and uploads the
+        readout, host round trips between circuits (the paper's punched-card baseline on the stock image). Interval = first
+        job submitted .. last job's data returned on the host; the same field set as run_c3 (no DDR/CNR fields)."""
+        from qubic.rpc_client import CircuitRunnerClient
+        exes, shots, bs = [], [], []
+        for idx in idxs:
+            exe, b = self.circuit(idx)
+            exes.append(exe); shots.append(b['shots']); bs.append(b)
+        r = CircuitRunnerClient(BOARD, RPC_PORT)              # classic client: no ddr_cmd
+        res = []
+        t0 = time.time_ns()
+        for exe, n, b in zip(exes, shots, bs):
+            rr = r.run_circuit_batch([exe], n, reads_per_shot=b['rps'], ddr=False)
+            res.append(rr[0] if isinstance(rr, (list, tuple)) else rr)
+        t1 = time.time_ns()
+        for i, (b, rr) in enumerate(zip(bs, res)):
+            expected = set(b['rps'].keys()) or {ch for ch in exes[i].result_channels if ch.endswith('.rdlo')}
+            missing = expected - set(rr.keys())
+            if missing or not rr:
+                raise RuntimeError(f"rpc circuit {i}: readout channels missing {sorted(missing)} (got {sorted(rr.keys())})")
+            for ch, s11 in rr.items():
+                n = np.asarray(s11._array if hasattr(s11, '_array') else s11).size
+                if n != shots[i] * b['rps'].get(ch, 1):
+                    raise RuntimeError(f"rpc circuit {i} {ch}: {n} values, expected {shots[i]}x{b['rps'].get(ch, 1)}")
+        iq_file = self._save_iq(res, idxs) if getattr(self.a, 'save_iq', False) else ''
+        print(f'[rpc] batch of {len(idxs)} circuits as {len(idxs)} stock jobs, host time {(t1 - t0) / 1e6:.1f} ms', flush=True)
+        return dict(iq_file=iq_file, t_start_ns=t0, t_end_ns=t1, elapsed_ms=(t1 - t0) / 1e6, cmd_bytes_transferred='',
+                    send_block_us_max='', send_block_us_total='', seamless='', n_groups=len(idxs), cnr='', cnr_wait_cycles='')
 
     def run_c3(self, idxs):
         from qubic.rpc_client import CircuitRunnerClient
@@ -598,7 +673,7 @@ class Runner:
 
     def attempt(self, workload, wid, idxs, rep):
         a = self.a
-        fn = {'std': self.run_std, 'c1': self.run_c1, 'c3': self.run_c3}[a.mode]
+        fn = {'std': self.run_std, 'c1': self.run_c1, 'c3': self.run_c3, 'rpc': self.run_rpc}[a.mode]
         self.order += 1
         row = dict(run_id=f'{a.tag}-{a.mode}-{wid}-r{rep}-{int(time.time())}', wall_time=time.strftime('%Y-%m-%dT%H:%M:%S'),
                    mode=a.mode, bitfile=self.bits_hash, wns_ns=a.wns, software_commit=self.sw_commit, workload=workload,
@@ -633,7 +708,7 @@ class Runner:
             qpu_ref = float(row['qpu_ms'])
             if row.get('actual_shots_total'):             # stop run: the workload actually executed
                 qpu_ref = float(row['actual_shots_total']) * bs[0]['per_shot_us'] / 1000
-            if row.get('elapsed_ms') is not None and float(row['elapsed_ms']) < 0.98 * qpu_ref:
+            if a.mode != 'rpc' and row.get('elapsed_ms') is not None and float(row['elapsed_ms']) < 0.98 * qpu_ref:
                 raise RuntimeError(f"elapsed {row['elapsed_ms']:.3f} ms < QPU {qpu_ref:.4f} ms (stream ended early)")
         except _Capacity:
             pass
@@ -655,7 +730,7 @@ class Runner:
             if f.tell() == 0:
                 w.writeheader()
             w.writerow(row)
-        if a.mode == 'c3' and 'cnr_groups' in row:     # plan addendum: per-hardware-group CNR evidence
+        if a.mode == 'c3' and 'cnr_groups' in row:     # per-hardware-group CNR
             with open(os.path.join(RES, 'cnr_log.csv'), 'a', newline='') as f:
                 w = csv.writer(f)
                 if f.tell() == 0:
@@ -693,7 +768,7 @@ class Runner:
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--mode', required=True, choices=['std', 'c1', 'c3'])
+    p.add_argument('--mode', required=True, choices=['std', 'c1', 'c3', 'rpc'], help='std/c1/c3 = the paper paths; rpc = the stock QubiC Python RPC path (run_circuit_batch, host-batched by accumulator capacity): the stock configuration of the device experiments')
     p.add_argument('--bits', required=True, help='bits dir (bram.json + dspregs.json) of the loaded gateware')
     p.add_argument('--gw', required=True, help='gateware build dir (gensrc/channel_config.json)')
     p.add_argument('--num-ch', type=int, default=8)

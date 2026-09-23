@@ -1,0 +1,18 @@
+export PYTHONPATH := cocotb:tests:$(PYTHONPATH)
+SIM ?= verilator
+TOPLEVEL_LANG ?= verilog
+VERILOG_SOURCES = $(shell python cocotb/preinclude.py plsv_v2b.d -oneline)
+EXTRA_ARGS += --trace --trace-structs --trace-fst
+ifdef V2B_BPC
+COMPILE_ARGS += -DV2B_SIM_BPC=$(V2B_BPC)
+endif
+ifdef V2B_BURST
+COMPILE_ARGS += -DV2B_SIM_BURST=$(V2B_BURST)
+endif
+COMPILE_ARGS += -Wno-fatal -Wno-REDEFMACRO -Wno-WIDTH -Wno-SELRANGE -Wno-PINMISSING -Wno-UNOPTFLAT -Wno-CASEINCOMPLETE -Wno-CMPCONST -Wno-UNSIGNED -Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-IMPLICIT -Wno-BLKANDNBLK
+TOPLEVEL = plsv_v2b_sim_top
+MODULE = test_plsv_v2b
+all: fst
+fst: sim
+	mv dump.fst $(TOPLEVEL).fst
+include $(shell cocotb-config --makefiles)/Makefile.sim

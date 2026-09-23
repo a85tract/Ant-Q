@@ -71,13 +71,13 @@ def heavy_output_probability(probs: dict, ideal_probs: dict) -> float:
 
 
 def classify_readability(hellinger: float, tvd: float) -> str:
-    """Classify as PASS / MARGINAL / FAIL based on Hellinger fidelity and TVD."""
+    """PASS / MARGINAL / FAIL as defined in the paper: PASS if HF > 0.7 and TVD < 0.3, FAIL (unreadable) if HF <= 0.4
+    and TVD >= 0.6 (the zone the early-stop rule stops in), MARGINAL otherwise."""
     if hellinger > 0.7 and tvd < 0.3:
         return 'PASS'
-    elif hellinger > 0.4 and tvd < 0.6:
-        return 'MARGINAL'
-    else:
+    if hellinger <= 0.4 and tvd >= 0.6:
         return 'FAIL'
+    return 'MARGINAL'
 
 
 def compute_circuit_metric(category: str, noisy_probs: dict, ideal_probs: dict,

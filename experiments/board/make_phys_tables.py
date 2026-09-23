@@ -4,7 +4,7 @@ table2_phys.csv: per (experiment, config): n, raw elapsed, mean, sd (NA if n=1),
   P_meas - P (loop overhead) with its 95 % CI, cnr, status/capacity; 5/6 rows: n_units, segments, cnr.
 table_stop.csv: per circuit: 5 pairs -> s_i = 1 - T_stop/T_full, mean + t CI df 4; overshoot mean/range; stop-path latencies;
   requested vs recorded delay; result classes."""
-import csv, os, math, statistics as st
+import csv, os, math, statistics as st, re
 from collections import defaultdict
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get('ANTQ_RESULTS', os.path.join(HERE, '..', '..', 'results'))   # <repo>/results
@@ -16,7 +16,8 @@ phys = rows('raw_runs_phys.csv')
 cells = defaultdict(list); cal = defaultdict(list); meta = {}
 for r in phys:
     if int(r['repeat']) < 0: continue
-    key = (r['workload_id'].split('_n')[0], r['mode'])
+    if r['tag'].startswith(('scope_', 'accept', 'hand_')): continue   # scope-metrology, handover and acceptance rows are not campaign cells
+    key = (re.sub(r'_n\d+', '', r['workload_id']), r['mode'])   # calibration ids carry _n<count> (phys1_n1000_prefill16 -> phys1_prefill16)
     if r['workload'] == 'phys_cal':
         if r['status'] == 'ok': cal[key].append((float(r['calib_n']), float(r['elapsed_ms'])))
         continue
@@ -51,7 +52,7 @@ if out:
     w = csv.DictWriter(open(os.path.join(RES, 'table2_phys.csv'), 'w', newline=''), fieldnames=fn); w.writeheader(); w.writerows(out)
     for d in out: print('A', d['experiment'], d['config'], d['status'], 'n', d['n'], 'mean', d['mean_ms'], 'consistent', d.get('consistent', ''), 'cnr', d['cnr'])
 # ---------------- part B ----------------
-stop = [r for r in rows('raw_runs_stop.csv') if r['tag'] in ('c3_14q_stop1', 'c3_14q_stop_poll0d') and r['status'] == 'ok']
+stop = [r for r in rows('raw_runs_stop.csv') if r['tag'] in ('c3_14q_stop1', 'c3_14q_stop_poll0d', 'c3_14q_stop2', 'c3_14q_stop_poll0e', 'c3_14q_stop3', 'c3_14q_stop_poll0f') and r['status'] == 'ok']
 pairs = defaultdict(dict)
 for r in stop:
     if r['pair_id']: pairs[(r['tag'], r['pair_id'])][('stop' if int(r['stop_at'] or 0) > 0 else 'full')] = r

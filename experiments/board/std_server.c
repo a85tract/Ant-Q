@@ -158,7 +158,7 @@ static int c1_drained_count(void){
 }
 /* ---- the measured path (plan D3a) ---- */
 /* One outstanding AXI transaction at a time. The bramctrl slave is the custom axi4_lb localbus (combinational
- * BID/RID, fixed-latency RVALID without hold — dossier 11): it tolerates the Python path, which issues one
+ * BID/RID, fixed-latency RVALID without hold): it tolerates the Python path, which issues one
  * MMIO access per interpreter step, but back-to-back posted stores from a C loop (several outstanding AW/W
  * beats) wedged the PS bus on 2026-08-29 (three watchdog reboots). `dsb sy` after every Device-nGnRE access
  * waits for the write response / read data before the next access is issued — the same one-at-a-time

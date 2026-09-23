@@ -4,8 +4,9 @@ several seeds, with the paper's stop rule (methodology.tex: 10 checkpoints; conv
 |dHF| <= 0.03 between consecutive checkpoints; unreadable when HF <= 0.4 and TVD >= 0.6; earliest stop at checkpoint 3
 = 30 % of the shot budget). Reuses the QCE26 archive's circuits.py / metrics.py / make_checkpoints unchanged.
 
-Per (circuit, backend, seed) row: ground-truth grade of the FULL noisy run (PASS / MARGINAL / FAIL, same thresholds as
-the paper's Table noise_study), the stop checkpoint under the paper rule and under the archived code's TVD-only rule,
+Per (circuit, backend, seed) row: ground-truth grade of the FULL noisy run against the reference distribution (REF=exact:
+the exact noiseless distribution) with the paper's definition (PASS: HF > 0.7 and TVD < 0.3; FAIL: HF <= 0.4 and
+TVD >= 0.6; MARGINAL otherwise), the stop checkpoint under the paper rule and under the archived code's TVD-only rule,
 and whether the stop decision was correct (CORRECT / FALSE_POS on a PASS circuit / MISSED on a FAIL circuit).
 
     BACKEND=FakeAlgiers SEEDS=0-9 python rq3_stats.py        -> results/rq3/rq3_FakeAlgiers.csv
@@ -77,9 +78,10 @@ def main():
                 ref_mem = ideal.run(c['circuit'], shots=ref_shots, memory=True, seed_simulator=1000 + seed).result().get_memory(0)
                 ref_p = {k: v / ref_shots for k, v in Counter(ref_mem).items()}
             noisy_mem = noisy.run(qc_t, shots=shots, memory=True, seed_simulator=seed).result().get_memory(0)
-            ideal_mem = ideal.run(c['circuit'], shots=shots, memory=True, seed_simulator=2000 + seed).result().get_memory(0)
-            p_noisy = {k: v / shots for k, v in Counter(noisy_mem).items()}; p_ideal = {k: v / shots for k, v in Counter(ideal_mem).items()}
-            tvd = total_variation_distance(p_ideal, p_noisy); hf = hellinger_fidelity(p_ideal, p_noisy); grade = classify_readability(hf, tvd)
+            p_noisy = {k: v / shots for k, v in Counter(noisy_mem).items()}
+            # ground truth: the full noisy run against the same reference the stop rule uses (REF=exact: the exact noiseless
+            # distribution, as the paper defines it)
+            tvd = total_variation_distance(ref_p, p_noisy); hf = hellinger_fidelity(ref_p, p_noisy); grade = classify_readability(hf, tvd)
             sp, st, rows = stop_points(noisy_mem, ref_p, cps)
 
             def correct(stop):

@@ -58,10 +58,12 @@ def _first_phase_per_frame(pulses, dests_seen=None):
 
 def build_segments(P, idx, cap=CAP, verify=True, max_pulses=None):
     if not hasattr(P, '_real_qchip'): P._real_init()
-    if not hasattr(P, '_phys_circuits'):                 # the runner loads physic_experiment or ANTQ_PHYS_MODULE
-        sys.path.insert(0, antq_runner.BENCH_DIR)
-        import physic_experiment
-        P._phys_circuits = {x['idx']: x for x in physic_experiment.build_circuits()}
+    if not hasattr(P, '_phys_circuits'):                 # same module the runner uses: physic_experiment or ANTQ_PHYS_MODULE
+        if hasattr(P, '_load_phys_module'):
+            m = P._load_phys_module()
+        else:
+            sys.path.insert(0, antq_runner.BENCH_DIR); import physic_experiment as m
+        P._phys_circuits = {x['idx']: x for x in m.build_circuits()}
     c = P._phys_circuits[idx]
     circ = json.loads(P._ren(json.dumps(copy.deepcopy(c['circuit']), default=float)))
     loop = [op for op in circ if op.get('name') == 'loop'][0]
@@ -77,7 +79,13 @@ def build_segments(P, idx, cap=CAP, verify=True, max_pulses=None):
         body = kept + [op for op in body if op.get('name') in ('read', 'delay')]
     dt = float(c['dt_inter_shot'])
     qg = {f'qubit_{i}': {f'qubit_{i}.qdrv', f'qubit_{i}.rdrv', f'qubit_{i}.rdlo'} for i in range(P.num_ch)}
-    segs = split_body(body, cap)
+    cut = c.get('seg_cut_after')                      # boundary experiment (2026-09-17): explicit cut after body op index k
+    if cut is not None:                                #   -> exactly two segments, [body[:k]] | [body[k:]], regardless of the cap
+        ops_ = [op for op in body if op.get('name') != 'alu']
+        segs = [ops_[:int(cut)], ops_[int(cut):]]
+        assert all(segs), f'seg_cut_after={cut} leaves an empty segment'
+    else:
+        segs = split_body(body, cap)
     # unbroken reference (the whole body once, same leading delay): its resolved pulse phases are the truth
     ref = P.tc.run_compile_stage([{'name': 'delay', 't': dt}] + [o for o in body if o.get('name') != 'alu'],
                                  P._real_fpga, P._real_qchip, compiler_flags={'schedule': True}, qubit_grouping=qg)
@@ -117,6 +125,14 @@ def build_segments(P, idx, cap=CAP, verify=True, max_pulses=None):
                 if rfr != fr or abs(((rph - ph + np.pi) % (2 * np.pi)) - np.pi) > 1e-6:
                     mism += 1
             consumed[dest] += len(lst)
+        # 2026-09-17 device finding: the compiler puts a 'phase_reset' (DSP opcode pulse_reset) at the start of EVERY program, so a
+        # continuation segment restarted the phase accumulators at the handover (drive and readout frames lost). Strip it from
+        # segments k >= 1 (default); SEG_KEEP_PHASE_RESET=1 reproduces the old behaviour for diagnostics.
+        stripped = 0
+        if k > 0 and not int(os.environ.get('SEG_KEEP_PHASE_RESET', '0')):
+            for grp, instrs in comp.program.items():
+                n0 = len(instrs); instrs[:] = [ins for ins in instrs if not (isinstance(ins, dict) and ins.get('op') == 'phase_reset')]
+                stripped += n0 - len(instrs)
         exe = P.tc.run_assemble_stage(comp, P.cc, elem_cfg_pool=P.pool)
         binaries = {n: bytes(d.data if hasattr(d, 'data') else d) for n, d in exe.get_binaries_fromboard().items()}
         cmd_max = max(len(b) for n, b in binaries.items() if 'command' in n)
@@ -129,7 +145,8 @@ def build_segments(P, idx, cap=CAP, verify=True, max_pulses=None):
                     dur = max(dur, ins['start_time'] + (int(tw / 2e-9) if tw else 15))
         rps = {ch: 1 for ch in exe.result_channels if ch.endswith('.rdlo')} if any(o.get('name') == 'read' for o in ops) else {}
         out.append((exe, dict(seg=k, n_ops=len(ops), cmd_bytes_max=cmd_max, n_cmds_max=cmd_max // 16, dur_us=dur * 2e-9 * 1e6,
-                              rps=rps, carry_in={drive_frames[float(fr)]: float(ph) for fr, ph in carry.items()}, phase_mismatches=mism)))
+                              rps=rps, carry_in={drive_frames[float(fr)]: float(ph) for fr, ph in carry.items()}, phase_mismatches=mism,
+                              phase_reset_stripped=stripped)))
     assert all(consumed[d] == len(ref_by_dest[d]) for d in ref_by_dest), 'segments do not cover the reference'
     report = dict(idx=idx, name=c['name'], n_segments=len(segs), shots=int(c['shots']), dt_us=dt * 1e6,
                   segments=[m for _, m in out], sum_dur_us=sum(m['dur_us'] for _, m in out))

@@ -1,7 +1,7 @@
 #!/bin/bash
 # RQ3 statistics: six fake backends in parallel, seeds 0-19, all 20 paper circuits (<= 14 qubits).
 cd "$(dirname "$0")"
-PY=/home/yicheng/anaconda3/envs/noise_exp/bin/python
+PY=${RQ3_PY:-python3}     # interpreter with qiskit + qiskit-ibm-runtime installed
 OUTD=$($PY -c 'from rq3_common import OUT_DIR; print(OUT_DIR)'); mkdir -p $OUTD
 LOG=$OUTD/run_rq3_stats.log
 echo "$(date +%Y-%m-%dT%H:%M:%S) START seeds 0-19 CIRCUITS=${CIRCUITS:-v2} REF=${REF:-exact}" >> $LOG

@@ -93,8 +93,8 @@ for idx in antq_runner.IDX20:
 report['pooled_tables_distinct'] = {k: len(v) for k, v in tab.items() if len(v) > 1}
 if report['pooled_tables_distinct']: report['fail'].append('pooled tables not identical across programs')
 sw = lambda d: subprocess.run(['git', '-C', d, 'rev-parse', '--short', 'HEAD'], capture_output=True, text=True).stdout.strip()
-report['commits'] = {'software_c3': sw('/home/yicheng/Desktop/software_c3'),
-                     'distproc_copy': '/home/yicheng/Desktop/Ryan_project/clean_software/distributed_processor (patched 2026-09-01: GlobalAssembler elem_cfg_pool)',
+report['commits'] = {'software': sw(os.environ.get('ANTQ_SOFTWARE', '.')),
+                     'distproc': 'the distributed_processor checkout on PYTHONPATH (needs the GlobalAssembler elem_cfg_pool option: official feat/ddr_mem, 0653425 or later)',
                      'gw_build': GW}
 report['pool_order'] = antq_runner.IDX20
 json.dump(sha, open(os.path.join(OUT, 'sha256.json'), 'w'), indent=1)

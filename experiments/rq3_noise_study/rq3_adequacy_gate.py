@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""rq3_adequacy_gate.py -- sampling-adequacy gate for the RQ3 readability rule (both round-2 reviewers: do not subtract
-a floor; restrict the rule to circuits whose NOISELESS sampling distribution of the metric stays inside PASS).
-For every paper circuit and every checkpoint size n = k/10 x shots (k = 3..10), draw 200 noiseless replicate pairs
-(sample of n shots, reference sample of 10 % as the rule uses) and record the 95th percentile of TVD and the 5th
+"""rq3_adequacy_gate.py -- sampling-adequacy gate for the RQ3 readability rule: the rule is restricted
+to circuits whose NOISELESS sampling distribution of the metric stays inside PASS.
+For every paper circuit and every checkpoint size n = k/10 x shots (k = 3..10), draw 200 noiseless replicates
+(a sample of n shots against the reference: the exact distribution under REF=exact, a 10 % reference sample under REF=sample) and record the 95th percentile of TVD and the 5th
 percentile of HF under this null. Gate: evaluable at checkpoint k when TVD_95 < 0.3 and HF_05 > 0.7 (the PASS region,
 i.e. the noiseless null never leaves PASS); also reported: the noiseless false-FAIL probability (TVD >= 0.6 & HF <= 0.4).
 Output: results/rq3/adequacy_gate.csv"""

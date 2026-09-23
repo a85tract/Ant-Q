@@ -10,13 +10,15 @@ Stages (us), per run:
   exec_res = (t_batch_done - t_first_cid) - shots x P     execution beyond the nominal QPU time; P = compiled or realized
   drain    = t_end - t_batch_done              last readout words DDR -> PS memory + dma_server detection (STRM_POLL_US)
   fixed    = elapsed - shots x P_realized      = upload + start + launch + exec_res(realized) + drain
-Output: results/table_decomp.csv (per tag x circuit: n, mean, sd of every stage) and a markdown print.
+Output: results/table_decomp.csv (per tag x circuit: n, mean, sd of every stage), table_decomp_fit.csv (fixed cost vs active
+cores, unweighted OLS over the circuits of a tag) and a markdown print.
 """
 import csv, statistics as st, sys
 from collections import defaultdict
+import os
 from pathlib import Path
 
-RES = Path(__file__).resolve().parent.parent.parent / 'results'
+RES = Path(os.environ.get('ANTQ_RESULTS') or Path(__file__).resolve().parent.parent.parent / 'results')   # ANTQ_RESULTS: re-campaign results dir
 P_real = {r['idx']: (float(r['per_shot_compiled_us']), float(r['per_shot_c1_slope_us']), r['name'])
           for r in csv.DictReader(open(RES / 'per_shot_realized_real.csv'))}
 STAGES = ['upload', 'start', 'launch', 'exec_res_compiled', 'exec_res_realized', 'drain', 'fixed_realized', 'fixed_compiled']
@@ -56,3 +58,17 @@ for r in out:
 for tag in sorted({r['tag'] for r in out}):
     sub = [r for r in out if r['tag'] == tag]
     print(f"\n{tag}: median over circuits (us): " + ', '.join(f"{k} {st.median(r[k + '_us'] for r in sub):.1f}" for k in STAGES))
+
+# descriptive fit: per-circuit mean fixed cost (realized) vs active cores, unweighted OLS over the circuits of a tag
+cores = {r['workload_id']: int(r['n_active_ch']) for r in rows if r.get('n_active_ch')}
+fits = []
+for tag in sorted({r['tag'] for r in out}):
+    per = {idx: st.mean(x['fixed_realized'] for x in ss) for (t, _, idx), ss in cells.items() if t == tag and idx in cores}
+    if len(per) < 3: continue
+    xs = [cores[i] for i in per]; ys = list(per.values()); mx, my = st.mean(xs), st.mean(ys)
+    b1 = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sum((x - mx) ** 2 for x in xs); b0 = my - b1 * mx
+    fits.append(dict(tag=tag, n_circuits=len(per), intercept_us=round(b0, 1), per_active_core_us=round(b1, 1)))
+    print(f"{tag}: fixed_realized = {b0:.1f} us + {b1:.1f} us per active core (unweighted OLS over {len(per)} circuits)")
+if fits:
+    with open(RES / 'table_decomp_fit.csv', 'w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=list(fits[0])); w.writeheader(); w.writerows(fits)

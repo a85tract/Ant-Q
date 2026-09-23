@@ -1,16 +1,17 @@
 """Plan-fixed execution sequences (generated BEFORE execution, consumed by the runners):
-results/pool_sequence.csv (C4: 5 blocks, seeds 43 assignment / 47 manifest order), results/stop_sequence.csv
-(B3: 5 consecutive pairs per circuit, 3/2 split, seed 44, pair_id), results/calib_sequence.csv (A3: seed 46),
-results/smoke_sequence.csv (C2(d): N P P N fixed), results/batch_manifest_provenance.csv (C6)."""
+pool_sequence.csv (C4: 5 blocks, seeds 43 assignment / 47 manifest order), stop_sequence.csv
+(B3: 5 consecutive pairs per circuit, 3/2 split, seed 44, pair_id), calib_sequence.csv (A3: seed 46),
+batch_manifest_provenance.csv (C6), all in $ANTQ_RESULTS (default: the published copies in results/bench/,
+so a regeneration shows up as a git diff)."""
 import csv, random, collections, sys, os
-os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
+os.chdir(os.environ.get('ANTQ_RESULTS', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'results', 'bench')))
 # --- provenance
-rows = list(csv.DictReader(open('results/batch_manifest.csv')))
+rows = list(csv.DictReader(open('batch_manifest.csv')))
 by = collections.OrderedDict()
 for r in rows: by.setdefault(r['batch_id'], []).append(int(r['circuit_idx']))
 pool20 = [1,2,3,4,5,6,7,8,9,10,11,12,13,19,20,21,22,23,24,25]
 random.seed(42); regen = {f'rand{k}_t{t}': random.choices(pool20, k=k) for k in (10,20,30) for t in range(10)}
-with open('results/batch_manifest_provenance.csv','w') as f:
+with open('batch_manifest_provenance.csv','w') as f:
     w = csv.writer(f); w.writerow(['batch_id','generator','ordered_draws','multiplicities','rejection_or_filtering','regeneration_matches'])
     for b, draws in regen.items():
         w.writerow([b, 'random.seed(42); random.choices(pool20, k=k) for k in (10,20,30) for t in range(10), pool20 = the 20 paper idx',
@@ -27,7 +28,7 @@ for k in (10, 20, 30):
 hb = random.sample(range(5), 2); blocks[hb[0]].append('ghz8_x30'); blocks[hb[1]].append('qaoa12_x30')
 C1_CFGS = ['std_native', 'std_pool', 'c1_native', 'c1_pool']
 random.seed(47)
-with open('results/pool_sequence.csv','w') as f:
+with open('pool_sequence.csv','w') as f:
     w = csv.writer(f); w.writerow(['seq','block','image','config','manifest','run_kind','repeat']); seq = 0
     for b in range(5):
         c3_first = (b % 2 == 0)
@@ -44,7 +45,7 @@ print('pool_sequence rows', seq, 'blocks', {b: blocks[b] for b in blocks})
 # --- stop sequence: six circuits, 5 consecutive pairs, 3 first-condition of one kind (seed 44)
 STOP = [(2,'GHZ-3',8192,2457),(9,'GHZ-6',128,60),(10,'GHZ-8',32,12),(19,'VQE BeH2 14Q',4096,1227),(22,'QML Image Class 14Q',400,120),(23,'VQE SrH PDM 12Q',4000,1200)]
 random.seed(44)
-with open('results/stop_sequence.csv','w') as f:
+with open('stop_sequence.csv','w') as f:
     w = csv.writer(f); w.writerow(['seq','idx','name','shots','stop_at','pair_id','position','condition','run_kind']); seq = 0
     for idx, name, shots, stop_at in STOP:
         for cond in ('full', 'stop'): w.writerow([seq, idx, name, shots, stop_at, '', 0, cond, 'warmup']); seq += 1
@@ -53,19 +54,14 @@ with open('results/stop_sequence.csv','w') as f:
             for pos, cond in enumerate([fst, 'stop' if fst == 'full' else 'full']):
                 w.writerow([seq, idx, name, shots, stop_at, f'{idx}_p{pid}', pos, cond, 'measure']); seq += 1
 print('stop_sequence rows', seq)
-# --- calibration order (seed 46): per experiment, 3 blocks x 3 counts randomized
-feas = {r['exp']: r for r in csv.DictReader(open('results/calib_feasibility.csv')) if r['verdict'] == 'FEASIBLE'}
+# --- calibration order (seed 46): per experiment, 3 blocks x 3 counts randomized; D = loop-count span of the slope calibration
+CALIB_D = {'vion_1': 100000, 'yan_3': 5941, 'riste_4': 461539}
 random.seed(46)
-with open('results/calib_sequence.csv','w') as f:
+with open('calib_sequence.csv','w') as f:
     w = csv.writer(f); w.writerow(['seq','exp','block','count']); seq = 0
-    for exp, r in feas.items():
-        D = int(r['D']); counts = [1000, 1000 + D // 2, 1000 + D]
+    for exp, D in CALIB_D.items():
+        counts = [1000, 1000 + D // 2, 1000 + D]
         for b in range(3):
             order = counts[:]; random.shuffle(order)
             for c in order: w.writerow([seq, exp, b, c]); seq += 1
-print('calib_sequence rows', seq, 'feasible:', list(feas))
-with open('results/smoke_sequence.csv','w') as f:
-    w = csv.writer(f); w.writerow(['seq','program','run','condition']); seq = 0
-    for prog in ('bell', 'grover', 'x90cal'):
-        for i, c in enumerate('NPPN'): w.writerow([seq, prog, i, 'native' if c == 'N' else 'pooled']); seq += 1
-print('smoke_sequence written')
+print('calib_sequence rows', seq)

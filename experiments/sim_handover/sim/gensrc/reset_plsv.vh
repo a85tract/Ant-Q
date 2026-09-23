@@ -1,0 +1,12 @@
+reg [8-1:0] cfgresetn_r=0;
+assign {cfgresetn0,cfgresetn1,cfgresetn2,cfgresetn3,cfgresetn4,cfgresetn5,cfgresetn6,cfgresetn7}=cfgresetn_r;
+always @(posedge cfgclk) begin cfgresetn_r<={8{~cfgreset}};end
+reg [42-1:0] dspresetn_r=0;
+assign {dspresetn0,dspresetn1,dspresetn2,dspresetn3,dspresetn4,dspresetn5,dspresetn6,dspresetn7,dspresetn8,dspresetn9,dspresetn10,dspresetn11,dspresetn12,dspresetn13,dspresetn14,dspresetn15,dspresetn16,dspresetn17,dspresetn18,dspresetn19,dspresetn20,dspresetn21,dspresetn22,dspresetn23,dspresetn24,dspresetn25,dspresetn26,dspresetn27,dspresetn28,dspresetn29,dspresetn30,dspresetn31,dspresetn32,dspresetn33,dspresetn34,dspresetn35,dspresetn36,dspresetn37,dspresetn38,dspresetn39,dspresetn40,dspresetn41}=dspresetn_r;
+always @(posedge dspclk) begin dspresetn_r<={42{~dspreset}};end
+reg [3-1:0] psresetn_r=0;
+assign {psresetn0,psresetn1,psresetn2}=psresetn_r;
+always @(posedge psclk) begin psresetn_r<={3{~psreset}};end
+reg [1-1:0] adc3resetn_r=0;
+assign {adc3resetn0}=adc3resetn_r;
+always @(posedge adc3clk) begin adc3resetn_r<={1{~adc3reset}};end

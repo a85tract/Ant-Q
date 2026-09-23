@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """scope_cadence.py -- bench cadence metrology (AQT plan P0-D; pre-registration
-~/agent_journals/antq_scope_cadence_plan_20260904.md). Tektronix MSO71254C via the ssh tunnel 127.0.0.1:14000
-(one client at a time). CH1 = veneno DAC 230_0 (rdrv, readout-drive bus): one 2 us readout pulse per shot.
+Tektronix MSO71254C over its SCPI raw socket (SCOPE_HOST / SCOPE_PORT from site_env.sh)
+(one client at a time). CH1 = the board's readout-drive DAC (shared readout bus): one 2 us readout pulse per shot.
 
   capture : arm single-sequence acquisitions in a loop and save each record
             python scope_cadence.py capture --tag phys4_run1 --scale 1e-3 --n 3 --max-s 60 [--mode AUTO|CONSTANT --sr 62.5e6]
@@ -13,11 +13,13 @@ to results/scope_cadence/cadence_summary.csv; pulse timestamps per capture: resu
 import argparse, csv, json, os, socket, sys, time
 import numpy as np
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'results', 'scope_cadence')
+RES = os.path.join(os.environ.get('ANTQ_RESULTS', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'results')), 'scope_cadence')   # ANTQ_RESULTS: re-campaign dir
 
 
 class Scope:
-    def __init__(self, host='127.0.0.1', port=14000):
+    def __init__(self, host=None, port=None):
+        host = host or os.environ['SCOPE_HOST']            # site_env.sh; one client at a time on this instrument
+        port = int(port or os.environ.get('SCOPE_PORT', '4000'))
         self.s = socket.create_connection((host, port), timeout=10)
 
     def w(self, c): self.s.sendall((c + '\n').encode())
@@ -61,7 +63,7 @@ def capture(a):
     os.makedirs(os.path.join(RES, 'raw'), exist_ok=True)
     sc = Scope()
     print('scope:', sc.q('*IDN?'), flush=True)
-    sc.w('ACQUIRE:STATE 0')
+    sc.w('ACQUIRE:STATE 0'); sc.w(f'ACQUIRE:MODE {a.acq_mode}')     # PEAKDETECT keeps 24 ns bursts at 80 ns/sample (paper recipe); was left to the front panel before
     sc.w(f'{a.ch}:SCALE {a.ch1_mv * 1e-3:.3E}'); sc.w(f'SELECT:{a.ch} ON')
     if a.mode == 'CONSTANT':
         sc.w('HORIZONTAL:MODE CONSTANT'); sc.w(f'HORIZONTAL:MODE:SAMPLERATE {a.sr:.3E}')
@@ -181,6 +183,7 @@ if __name__ == '__main__':
     c.add_argument('--n', type=int, default=1); c.add_argument('--max-s', type=float, default=120); c.add_argument('--mode', default='AUTO', choices=['AUTO', 'CONSTANT'])
     c.add_argument('--sr', type=float, default=62.5e6); c.add_argument('--trig-mv', type=float, default=3.0); c.add_argument('--auto-trigger', action='store_true')
     c.add_argument('--ch1-mv', type=float, default=5.0, help='volts/div of the captured channel, in mV')
+    c.add_argument('--acq-mode', default='PEAKDETECT', choices=['PEAKDETECT', 'SAMPLE'], help='scope acquisition mode (PEAKDETECT = the 2026-09-04 final recipe)')
     c.add_argument('--ch', default='CH1', choices=['CH1', 'CH2'], help='captured/trigger channel (CH1 = rdrv bus, CH2 = qubit_1 drive)')
     an = sub.add_parser('analyze'); an.add_argument('--tag', required=True); an.add_argument('--period-us', type=float, required=True); an.add_argument('--thr-frac', type=float, default=0.4); an.add_argument('--gap-us', type=float, default=3.0, help='a pulse gap longer than this starts a new shot'); an.add_argument('--verbose', action='store_true'); an.add_argument('--merge-short-us', type=float, default=0.0, help='fold pulse clusters shorter than this into the next shot (conditional-reset pulses)'); an.add_argument('--min-thr-mv', type=float, default=8.0, help='absolute floor of the pulse threshold (noise-only records give no pulses)')
     a = p.parse_args(); capture(a) if a.cmd == 'capture' else analyze(a)

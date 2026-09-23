@@ -1,0 +1,30 @@
+# Site configuration for the board experiments -- copy to site_env.sh and fill in for your setup.
+# site_env.sh is NOT tracked (see .gitignore): it holds the only machine-specific values the scripts need.
+# Every script in this directory reads these variables; none contains a host name, address or path of its own.
+# recampaign_env.sh stops with a message when a required value is empty.
+
+# --- host side -------------------------------------------------------------------------------------------------
+export ANTQ_PY=python3                 # interpreter with the qubic client on PYTHONPATH (a conda env works)
+export ANTQ_SOFTWARE=                  # host client tree: this repository's software/ submodule or a worktree of it
+export ANTQ_GW_ROOT=                   # directory that holds <gw_build_dir>/top/<board>/build_<hash>_<timestamp>/
+export ANTQ_GW_C3_GLOB=                # subpath under ANTQ_GW_ROOT of the Ant-Q image family, e.g. gw_build_c3/top/zcu216_14_2
+export ANTQ_GW_C1=                     # build directory of the baseline image (build_<hash>_<timestamp>)
+export ANTQ_RESULTS_ROOT=              # campaign result directories are created under here
+export ANTQ_BENCH_DIR=                 # optional: benchmark checkout (defaults to this repo's benchmark/)
+
+# --- board side ------------------------------------------------------------------------------------------------
+export ANTQ_BOARD_SSH=                 # ssh destination of the ZCU216 (e.g. an ssh config alias with key auth)
+export ANTQ_BOARD_LAN=                 # the board's address on the lab network, as seen from the jump host
+export ANTQ_JUMP_SSH=                  # ssh destination that reaches the board network ('' = board reachable directly)
+export ANTQ_TUNNEL_IP=                 # a spare local loopback address the per-port forwards bind to
+export ANTQ_BOARD_SW=                  # the board's QubiC software tree (the directory holding qubic/ and scripts/)
+export ANTQ_BOARD_CFG=                 # the server configuration file the board's qubic service reads
+# Privileged commands on the board. Prefer passwordless sudo ('sudo -n'). If the board needs a password, export
+# ANTQ_SUDO on the command line for that session only -- never store a password in this file or in any script.
+export ANTQ_SUDO='sudo -n'
+# Optional: a register-dump script that acceptance/ce_stress.py runs on the board (as root) when a batch wedges
+export ANTQ_REGDUMP_SCRIPT=
+
+# --- instruments (only needed for the scope metrology steps) ---------------------------------------------------
+export SCOPE_HOST=                     # oscilloscope address, SCPI raw socket
+export SCOPE_PORT=4000

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Plan A driver (run matrix A2 + calibration A3 + the 5/6 sub-circuit streams + the unsplit/split boundary control).
+"""Plan A driver (run matrix A2 + calibration A3 + the 5/6 sub-circuit streams).
 Cells: for each experiment and configuration: warm-up + 3 complete runs (--repeats 3 through antq_runner --phys).
 Calibration series (results/calib_sequence.csv, 3 randomized blocks x 3 counts) for #1/#3/#4 on c3 and c1.
-Images: c3 cells on 63329aaf; c1/std cells on 0071783e_14q (switch via run_pool_campaign.switch_image).
+Images: c3 cells on the C3 image (ANTQ_XSA_C3); c1/std cells on 0071783e_14q (switch via run_pool_campaign.switch_image).
 std_server needs SS_CHUNK_TIMEOUT_S >= 200 for the 100 s shots (deployed with deploy_servers.sh)."""
 import csv, os, subprocess, sys, time, argparse
 HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get('ANTQ_RESULTS', os.path.join(HERE, '..', '..', 'results'))   # <repo>/results
@@ -20,7 +20,9 @@ def cell(image, mode, idx, repeats, tag, calib_n=None, note='', extra=()):
         log(f'{image} {mode} phys{idx}{f"_n{calib_n}" if calib_n else ""} attempt {att} rc={r.returncode}\n' + '\n'.join(lines)[-800:] + ('\nSTDERR: ' + r.stderr[-600:] if r.returncode else ''))
         if r.returncode == 0 and 'second failure' not in r.stdout: return True
         C.restart_service()
+    FAILED.append(f'{image} {mode} phys{idx} n={calib_n}')
     return False
+FAILED = []
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--part', default='all', help='c3|c1std|all'); a = ap.parse_args()
     calib = list(csv.DictReader(open(os.path.join(RES, 'calib_sequence.csv'))))
@@ -29,16 +31,17 @@ def main():
         C.switch_image('C3')
         for idx in (1, 2, 3, 4): cell('C3', 'c3', idx, 3, 'c3_14q_phys1')
         for r in calib: cell('C3', 'c3', EXP[r['exp']], 1, 'c3_14q_physcal1', calib_n=int(r['count']), note=f"calib block={r['block']} seq={r['seq']}")
-        for idx in (5, 6): cell('C3', 'c3', idx, 3, 'c3_14q_phys1')
-        # boundary dead-time control (plan A0, Codex part-A #1): 1800-pulse prefix of #5, unsplit (1 unit/shot) vs split (2 units/shot)
-        cell('C3', 'c3', 5, 3, 'c3_14q_physctrl1', extra=['--seg-pulses', '1800', '--seg-cap', '1802'])
-        cell('C3', 'c3', 5, 3, 'c3_14q_physctrl1', extra=['--seg-pulses', '1800', '--seg-cap', '902'])
+        # (5)/(6) sub-circuit streams: pooled tables + prefill 16; without --pool-tables the segments land in two hardware
+        # groups and the runner rejects the stream ("split into 2 hardware groups").
+        STREAM = ['--pool-tables', '--prefill', '16']
+        for idx in (5, 6): cell('C3', 'c3', idx, 3, 'c3_14q_phys4_start16', extra=STREAM)
     if a.part in ('c1std', 'all'):
         C.switch_image('C1')
         for idx in (1, 2, 3, 4): cell('C1', 'c1', idx, 3, 'c1_14q_phys1')
         for r in calib: cell('C1', 'c1', EXP[r['exp']], 1, 'c1_14q_physcal1', calib_n=int(r['count']), note=f"calib block={r['block']} seq={r['seq']}")
         for idx in (1, 2, 3, 4): cell('C1', 'std', idx, 3 if idx == 2 else 1, 'std_14q_phys1')     # 1/3/4: capacity rows (repeat 0 recorded)
         C.switch_image('C3')
-    log('phys campaign done')
+    log('phys campaign done' + (f' with {len(FAILED)} FAILED cell(s): {FAILED}' if FAILED else ''))
+    if FAILED: sys.exit(1)
 if __name__ == '__main__':
     main()

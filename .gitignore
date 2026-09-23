@@ -1,3 +1,13 @@
 __pycache__/
 *.pyc
 *.npz
+# raw captures under results/ are data and are tracked (per-run readout, oscilloscope records)
+!results/**/*.npz
+# derived outputs of the table builders and analyses when they are run in place on results/
+results/**/analysis/
+results/**/table*.csv
+results/**/pool_reliability.csv
+results/**/*_analysis.json
+results/**/adequacy_gate.csv
+results/**/*.log
+results/**/log_*.txt

@@ -1,0 +1,5 @@
+/sim_build/
+/gensrc/
+/results.xml
+/*.fst*
+__pycache__/

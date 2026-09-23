@@ -1,113 +1,107 @@
 # Ant-Q: Breaking Memory Bottlenecks in Quantum Control Systems
 
 Ant-Q is a memory-hierarchy design for the FPGA-based quantum control system QubiC. It uses the control board's PL-DRAM as
-the main memory for circuit commands and readout results and keeps BRAM as a cache with ping-pong buffers, so that circuits
-longer than the command buffer and acquisitions longer than the accumulator buffer run with deterministic timing, and
-readout results reach the host while the remaining shots are still executing.
+the main memory for circuit commands and readout results and keeps BRAM as a cache with ping-pong buffers: command images
+stream from PL-DRAM into the BRAM command buffers, and readout results stream from the accumulators to PS memory during
+execution.
 
 > **Breaking Memory Bottlenecks in Quantum Control Systems for More Precise Experiments and Higher Throughput Computing**
 > Yicheng Guang, Neel Vora, Yilun Xu, Yueqi Chen, Gang Huang
 > *University of Colorado Boulder & Lawrence Berkeley National Laboratory*
 
-This repository is the artifact of the paper: it pins the exact gateware, software and benchmark versions behind every
-number in the paper and holds the measurement scripts, the raw data and the analysis reports.
+This repository is the artifact of the paper: it pins the gateware, software and benchmark versions of the measurements
+and holds the measurement scripts and the raw data. Derived quantities are regenerated from the raw rows by the scripts.
 
 ## Repository structure
 
-| Path | What it is | Pinned commit |
-|---|---|---|
-| [`gateware/`](https://gitlab.com/yguang1/gateware/-/tree/feat/ddr_mem) | Submodule: QubiC gateware with the Ant-Q downlink and uplink integrated (the "C3" image, ZCU216, 14 qubits). The measured bitstream was built from exactly this commit (`xsa_commit` 63329aaf, timing closed, WNS 0.000 ns). The uplink-only "C1" image used for the baseline columns is commit 0071783e of the same repository (tag `antq-qst-c1-image-0071783e`). | `63329aaf` (tag `antq-qst-c3-image-63329aaf`, the exact source of the measured bitstream; the fork's `feat/ddr_mem` carries this content as one squashed commit, `5965dc8`, on top of the official branch for the upstream MR) |
-| [`software/`](https://gitlab.com/yguang1/software/-/tree/feat/ddr_mem) | Submodule: QubiC host software plus the Ant-Q PS servers (`scripts/batch_server.c`, `scripts/dma_server.c`) and the batch client (`qubic/rpc_client.py`). `cac82a9` is the C3 stage as one squashed commit on the fork's `feat/ddr_mem`, the product subset of the last measured commit `a1eefb5` (tag `antq-qst-software-a1eefb5`): same product code plus one guard so that the default assembly path also works with an unpatched `distributed_processor`, minus the measurement-only files, which now live in `experiments/board/` (`std_server.c` + `std_client.py`, the stock PS path in C used as the timing baseline, and the two board deployment scripts) | `cac82a9` (fork `feat/ddr_mem`) |
-| [`benchmark/`](https://gitlab.com/yguang1/benchmark_qce) | Submodule: the 20 computing circuits and 6 physics experiments as QubiC pulse-level programs (`circuits_le14.py`, `physic_experiment.py`), the same 20 circuits as Qiskit objects (`circuits_qiskit.py`, used by the noise study) and the 14-qubit configuration. Also holds the two measured bitstreams with their register/channel files (`bitstreams/`, see the benchmark README for deployment). The hardware rows in `results/` were measured with revision `8baf102` of this suite; `dda8d37` changed only the angles of the two 14-qubit template circuits (see "Version provenance") | `d9a9cee` |
-| [`experiments/`](experiments/README.md) | Measurement and analysis code: `board/` (the runner and campaign drivers that produced every hardware number), `rq3_noise_study/` (the simulator study behind RQ3), `patches/` (one small patch to the QubiC assembler) | this repository |
-| [`results/`](results/README.md) | Every measured row, the derived tables, the campaign logs and the analysis reports | this repository |
+| Path | What it is |
+|---|---|
+| [`gateware/`](https://gitlab.com/LBL-QubiC/gateware) | Submodule: QubiC gateware with the Ant-Q downlink (command streaming through PL-DRAM, ping-pong command buffers, command-supply witness) and uplink (readout streaming). |
+| [`software/`](https://gitlab.com/LBL-QubiC/software) | Submodule: QubiC host software with the Ant-Q batch client (`qubic/rpc_client.py`) and the PS servers (`scripts/batch_server.c`, `scripts/dma_server.c`). |
+| [`benchmark/`](https://gitlab.com/yguang1/benchmark_qce) | Submodule: the 20 computing circuits and 6 physics experiments as QubiC programs, their Qiskit twins, the shot-count sources, and `bitstreams/` -- the three ZCU216 images used (14-core Ant-Q, 8-core Ant-Q, 14-core uplink-only baseline) with their description files and checksums. |
+| [`experiments/`](experiments/README.md) | Measurement and analysis code: `board/` (runner, campaign and acceptance drivers, table builders, site configuration), `device_x6y3/` (device programs and analysis), `rq3_noise_study/` (simulator study), `sim_handover/` (handover simulation). |
+| [`results/`](results/README.md) | Raw rows and raw captures, one directory per measurement set. |
 
-Clone with submodules:
+`git submodule status` shows the pinned commit of each submodule. `gateware` and `software` pin commits of the official
+QubiC repositories (branch `feat/ddr_mem`, which holds the Ant-Q work). `gateware` pins `38543b7`, whose tree equals the build
+commit of the 14-core Ant-Q image, `13b440c3`, except for one source comment; the build commits of the three images are tagged
+in [yguang1/gateware](https://gitlab.com/yguang1/gateware): `antq-qst-c3-image-13b440c3`, `antq-qst-c3-8_2-image-c26942c0` and
+`antq-qst-c1-image-0071783e`. `software` pins `29d123a`; the bench measurements ran the host client and PS servers of `7de69de`
+(tag `antq-qst-software-7de69de` in [yguang1/software](https://gitlab.com/yguang1/software)). The PS server sources of the two
+commits differ by one comment. The pinned host client defaults to the host name `localhost` instead of a numeric loopback address, takes
+`ddr_cmd` and `num_ch` from the environment (`QUBIC_DDR_CMD`, `QUBIC_NUM_CH`) when a caller passes neither (unset: the previous
+defaults, `False` and 8), and reports the byte position of a stream disconnect. `scripts/start_qubic_server.sh` is the start
+script the bench board ran (each PS server pinned to its own core). The stock-path timing server and its client are in
+`experiments/board/`. The acceptance run used `13492bf`, an ancestor of `7de69de`; the device session used `c97a261` and
+`a83a733` (tag `antq-qst-software-a83a733`). Clone with submodules:
 
 ```bash
 git clone --recurse-submodules https://github.com/a85tract/Ant-Q.git
 ```
 
-## What was measured, and what was not
+## Data provenance
 
-All hardware numbers come from a ZCU216 control board **without a quantum device attached**: the DSP cores execute the
-real compiled programs (the paper's circuits with fast-reset branches, real gates and readouts), the readout channels
-acquire the board's own signals, and the PS records timestamps. What this validates is execution (every program runs
-to completion), data integrity (every run returns exactly the programmed number of IQ words, in order, per channel),
-timing (from the first transfer-initiating PS operation to the last readout word in PS memory) and physical output
-cadence (drive pulses on an oscilloscope). It does **not** validate the physics results of the six reconstructed
-experiments (T2*, 1/f spectrum, charge parity, RB fidelities): their observables were never measured. "QPU time" in the
-tables means the compiled duration of the program (shots x compiled shot length), i.e. the time a quantum device would
-be busy. "Realized" QPU time uses the shot length measured on the board by the slope method
-(`per_shot_realized_real.csv`): the 20 computing circuits, each of whose shots ends with a readout followed by a
-conditional-reset branch, run 0.14-0.17 us per shot longer than their compiled duration (the same on every path, so it
-cancels in the comparisons); the loop programs of the physics experiments show no such offset -- their fitted loop
-period equals the compiled one within a few nanoseconds (`table2_phys.csv`, `loop_overhead_ns`), which the oscilloscope
-measurement confirms to its 80 ns resolution.
+Every row of a `raw_runs*.csv` file names the gateware build the runner compiled against (`bitfile`; on the bench this
+is the loaded image, for the device session's classic-path rows see `results/device_x6y3/README.md`) and the host client
+commit (`software_commit`); the tag of the round is in `tag`. The images map to the result directories as follows.
 
-## What the paper claims and where the evidence is
+| Image (`benchmark/bitstreams/`) | Result directories |
+|---|---|
+| `zcu216_14_2_c3_13b440c3` | `bench/` (`c3` rows, the oscilloscope captures, `stress/`, `refill/refill_sweep_13b440c3.csv`) |
+| `zcu216_14_2_c1_0071783e` | `bench/` (`std` and `c1` rows) |
+| `zcu216_8_2_c3_c26942c0` | `device_x6y3/` (`c3` rows; the `rpc` rows ran on the device operator's stock image), `bench/refill/refill_sweep_c26942c0.csv` |
 
-| Paper item | Claim (revised manuscript) | How it is computed | Where |
-|---|---|---|---|
-| RQ1, Table "functionality" | All six reconstructed experiments execute on the integrated image with the programmed number of readouts returned; (3) 50000 x 2 ms Ramsey and (4) the 6 us trace need the uplink (more than 1024 shots with deterministic timing), (5) 5101-Clifford 1Q RB and (6) 500-Clifford 2Q RB need the downlink and run as sub-circuit streams (5 and 3 segments cut at gate boundaries, replayed from DDR) with `circuit_not_ready` = 0 at every one of the 5119 and 14999 buffer boundaries | `run_phys_campaign.py`; loop periods fitted from 9-point calibration series (`P_meas` vs `P_compiled`, table columns `loop_overhead_ns`, `loop_overhead_ci95_ns`) | `results/table2_phys.csv` (one row per configuration x experiment), rows in `results/raw_runs_phys.csv`, report `reports/report_20260902.md` section A |
-| RQ1, physical cadence | Oscilloscope on the drive output: the measured shot period equals the compiled period within the 80 ns sampling bin -- 8.9320 us over 3 complete 8000-shot runs of the 6 us trace, 2003.6476 us over 10 one-second windows (490-499 shots each) of the 2 ms Ramsey, no missing shot, no interval deviating by more than 132 ns; in the streamed RB every command-buffer handover adds 141 ns (0.706 us per 5-unit shot, constant to within the 80 ns bins over 3 x 1024 shots), and no pulse gap inside the RB bodies exceeded one bin (stall criterion) at any of the 3 x 4096 intra-shot boundaries | `scope_cadence.py analyze` on the per-record pulse timestamps (gap-segmented shots; the timestamps allow every interval and gap statistic to be recomputed, the raw waveforms are not in git) | `results/scope_cadence/cadence_summary.csv`, `results/scope_cadence/ts/`, addendum section G |
-| RQ2, batches (Table "speedup") | For the 10 random 30-circuit batches: **G_stack = T_std_pool / T_c3_pool - 1 = +51.1 %** (manifest-mean; block-level 95 % CI over the 5 execution blocks 46.9-55.3 %, the confirmatory estimate), **G_sys = T_std_native / T_c3_pool - 1 = +60.0 %**, uplink alone **T_std_native / T_c1_native - 1 = +40.9 %**; T = mean complete-run latency of a configuration on a manifest (n = 5 runs per manifest x block). Total elapsed-time excess of a c3 batch over its compiled QPU time: 0.62-1.80 % (`delta_pct`, configuration `c3_pool`); this includes the circuits' intrinsic 0.14-0.17 us/shot realized-shot-length excess, so Ant-Q's own share is smaller (see the single-circuit row) | `run_pool_campaign.py` (rows tagged `*_pool1`), `make_pool_tables.py` | `results/table4_pool_summary.csv` rows `k = 30`, estimands `G_stack`, `G_sys`, `G_up_native` (`mean`, `ci95_lo_block`, `ci95_hi_block`); inputs `results/table4_pool.csv` (per manifest x block x configuration); report section C |
-| RQ2, single circuits | Fixed cost of a c3 run ~25 us + ~10 us per active core: 26-108 us for 2-8 cores, 172-205 us for 12-14 cores, i.e. below 0.7 % of the realized QPU time for every circuit with >= 1000 shots, 1.0 % at 400 shots, 3.1 % at 128 shots and 11.2 % for the 32-shot GHZ-8; everything else in "elapsed minus compiled QPU" is the 0.15 us/shot realized-shot-length difference, a property of the DSP program shared with the baseline | `run_decomp.sh` (batch_server protocol v7 stage timestamps), `make_decomp_table.py` | `results/table_decomp.csv` (`fixed_realized_us`, `fixed_realized_pct`, stage columns), rows `results/raw_runs_decomp.csv`, addendum section D; the first single-circuit campaign in `results/table3_single.csv` and report `campaign_notes_20260829.md` |
-| RQ3, Table "noise study" | Readability of the 20 circuits on six Qiskit fake backends over 20 seeds each: 2400 runs, of which 240 are not runnable (circuit wider than the 5- and 7-qubit backends, `grade = SKIP`) and 2160 are graded on the full noisy sample: 1698 PASS, 345 MARGINAL, 117 FAIL (`grade` column). The stop rule fired in 120 of the 2160: 117 of the 117 FAIL runs (no missed stop), 3 of the 345 MARGINAL runs, 0 of the 1698 PASS runs (no false stop) -- columns `stop_cp_paper`, `stop_correct_paper`. The six circuits with at least one FAIL cell are the paper's table; the adequacy gate is a separate evaluability check, not a filter of this accounting | `run_rq3_stats.sh` (`CIRCUITS=v2 REF=exact`), `make_rq3_tables.py`, `rq3_adequacy_gate.py` | `results/rq3_v2/rq3_<backend>.csv` (one row per circuit x seed), `results/table_rq3_cells_v2.csv` (per cell), `results/rq3_v2/adequacy_gate.csv`, addendum sections E-F |
-| RQ3, hardware early stop | Stop points chosen in the simulator study and preset on the PS, checkpoint latency injected from the ARM microbenchmark; 24.7-69.6 % of the QPU time saved on the six stopped circuits, overshoot 6-27 shots, n = 5 pairs each | `run_stop_campaign.py`, `make_phys_tables.py`; `bench_early_stop.c` for the latencies | `results/table_stop.csv`, rows `results/raw_runs_stop.csv`, report section B |
-
-Uncertainty conventions: hardware timing cells are n = 5 (or more) repeats with the sample standard deviation and the
-warm-up run excluded; batch gains are paired per-manifest ratios with t confidence intervals over manifests and over the 5
-execution blocks; RQ3 cells are counts over 20 seeds; the oscilloscope numbers are limited by the 80 ns sampling bin, not
-by repeat scatter. Every report states the definition used for each table.
-
-## Version provenance
-
-| Component | Used for the published rows | Notes |
-|---|---|---|
-| Gateware C3 image | `63329aaf` (`xsa_commit` on the board, `bitfile` column of the rows) | all `c3` rows |
-| Gateware C1 image | `0071783e` | all `std` and `c1` rows |
-| Software | `software_commit` column of every row; the final rows use `a1eefb5` and its predecessors (tag `antq-qst-software-a1eefb5`; the commit of each fix is named in the reports) | the pinned `29e7fcb` is that content squashed onto the official `feat/ddr_mem` plus the optional-argument guard in `qubic/toolchain.py` |
-| Benchmark | `8baf102` for every hardware row | `dda8d37` re-parameterizes the two 14-qubit templates for the noise study; their instruction counts, pulse counts and compiled durations are unchanged (idx 19: 290 / 178 / 46.416 us, idx 22: 304 / 192 / 50.124 us) and only the pulse-amplitude fields differ, so the hardware rows were not repeated |
-| QubiC `distributed_processor` | `c22cce8` + `experiments/patches/distributed_processor_elem_cfg_pool.patch` | the patch adds the shared table pool used for heterogeneous batches |
-| Simulator | qiskit 2.3.1, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.46.1 | recorded in every RQ3 row |
-
-## Status of the components (what is and is not implemented)
-
-| Component | Where | Status |
-|---|---|---|
-| Uplink (readout DDR streaming) | `gateware/`, `software/` | Integrated, measured (`c1` and `c3` modes) |
-| Downlink (command streaming, ping-pong command buffers, `circuit_not_ready` detector) | `gateware/`, `software/` | Integrated with the uplink in the C3 image, board-validated, measured. The official QubiC `feat/ddr_mem` branch carries stages C1 (readout streaming) and C2 (command streaming); stage C3, the integrated version, is under review upstream ([gateware MR !39](https://gitlab.com/LBL-QubiC/gateware/-/merge_requests/39), [software MR !48](https://gitlab.com/LBL-QubiC/software/-/merge_requests/48), both from the forks' `feat/ddr_mem` to the official `feat/ddr_mem`, each one squashed commit; the development history is kept under tags on the forks), so the submodules point at the authors' fork until they are merged |
-| Pool-wide envelope/frequency tables (heterogeneous batches without table reloads) | `software/` + `experiments/patches/` | Implemented in the host toolchain (two-pass assembly); the `distributed_processor` extension (patch against `c22cce8`, one optional argument) is under review upstream ([distributed_processor MR !39](https://gitlab.com/LBL-QubiC/distributed_processor/-/merge_requests/39)); the software's default assembly path does not need it |
-| Early termination | `software/scripts/dma_server.c` (policy stream), `experiments/rq3_noise_study/` | The stop mechanism (PS-side stop records, checkpoint bookkeeping, late-stop guard) is implemented and measured. The decision is **not** a live host service in this version: stop points come from the simulator study and are preset on the PS, and the checkpoint latency of the decision kernel is injected from the ARM microbenchmark. The paper states this |
-| Bitstreams (34 MB `.bit`, 17-19 MB `.xsa` per image) | `benchmark/bitstreams/zcu216_14_2_c3_63329aaf/`, `benchmark/bitstreams/zcu216_14_2_c1_0071783e/` | Published: `.xsa` (what the QubiC server loads), `.bit`, the register/channel description files and `SHA256SUMS`; deployment steps in the benchmark README; `results/bitstreams.sha256` repeats the checksums and source commits |
+The bench measurements use a ZCU216 without a quantum device attached; `device_x6y3/` was acquired on one qubit of an
+8-qubit fixed-frequency transmon device. `distributed_processor` is the official QubiC commit `0653425` (branch
+`feat/ddr_mem` of [LBL-QubiC/distributed_processor](https://gitlab.com/LBL-QubiC/distributed_processor): `c22cce8` plus the
+`elem_cfg_pool` option of `GlobalAssembler`, the shared envelope/frequency table layout for heterogeneous batches; the
+measurements used the identical tree). The simulator study records its package versions in every row.
 
 ## Reproducing
 
-**Simulator study (no hardware).** Environment: Python 3.11+, `qiskit 2.3.1`, `qiskit-aer 0.17.2`, `qiskit-ibm-runtime 0.46.1`
-(fake backends), `numpy`. From `experiments/rq3_noise_study/`:
+**Simulator study (no hardware).** Python 3.11+, `qiskit 2.3.1`, `qiskit-aer 0.17.2`, `qiskit-ibm-runtime 0.46.1`, `numpy`.
+From `experiments/rq3_noise_study/`:
 
 ```bash
-CIRCUITS=v2 REF=exact ./run_rq3_stats.sh       # the paper's study: 6 backends in parallel, seeds 0-19 -> results/rq3_v2/rq3_<backend>.csv (~15 min)
-python make_rq3_tables.py                       # -> results/table_rq3_cells_v2.csv and the paper's table in multi-seed form
-python rq3_adequacy_gate.py                     # -> results/rq3_v2/adequacy_gate.csv (which circuits are evaluable at which checkpoint)
-BACKEND=FakeAlgiers SEEDS=0-19 python rq3_stats.py   # one backend only (partial run, same settings)
+CIRCUITS=v2 REF=exact ./run_rq3_stats.sh       # 6 backends in parallel, seeds 0-19 -> results/rq3_v2/rq3_<backend>.csv
+python make_rq3_tables.py                       # per-cell counts and stop checkpoints from those rows
+python rq3_adequacy_gate.py                     # which circuits are evaluable at which checkpoint
 ```
 
-**Hardware measurements.** A ZCU216 running the pinned image (`benchmark/bitstreams/`, deployment in the benchmark README) with the
-three PS servers from `software/scripts/` (build and service notes in the software submodule), the QubiC host environment with `software/` on `PYTHONPATH`, `distributed_processor`
-at `c22cce8` with `experiments/patches/distributed_processor_elem_cfg_pool.patch` applied, and the gateware build directory
-of the image (`bram.json`, `dspregs.json`, `gensrc/channel_config.json`). The runner is the single entry point:
+**Hardware measurements.** A ZCU216 running one of the images in `benchmark/bitstreams/` (deployment notes in the benchmark
+README) with the PS servers and the service start script (`start_qubic_server.sh`) of `software/scripts/`, and a host with `software/` on `PYTHONPATH` and that
+`distributed_processor`. Fill in `experiments/board/site_env.sh` from `site_env.sh.example` (board address, ssh destinations,
+build directories -- nothing site-specific is stored in the scripts), then:
 
 ```bash
 cd experiments/board
-python antq_runner.py --real --mode c3 --bits <build dir> --gw <build dir> --num-ch 14 --what single --idx 1,2,3 --repeats 5 --tag mytest
-python antq_runner.py --real --mode c3 --bits <build dir> --gw <build dir> --num-ch 14 --what batch --batches rand30_t4 --pool-tables --repeats 5 --tag mytest
-python antq_runner.py --phys --mode c3 --bits <build dir> --gw <build dir> --num-ch 14 --what single --idx 5 --pool-tables --repeats 3 --tag mytest
+export ANTQ_IMG=<slot> ANTQ_WNS_C3=<sign-off WNS>
+source recampaign_env.sh
+bash recampaign_accept.sh        # prepare the image; batch-completion stress; handover measurement
+bash recampaign_run.sh A1        # campaign steps A1-A7 (with A3b, A3r), then the tables; 'A3b A3b' runs one step
+python antq_runner.py --real --mode c3 --bits $GW --gw $GW --num-ch 14 --what single --idx 1,2,3 --repeats 5 --tag mytest
 ```
 
-Rows are appended to `results/raw_runs*.csv`; the `make_*` scripts rebuild the tables from the rows. The campaign drivers in
-`experiments/board/` are the exact sequences that produced the published rows (see `experiments/README.md`).
+The runner appends rows to `$ANTQ_RESULTS/raw_runs*.csv`; `make_tables.py`, `make_pool_tables.py`, `make_phys_tables.py`
+and `make_decomp_table.py` rebuild the tables from the rows.
+
+**Tables and analyses from the published rows (no hardware).** With `software/` on `PYTHONPATH`, from the repository root:
+
+```bash
+export ANTQ_RESULTS=results/bench
+for t in make_tables make_pool_tables make_phys_tables make_decomp_table; do python experiments/board/$t.py; done
+D=results/device_x6y3
+for b in EA1 EB1 EA2 EB2; do python experiments/device_x6y3/analyze_block.py $b $D; done
+python experiments/device_x6y3/summarize_abab.py $D E                 # four-block table, the four comparisons, figure
+python experiments/device_x6y3/boundary_analysis.py BNDF $D BND2     # boundary experiment
+python experiments/device_x6y3/deep_rb_analysis.py DRB DRB DRA DRA --res $D
+python experiments/device_x6y3/handover_scope_analyze.py hand_13b440c3 results/bench
+python experiments/device_x6y3/make_device_figure.py $D              # the paper's device figure (after the two analyses above)
+python experiments/board/make_stop_figure.py                         # the paper's early-stop figure (after make_phys_tables)
+```
+
+The builders and analyses write their outputs (`table*.csv`, `analysis/`, `*_analysis.json`) next to the data; these
+paths are git-ignored, so the tracked files stay raw.
 
 ## Hardware platform
 

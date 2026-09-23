@@ -1,0 +1,132 @@
+{
+    "qubit_command": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 32,
+            "Adepth": 8192,
+            "Bwidth": 128,
+            "latency": 2,
+            "prefix": "QUBIT_COMMAND",
+            "access": "r",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "qubit_qdrv_env": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 32,
+            "Adepth": 4096,
+            "Bwidth": 128,
+            "latency": 2,
+            "prefix": "QUBIT_QDRV_ENV",
+            "access": "r",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "qubit_qdrv_freq": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 32,
+            "Adepth": 4096,
+            "Bwidth": 512,
+            "latency": 2,
+            "prefix": "QUBIT_QDRV_FREQ",
+            "access": "r",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "qubit_rdrv_env": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 32,
+            "Adepth": 4096,
+            "Bwidth": 32,
+            "latency": 2,
+            "prefix": "QUBIT_RDRV_ENV",
+            "access": "r",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "qubit_rdrv_freq": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 32,
+            "Adepth": 4096,
+            "Bwidth": 512,
+            "latency": 2,
+            "prefix": "QUBIT_RDRV_FREQ",
+            "access": "r",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "qubit_rdlo_env": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 32,
+            "Adepth": 4096,
+            "Bwidth": 32,
+            "latency": 2,
+            "prefix": "QUBIT_RDLO_ENV",
+            "access": "r",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "qubit_rdlo_freq": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 32,
+            "Adepth": 4096,
+            "Bwidth": 128,
+            "latency": 2,
+            "prefix": "QUBIT_RDLO_FREQ",
+            "access": "r",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "qubit_accbuf": {
+        "cnt": 8,
+        "cfg": {
+            "Awidth": 64,
+            "Adepth": 1024,
+            "Bwidth": 32,
+            "latency": 2,
+            "prefix": "QUBIT_ACCBUF",
+            "access": "w",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "acqbuf": {
+        "cnt": 2,
+        "cfg": {
+            "Awidth": 64,
+            "Adepth": 4096,
+            "Bwidth": 32,
+            "latency": 2,
+            "prefix": "ACQBUF",
+            "access": "w",
+            "address": null,
+            "ram_style": "block"
+        }
+    },
+    "dacmon": {
+        "cnt": 4,
+        "cfg": {
+            "Awidth": 256,
+            "Adepth": 512,
+            "Bwidth": 32,
+            "latency": 2,
+            "prefix": "DACMON",
+            "access": "w",
+            "address": null,
+            "ram_style": "block"
+        }
+    }
+}

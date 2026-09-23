@@ -4,7 +4,8 @@
   table4_batch.csv  : per batch_id x mode: n, mean_ms, sd_ms, qpu_ms, delta_ms, delta_pct
                       + aggregate rows rand10/rand20/rand30: mean over the 10 batch means, sd ACROSS batches
 Inclusion: status == ok and not superseded; exactly one five-run set per (mode, workload) (the latest tag
-when several complete sets exist — recorded in the `set_tag` column).
+when several complete sets exist — recorded in the `set_tag` column). Configurations as designed: std and c1 rows
+without pooled tables, c3 batch rows with the shared (pooled) table layout.
 """
 import csv, os, statistics as st
 from collections import defaultdict
@@ -27,6 +28,11 @@ def pick_sets(rows, repeats=5):
     for r in rows:
         if r['status'] != 'ok' or int(r['repeat']) < 0:
             continue
+        pooled = str(r.get('pool_tables', '')).strip() in ('1', 'True', 'true')
+        # the configurations as designed: std and c1 run as deployed (native tables), an Ant-Q (c3) batch runs against its
+        # shared table layout (pooled); the other combinations belong to make_pool_tables.py
+        if pooled != (r['mode'] == 'c3' and r['workload'] == 'batch'):
+            continue
         by[(r['mode'], r['workload'], r['workload_id'])][r['tag']].append(r)
     out = {}
     for key, tags in by.items():
@@ -41,7 +47,8 @@ def pick_sets(rows, repeats=5):
 
 
 def load_realized():
-    p = os.environ.get('REALIZED_CSV', os.path.join(RES, 'per_shot_realized.csv'))   # real campaign: per_shot_realized_real.csv
+    p = os.environ.get('REALIZED_CSV') or next((q for q in (os.path.join(RES, 'per_shot_realized_real.csv'), os.path.join(RES, 'per_shot_realized.csv'))
+                                                if os.path.exists(q)), '')   # published data: per_shot_realized_real.csv
     if not os.path.exists(p):
         return {}
     with open(p) as f:

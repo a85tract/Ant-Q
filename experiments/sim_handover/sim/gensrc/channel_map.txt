@@ -1,0 +1,19 @@
+DACs:
+    228_0 <= qubit_qdrv[0]
+    228_1 <= qubit_qdrv[1]
+    228_2 <= qubit_qdrv[2]
+    228_3 <= qubit_qdrv[3]
+    229_0 <= qubit_qdrv[4]
+    229_1 <= qubit_qdrv[5]
+    229_2 <= qubit_qdrv[6]
+    229_3 <= qubit_qdrv[7]
+    230_0 <= qubit_rdrv
+ADCs:
+    qubit_rdlo[0] <= 227_0
+    qubit_rdlo[1] <= 227_0
+    qubit_rdlo[2] <= 227_0
+    qubit_rdlo[3] <= 227_0
+    qubit_rdlo[4] <= 227_0
+    qubit_rdlo[5] <= 227_0
+    qubit_rdlo[6] <= 227_0
+    qubit_rdlo[7] <= 227_0
