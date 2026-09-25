@@ -112,6 +112,13 @@ paths are git-ignored, so the tracked files stay raw.
 Upstream project: [QubiC](https://gitlab.com/LBL-QubiC), an open-source FPGA-based qubit control system developed at Lawrence
 Berkeley National Laboratory.
 
+## License
+
+The files of this repository (scripts, data and documentation) are released under the BSD 3-Clause license (`LICENSE`).
+The submodules keep their own licenses: `gateware/` and `software/` are QubiC (the Lawrence Berkeley National Laboratory
+license in their `LICENSE` files), `benchmark/` is BSD 3-Clause, with the QubiC license reproduced for its bitstreams.
+`experiments/sim_handover/vendor/` holds QubiC sources under `vendor/QUBIC_LICENSE`.
+
 ## Acknowledgements
 
 This work is supported by a collaboration between the US DOE and the National Science Foundation (NSF). This material is based
