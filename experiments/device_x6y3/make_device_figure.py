@@ -10,33 +10,33 @@ res = sys.argv[1] if len(sys.argv) > 1 else os.environ['ANTQ_RESULTS']
 an = os.path.join(res, 'analysis'); out = sys.argv[2] if len(sys.argv) > 2 else os.path.join(an, 'device_figure.pdf')
 rb = json.load(open(os.path.join(an, 'deep_rb_DRB_DRA.json'))); bd = json.load(open(os.path.join(an, 'BNDF_boundary_summary.json')))
 STYLE = {'A': ('QubiC', '#555555', 'o'), 'B': ('Ant-Q', '#0a6ba0', 's')}
-fig, (a, b) = plt.subplots(1, 2, figsize=(7.2, 2.7))
+fig, (a, b) = plt.subplots(1, 2, figsize=(6.0, 2.8))   # printed at the full text width (about 15 cm): all text >= 8 pt
 shared = [m for m in rb['epc_diff_B_minus_A']['shared_lengths']]
 for key in ('A', 'B'):
     d = rb[key]; label, col, mk = STYLE[key]
     mean = np.array([d['table'][str(m)]['mean'] for m in shared]); ci = np.array([d['table'][str(m)]['ci_mean'] for m in shared])
-    a.errorbar(shared, mean, yerr=[mean - ci[:, 0], ci[:, 1] - mean], fmt=mk, color=col, ms=3.5, capsize=2, lw=0.8, label=label)
+    a.errorbar(shared, mean, yerr=[mean - ci[:, 0], ci[:, 1] - mean], fmt=mk, color=col, ms=3, capsize=2, lw=0.8, label=label)
     xs = np.geomspace(shared[0], shared[-1], 100); a.plot(xs, d['floor'] + d['A'] * d['p'] ** xs, '-', color=col, lw=0.9)
 only = sorted(int(m) for m in rb['B']['table'] if int(m) > shared[-1])
 seamless = sum(rb['B']['table'][str(m)]['seamless'] for m in only); runs = sum(rb['B']['table'][str(m)]['n_seq'] for m in only)
 LIMIT = 1000   # ~ Cliffords in the 2048-command buffer of stock QubiC (about 2 commands per Clifford; m = 1024 compiles to 2055)
 a.axvspan(LIMIT, only[-1] * 1.4, color='#0a6ba0', alpha=0.08, lw=0)
 a.axvline(LIMIT, color='#555555', ls='--', lw=0.8)
-a.plot(only, [0.47] * len(only), 'v', color='#0a6ba0', ms=5)
+a.plot(only, [0.47] * len(only), 'v', color='#0a6ba0', ms=4)
 a.text(np.sqrt(only[0] * only[-1]) * 1.4, 0.63, f'Ant-Q only\n$m$ = {", ".join(map(str, only))}\n{seamless}/{runs} runs seamless',
-       ha='center', va='center', fontsize=6.5)
-a.text(LIMIT * 0.92, 0.79, 'QubiC limit\n(2048 commands)', ha='right', va='top', fontsize=7, color='#555555')
+       ha='center', va='center', fontsize=8)
+a.text(LIMIT * 0.92, 0.79, 'QubiC limit\n(2048 commands)', ha='right', va='top', fontsize=8, color='#555555')
 a.set_xscale('log'); a.set_xlim(12, only[-1] * 1.4); a.set_ylim(0.44, 0.82)
-a.set_xlabel('Clifford length $m$', fontsize=8); a.set_ylabel('Survival $P(0)$', fontsize=8); a.legend(fontsize=7, loc='lower left', frameon=False)
-a.set_title('(a) Randomized benchmarking', fontsize=8)
+a.set_xlabel('Clifford length $m$', fontsize=8); a.set_ylabel('Survival $P(0)$', fontsize=8); a.legend(fontsize=8, loc='lower left', frameon=False)
+a.set_title('(a) Randomized benchmarking', fontsize=9)
 ph = np.linspace(-np.pi, np.pi, 13); xs = np.linspace(-np.pi, np.pi, 200)
-for cfg, label, col, mk in (('U', 'Unbroken', '#555555', 'o'), ('S', 'One handover in the delay', '#0a6ba0', 's')):
+for cfg, label, col, mk in (('U', 'Unbroken', '#555555', 'o'), ('S', 'With one handover', '#0a6ba0', 's')):
     f = bd['fringe'][cfg]
-    b.plot(ph, f['P1'], mk, color=col, ms=3.5, label=label); b.plot(xs, f['offset'] + f['contrast'] * np.cos(xs - f['phase']), '-', color=col, lw=0.9)
+    b.plot(ph, f['P1'], mk, color=col, ms=3, label=label); b.plot(xs, f['offset'] + f['contrast'] * np.cos(xs - f['phase']), '-', color=col, lw=0.9)
 b.set_xlabel('Phase of the second $\\pi/2$ pulse (rad)', fontsize=8); b.set_ylabel('$P(1)$', fontsize=8)
 b.set_xticks([-np.pi, -np.pi / 2, 0, np.pi / 2, np.pi]); b.set_xticklabels(['$-\\pi$', '$-\\pi/2$', '0', '$\\pi/2$', '$\\pi$'])
-b.legend(fontsize=7, loc='lower center', frameon=False); b.set_title('(b) Ramsey fringe across a handover', fontsize=8)
+b.set_ylim(0.15, 0.98); b.legend(fontsize=8, loc='upper center', ncol=2, frameon=False); b.set_title('(b) Ramsey fringe across a handover', fontsize=9)
 for ax in (a, b):
-    ax.tick_params(labelsize=7)
+    ax.tick_params(labelsize=8)
     for s in ('top', 'right'): ax.spines[s].set_visible(False)
 fig.tight_layout(); fig.savefig(out); print('wrote', out)
