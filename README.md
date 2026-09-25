@@ -97,6 +97,7 @@ D=results/device_x6y3
 for b in EA1 EB1 EA2 EB2; do python experiments/device_x6y3/analyze_block.py $b $D; done
 python experiments/device_x6y3/summarize_abab.py $D E                 # four-block table, the four comparisons, figure
 python experiments/device_x6y3/boundary_analysis.py BNDF $D BND2     # boundary experiment
+python experiments/device_x6y3/ramsey_noise_spectrum.py $D          # Ramsey noise spectrum, the paper's noise figure
 python experiments/device_x6y3/deep_rb_analysis.py DRB DRB DRA DRA --res $D
 python experiments/device_x6y3/handover_scope_analyze.py hand_13b440c3 results/bench
 python experiments/device_x6y3/make_device_figure.py $D              # the paper's device figure (after the two analyses above)

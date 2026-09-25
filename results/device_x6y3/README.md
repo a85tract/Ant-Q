@@ -24,3 +24,14 @@ acquired under the same tags were removed, so some tags hold fewer rows than the
 
 The device chip configuration the programs were compiled with is the operator's calibration and is not included; the
 calibrated pulses of the measured qubit are in `experiments/device_x6y3/pulses_q5_20260917.json`.
+
+Session settings: every round compiled `experiments/device_x6y3/aqt_programs.py` with the pulses above (`ANTQ_QCHIP_PATCH`) and
+
+    AQT_QUBIT=Q5 AQT_TAU_R_S=0.5e-6 AQT_RESET_S=500e-6 AQT_PAD_C=3.588e-6 AQT_PAD_B=1.998088e-3
+    AQT_N_FRINGE=2048 AQT_N_A=20000 AQT_N_B_ITER=25000 AQT_RB_LENGTHS=2,4,8,16,32 AQT_RB_SEQS=8 AQT_RB_SHOTS=256
+
+(the module's defaults differ). With these pulses the pads give a 6.000 us fixed-cadence period and a 4.000 ms Ramsey pair
+(`qpu_ms` 48.0000 and 100000.0000). The boundary rounds (`BNDF`, `BND2`) added
+`AQT_BOUNDARY=1 AQT_BFRINGE_N=2048 AQT_BRB_SHOTS=2048 AQT_BRB_LENGTHS=16,32,64,128 AQT_TAIL_S=12e-6`, the long RB sweep
+(`DRA`, `DRB`) `AQT_RB_LENGTHS=16,32,64,128,256,512,1024,2048,5101 AQT_RB_SEQS=8 AQT_RB_SHOTS=2048 AQT_RB_TAIL=1
+AQT_TAIL_S=12e-6 AQT_STREAM_ABOVE=900`.

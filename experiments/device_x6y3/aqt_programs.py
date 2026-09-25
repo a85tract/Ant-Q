@@ -4,7 +4,7 @@ Load through the runner:
     ANTQ_PHYS_MODULE=<this file> ANTQ_QCHIP=<device qubitcfg.json> antq_runner.py --phys --mode c3 --idx <k> --save-iq ...
 Every program is one hardware loop on one qubit (AQT_QUBIT, default Q6); the runner renames Q<n> -> qubit_<n>.
 Loop periods are set by pad delays (env, seconds) so that the compiled period hits the pre-registered cadence;
-the defaults of AQT_PAD_C / AQT_PAD_B below are the values of the session.
+the environment of the device session (pads, tau_R, qubit, counts) is listed in results/device_x6y3/README.md.
 
 idx      program                                   reads/iter  body
 101      P0-C  6 us cadence x 8000                  1           X90 - 1 us - X90 - read - pad_C
