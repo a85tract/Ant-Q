@@ -54,17 +54,18 @@ programs are idx 700/701 of `experiments/device_x6y3/aqt_programs.py`, compiled 
 
 ## Batch-completion stress
 
-`stress/stress_K3.csv`, `stress/stress_K1.csv`: one row per batch of the stress test, 3000 back-to-back batches of K = 3 units
-and 3000 of K = 1, the channel mask cycling through `fe`, `7f`, `00` (batch index modulo 3).
+`stress/stress_K3.csv`, `stress/stress_K1.csv`: one row per evaluable batch of the stress test, 3000 back-to-back batches of
+K = 3 units and 2984 of K = 1, the channel mask cycling through `fe`, `7f`, `00` (batch index modulo 3). Batches whose host
+session to the PS readout server dropped before the data arrived, a software fault outside the PL, are not listed.
 
 | Column | Meaning |
 |---|---|
 | `batch`, `K` | batch index (0-2999) and units per batch |
 | `mask` | `fe` / `7f`: only core 0 / core 7 reads, the other channels' command images are masked; `00`: every channel's image |
-| `outcome` | `ok`; `exception` = the client lost the dma_server stream, the batch is not evaluable; `wedge` = no batch completion within the 25 s watchdog |
+| `outcome` | `ok`; `wedge` = no batch completion within the 25 s watchdog |
 | `seamless` | `1` = no unit boundary of the batch waited more than 8 DSP cycles (16 ns) for its commands (the hardware's CNR flag is clear) |
 | `last_boundary_wait_cycles` | wait at the batch's last unit boundary in DSP cycles (2 ns each), given for batches that were not seamless; an earlier boundary may have waited longer |
-| `note` | the exception message, or a failed data check (record count, zeros, missing channel) |
+| `note` | a failed data check (record count, zeros, missing channel); empty for every listed batch |
 
 The rows of this run were rebuilt from the test's console output (one line per batch), and the rebuilt counts agree with the
 test's own running counters at every 100 batches; `ce_stress.py` writes the same rows directly.

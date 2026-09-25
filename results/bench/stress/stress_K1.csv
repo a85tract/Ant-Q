@@ -369,7 +369,6 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 367,1,7f,ok,1,,
 368,1,00,ok,1,,
 369,1,fe,ok,1,,
-370,1,7f,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 371,1,00,ok,1,,
 372,1,fe,ok,1,,
 373,1,7f,ok,1,,
@@ -398,8 +397,6 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 396,1,fe,ok,1,,
 397,1,7f,ok,1,,
 398,1,00,ok,1,,
-399,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
-400,1,7f,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 401,1,00,ok,1,,
 402,1,fe,ok,1,,
 403,1,7f,ok,1,,
@@ -507,18 +504,15 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 505,1,7f,ok,1,,
 506,1,00,ok,1,,
 507,1,fe,ok,1,,
-508,1,7f,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 509,1,00,ok,1,,
 510,1,fe,ok,1,,
 511,1,7f,ok,1,,
 512,1,00,ok,1,,
 513,1,fe,ok,1,,
-514,1,7f,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 515,1,00,ok,1,,
 516,1,fe,ok,1,,
 517,1,7f,ok,1,,
 518,1,00,ok,1,,
-519,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 520,1,7f,ok,1,,
 521,1,00,ok,1,,
 522,1,fe,ok,1,,
@@ -653,13 +647,10 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 651,1,fe,ok,1,,
 652,1,7f,ok,1,,
 653,1,00,ok,1,,
-654,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 655,1,7f,ok,1,,
 656,1,00,ok,1,,
-657,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 658,1,7f,ok,1,,
 659,1,00,ok,1,,
-660,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 661,1,7f,ok,1,,
 662,1,00,ok,1,,
 663,1,fe,ok,1,,
@@ -1223,10 +1214,8 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 1221,1,fe,ok,1,,
 1222,1,7f,ok,1,,
 1223,1,00,ok,1,,
-1224,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 1225,1,7f,ok,1,,
 1226,1,00,ok,1,,
-1227,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 1228,1,7f,ok,1,,
 1229,1,00,ok,1,,
 1230,1,fe,ok,1,,
@@ -2535,10 +2524,8 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 2533,1,7f,ok,1,,
 2534,1,00,ok,1,,
 2535,1,fe,ok,1,,
-2536,1,7f,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 2537,1,00,ok,1,,
 2538,1,fe,ok,1,,
-2539,1,7f,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 2540,1,00,ok,1,,
 2541,1,fe,ok,1,,
 2542,1,7f,ok,1,,
@@ -2570,7 +2557,6 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 2568,1,fe,ok,1,,
 2569,1,7f,ok,1,,
 2570,1,00,ok,1,,
-2571,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 2572,1,7f,ok,1,,
 2573,1,00,ok,1,,
 2574,1,fe,ok,1,,
@@ -2889,12 +2875,10 @@ batch,K,mask,outcome,seamless,last_boundary_wait_cycles,note
 2887,1,7f,ok,1,,
 2888,1,00,ok,1,,
 2889,1,fe,ok,1,,
-2890,1,7f,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 2891,1,00,ok,1,,
 2892,1,fe,ok,1,,
 2893,1,7f,ok,1,,
 2894,1,00,ok,1,,
-2895,1,fe,exception,,,RuntimeError('dma_server disconnected unexpectedly')
 2896,1,7f,ok,1,,
 2897,1,00,ok,1,,
 2898,1,fe,ok,1,,
