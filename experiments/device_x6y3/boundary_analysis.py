@@ -47,7 +47,8 @@ class QDA:
 z0, z1 = load_tag(prep, 'p0a', 102), load_tag(prep, 'p0a', 103)
 h0, h1 = len(z0) // 2, len(z1) // 2
 clf = QDA().fit(xy(z0[:h0]), xy(z1[:h1]))
-P00 = 1 - clf.predict(xy(z0[h0:])).mean(); P11 = clf.predict(xy(z1[h1:])).mean()
+lab0, lab1 = clf.predict(xy(z0[h0:])), clf.predict(xy(z1[h1:]))   # held-out labels; also resampled for the floor's uncertainty
+P00 = 1 - lab0.mean(); P11 = lab1.mean()
 B = (P00 + 1 - P11) / 2
 print(f"{tag} (classifier from {prep}): held-out readout P00 {P00:.3f} P11 {P11:.3f} -> RB floor B {B:.3f}")
 out = {'readout': {'P00': float(P00), 'P11': float(P11), 'floor': float(B)}, 'fringe': {}, 'rb': {}}
@@ -101,14 +102,15 @@ for cfg, (base, st) in RBCONFIGS.items():
         for s in range(8):
             z = load('rb', base + 10 * L + s, st)
             if z is not None: surv[(cfg, L, s)] = 1 - clf.predict(xy(z))
-def fit_h(sample):
-    """sample: dict (config, L, s) -> survival value. LS fit of A, p, hS with B fixed: minimise squared error over means."""
+def fit_h(sample, Bv=None):
+    """sample: dict (config, L, s) -> survival value. LS fit of A, p, hS with the floor fixed (B, or Bv when given)."""
+    Bv = B if Bv is None else Bv
     from scipy.optimize import least_squares
     keys = [k for k in sample if k[0] in ('S', 'U')]; y = np.array([sample[k] for k in keys]); ms = np.array([LENGTHS[k[1]] for k in keys])
     bS = np.array([1.0 if k[0] == 'S' else 0.0 for k in keys])
     def f(x):
-        A, p, hS = x; return B + A * p ** ms * hS ** bS - y
-    r = least_squares(f, x0=[0.5 - B + 0.3, 0.99, 1.0], bounds=([0, 0.5, 0.5], [1, 1, 1.5]))
+        A, p, hS = x; return Bv + A * p ** ms * hS ** bS - y
+    r = least_squares(f, x0=[0.5 - Bv + 0.3, 0.99, 1.0], bounds=([0, 0.5, 0.5], [1, 1, 1.5]))
     return r.x
 if surv:
     means = {k: float(v.mean()) for k, v in surv.items()}
@@ -117,7 +119,8 @@ if surv:
         out['rb'][cfg] = {'survival_by_m': dict(zip(map(str, LENGTHS), map(float, row)))}
         print(f"  RB {cfg}: survival by m {dict(zip(LENGTHS, np.round(row, 4)))}")
     A_, p_, hS = fit_h(means)
-    hs = []
+    hs, hsB = [], []
+    rngB = np.random.default_rng(20260925)   # separate stream: the pre-registered interval hs stays as it was
     for _ in range(1000):   # PAIRED bootstrap: resample sequence ids jointly across the two configurations within each length
         samp = {}                #   (the same random sequence is run in S and U), then shots within each (configuration, sequence)
         for L in range(len(LENGTHS)):
@@ -129,9 +132,13 @@ if surv:
                     if (cfg, L, sid) in surv:
                         v = surv[(cfg, L, sid)]; samp[(cfg, L, j)] = float(rng.choice(v, len(v)).mean())
         hs.append(fit_h(samp)[2])
-    ciS = np.percentile(hs, [2.5, 97.5])
+        Bb = ((1 - rngB.choice(lab0, len(lab0)).mean()) + 1 - rngB.choice(lab1, len(lab1)).mean()) / 2   # (P00 + 1 - P11) / 2, resampled
+        hsB.append(fit_h(samp, Bb)[2])
+    ciS = np.percentile(hs, [2.5, 97.5]); ciSB = np.percentile(hsB, [2.5, 97.5])
     out['rb']['fit'] = {'A': float(A_), 'p': float(p_), 'EPC': float((1 - p_) / 2), 'hS': float(hS), 'hS_ci': ciS.tolist(),
-                        'hS_verdict': verdict(ciS[0], ciS[1], 0.95, 1.05), 'floor_B': float(B)}
-    print(f"  RB joint fit: p {p_:.4f} (EPC {(1-p_)/2:.4f}), A {A_:.3f}; hS {hS:.3f} [{ciS[0]:.3f}, {ciS[1]:.3f}] -> {out['rb']['fit']['hS_verdict']}")
+                        'hS_verdict': verdict(ciS[0], ciS[1], 0.95, 1.05), 'floor_B': float(B),
+                        'hS_ci_with_floor_resampled': ciSB.tolist()}
+    print(f"  RB joint fit: p {p_:.4f} (EPC {(1-p_)/2:.4f}), A {A_:.3f}; hS {hS:.3f} [{ciS[0]:.3f}, {ciS[1]:.3f}] -> {out['rb']['fit']['hS_verdict']}"
+          f"; with the floor resampled [{ciSB[0]:.3f}, {ciSB[1]:.3f}]")
 json.dump(out, open(os.path.join(an, f'{tag}_boundary_summary.json'), 'w'), indent=1)
 print('saved', os.path.join(an, f'{tag}_boundary_summary.json'))

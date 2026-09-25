@@ -8,6 +8,8 @@ Readings (pre-registered):
 usage: python deep_rb_analysis.py <tagB> <prepB> [<tagA> <prepA>] [--res DIR]   (default DIR: $ANTQ_RESULTS)"""
 import sys, os, glob, json, csv
 import numpy as np
+T975 = {1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447, 7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228}
+def t975(df): return T975.get(df, 1.96 + 2.4 / df)   # 97.5 % t quantile (small-sample CI of a sequence mean); approximation above df 10
 args = [a for i, a in enumerate(sys.argv[1:], 1) if not a.startswith('--') and sys.argv[i - 1] != '--res']
 res = sys.argv[sys.argv.index('--res') + 1] if '--res' in sys.argv else os.environ['ANTQ_RESULTS']
 tagB, prepB = args[0], args[1]; tagA, prepA = (args[2], args[3]) if len(args) >= 4 else (None, None)
@@ -51,7 +53,7 @@ def analyze(tag, prep, name):
         f = [fl[(m, s)] for s in range(NSEQ) if (m, s) in surv]
         seam = sum(1 for x in f if x.get('seamless') == '1'); cnr = max(int(x.get('cnr') or 0) for x in f); segs = {x.get('n_segments') for x in f}; ok = sum(1 for x in f if x.get('status') == 'ok')
         tab[m] = dict(mean=float(v.mean()), sd_seq=float(v.std(ddof=1)) if len(v) > 1 else 0.0, n_seq=len(v), shots=int(n), ok=ok, seamless=seam, cnr=cnr, n_segments=sorted(segs),
-                      cmd_bytes_max=max(int(x.get('cmd_bytes_max') or 0) for x in f), ci_mean=[float(v.mean() - 1.96 * v.std(ddof=1) / np.sqrt(len(v))), float(v.mean() + 1.96 * v.std(ddof=1) / np.sqrt(len(v)))] if len(v) > 1 else None)
+                      cmd_bytes_max=max(int(x.get('cmd_bytes_max') or 0) for x in f), ci_mean=[float(v.mean() - t975(len(v) - 1) * v.std(ddof=1) / np.sqrt(len(v))), float(v.mean() + t975(len(v) - 1) * v.std(ddof=1) / np.sqrt(len(v)))] if len(v) > 1 else None)
         t = tab[m]; print(f"   m={m:>5}: survival {t['mean']:.4f} (seq sd {t['sd_seq']:.4f}, {t['n_seq']} seqs x {n // max(1, len(v))} shots) ok {ok}/{len(f)} seamless {seam}/{len(f)} cnr {cnr} segments {t['n_segments']} cmd_bytes_max {t['cmd_bytes_max']}" + (f"  95% CI [{t['ci_mean'][0]:.4f}, {t['ci_mean'][1]:.4f}]" if t['ci_mean'] else ''))
     # joint fit over m <= 512
     fit_m = [m for m in ms if m <= 512]
