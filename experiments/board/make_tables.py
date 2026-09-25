@@ -1,13 +1,14 @@
 """Build the summary CSVs from results/raw_runs.csv (plan D7/D12; nothing is deleted from raw_runs.csv).
 
-  table3_single.csv : per circuit x mode: n, mean_ms, sd_ms (ddof=1), qpu_ms, delta_ms, delta_pct
+  table3_single.csv : per circuit x mode: n, mean_ms, sd_ms (ddof=1), qpu_ms, delta_ms, delta_pct, and against the realized
+                      per-shot time: delta_real_ms, delta_real_pct, delta_real_se_ms (5 runs and 3 slope measurements)
   table4_batch.csv  : per batch_id x mode: n, mean_ms, sd_ms, qpu_ms, delta_ms, delta_pct
                       + aggregate rows rand10/rand20/rand30: mean over the 10 batch means, sd ACROSS batches
 Inclusion: status == ok and not superseded; exactly one five-run set per (mode, workload) (the latest tag
 when several complete sets exist — recorded in the `set_tag` column). Configurations as designed: std and c1 rows
 without pooled tables, c3 batch rows with the shared (pooled) table layout.
 """
-import csv, os, statistics as st
+import csv, math, os, statistics as st
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -46,19 +47,19 @@ def pick_sets(rows, repeats=5):
     return out
 
 
-def load_realized():
+def load_realized(col='per_shot_c1_slope_us'):
     p = os.environ.get('REALIZED_CSV') or next((q for q in (os.path.join(RES, 'per_shot_realized_real.csv'), os.path.join(RES, 'per_shot_realized.csv'))
                                                 if os.path.exists(q)), '')   # published data: per_shot_realized_real.csv
     if not os.path.exists(p):
         return {}
     with open(p) as f:
-        return {r['idx']: float(r['per_shot_c1_slope_us']) for r in csv.DictReader(f)}   # realized shot length measured on the C1 bitfile's standard DSP loop (not the C3 slope)
+        return {r['idx']: float(r[col]) for r in csv.DictReader(f)}   # realized shot length measured on the C1 bitfile's standard DSP loop (not the C3 slope)
 
 
 def main():
     rows = load_raw()
     sets = pick_sets(rows)
-    realized = load_realized()
+    realized = load_realized(); realized_sd = load_realized('sd_us')
     names = {}
     with open(os.path.join(RES, 'shots_verification.csv')) as f:
         for r in csv.DictReader(f):
@@ -67,7 +68,7 @@ def main():
     with open(os.path.join(RES, 'table3_single.csv'), 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow(['idx', 'name', 'n_qubits', 'shots', 'per_shot_us', 'qpu_ms', 'per_shot_realized_us', 'workload_realized_ms'] +
-                   [f'{m}_{c}' for m in MODES for c in ('n', 'mean_ms', 'sd_ms', 'delta_ms', 'delta_pct', 'delta_real_ms', 'delta_real_pct', 'provisional', 'set_tag')])
+                   [f'{m}_{c}' for m in MODES for c in ('n', 'mean_ms', 'sd_ms', 'delta_ms', 'delta_pct', 'delta_real_ms', 'delta_real_pct', 'delta_real_se_ms', 'provisional', 'set_tag')])
         for idx in sorted(names, key=int):
             row = [idx, names[idx]['name'], names[idx]['n_qubits'], names[idx]['rerun_shots'], names[idx]['per_shot_us']]
             shots = int(names[idx]['rerun_shots'])
@@ -78,11 +79,13 @@ def main():
             for m in MODES:
                 s = sets.get((m, 'single', idx))
                 if not s:
-                    row += [''] * 9; continue
+                    row += [''] * 10; continue
                 tag, xs, q, r0, prov = s
                 mean = st.mean(xs); sd = st.stdev(xs) if len(xs) > 1 else 0.0
+                # standard error of delta_real: the mean of the runs and the realized per-shot time (mean of 3 slopes), in quadrature
+                se = math.hypot(sd / math.sqrt(len(xs)), shots * realized_sd[idx] / math.sqrt(3) / 1000) if wr and idx in realized_sd else None
                 row += [len(xs), f'{mean:.4f}', f'{sd:.4f}', f'{mean - qpu:.4f}', f'{100 * (mean - qpu) / qpu:.2f}',
-                        f'{mean - wr:.4f}' if wr else '', f'{100 * (mean - wr) / wr:.2f}' if wr else '', 'yes' if prov else 'no', tag]
+                        f'{mean - wr:.4f}' if wr else '', f'{100 * (mean - wr) / wr:.2f}' if wr else '', f'{se:.4f}' if se is not None else '', 'yes' if prov else 'no', tag]
             w.writerow(row)
     # ---- table 4 ----
     with open(os.path.join(RES, 'table4_batch.csv'), 'w', newline='') as f:
