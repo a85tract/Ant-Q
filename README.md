@@ -39,6 +39,9 @@ script the bench board ran (each PS server pinned to its own core). The stock-pa
 git clone --recurse-submodules https://github.com/a85tract/Ant-Q.git
 ```
 
+Release v1.0 of this repository, with the three submodules at the commits above, is archived at
+[doi:10.5281/zenodo.22950192](https://doi.org/10.5281/zenodo.22950192).
+
 ## Data provenance
 
 Every row of a `raw_runs*.csv` file names the gateware build the runner compiled against (`bitfile`; on the bench this
