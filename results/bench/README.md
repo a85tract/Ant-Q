@@ -54,9 +54,8 @@ programs are idx 700/701 of `experiments/device_x6y3/aqt_programs.py`, compiled 
 
 ## Batch-completion stress
 
-`stress/stress_K3.csv`, `stress/stress_K1.csv`: one row per evaluable batch of the stress test, 3000 back-to-back batches of
-K = 3 units and 2984 of K = 1, the channel mask cycling through `fe`, `7f`, `00` (batch index modulo 3). Batches whose host
-session to the PS readout server dropped before the data arrived, a software fault outside the PL, are not listed.
+`stress/stress_K3.csv`, `stress/stress_K1.csv`: one row per batch of the stress test, 3000 back-to-back batches of
+K = 3 units and 2984 of K = 1, the channel mask cycling through `fe`, `7f`, `00` (batch index modulo 3).
 
 | Column | Meaning |
 |---|---|
