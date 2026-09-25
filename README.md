@@ -70,6 +70,9 @@ From `experiments/rq3_noise_study/`:
 CIRCUITS=v2 REF=exact ./run_rq3_stats.sh       # 6 backends in parallel, seeds 0-19 -> results/rq3_v2/rq3_<backend>.csv
 python make_rq3_tables.py                       # per-cell counts and stop checkpoints from those rows
 python rq3_adequacy_gate.py                     # which circuits are evaluable at which checkpoint
+for b in FakeManilaV2 FakeLagosV2 FakeGuadalupeV2 FakeAlgiers FakeSherbrooke FakeTorino; do
+  BACKEND=$b SEEDS=20-119 SUFFIX=_s20-119 python rq3_stats.py & done; wait   # 100 further seeds -> rq3_<backend>_s20-119.csv
+python rq3_extended.py                          # stop rates per grade, threshold sensitivity, board savings -> rq3_extended.json
 ```
 
 **Hardware measurements.** A ZCU216 running one of the images in `benchmark/bitstreams/` (deployment notes in the benchmark
@@ -99,6 +102,7 @@ for b in EA1 EB1 EA2 EB2; do python experiments/device_x6y3/analyze_block.py $b 
 python experiments/device_x6y3/summarize_abab.py $D E                 # four-block table, the four comparisons, figure
 python experiments/device_x6y3/boundary_analysis.py BNDF $D BND2     # boundary experiment
 python experiments/device_x6y3/ramsey_noise_spectrum.py $D          # Ramsey noise spectrum, the paper's noise figure
+python experiments/device_x6y3/noise_mc_uncertainty.py $D           # Monte Carlo intervals of its detection levels and limits
 python experiments/device_x6y3/deep_rb_analysis.py DRB DRB DRA DRA --res $D
 python experiments/device_x6y3/handover_scope_analyze.py hand_13b440c3 results/bench
 python experiments/device_x6y3/make_device_figure.py $D              # the paper's device figure (after the two analyses above)

@@ -10,6 +10,7 @@ Stages (us), per run:
   exec_res = (t_batch_done - t_first_cid) - shots x P     execution beyond the nominal QPU time; P = compiled or realized
   drain    = t_end - t_batch_done              last readout words DDR -> PS memory + dma_server detection (STRM_POLL_US)
   fixed    = elapsed - shots x P_realized      = upload + start + launch + exec_res(realized) + drain
+  outside  = elapsed - (t_batch_done - t_first_cid) = upload + start + launch + drain   the time outside Ant-Q's own execution
 Output: results/table_decomp.csv (per tag x circuit: n, mean, sd of every stage), table_decomp_fit.csv (fixed cost vs active
 cores, unweighted OLS over the circuits of a tag) and a markdown print.
 """
@@ -21,7 +22,7 @@ from pathlib import Path
 RES = Path(os.environ.get('ANTQ_RESULTS') or Path(__file__).resolve().parent.parent.parent / 'results')   # ANTQ_RESULTS: re-campaign results dir
 P_real = {r['idx']: (float(r['per_shot_compiled_us']), float(r['per_shot_c1_slope_us']), r['name'])
           for r in csv.DictReader(open(RES / 'per_shot_realized_real.csv'))}
-STAGES = ['upload', 'start', 'launch', 'exec_res_compiled', 'exec_res_realized', 'drain', 'fixed_realized', 'fixed_compiled']
+STAGES = ['upload', 'start', 'launch', 'exec_res_compiled', 'exec_res_realized', 'drain', 'fixed_realized', 'fixed_compiled', 'outside', 'exec']
 
 rows = [r for r in csv.DictReader(open(RES / 'raw_runs_decomp.csv')) if r['status'] == 'ok' and r['t_batch_done_ns']
         and not r['tag'].endswith('smoke')]
@@ -32,7 +33,7 @@ for r in rows:
     exe = d['t_batch_done'] - d['t_first_cid']
     s = dict(upload=d['t_first_dma_done'], start=d['t_start_written'] - d['t_first_dma_done'], launch=d['t_first_cid'] - d['t_start_written'],
              exec_res_compiled=exe - shots * pc, exec_res_realized=exe - shots * pr, drain=d['t_end'] - d['t_batch_done'],
-             fixed_realized=d['t_end'] - shots * pr, fixed_compiled=d['t_end'] - shots * pc)
+             fixed_realized=d['t_end'] - shots * pr, fixed_compiled=d['t_end'] - shots * pc, outside=d['t_end'] - exe, exec=exe)
     poll = r['note'].split('STRM_POLL_US=')[-1].split()[0] if 'STRM_POLL_US=' in r['note'] else ''
     cells[(r['tag'], poll, idx)].append(s)
 
@@ -44,6 +45,7 @@ for (tag, poll, idx), ss in sorted(cells.items(), key=lambda kv: (kv[0][0], int(
     for k in STAGES:
         v = [x[k] for x in ss]; row[k + '_us'] = round(st.mean(v), 1); row[k + '_sd_us'] = round(st.stdev(v), 1) if len(v) > 1 else 0.0
     row['fixed_realized_pct'] = round(100 * row['fixed_realized_us'] / (shots * pr), 3)
+    row['outside_pct_of_exec'] = round(100 * row['outside_us'] / row['exec_us'], 3)
     row['res_compiled_per_shot_ns'] = round(1e3 * row['exec_res_compiled_us'] / shots, 1)   # the realized-shot-length offset, per shot
     row['launch_plus_exec_res_us'] = round(row['launch_us'] + row['exec_res_realized_us'], 1)   # PL launch + end flush; robust to the first-cid detection latency
     out.append(row)

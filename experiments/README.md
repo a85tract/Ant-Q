@@ -70,6 +70,7 @@ commit named in each row's `software_commit`, the `std` baseline server `board/s
 | `export_qcal_pulses.py` | Produces such a file from a calibration configuration directory; run with the operator's environment. |
 | `analyze_block.py`, `compare_blocks.py`, `summarize_abab.py` | Per-block estimators of the two-command-path comparison (classifier, fringe fit, cadence, Ramsey pair statistics, RB decay), the comparison of two blocks against the pre-registered margins, and the four-block summary with its figure. |
 | `ramsey_noise_spectrum.py` | The pre-registered noise analysis of the paired Ramsey records: per-record spectra with a Whittle fit of a 1/f term plus white noise, the Monte-Carlo-calibrated upper bound on the 1/f level, the test for lines at the stock run rate, the excess-variance bound on noise slower than one pair, and the paper's noise-spectrum figure. |
+| `noise_mc_uncertainty.py` | Monte Carlo intervals of the detection levels, their spectral-density ratio and the upper limits of `ramsey_noise_spectrum.py`, from binomial resampling of its stored simulated rates. |
 | `boundary_analysis.py` | Fringe and RB analysis of the streamed (S) and unbroken (U) boundary programs and of the unbroken programs with a 152-ns idle at the cut (UD), the control for the time a handover adds. |
 | `deep_rb_analysis.py` | RB to 5101 Cliffords on both command paths: survival per length, the joint fit over the shared lengths, the execution flags of every program. |
 | `make_device_figure.py` | The paper's device figure from the outputs of `deep_rb_analysis.py` and `boundary_analysis.py`: RB survival on both command paths with the Ant-Q-only lengths marked, and the boundary fringe. |
@@ -90,6 +91,7 @@ output: `results/sim_handover/`.
 | File | Purpose |
 |---|---|
 | `rq3_stats.py`, `run_rq3_stats.sh` | The multi-seed study: 20 circuits x 6 fake backends x seeds 0-19, paper rule and the archived TVD-only rule side by side, ground-truth grade per seed, false/missed-stop accounting. `CIRCUITS=v1` or `v2`, `REF=sample` or `exact` (see `rq3_common.py`). |
+| `rq3_extended.py` | Stop rates per ground-truth grade with Clopper-Pearson bounds for seeds 0-19 and 20-119 (`SEEDS=20-119 SUFFIX=_s20-119` run of `rq3_stats.py`), the stop decisions under 27 settings of the rule's thresholds, and the board time saved at the simulated stop checkpoints of the six board circuits (per-shot time and stop latency from `results/bench/table_stop.csv`). |
 | `make_rq3_tables.py` | Per-cell counts, stop checkpoints and the paper's table in multi-seed form. |
 | `rq3_adequacy_gate.py` | Sampling-adequacy gate: noiseless replicate pairs per checkpoint; a circuit is evaluable only where the noiseless null stays inside PASS. |
 | `rq3_common.py` | The study's switches (`CIRCUITS`, `REF`) and output directory. |
