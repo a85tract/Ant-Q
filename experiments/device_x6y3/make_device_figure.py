@@ -20,13 +20,12 @@ for key in ('A', 'B'):
 only = sorted(int(m) for m in rb['B']['table'] if int(m) > shared[-1])
 seamless = sum(rb['B']['table'][str(m)]['seamless'] for m in only); runs = sum(rb['B']['table'][str(m)]['n_seq'] for m in only)
 LIMIT = 1000   # ~ Cliffords in the 2048-command buffer of stock QubiC (about 2 commands per Clifford; m = 1024 compiles to 2055)
-a.axvspan(LIMIT, only[-1] * 1.4, color='#0a6ba0', alpha=0.08, lw=0)
+a.axvspan(LIMIT, only[-1] * 2.5, color='#0a6ba0', alpha=0.08, lw=0)
 a.axvline(LIMIT, color='#555555', ls='--', lw=0.8)
-a.plot(only, [0.47] * len(only), 'v', color='#0a6ba0', ms=4)
-a.text(np.sqrt(only[0] * only[-1]) * 1.4, 0.63, f'Ant-Q only\n$m$ = {", ".join(map(str, only))}\n{seamless}/{runs} runs seamless',
-       ha='center', va='center', fontsize=8)
-a.text(LIMIT * 0.92, 0.79, 'QubiC limit\n(2048 commands)', ha='right', va='top', fontsize=8, color='#555555')
-a.set_xscale('log'); a.set_xlim(12, only[-1] * 1.4); a.set_ylim(0.44, 0.82)
+a.text(LIMIT * 1.15, 0.63, f'Ant-Q only\n$m$ = {", ".join(map(str, only[:-1]))},\n{only[-1]}\n{seamless}/{runs} runs\nseamless',
+       ha='left', va='center', fontsize=8)
+a.text(LIMIT * 0.9, 0.815, 'QubiC limit (2048 commands)', rotation=90, ha='right', va='top', fontsize=8, color='#555555')
+a.set_xscale('log'); a.set_xlim(12, only[-1] * 2.5); a.set_ylim(0.44, 0.82)
 a.set_xlabel('Clifford length $m$', fontsize=8); a.set_ylabel('Survival $P(0)$', fontsize=8); a.legend(fontsize=8, loc='lower left', frameon=False)
 a.set_title('(a) Randomized benchmarking', fontsize=9)
 ph = np.linspace(-np.pi, np.pi, 13); xs = np.linspace(-np.pi, np.pi, 200)
