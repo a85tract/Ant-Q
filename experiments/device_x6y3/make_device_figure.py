@@ -1,6 +1,6 @@
 """The paper's device figure: (a) RB survival vs Clifford length on both command paths over the lengths both paths hold
 (deep_rb_analysis.py output), with the stock path's command-memory limit and the Ant-Q-only lengths marked; (b) the boundary
-fringe, streamed (S, one handover inside the Ramsey delay) vs unbroken (U) (boundary_analysis.py output). Run the two analyses
+fringe, streamed (S, one handover inside the Ramsey delay) vs unbroken (U) and unbroken with a 152-ns idle (UD) (boundary_analysis.py output). Run the two analyses
 first.
 usage: python make_device_figure.py [results_dir] [out.pdf]   (default: $ANTQ_RESULTS, <results>/analysis/device_figure.pdf)"""
 import json, os, sys
@@ -29,12 +29,13 @@ a.set_xscale('log'); a.set_xlim(12, only[-1] * 2.5); a.set_ylim(0.44, 0.82)
 a.set_xlabel('Clifford length $m$', fontsize=8); a.set_ylabel('Survival $P(0)$', fontsize=8); a.legend(fontsize=8, loc='lower left', frameon=False)
 a.set_title('(a) Randomized benchmarking', fontsize=9)
 ph = np.linspace(-np.pi, np.pi, 13); xs = np.linspace(-np.pi, np.pi, 200)
-for cfg, label, col, mk in (('U', 'Unbroken', '#555555', 'o'), ('S', 'With one handover', '#0a6ba0', 's')):
+for cfg, label, col, mk, ls in (('U', 'Unbroken', '#555555', 'o', '-'), ('UD', 'Unbroken, 152-ns idle', '#e08030', '^', '--'),
+                                 ('S', 'With one handover', '#0a6ba0', 's', '-')):
     f = bd['fringe'][cfg]
-    b.plot(ph, f['P1'], mk, color=col, ms=3, label=label); b.plot(xs, f['offset'] + f['contrast'] * np.cos(xs - f['phase']), '-', color=col, lw=0.9)
+    b.plot(ph, f['P1'], mk, color=col, ms=3, label=label); b.plot(xs, f['offset'] + f['contrast'] * np.cos(xs - f['phase']), ls, color=col, lw=0.9)
 b.set_xlabel('Phase of the second $\\pi/2$ pulse (rad)', fontsize=8); b.set_ylabel('$P(1)$', fontsize=8)
 b.set_xticks([-np.pi, -np.pi / 2, 0, np.pi / 2, np.pi]); b.set_xticklabels(['$-\\pi$', '$-\\pi/2$', '0', '$\\pi/2$', '$\\pi$'])
-b.set_ylim(0.15, 0.98); b.legend(fontsize=8, loc='upper center', ncol=2, frameon=False); b.set_title('(b) Ramsey fringe across a handover', fontsize=9)
+b.set_ylim(0.1, 0.9); b.legend(fontsize=8, loc='lower center', ncol=1, frameon=False, handlelength=1.6); b.set_title('(b) Ramsey fringe across a handover', fontsize=9)
 for ax in (a, b):
     ax.tick_params(labelsize=8)
     for s in ('top', 'right'): ax.spines[s].set_visible(False)

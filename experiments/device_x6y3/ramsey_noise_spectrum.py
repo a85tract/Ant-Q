@@ -13,7 +13,9 @@ slope calibration (idx 105-109); a readout drift moves both halves alike and can
      records of Bernoulli outcomes (the block's outcome probabilities, K drawn from its calibration uncertainty, phase noise with
      S_f = A/f from 0.01 to 250 Hz synthesised at every read, so aliasing from 125-250 Hz is included) through the same periodogram
      and fit give the null distribution of the LR and the 95 % upper limit on A: the A at which 5 % of simulated records give an LR
-     at or below the observed one, the slope uncertainty included by averaging over it (hybrid treatment). The limit holds for this
+     at or below the observed one, the slope uncertainty included by averaging over it (hybrid treatment); the same limit and the level
+     detected with 50 % probability (5 % false alarm) also from the per-run analysis, i.e. the sensitivity that runs of 2.048 s allow for
+     the same total measurement time. The limit holds for this
      model and for a slope that stays at its calibrated value during the record.
   2. Run-rate lines: in the pair-index series of every block (stock: runs concatenated), the ordinates at k/512 cycles per pair
      (k = 1..5) against the local median, summed; p-value from the same statistic on the simulated white records. Plus the first 16
@@ -139,13 +141,35 @@ null_run = np.array([fit(*spectrum(sim_d(out['EA1'], draw_K(out['EA1'])), True))
 for tag, o in out.items():
     o['p_lr_run'] = float(np.mean(null_run >= o['lr_run'])); o['runrate_line_p'] = float(np.mean(null_line >= sum(o['runrate_line_ratios'])))
     if 'lr' in o: o['p_lr'] = float(np.mean(null_full >= o['lr']))
-grid = np.geomspace(1e7, 1e10, 13)      # A in Hz^2: sqrt(S_f(1 Hz)) from 3.2 to 100 kHz/sqrt(Hz)
-for tag in ('EB1', 'EB2'):     # Neyman upper limit on A
-    o = out[tag]
-    frac = np.array([np.mean([fit(*spectrum(sim_d(o, draw_K(o), A), False))[0] <= o['lr'] for _ in range(N_NEYMAN)]) for A in grid])
+def neyman(o, per_run, lr_obs, grid):
+    """Neyman 95 % upper limit on A: the A at which 5 % of simulated records give an LR at or below the observed one."""
+    frac = np.array([np.mean([fit(*spectrum(sim_d(o, draw_K(o), A), per_run))[0] <= lr_obs for _ in range(N_NEYMAN)]) for A in grid])
     j = int(np.argmax(frac <= 0.05)); assert frac[0] > 0.05 and frac[j] <= 0.05, frac
-    A95 = float(np.exp(np.interp(0.05, [frac[j], frac[j - 1]], [np.log(grid[j]), np.log(grid[j - 1])])))
+    return float(np.exp(np.interp(0.05, [frac[j], frac[j - 1]], [np.log(grid[j]), np.log(grid[j - 1])]))), frac
+grid = np.geomspace(1e7, 1e10, 13)      # A in Hz^2: sqrt(S_f(1 Hz)) from 3.2 to 100 kHz/sqrt(Hz)
+for tag in ('EB1', 'EB2'):     # whole uninterrupted record
+    o = out[tag]; A95, frac = neyman(o, False, o['lr'], grid)
     o.update(A95_Hz2=A95, sqrtSf_1Hz_limit_Hz_per_rtHz=float(np.sqrt(A95)), neyman_grid=grid.tolist(), neyman_frac=frac.tolist())
+# the same records (Ant-Q) and the stock records analysed run by run (2.048 s, from 0.49 Hz): the limit the stock acquisition
+# allows for the same total measurement time; on the Ant-Q records the difference to the whole-record limit is due to the
+# acquisition continuity alone
+grid_run = np.geomspace(1e7, 1e11, 17)
+for tag in BLOCKS:
+    o = out[tag]; A95r, fracr = neyman(o, True, o['lr_run'], grid_run)
+    o.update(A95_run_Hz2=A95r, sqrtSf_1Hz_limit_run_Hz_per_rtHz=float(np.sqrt(A95r)), neyman_grid_run=grid_run.tolist(), neyman_frac_run=fracr.tolist())
+
+# ---- detection sensitivity for the same total measurement time: the 1/f level detected with 50 % probability at a 5 % false-alarm
+# rate (LR above the 95th percentile of its null distribution), from the whole record and from the same record split into runs
+def a50(o, per_run, grid, n=300):
+    null = np.array([fit(*spectrum(sim_d(o, draw_K(o)), per_run))[0] for _ in range(600)]); t95 = np.percentile(null, 95)
+    pw = np.array([np.mean([fit(*spectrum(sim_d(o, draw_K(o), A), per_run))[0] > t95 for _ in range(n)]) for A in grid])
+    j = int(np.argmax(pw >= 0.5)); assert pw[0] < 0.5 <= pw[j], pw
+    return float(np.exp(np.interp(0.5, [pw[j - 1], pw[j]], [np.log(grid[j - 1]), np.log(grid[j])]))), pw.tolist()
+for tag in ('EB1', 'EB2'):
+    o = out[tag]
+    A50w, pww = a50(o, False, np.geomspace(1e7, 3e9, 13)); A50r, pwr = a50(o, True, np.geomspace(1e7, 1e10, 13))
+    o.update(sqrtSf_1Hz_detect50_record_Hz_per_rtHz=float(np.sqrt(A50w)), sqrtSf_1Hz_detect50_run_Hz_per_rtHz=float(np.sqrt(A50r)),
+             detect_power_record=pww, detect_power_run=pwr)
 
 # ---- test 3: consecutive pairs, and what quasi-static noise producing T2* would give
 col = lambda key: np.array([out[t][key] for t in BLOCKS])
@@ -171,6 +195,8 @@ for tag in BLOCKS:
     print(f"{tag} ({o['stack']}): K {o['K']:+.3f}+-{o['K_se']:.3f}/rad  offset {o['offset_rad']:+.3f} rad  white(run) {o['white_level_run']:.5f} vs "
           f"binomial {o['white_level_bernoulli']:.5f}/Hz  LR run-avg {o['lr_run']:.2f} (p {o['p_lr_run']:.2f})"
           + (f"  LR record {o['lr']:.2f} (p {o['p_lr']:.2f}) white {o['white_level']:.5f}  sqrtS_f(1 Hz) <= {o['sqrtSf_1Hz_limit_Hz_per_rtHz'] / 1e3:.1f} kHz/rtHz" if 'lr' in o else '')
+          + f"  per-run limit {o['sqrtSf_1Hz_limit_run_Hz_per_rtHz'] / 1e3:.1f} kHz/rtHz"
+          + (f"  50 %-detection level record {o['sqrtSf_1Hz_detect50_record_Hz_per_rtHz'] / 1e3:.1f} / runs {o['sqrtSf_1Hz_detect50_run_Hz_per_rtHz'] / 1e3:.1f} kHz/rtHz" if 'sqrtSf_1Hz_detect50_record_Hz_per_rtHz' in o else '')
           + f"  run-rate lines p {o['runrate_line_p']:.2f}  head-rest {o['segment_head_minus_rest']:+.4f}  lag-1 corr {o['lag1_corr']:+.4f}")
 print('pooled:', out['pooled']); print('MC:', out['mc'])
 

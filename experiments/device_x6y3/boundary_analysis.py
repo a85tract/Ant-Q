@@ -1,6 +1,7 @@
-"""Boundary experiment (Q5, 8-core image c26942c0): quantum consequence of one command-buffer handover. Two configurations of
-identical programs -- S (streamed as 2 segments, handover inside the coherent evolution) and U (unbroken).
-Fringe family: idx 220-232 (S) / 240-252 (U), 13 phases; RB family: idx 400/500 + 10L + s, lengths from AQT_BRB_LENGTHS,
+"""Boundary experiment (Q5, 8-core image c26942c0): quantum consequence of one command-buffer handover. Three configurations of
+identical programs -- S (streamed as 2 segments, handover inside the coherent evolution), U (unbroken) and UD (unbroken with an
+idle of 152 ns inserted at the cut, the control for the time the handover adds to the evolution).
+Fringe family: idx 220-232 (S) / 240-252 (U) / 260-272 (UD), 13 phases; RB family: idx 400/500/600 + 10L + s, lengths from AQT_BRB_LENGTHS,
 8 sequences. Classifier: held-out QDA from <PREP>_p0a idx 102/103 (first half fit, second half evaluated).
 Pre-registered: fringe |phase diff| <= 0.10 rad and contrast ratio 0.90-1.10 (95 % bootstrap CI of the difference fully inside ->
 EQUIVALENT, fully outside -> DIFFERENT, else INCONCLUSIVE); RB boundary factor hS from the joint fit P = B + A p^m hS^b (b = 1 for S,
@@ -55,7 +56,7 @@ def fringe_fit(P):
     A = np.column_stack([np.ones_like(PH), np.cos(PH), np.sin(PH)]); c, *_ = np.linalg.lstsq(A, P, rcond=None)
     return float(c[0]), float(np.hypot(c[1], c[2])), float(np.arctan2(c[2], c[1]))
 
-CONFIGS = {'S': (220, True), 'U': (240, False)}
+CONFIGS = {'S': (220, True), 'U': (240, False), 'UD': (260, False)}
 labels = {}
 for cfg, (base, st) in CONFIGS.items():
     labels[cfg] = [clf.predict(xy(load('fringe', base + k, st))) if load('fringe', base + k, st) is not None else None for k in range(13)]
@@ -76,15 +77,24 @@ def verdict(lo, hi, mlo, mhi):
     if mlo <= lo and hi <= mhi: return 'EQUIVALENT'
     if hi < mlo or lo > mhi: return 'DIFFERENT'
     return 'INCONCLUSIVE'
-if 'S' in out['fringe'] and 'U' in out['fringe']:
-    (plo, phi_), (clo, chi) = boot_fringe(labels['S'], labels['U'])
-    dph = float(np.angle(np.exp(1j * (out['fringe']['S']['phase'] - out['fringe']['U']['phase'])))); rc = out['fringe']['S']['contrast'] / out['fringe']['U']['contrast']
-    out['fringe']['S-U'] = {'phase_diff': dph, 'phase_ci': [float(plo), float(phi_)], 'phase_verdict': verdict(plo, phi_, -0.10, 0.10),
-                            'contrast_ratio': float(rc), 'contrast_ci': [float(clo), float(chi)], 'contrast_verdict': verdict(clo, chi, 0.90, 1.10)}
-    print(f"  fringe S vs U: phase diff {dph:+.3f} [{plo:+.3f}, {phi_:+.3f}] -> {out['fringe']['S-U']['phase_verdict']}; contrast ratio {rc:.3f} [{clo:.3f}, {chi:.3f}] -> {out['fringe']['S-U']['contrast_verdict']}")
+# systematic band for S vs UD, as fixed before the acquisition: the pause of UD may differ from the time the handover adds by up to
+# 50 ns (the handover was then known to +-40 ns from the bench scope), i.e. phase 2 pi x 30 kHz x 50 ns = 0.009 rad and contrast
+# exp(50 ns / 1.4 us) (exponential decay, the conservative model); the S-UD verdict uses the bootstrap CI widened by this band.
+# (The handover is now measured at 134 ns + the 10 ns start offset = 144 ns against the 152 ns pause of UD.)
+SYS_PHASE, SYS_F = 0.0095, float(np.exp(50.0 / 1400.0))
+for a, b in (('S', 'U'), ('S', 'UD'), ('UD', 'U')):
+    if a in out['fringe'] and b in out['fringe']:
+        (plo, phi_), (clo, chi) = boot_fringe(labels[a], labels[b])
+        dph = float(np.angle(np.exp(1j * (out['fringe'][a]['phase'] - out['fringe'][b]['phase'])))); rc = out['fringe'][a]['contrast'] / out['fringe'][b]['contrast']
+        bp, bf = (SYS_PHASE, SYS_F) if (a, b) == ('S', 'UD') else (0.0, 1.0)
+        out['fringe'][f'{a}-{b}'] = {'phase_diff': dph, 'phase_ci': [float(plo), float(phi_)], 'phase_sys_band': bp,
+                                     'phase_verdict': verdict(plo - bp, phi_ + bp, -0.10, 0.10),
+                                     'contrast_ratio': float(rc), 'contrast_ci': [float(clo), float(chi)], 'contrast_sys_factor': bf,
+                                     'contrast_verdict': verdict(clo / bf, chi * bf, 0.90, 1.10)}
+        print(f"  fringe {a} vs {b}: phase diff {dph:+.3f} [{plo:+.3f}, {phi_:+.3f}] -> {out['fringe'][f'{a}-{b}']['phase_verdict']}; contrast ratio {rc:.3f} [{clo:.3f}, {chi:.3f}] -> {out['fringe'][f'{a}-{b}']['contrast_verdict']}" + (' (CI widened by the systematic band)' if bp else ''))
 
 # ---- RB: survival per (configuration, m, seq); joint fit P = B + A p^m hS^b over both configurations (U: b = 0)
-RBCONFIGS = {'S': (400, True), 'U': (500, False)}
+RBCONFIGS = {'S': (400, True), 'U': (500, False), 'UD': (600, False)}
 surv = {}   # (config, L, s) -> label array (1 = excited; survival = P(0) = 1 - mean)
 for cfg, (base, st) in RBCONFIGS.items():
     for L, m in enumerate(LENGTHS):
@@ -94,7 +104,7 @@ for cfg, (base, st) in RBCONFIGS.items():
 def fit_h(sample):
     """sample: dict (config, L, s) -> survival value. LS fit of A, p, hS with B fixed: minimise squared error over means."""
     from scipy.optimize import least_squares
-    keys = list(sample.keys()); y = np.array([sample[k] for k in keys]); ms = np.array([LENGTHS[k[1]] for k in keys])
+    keys = [k for k in sample if k[0] in ('S', 'U')]; y = np.array([sample[k] for k in keys]); ms = np.array([LENGTHS[k[1]] for k in keys])
     bS = np.array([1.0 if k[0] == 'S' else 0.0 for k in keys])
     def f(x):
         A, p, hS = x; return B + A * p ** ms * hS ** bS - y

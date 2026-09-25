@@ -64,13 +64,13 @@ commit named in each row's `software_commit`, the `std` baseline server `board/s
 
 | File | Purpose |
 |---|---|
-| `aqt_programs.py` | The device program module in the `physic_experiment` format: readout-classifier preparations, the phase fringe, the fixed-cadence timing loop, the paired Ramsey plus its slope calibration, Clifford randomized benchmarking (the 24-element group generated and decomposed on the pi/2 grid), the streamed and unbroken boundary programs and the handover marker programs. Loaded through the runner with `ANTQ_PHYS_MODULE`. |
+| `aqt_programs.py` | The device program module in the `physic_experiment` format: readout-classifier preparations, the phase fringe, the fixed-cadence timing loop, the paired Ramsey plus its slope calibration, Clifford randomized benchmarking (the 24-element group generated and decomposed on the pi/2 grid), the streamed, unbroken and idling (UD) boundary programs and the handover marker programs. Loaded through the runner with `ANTQ_PHYS_MODULE`. |
 | `PREREGISTRATION.md` | What was fixed in writing before the device session: the programs and their analysis, the equivalence margins with the two-pass decision rule, the declaration for the reported blocks, and where the reported analysis departs from them. |
 | `pulses_q5_20260917.json` | The calibrated pulse export of the measured qubit (X90 envelope, readout drive and demodulation, frequencies, T1/T2*) as patched into the chip configuration by `patch_qchip`. |
 | `export_qcal_pulses.py` | Produces such a file from a calibration configuration directory; run with the operator's environment. |
 | `analyze_block.py`, `compare_blocks.py`, `summarize_abab.py` | Per-block estimators of the two-command-path comparison (classifier, fringe fit, cadence, Ramsey pair statistics, RB decay), the comparison of two blocks against the pre-registered margins, and the four-block summary with its figure. |
 | `ramsey_noise_spectrum.py` | The pre-registered noise analysis of the paired Ramsey records: per-record spectra with a Whittle fit of a 1/f term plus white noise, the Monte-Carlo-calibrated upper bound on the 1/f level, the test for lines at the stock run rate, the excess-variance bound on noise slower than one pair, and the paper's noise-spectrum figure. |
-| `boundary_analysis.py` | Fringe and RB analysis of the streamed (S) and unbroken (U) boundary programs. |
+| `boundary_analysis.py` | Fringe and RB analysis of the streamed (S) and unbroken (U) boundary programs and of the unbroken programs with a 152-ns idle at the cut (UD), the control for the time a handover adds. |
 | `deep_rb_analysis.py` | RB to 5101 Cliffords on both command paths: survival per length, the joint fit over the shared lengths, the execution flags of every program. |
 | `make_device_figure.py` | The paper's device figure from the outputs of `deep_rb_analysis.py` and `boundary_analysis.py`: RB survival on both command paths with the Ant-Q-only lengths marked, and the boundary fringe. |
 | `handover_scope.py`, `handover_scope_analyze.py` | Direct oscilloscope measurement of the command-buffer handover from marker-pulse gaps. |

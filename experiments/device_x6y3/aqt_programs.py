@@ -223,25 +223,29 @@ def build_circuits():
             body = [op for tr in triples for op in clifford_ops(Q, tr)] + [read()] + RB_TAIL + [delay(RESET_S)]
             cs.append(_prog(300 + 10 * L + s_, f'RB m={m} seq {s_} on {Q}', RB_SHOTS, 1, body, RESET_S,
                             rb_m=m, rb_seq=s_, rb_ids=ids, stream=(m > STREAM_ABOVE)))
-    # ---------------- boundary experiment: the quantum consequence of one command-buffer handover. AQT_BOUNDARY=1 adds two
+    # ---------------- boundary experiment: the quantum consequence of one command-buffer handover. AQT_BOUNDARY=1 adds three
     # configurations of otherwise identical programs, run on the same image/load:
     #   S = streamed as two sub-circuit segments cut at a chosen gate boundary (seg_cut_after -> phys_split), 'stream': True;
-    #   U = the same program unbroken (hardware loop, no handover).
+    #   U = the same program unbroken (hardware loop, no handover);
+    #   UD = U with an idle of AQT_HANDOVER_S inserted at the cut (the control for the time the handover adds).
     # Every body ends with read - delay(AQT_TAIL_S) - one zero-amplitude 8-ns readout-drive pulse, so the second segment lasts
     # >= AQT_TAIL_S (a trailing delay would be dropped by the compiler; a short tail segment stalls the stream).
-    #   fringe: idx 220-232 (S), 240-252 (U): X90 | delay(tau) - Z(phi) - X90 - read - tail   (cut after the first X90)
-    #   RB    : idx 400+10L+s (S), 500+10L+s (U), lengths AQT_BRB_LENGTHS, 8 sequences, AQT_BRB_SHOTS shots,
-    #           cut after Clifford m//2 (same sequences in both configurations; seed AQT_BRB_SEED)
+    #   fringe: idx 220-232 (S), 240-252 (U), 260-272 (UD): X90 | delay(tau) - Z(phi) - X90 - read - tail   (cut after the first X90)
+    #   RB    : idx 400+10L+s (S), 500+10L+s (U), 600+10L+s (UD), lengths AQT_BRB_LENGTHS, 8 sequences, AQT_BRB_SHOTS shots,
+    #           cut after Clifford m//2 (same sequences in all three configurations; seed AQT_BRB_SEED)
     if int(os.environ.get('AQT_BOUNDARY', '0')):
         TAIL_S = float(os.environ.get('AQT_TAIL_S', '12e-6'))
         TAIL = [delay(TAIL_S), {'name': 'pulse', 'freq': f'{Q}.readfreq', 'phase': 0.0, 'dest': f'{Q}.rdrv', 'twidth': 8e-9, 'amp': 0.0,
                                 'env': {'env_func': 'square', 'paradict': {'phase': 0.0, 'amplitude': 1.0, 'twidth': 8e-9}}}]
         NB_FR = int(os.environ.get('AQT_BFRINGE_N', str(N_FRINGE)))
+        HANDOVER_S = float(os.environ.get('AQT_HANDOVER_S', '152e-9'))   # UD: idle inserted at the cut of the unbroken twin
         for k, ph in enumerate(FRINGE_PHASES):
             head = [x90()]; rest = [delay(FRINGE_TAU_S), vz(ph), x90(), read()] + TAIL + [delay(RESET_S)]
             cs.append(_prog(220 + k, f'boundary fringe S Z({ph:+.3f}) on {Q}', NB_FR, 1, head + rest, RESET_S, fringe_phase=ph, config='S',
                             stream=True, seg_cut_after=len(head)))
             cs.append(_prog(240 + k, f'boundary fringe U Z({ph:+.3f}) on {Q}', NB_FR, 1, head + rest, RESET_S, fringe_phase=ph, config='U'))
+            cs.append(_prog(260 + k, f'boundary fringe UD Z({ph:+.3f}) on {Q}', NB_FR, 1, head + [delay(HANDOVER_S)] + rest, RESET_S,
+                            fringe_phase=ph, config='UD'))
         BRB_LENGTHS = [int(x) for x in os.environ.get('AQT_BRB_LENGTHS', '16,32,64,128').split(',')]
         BRB_SHOTS = int(os.environ.get('AQT_BRB_SHOTS', '2048')); BRB_SEED = int(os.environ.get('AQT_BRB_SEED', '20260917'))
         rng_b = np.random.default_rng(BRB_SEED)
@@ -255,6 +259,8 @@ def build_circuits():
                 cs.append(_prog(400 + 10 * L + s_, f'boundary RB S m={m} seq {s_} on {Q}', BRB_SHOTS, 1, head + rest, RESET_S,
                                 config='S', stream=True, seg_cut_after=len(head), **common))
                 cs.append(_prog(500 + 10 * L + s_, f'boundary RB U m={m} seq {s_} on {Q}', BRB_SHOTS, 1, head + rest, RESET_S, config='U', **common))
+                cs.append(_prog(600 + 10 * L + s_, f'boundary RB UD m={m} seq {s_} on {Q}', BRB_SHOTS, 1, head + [delay(HANDOVER_S)] + rest,
+                                RESET_S, config='UD', **common))
     # ---------------- handover marker programs (2026-09-18, bench only, the bench board + oscilloscope on the readout-drive DAC):
     # measure the command-buffer handover DIRECTLY as the gap between two visible marker pulses on the readout-drive channel.
     # AQT_HANDOVER_MARK=1 adds: idx 700 S2  = [lead reset, marker A] | [marker B, tail]      (2-segment stream, cut after A)

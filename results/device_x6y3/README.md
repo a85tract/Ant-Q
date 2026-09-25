@@ -5,7 +5,7 @@ stored here: `experiments/device_x6y3/` regenerates every derived quantity from 
 
 | File | Contents |
 |---|---|
-| `raw_runs_phys.csv` | One row per program execution of the single-qubit programs (classifier preparations, phase fringe, fixed-cadence timing loop, paired Ramsey and its slope calibration, Clifford RB, the streamed and unbroken boundary programs, the long RB sweep). |
+| `raw_runs_phys.csv` | One row per program execution of the single-qubit programs (classifier preparations, phase fringe, fixed-cadence timing loop, paired Ramsey and its slope calibration, Clifford RB, the streamed, unbroken and idling boundary programs, the long RB sweep). |
 | `iq/` | One compressed `.npz` per successful run: the complex readout values as returned, keyed `c<circuit>_<channel>`. Shape `(shots, reads_per_shot)` for one-shot programs and `(1, reads)` for hardware-loop programs. |
 
 Row identification: `tag` names the acquisition round, `workload_id` the program (`phys<idx>` refers to the program
@@ -18,8 +18,8 @@ timestamps on `c3` rows (first command image submitted, last readout data in PS 
 rows, so `elapsed_ms` must be read together with `mode`. `software_commit` names the host client,
 `seamless`/`cnr`/`cnr_wait_cycles` the command-supply witness of the streaming path.
 
-Rounds present: the four alternating blocks of the two-command-path comparison, the boundary experiment (streamed and
-unbroken programs with their classifier preparations) and the long RB sweep on both command paths. Only these rounds and programs are included; rows of other programs
+Rounds present: the four alternating blocks of the two-command-path comparison, the boundary experiment (streamed programs,
+unbroken programs and unbroken programs with a 152-ns idle at the cut, with their classifier preparations) and the long RB sweep on both command paths. Only these rounds and programs are included; rows of other programs
 acquired under the same tags were removed, so some tags hold fewer rows than the session produced.
 
 The device chip configuration the programs were compiled with is the operator's calibration and is not included; the
@@ -33,6 +33,6 @@ Session settings: every round compiled `experiments/device_x6y3/aqt_programs.py`
 
 (the module's defaults differ). With these pulses the pads give a 6.000 us fixed-cadence period and a 4.000 ms Ramsey pair
 (`qpu_ms` 48.0000 and 100000.0000). The boundary rounds (`BNDF`, `BND2`) added
-`AQT_BOUNDARY=1 AQT_BFRINGE_N=2048 AQT_BRB_SHOTS=2048 AQT_BRB_LENGTHS=16,32,64,128 AQT_TAIL_S=12e-6`, the long RB sweep
+`AQT_BOUNDARY=1 AQT_BFRINGE_N=2048 AQT_BRB_SHOTS=2048 AQT_BRB_LENGTHS=16,32,64,128 AQT_TAIL_S=12e-6 AQT_HANDOVER_S=152e-9`, the long RB sweep
 (`DRA`, `DRB`) `AQT_RB_LENGTHS=16,32,64,128,256,512,1024,2048,5101 AQT_RB_SEQS=8 AQT_RB_SHOTS=2048 AQT_RB_TAIL=1
 AQT_TAIL_S=12e-6 AQT_STREAM_ABOVE=900`.
