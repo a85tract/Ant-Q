@@ -39,8 +39,8 @@ script the bench board ran (each PS server pinned to its own core). The stock-pa
 git clone --recurse-submodules https://github.com/a85tract/Ant-Q.git
 ```
 
-Release v1.7 of this repository, with the three submodules at the commits above, is archived at
-[doi:10.5281/zenodo.22965282](https://doi.org/10.5281/zenodo.22965282); all releases:
+Release v1.8 of this repository, with the three submodules at the commits above, is archived at
+[doi:10.5281/zenodo.22967196](https://doi.org/10.5281/zenodo.22967196); all releases:
 [doi:10.5281/zenodo.22950191](https://doi.org/10.5281/zenodo.22950191).
 
 ## Data provenance
@@ -72,7 +72,7 @@ python make_rq3_tables.py                       # per-cell counts and stop check
 python rq3_adequacy_gate.py                     # which circuits are evaluable at which checkpoint
 for b in FakeManilaV2 FakeLagosV2 FakeGuadalupeV2 FakeAlgiers FakeSherbrooke FakeTorino; do
   BACKEND=$b SEEDS=20-119 SUFFIX=_s20-119 python rq3_stats.py & done; wait   # 100 further seeds -> rq3_<backend>_s20-119.csv
-python rq3_extended.py                          # stop rates per grade, threshold sensitivity, board savings -> rq3_extended.json
+python rq3_extended.py                          # stop rates per grade, threshold sensitivity, board savings, independent-seed reference -> rq3_extended.json
 ```
 
 **Hardware measurements.** A ZCU216 running one of the images in `benchmark/bitstreams/` (deployment notes in the benchmark
