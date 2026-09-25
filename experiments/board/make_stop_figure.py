@@ -21,7 +21,7 @@ ax.bar(x, [100] * len(names), w, color='#e6e6e6', edgecolor='black', lw=0.8, lab
 ax.bar(x, act_pct, w, color='#7fb0d0', edgecolor='black', lw=0.8, label='Executed shots')
 ax.bar(x, stop_pct, w, color='#0a6ba0', edgecolor='black', lw=0.8, label='Stop threshold')
 for i, (s, a) in enumerate(zip(stop_pct, act_pct)):
-    ax.text(i, s / 2, f'{s:.0f}%', ha='center', va='center', color='white', fontsize=8, fontweight='bold')
+    ax.text(i, s / 2, f'{s:.2f}%', ha='center', va='center', color='white', fontsize=8, fontweight='bold')
     ax.text(i, a + 2, f'{a:.2f}%', ha='center', va='bottom', color='#0b4f75', fontsize=8, fontweight='bold')
 ax.axhline(100, color='gray', ls='--', lw=0.8); ax.set_ylim(0, 118); ax.set_xticks(list(x)); ax.set_xticklabels(names, fontsize=8)
 ax.set_ylabel('Shots (% of original)', fontsize=9); ax.tick_params(axis='y', labelsize=8); ax.grid(axis='y', color='#dddddd', lw=0.6); ax.set_axisbelow(True)

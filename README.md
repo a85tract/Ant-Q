@@ -105,6 +105,7 @@ python experiments/device_x6y3/ramsey_noise_spectrum.py $D          # Ramsey noi
 python experiments/device_x6y3/noise_mc_uncertainty.py $D           # Monte Carlo intervals of its detection levels and limits
 python experiments/device_x6y3/deep_rb_analysis.py DRB DRB DRA DRA --res $D
 python experiments/device_x6y3/handover_scope_analyze.py hand_13b440c3 results/bench
+python experiments/board/make_timing_figure.py                       # the paper's timing figure (after the scope analysis)
 python experiments/device_x6y3/make_device_figure.py $D              # the paper's device figure (after the two analyses above)
 python experiments/board/make_stop_figure.py                         # the paper's early-stop figure (after make_phys_tables)
 ```
