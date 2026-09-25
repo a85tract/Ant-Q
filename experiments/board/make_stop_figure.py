@@ -18,7 +18,7 @@ for r in rows:
     act_pct.append(100 * st.mean(int(x) for x in r['actual_shots'].split()) / n)
 fig, ax = plt.subplots(figsize=(5.0, 3.0)); x = range(len(names)); w = 0.7   # printed at about 12.7 cm: all text >= 8 pt
 ax.bar(x, [100] * len(names), w, color='#e6e6e6', edgecolor='black', lw=0.8, label='Original (100%)')
-ax.bar(x, act_pct, w, color='#7fb0d0', edgecolor='black', lw=0.8, label='Actual shots')
+ax.bar(x, act_pct, w, color='#7fb0d0', edgecolor='black', lw=0.8, label='Executed shots')
 ax.bar(x, stop_pct, w, color='#0a6ba0', edgecolor='black', lw=0.8, label='Stop threshold')
 for i, (s, a) in enumerate(zip(stop_pct, act_pct)):
     ax.text(i, s / 2, f'{s:.0f}%', ha='center', va='center', color='white', fontsize=8, fontweight='bold')

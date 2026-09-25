@@ -39,8 +39,8 @@ script the bench board ran (each PS server pinned to its own core). The stock-pa
 git clone --recurse-submodules https://github.com/a85tract/Ant-Q.git
 ```
 
-Release v1.1 of this repository, with the three submodules at the commits above, is archived at
-[doi:10.5281/zenodo.22952647](https://doi.org/10.5281/zenodo.22952647); all releases:
+Release v1.2 of this repository, with the three submodules at the commits above, is archived at
+[doi:10.5281/zenodo.22954578](https://doi.org/10.5281/zenodo.22954578); all releases:
 [doi:10.5281/zenodo.22950191](https://doi.org/10.5281/zenodo.22950191).
 
 ## Data provenance

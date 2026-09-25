@@ -65,6 +65,7 @@ commit named in each row's `software_commit`, the `std` baseline server `board/s
 | File | Purpose |
 |---|---|
 | `aqt_programs.py` | The device program module in the `physic_experiment` format: readout-classifier preparations, the phase fringe, the fixed-cadence timing loop, the paired Ramsey plus its slope calibration, Clifford randomized benchmarking (the 24-element group generated and decomposed on the pi/2 grid), the streamed and unbroken boundary programs and the handover marker programs. Loaded through the runner with `ANTQ_PHYS_MODULE`. |
+| `PREREGISTRATION.md` | What was fixed in writing before the device session: the programs and their analysis, the equivalence margins with the two-pass decision rule, the declaration for the reported blocks, and where the reported analysis departs from them. |
 | `pulses_q5_20260917.json` | The calibrated pulse export of the measured qubit (X90 envelope, readout drive and demodulation, frequencies, T1/T2*) as patched into the chip configuration by `patch_qchip`. |
 | `export_qcal_pulses.py` | Produces such a file from a calibration configuration directory; run with the operator's environment. |
 | `analyze_block.py`, `compare_blocks.py`, `summarize_abab.py` | Per-block estimators of the two-command-path comparison (classifier, fringe fit, cadence, Ramsey pair statistics, RB decay), the comparison of two blocks against the pre-registered margins, and the four-block summary with its figure. |

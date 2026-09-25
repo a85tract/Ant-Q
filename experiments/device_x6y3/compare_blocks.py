@@ -24,11 +24,15 @@ def se_fid(x):
 d = B['readout']['fidelity'] - A['readout']['fidelity']; se = np.hypot(se_fid(A), se_fid(B))
 rows.append(('P0-A assignment fidelity diff', d, d - 1.645*se, d + 1.645*se, -0.01, 0.01))
 # Ramsey pairs: diff-mean difference (+-0.02) and variance ratio (0.80-1.25)
-ra, rb = A['ramsey_pairs'], B['ramsey_pairs']
-d = rb['diff_mean'] - ra['diff_mean']; se = np.hypot(ra['diff_mean_se'], rb['diff_mean_se'])
-rows.append(('Ramsey pair-diff mean, B-A', d, d - 1.96*se, d + 1.96*se, -0.02, 0.02))
-vr = rb['diff_var'] / ra['diff_var']; se_lnvr = np.sqrt(2/(ra['iterations']-1) + 2/(rb['iterations']-1))
-rows.append(('Ramsey pair-diff variance ratio B/A', vr, vr*np.exp(-1.96*se_lnvr), vr*np.exp(1.96*se_lnvr), 0.80, 1.25))
+# CIs by bootstrap over iterations (the pairs of each block resampled independently), as in the pre-registered rule
+da, db = (np.load(os.path.join(res, 'analysis', f'{t}_pair_diff.npy')).astype(float) for t in (sys.argv[1], sys.argv[2]))
+brng = np.random.default_rng(2); bm, bv = [], []
+for _ in range(10):                                        # 10 x 200 = 2000 resamples, in chunks to bound memory
+    ra_, rb_ = da[brng.integers(0, len(da), (200, len(da)))], db[brng.integers(0, len(db), (200, len(db)))]
+    bm.append(rb_.mean(1) - ra_.mean(1)); bv.append(rb_.var(1, ddof=1) / ra_.var(1, ddof=1))
+bm, bv = np.concatenate(bm), np.concatenate(bv)
+rows.append(('Ramsey pair-diff mean, B-A', db.mean() - da.mean(), *np.percentile(bm, [2.5, 97.5]), -0.02, 0.02))
+rows.append(('Ramsey pair-diff variance ratio B/A', db.var(ddof=1) / da.var(ddof=1), *np.percentile(bv, [2.5, 97.5]), 0.80, 1.25))
 # RB: paired sequence-level bootstrap of the EPC difference, margin +-0.005
 sa, sb = np.array(A['rb']['survival_per_seq']), np.array(B['rb']['survival_per_seq']); m = np.array(A['rb']['lengths'], dtype=float)
 def fit_p(y, B0=0.5):

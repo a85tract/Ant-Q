@@ -67,6 +67,7 @@ if z is not None:
     lab = clf.predict(xy(z)).reshape(-1, 2); d = lab[:, 0].astype(float) - lab[:, 1].astype(float)
     out['ramsey_pairs'] = dict(iterations=int(lab.shape[0]), P1_plus=float(lab[:, 0].mean()), P1_minus=float(lab[:, 1].mean()),
                                diff_mean=float(d.mean()), diff_var=float(d.var(ddof=1)), diff_mean_se=float(d.std(ddof=1) / np.sqrt(len(d))))
+    np.save(os.path.join(res, 'analysis', f'{tag}_pair_diff.npy'), d.astype(np.int8))   # per-pair differences for compare_blocks' bootstrap
 sl = []
 for k in range(5):
     z = load(105 + k, 'ramsey'); sl.append(P1(z) if z is not None else np.nan)

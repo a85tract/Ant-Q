@@ -23,7 +23,8 @@ unbroken programs with their classifier preparations) and the long RB sweep on b
 acquired under the same tags were removed, so some tags hold fewer rows than the session produced.
 
 The device chip configuration the programs were compiled with is the operator's calibration and is not included; the
-calibrated pulses of the measured qubit are in `experiments/device_x6y3/pulses_q5_20260917.json`.
+calibrated pulses of the measured qubit are in `experiments/device_x6y3/pulses_q5_20260917.json`; the margins and decision rules
+fixed before the session are in `experiments/device_x6y3/PREREGISTRATION.md`.
 
 Session settings: every round compiled `experiments/device_x6y3/aqt_programs.py` with the pulses above (`ANTQ_QCHIP_PATCH`) and
 
