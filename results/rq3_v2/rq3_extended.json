@@ -500,5 +500,60 @@
    "saved_worst_overshoot_median": 0.6958,
    "too_late": 0
   }
+ },
+ "independent_reference": {
+  "paired_seed": {
+   "PASS": {
+    "runs": 10537,
+    "stopped": 0,
+    "rate_ci95": [
+     0.0,
+     0.00035
+    ]
+   },
+   "MARGINAL": {
+    "runs": 1718,
+    "stopped": 23,
+    "rate_ci95": [
+     0.00851,
+     0.02002
+    ]
+   },
+   "FAIL": {
+    "runs": 705,
+    "stopped": 697,
+    "rate_ci95": [
+     0.97776,
+     0.99509
+    ]
+   }
+  },
+  "all_other_seeds": {
+   "PASS": {
+    "pairs": 1253903,
+    "stopped": 30
+   },
+   "MARGINAL": {
+    "pairs": 204442,
+    "stopped": 2700
+   },
+   "FAIL": {
+    "pairs": 83895,
+    "stopped": 82950
+   }
+  },
+  "cells_with_stops_and_pass_seeds": [
+   {
+    "backend": "FakeTorino",
+    "idx": 7,
+    "name": "GHZ-8",
+    "grades": {
+     "PASS": 5,
+     "MARGINAL": 115,
+     "FAIL": 0
+    },
+    "stopped": 6
+   }
+  ]
  }
 }

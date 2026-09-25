@@ -1,6 +1,8 @@
 """Early-stop study, extended: (1) stop rates by ground-truth grade with Clopper-Pearson bounds, per seed set; (2) sensitivity of
 the stop decisions to the rule's thresholds, re-evaluated on the stored checkpoint traces; (3) time saved on the board for the
-simulated stop checkpoints of the six circuits of the board experiment, from the board's per-shot time and stop latency.
+simulated stop checkpoints of the six circuits of the board experiment, from the board's per-shot time and stop latency;
+(4) stop decisions against an independent reference: the full-budget grade of another seed of the same circuit and backend,
+which shares no shots with the run the rule decides on (seed s against seed s + 60 mod 120, and against every other seed).
 Inputs: results/rq3_v2/rq3_<backend>[_s20-119].csv and *_checkpoints.csv (rq3_stats.py; SEEDS=20-119 SUFFIX=_s20-119 for the
 second set), results/bench/table_stop.csv. Output: results/rq3_v2/rq3_extended.json and a printout.
 usage: python rq3_extended.py"""
@@ -90,6 +92,26 @@ for name, bd in sorted(board.items()):
                     saved_range=[round(min(s_mean), 4), round(max(s_mean), 4)], saved_worst_overshoot_median=round(st.median(s_worst), 4),
                     too_late=sum(1 for v in s_worst if v <= 0))
 out['board_savings'] = sav
+
+# (4) independent reference grade from another seed of the same circuit and backend
+cell = defaultdict(dict)
+for x in runs: cell[(x['backend'], x['idx'])][x['seed']] = x
+seeds = sorted({x['seed'] for x in runs}); ns = len(seeds)
+paired = {g: [0, 0] for g in ('PASS', 'MARGINAL', 'FAIL')}; allp = {g: [0, 0] for g in ('PASS', 'MARGINAL', 'FAIL')}
+for d in cell.values():
+    for sd, x in d.items():
+        ref = d[seeds[(seeds.index(sd) + ns // 2) % ns]]['grade']
+        paired[ref][0] += 1; paired[ref][1] += x['stop'] is not None
+        for sd2, y in d.items():
+            if sd2 != sd: allp[y['grade']][0] += 1; allp[y['grade']][1] += x['stop'] is not None
+out['independent_reference'] = dict(
+    paired_seed={g: dict(runs=n, stopped=k, rate_ci95=cp_bounds(k, n)) for g, (n, k) in paired.items()},
+    all_other_seeds={g: dict(pairs=n, stopped=k) for g, (n, k) in allp.items()},
+    cells_with_stops_and_pass_seeds=[dict(backend=b, idx=i, name=next(iter(d.values()))['name'],
+                                          grades={g: sum(1 for y in d.values() if y['grade'] == g) for g in ('PASS', 'MARGINAL', 'FAIL')},
+                                          stopped=sum(1 for y in d.values() if y['stop'] is not None))
+                                     for (b, i), d in sorted(cell.items())
+                                     if any(y['stop'] is not None for y in d.values()) and any(y['grade'] == 'PASS' for y in d.values())])
 json.dump(out, open(R / 'rq3_extended.json', 'w'), indent=1)
 
 for sname, d in rates.items():
@@ -99,3 +121,4 @@ print('paper rule on the traces:', {k: v for k, v in ref.items() if k.endswith('
 for k in ('PASS_stopped', 'MARGINAL_stopped', 'FAIL_stopped'):
     print(f'  {k} over the 27 settings: {min(x[k] for x in sens)}..{max(x[k] for x in sens)}')
 for name, v in sav.items(): print(name, v)
+print('independent reference:', out['independent_reference'])
