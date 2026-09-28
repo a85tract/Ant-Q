@@ -50,7 +50,7 @@
 #define CHUNK_TIMEOUT_S_DEFAULT 60.0
 static double CHUNK_TIMEOUT_S = CHUNK_TIMEOUT_S_DEFAULT;   /* env SS_CHUNK_TIMEOUT_S overrides (100 s single-shot loops, plan A) */
 
-enum { E_OK = 0, E_PROTO = 1, E_RANGE = 2, E_TIMEOUT = 3, E_NOMEM = 4 };
+enum { E_OK = 0, E_PROTO = 1, E_RANGE = 2, E_TIMEOUT = 3, E_NOMEM = 4, E_REG = 5 /* a dspregs write did not take in 4 tries */ };
 enum { F_READOUT_DDR = 1 };
 
 static volatile uint32_t *bram, *dspregs, *axil;
@@ -150,11 +150,31 @@ static uint32_t recv_batch(int fd, batch_t *b){
 /* C1 batches: dma_server writes the number of drained circuits (one line per circuit) to this file; std_server
  * truncates it at BATCH start (readout_ddr) and waits for it before starting circuit i >= 1 */
 #define C1_DRAINED_FILE "/dev/shm/qubic_c1_drained"
-#define C1_STARTED_FILE "/dev/shm/qubic_c1_started"   /* std_server appends one line per circuit start (after the CUR_ADDR reset); dma_server waits for it */
+#define C1_STARTED_FILE "/dev/shm/qubic_c1_started"   /* one line per circuit start (after the CUR_ADDR reset); informational: dma_server does not read it */
 static int c1_drained_count(void){
     FILE *f = fopen(C1_DRAINED_FILE, "r"); if (!f) return 0;
     int n = 0, ch; while ((ch = fgetc(f)) != EOF) if (ch == '\n') n++;
     fclose(f); return n;
+}
+/* C1 batches: dma_server ends a circuit's stream on SHOT_DONE, a read-to-clear bit whose set loses to a coinciding read in
+ * the C1 gateware, so its own polling can swallow the event (~0.15 % of circuits). It backs that up with the writer's
+ * FINAL_ADDR / cur_addr, which show nothing for a single-burst circuit with the same size as its predecessor. For that
+ * case std_server names the circuit here once its lastshotdone is >= 2 ms old and it is still not drained (the
+ * writer's flush takes microseconds): dma_server's backup end signal, read only while it waits. */
+#define C1_NUDGE_FILE "/dev/shm/qubic_c1_nudge"
+/* Only for a circuit whose start the DSP took: a start strobe clears lastshotdone at once (dsp.sv:163-164), so a 1 read
+ * right after the start write is the previous circuit's and the DSP never ran this one (seen twice on 2026-09-25: DSP
+ * shotcnt unchanged, no readout). Without this check the nudge would let dma_server drain the previous circuit's data. */
+static int g_c1_start_seen = 0;
+static uint32_t g_c1_nostart = 0, g_c1_nostart_first = 0;
+static int c1_wait_drained(uint32_t n){               /* wait until n circuits are drained; circuit n-1 has finished */
+    uint64_t t0w = now_ns(); int nudged = 0;
+    while ((uint32_t)c1_drained_count() < n){
+        if (!nudged && g_c1_start_seen && (now_ns() - t0w) > 2000000ull){ FILE *f = fopen(C1_NUDGE_FILE, "w"); if (f){ fprintf(f, "%u\n", n - 1); fclose(f); } nudged = 1; }
+        if ((now_ns() - t0w) > (uint64_t)(CHUNK_TIMEOUT_S * 1e9)) return -1;
+        usleep(50);
+    }
+    return 0;
 }
 /* ---- the measured path (plan D3a) ---- */
 /* One outstanding AXI transaction at a time. The bramctrl slave is the custom axi4_lb localbus (combinational
@@ -169,11 +189,32 @@ static inline void mmio_wr(volatile uint32_t *p, uint32_t v){ *p = v; MMIO_SYNC(
 static inline uint32_t mmio_rd(volatile uint32_t *p){ uint32_t v = *p; MMIO_SYNC(); return v; }
 static inline void reg_wr(uint32_t off, uint32_t v){ mmio_wr(dspregs + off, v); }
 static inline uint32_t reg_rd(uint32_t off){ return mmio_rd(dspregs + off); }
+/* The start sequence's dspregs writes are verified. After a bitstream load one dspregs write can be answered OKAY and
+ * never reach the register file (ZCU216 bench 2026-09-25: one such loss in 35 of 37 loads, none seen after it; simulated
+ * mechanism: the axi4_lb bridge behind the cfgclk -> dspclk clock converter drops a write whose data beat arrives before
+ * its address; stream-failure report section 5). A lost start left the circuit waiting forever, a lost nshot or
+ * resetacc ran it with the wrong shot count or accbuf pointer. */
+static uint32_t g_reg_rewrites = 0, g_reg_rw_off = 0, g_reg_rw_circ = 0, g_circ = 0;
+static int reg_set(uint32_t off, uint32_t v){            /* write until it reads back */
+    for (int k = 0; k < 4; k++){
+        reg_wr(off, v);
+        if (reg_rd(off) == v) return 0;
+        if (!g_reg_rewrites++){ g_reg_rw_off = off; g_reg_rw_circ = g_circ; }
+    }
+    return -1;
+}
+/* The DSP starts on the write itself, whatever the value. Writing the complement of the stored bit makes the write
+ * visible: the bit flips exactly when the write reached the register file, which is exactly when it started the DSP.
+ * The read-back follows the write's response (dsb). A dropped write, the only loss seen, left the bit unchanged and
+ * started nothing, so it is re-issued without running a circuit twice. A write landing on another register (seen only
+ * in simulation) is not handled. */
+static int reg_start(uint32_t off){ return reg_set(off, (reg_rd(off) & 1) ^ 1); }
 
 static uint32_t run_batch(batch_t *b, uint64_t *t_start, uint64_t *t_end, uint64_t *words_written){
     uint64_t nw = 0;
     int ddr = (b->flags & F_READOUT_DDR) != 0;
-    if (ddr){ FILE *f = fopen(C1_DRAINED_FILE, "w"); if (f) fclose(f); f = fopen(C1_STARTED_FILE, "w"); if (f) fclose(f); }   /* reset both counts */
+    if (ddr){ FILE *f = fopen(C1_DRAINED_FILE, "w"); if (f) fclose(f); f = fopen(C1_STARTED_FILE, "w"); if (f) fclose(f); f = fopen(C1_NUDGE_FILE, "w"); if (f) fclose(f); g_c1_nostart = 0; }   /* reset the counts and the nudge */
+    g_reg_rewrites = 0;
     *t_start = now_ns();
     for (uint32_t i = 0; i < b->K; i++){
         circuit_t *c = &b->circ[i];
@@ -192,11 +233,7 @@ static uint32_t run_batch(batch_t *b, uint64_t *t_start, uint64_t *t_end, uint64
             /* C1 batches: the readout writer parks at its base after every circuit, so circuit i may only start
              * once dma_server has drained circuit i-1 (it appends the count to C1_DRAINED_FILE). PS-local wait,
              * no host round trip inside the interval. */
-            uint64_t t0w = now_ns();
-            while ((uint32_t)c1_drained_count() < i){
-                if ((now_ns() - t0w) > (uint64_t)(CHUNK_TIMEOUT_S * 1e9)) return E_TIMEOUT;
-                usleep(50);
-            }
+            if (c1_wait_drained(i)) return E_TIMEOUT;
         }
         if (ddr){
             /* C1 (run.py ddr_start_circuit): clear stale SHOT_DONE (clear-on-read) / FINAL_ADDR / CUR_ADDR
@@ -204,7 +241,7 @@ static uint32_t run_batch(batch_t *b, uint64_t *t_start, uint64_t *t_end, uint64
             (void)mmio_rd(axil + 0x1C / 4);
             mmio_wr(axil + 0x18 / 4, 0);
             mmio_wr(axil + 0x20 / 4, 0);
-            { FILE *f = fopen(C1_STARTED_FILE, "a"); if (f){ fputc('\n', f); fclose(f); } }   /* registers reset: dma_server may poll this circuit */
+            { FILE *f = fopen(C1_STARTED_FILE, "a"); if (f){ fputc('\n', f); fclose(f); } }   /* registers reset (a SHOT_DONE left by a std run is cleared by dma_server before its SDK session OK) */
         }
         /* 4. run_circuit: chunks of shots_per_run = accbuf_len // max words_per_shot */
         uint32_t wps_max = 1;
@@ -216,13 +253,20 @@ static uint32_t run_batch(batch_t *b, uint64_t *t_start, uint64_t *t_end, uint64
             uint32_t chunk = (r < n_runs - 1) ? shots_per_run : c->nshots - r * shots_per_run;
             /* start_program */
             TRACE("  run %u/%u: chunk=%u start_program\n", r + 1, n_runs, chunk);
-            reg_wr(b->off_nshot, chunk);
-            reg_wr(b->off_dspreset, 0);
-            reg_wr(b->off_resetacc, 1);
+            g_circ = i;
+            if (reg_set(b->off_nshot, chunk)) return E_REG;
+            reg_wr(b->off_dspreset, 0);                     /* a lost one is harmless: the DSP is idle between circuits */
+            if (reg_set(b->off_resetacc, 1)) return E_REG;
             usleep(POLL_US);
-            reg_wr(b->off_resetacc, 0);
+            if (reg_set(b->off_resetacc, 0)) return E_REG;
             usleep(POLL_US);
-            reg_wr(b->off_start, 0);
+            if (reg_start(b->off_start)) return E_REG;
+            if (ddr){                                       /* C1: did the DSP take this start? (see C1_NUDGE_FILE) */
+                int k = 0;
+                while (k < 20 && reg_rd(b->off_lsd)) k++;
+                g_c1_start_seen = k < 20;
+                if (!g_c1_start_seen && !g_c1_nostart++) g_c1_nostart_first = i;
+            }
             /* wait_and_readback: poll lastshotdone every 1 ms */
             uint64_t t0 = now_ns();
             while (reg_rd(b->off_lsd) == 0){
@@ -249,6 +293,7 @@ static uint32_t run_batch(batch_t *b, uint64_t *t_start, uint64_t *t_end, uint64
     }
     *t_end = now_ns();
     *words_written = nw;
+    if (ddr && c1_wait_drained(b->K)) return E_TIMEOUT;   /* after t_end: the last circuit gets the nudge as well */
     return E_OK;
 }
 
@@ -264,6 +309,9 @@ static void serve(int fd){
     st = run_batch(&b, &ts, &te, &nw);
     printf(">>> [STD] K=%u flags=%u status=%u elapsed=%.3f ms words=%llu\n", b.K, b.flags, st,
            (double)(te - ts) / 1e6, (unsigned long long)nw);
+    if (g_c1_nostart) printf(">>> [STD] C1: the DSP did not take the start of %u circuit(s), first circuit %u\n", g_c1_nostart, g_c1_nostart_first);
+    if (g_reg_rewrites) printf(">>> [STD] dspregs: %u write(s) read back unchanged and were re-written, first at circuit %u, word %u\n",
+                               g_reg_rewrites, g_reg_rw_circ, g_reg_rw_off);
     if (send_all(fd, &st, 4) || send_all(fd, &ts, 8) || send_all(fd, &te, 8) || send_all(fd, &nw, 8)){ free_batch(&b); return; }
     if (st == E_OK && !(b.flags & F_READOUT_DDR)){
         for (uint32_t i = 0; i < b.K; i++)
