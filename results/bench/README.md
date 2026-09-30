@@ -6,7 +6,8 @@ compiled programs and the readout channels acquire the board's own signals. No d
 
 | Experiment | Files | Image (`benchmark/bitstreams/`) | Produced by |
 |---|---|---|---|
-| Single circuits, 30-circuit batches with and without pooled tables, the six physics experiments with their calibration series, oscilloscope cadence, fixed-cost decomposition, early stop (steps A1-A7, 2026-09-20; the `std` and `c1` single circuits, step A3b, 2026-09-23) | `raw_runs*.csv`, `cnr_log.csv`, `scope_cadence/raw/*.npz`, the workload definitions | `zcu216_14_2_c3_13b440c3` (`c3` rows), `zcu216_14_2_c1_0071783e` (`std` and `c1` rows) | `experiments/board/recampaign_run.sh` |
+| Single circuits, 30-circuit batches with and without pooled tables, the physics experiments (1) to (5) with their calibration series, oscilloscope cadence, fixed-cost decomposition, early stop (steps A1-A7, 2026-09-20; the `std` and `c1` single circuits, step A3b, 2026-09-23) | `raw_runs*.csv`, `cnr_log.csv`, `scope_cadence/raw/*.npz`, the workload definitions | `zcu216_14_2_c3_13b440c3` (`c3` rows), `zcu216_14_2_c1_0071783e` (`std` and `c1` rows) | `experiments/board/recampaign_run.sh` |
+| Physics experiment (6), sub-circuit segments of the compiler (2026-09-30, tag `split_new`) | `raw_runs_phys.csv`, `cnr_log.csv` | `zcu216_14_2_c3_13b440c3` | `experiments/board/run_phys_campaign.py` (three cells of a warm-up and 5 repeats) |
 | Realized shot length of the 20 circuits on the baseline image (step A3r, 2026-09-24) | `per_shot_realized_raw.csv`, `per_shot_realized_real.csv` | `zcu216_14_2_c1_0071783e` | `experiments/board/c1_slope_real.py` (`recampaign_run.sh` step A3r) |
 | Command-buffer handover time (2026-09-19) | `handover_scope/*.npz` | `zcu216_14_2_c3_13b440c3` | `experiments/device_x6y3/handover_scope.py` (`recampaign_accept.sh` step 3) |
 | Batch-completion stress (2026-09-19) | `stress/stress_K3.csv`, `stress/stress_K1.csv` | `zcu216_14_2_c3_13b440c3` | `experiments/board/acceptance/ce_stress.py` (`recampaign_accept.sh` step 2) |
@@ -18,7 +19,7 @@ compiled programs and the readout channels acquire the board's own signals. No d
 | File | Contents |
 |---|---|
 | `raw_runs.csv` | Single-circuit and batch runs of the 20 paper circuits on every path (`mode` = `c3`, `c1`, `std`), with and without pooled tables (`pool_tables`). |
-| `raw_runs_phys.csv` | The six physics experiments, their calibration series, and the runs recorded by the oscilloscope captures (tags `scope_*`). |
+| `raw_runs_phys.csv` | The six physics experiments (experiment (6): tag `split_new`), their calibration series, and the runs recorded by the oscilloscope captures (tags `scope_*`). |
 | `raw_runs_decomp.csv` | Single-circuit runs carrying the batch_server stage timestamps (first DMA done, start written, first circuit id, batch done). |
 | `raw_runs_stop.csv` | Early-stop pairs (full run / preset stop), with the stop records. |
 | `cnr_log.csv` | Per hardware group: the command-supply witness (`cnr`, `cnr_wait_cycles`) of every c3 run. |

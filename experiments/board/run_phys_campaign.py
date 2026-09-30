@@ -34,7 +34,8 @@ def main():
         # (5)/(6) sub-circuit streams: pooled tables + prefill 16; without --pool-tables the segments land in two hardware
         # groups and the runner rejects the stream ("split into 2 hardware groups").
         STREAM = ['--pool-tables', '--prefill', '16']
-        for idx in (5, 6): cell('C3', 'c3', idx, 3, 'c3_14q_phys4_start16', extra=STREAM)
+        cell('C3', 'c3', 5, 3, 'c3_14q_phys4_start16', extra=STREAM)   # published (5) rows: segments of phys_split.py (release v1.8)
+        for _ in range(3): cell('C3', 'c3', 6, 5, 'split_new', extra=STREAM)   # published (6) rows (2026-09-30): the compiler's segments
     if a.part in ('c1std', 'all'):
         C.switch_image('C1')
         for idx in (1, 2, 3, 4): cell('C1', 'c1', idx, 3, 'c1_14q_phys1')

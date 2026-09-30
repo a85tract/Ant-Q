@@ -59,7 +59,11 @@ The bench measurements use a ZCU216 without a quantum device attached; `device_x
 8-qubit fixed-frequency transmon device. `distributed_processor` is the official QubiC commit `0653425` (branch
 `feat/ddr_mem` of [LBL-QubiC/distributed_processor](https://gitlab.com/LBL-QubiC/distributed_processor): `c22cce8` plus the
 `elem_cfg_pool` option of `GlobalAssembler`, the shared envelope/frequency table layout for heterogeneous batches; the
-measurements used the identical tree). The simulator study records its package versions in every row.
+measurements used the identical tree). The runner's sub-circuit streams and the rows of experiment (6) use
+`Compiler.compile_segments`, commit `c2adc1c` of branch `antq-compile-segments` of
+[yguang1/distributed_processor](https://gitlab.com/yguang1/distributed_processor) (`0653425` plus that pass, proposed for
+`feat/ddr_mem` in [LBL-QubiC/distributed_processor!40](https://gitlab.com/LBL-QubiC/distributed_processor/-/merge_requests/40));
+the rows of experiment (5) and of the device programs were split by `phys_split.py` of release v1.8. The simulator study records its package versions in every row.
 
 ## Reproducing
 
@@ -76,8 +80,7 @@ python rq3_extended.py                          # stop rates per grade, threshol
 ```
 
 **Hardware measurements.** A ZCU216 running one of the images in `benchmark/bitstreams/` (deployment notes in the benchmark
-README) with the PS servers and the service start script (`start_qubic_server.sh`) of `software/scripts/`, and a host with `software/` on `PYTHONPATH` and that
-`distributed_processor`. Fill in `experiments/board/site_env.sh` from `site_env.sh.example` (board address, ssh destinations,
+README) with the PS servers and the service start script (`start_qubic_server.sh`) of `software/scripts/`, and a host with `software/` and the `python/` directory of `distributed_processor` `c2adc1c` on `PYTHONPATH`. Fill in `experiments/board/site_env.sh` from `site_env.sh.example` (board address, ssh destinations,
 build directories -- nothing site-specific is stored in the scripts), then:
 
 ```bash

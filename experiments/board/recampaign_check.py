@@ -35,7 +35,7 @@ if step == 'A1':
         hit = [r for r in cal if r['workload_id'].split('_')[0] == f"phys{EXP[e['exp']]}" and int(float(r['calib_n'] or 0)) == int(e['count'])]
         need(hit and all(r['cnr'] == '0' for r in hit), f"calibration {e['exp']} n={e['count']}: {len(hit)} ok rows (cnr {[r['cnr'] for r in hit]})")
     for i in (5, 6):
-        s = ok_measured([r for r in phys if r['tag'] == 'c3_14q_phys4_start16' and r['workload_id'].split('_')[0] == f'phys{i}'])
+        s = ok_measured([r for r in phys if r['tag'] == ('c3_14q_phys4_start16' if i == 5 else 'split_new') and r['workload_id'].split('_')[0] == f'phys{i}'])
         need(reps(s) >= {0, 1, 2}, f'phys{i} stream: ok repeats {sorted(reps(s))}'); need(all(r['cnr'] == '0' for r in s), f'phys{i} stream: CNR != 0 in {[r["cnr"] for r in s]}')
 elif step == 'A2':
     cad = rows('scope_cadence/cadence_summary.csv'); by = collections.defaultdict(list)
