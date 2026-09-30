@@ -39,8 +39,8 @@ script the bench board ran (each PS server pinned to its own core). The stock-pa
 git clone --recurse-submodules https://github.com/a85tract/Ant-Q.git
 ```
 
-Release v1.8 of this repository, with the three submodules at the commits above, is archived at
-[doi:10.5281/zenodo.22967196](https://doi.org/10.5281/zenodo.22967196); all releases:
+Release v1.9 of this repository, with the three submodules at the commits above, is archived at
+[doi:10.5281/zenodo.23072166](https://doi.org/10.5281/zenodo.23072166); all releases:
 [doi:10.5281/zenodo.22950191](https://doi.org/10.5281/zenodo.22950191).
 
 ## Data provenance
@@ -63,7 +63,8 @@ measurements used the identical tree). The runner's sub-circuit streams and the 
 `Compiler.compile_segments`, commit `c2adc1c` of branch `antq-compile-segments` of
 [yguang1/distributed_processor](https://gitlab.com/yguang1/distributed_processor) (`0653425` plus that pass, proposed for
 `feat/ddr_mem` in [LBL-QubiC/distributed_processor!40](https://gitlab.com/LBL-QubiC/distributed_processor/-/merge_requests/40));
-the rows of experiment (5) and of the device programs were split by `phys_split.py` of release v1.8. The simulator study records its package versions in every row.
+the rows of experiment (5) and of the device programs were split by `phys_split.py` of release v1.8
+([doi:10.5281/zenodo.22967196](https://doi.org/10.5281/zenodo.22967196)). The simulator study records its package versions in every row.
 
 ## Reproducing
 
