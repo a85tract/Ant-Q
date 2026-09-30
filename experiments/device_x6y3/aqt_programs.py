@@ -16,7 +16,7 @@ idx      program                                   reads/iter  body
 200-212  fringe X90 - 100 ns - Z(phi_k) - X90 - read    1           first on-device check, 13 phases over [-pi, pi] (also run on the stock path)
 300+     RB    random Clifford sequences + inverse  1           idx = 300 + 10*L + s (length index L in RB_LENGTHS, sequence s);
                                                                 sequences longer than STREAM_ABOVE Cliffords carry 'stream': True
-                                                                and run as sub-circuit streams (phys_split / REPT, --pool-tables)
+                                                                and run as sub-circuit streams (compile_segments / REPT, --pool-tables)
 """
 import os
 import numpy as np
@@ -225,7 +225,7 @@ def build_circuits():
                             rb_m=m, rb_seq=s_, rb_ids=ids, stream=(m > STREAM_ABOVE)))
     # ---------------- boundary experiment: the quantum consequence of one command-buffer handover. AQT_BOUNDARY=1 adds three
     # configurations of otherwise identical programs, run on the same image/load:
-    #   S = streamed as two sub-circuit segments cut at a chosen gate boundary (seg_cut_after -> phys_split), 'stream': True;
+    #   S = streamed as two sub-circuit segments cut at a chosen gate boundary (seg_cut_after -> a segment_cut for compile_segments), 'stream': True;
     #   U = the same program unbroken (hardware loop, no handover);
     #   UD = U with an idle of AQT_HANDOVER_S inserted at the cut (the control for the time the handover adds).
     # Every body ends with read - delay(AQT_TAIL_S) - one zero-amplitude 8-ns readout-drive pulse, so the second segment lasts

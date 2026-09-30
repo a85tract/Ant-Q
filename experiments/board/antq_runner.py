@@ -93,17 +93,16 @@ class Programs:
         # measured program against the complete pool, so all programs carry byte-identical tables.
         self.pool = {} if pool_tables else None
         self.pool_ready = False
+        self._seg_cache = {}
 
     def build_pool(self):
         if self.pool is None or self.pool_ready:
             return
         if os.environ.get('ANTQ_PHYS_MODULE'):          # device programs (AQT): the pool is that program set itself --
             self.phys(min(self._phys_ids()))            # pass 1 assembles every program (segments of streams included)
-            import phys_split
             for i in sorted(self._phys_circuits):
                 if self.phys_is_stream(i):
-                    phys_split.build_segments(self, i, cap=getattr(self, 'seg_cap', None) or phys_split.CAP,
-                                              max_pulses=getattr(self, 'seg_pulses', None), verify=False)
+                    self.segments(i)
                 else:
                     self.phys(i)
             self._seg_cache = {}                        # pass 2 (lazy) re-assembles against the complete pool
@@ -252,16 +251,8 @@ class Programs:
             physic_experiment = self._load_phys_module()
             self._phys_circuits = {c['idx']: c for c in physic_experiment.build_circuits()}
         c = self._phys_circuits[idx]
-        if idx in (5, 6) or c.get('stream'):               # sub-circuit stream (plan A0): programs come from phys_split; 'stream': True marks other oversized programs (AQT RB)
-            import phys_split
-            if not hasattr(self, '_seg_cache'): self._seg_cache = {}
-            cap = getattr(self, 'seg_cap', None) or phys_split.CAP
-            max_pulses = getattr(self, 'seg_pulses', None)
-            key = (idx, cap, max_pulses)
-            if key not in self._seg_cache:
-                self._seg_cache[key] = phys_split.build_segments(self, idx, cap=cap, max_pulses=max_pulses)
-            segs, rep_ = self._seg_cache[key]
-            self._seg_cache[idx] = self._seg_cache[key]
+        if idx in (5, 6) or c.get('stream'):               # sub-circuit stream (plan A0): segments(); 'stream': True marks other oversized programs (AQT RB)
+            segs, rep_ = self.segments(idx)
             exe0 = segs[-1][0]
             per_shot = rep_['sum_dur_us']                       # segment 0 already carries the leading dt delay
             shots = int(getattr(self, 'repeat_override', 0) or 0) or rep_['shots']   # diagnostic replay count
@@ -298,6 +289,55 @@ class Programs:
                  cmd_bytes_max=max(len(d.data if hasattr(d, 'data') else bytes(d))
                                    for n, d in exe.get_binaries_fromboard().items() if 'command' in n))
         return exe, b
+
+    def segments(self, idx):
+        """Sub-circuit stream of an oversized straight-line program (physics experiments 5 and 6, device programs flagged
+        'stream'): one shot, [delay(dt_inter_shot)] + the shot loop's body, compiled once and cut by distproc's
+        Compiler.compile_segments where all cores are idle, at most slot_bytes // 16 commands per core and segment; a
+        program's 'seg_cut_after' (the boundary programs) places the cut by hand instead. Segment 0 carries the inter-shot
+        delay as a leading delay. Returns ([(exe, meta) per segment], report); cached until the pool is complete."""
+        if idx in self._seg_cache:
+            return self._seg_cache[idx]
+        import copy
+        from distproc.compiler import Compiler, get_passes
+        if not hasattr(self, '_real_qchip'):
+            self._real_init()
+        if not hasattr(self, '_phys_circuits'):
+            self._phys_circuits = {c['idx']: c for c in self._load_phys_module().build_circuits()}
+        c = self._phys_circuits[idx]
+        circ = self._rename(copy.deepcopy(c['circuit']), self._ren)
+        # the physics-program format: declare, set_var, then a loop whose last op increments the loop variable (one shot per
+        # pass). REPT replays the segments instead, so exactly this wrapper goes; anything else reaches the compiler.
+        var = circ[0].get('var') if circ else None
+        if [op.get('name') for op in circ] != ['declare', 'set_var', 'loop'] or \
+                circ[2]['body'][-1:] != [{'name': 'alu', 'op': 'add', 'lhs': 1, 'rhs': var, 'out': var}]:
+            raise ValueError(f'phys {idx}: not a shot loop (declare, set_var, loop ending in its counter increment)')
+        body = circ[2]['body'][:-1]
+        if c.get('seg_cut_after') is not None:
+            body.insert(int(c['seg_cut_after']), {'name': 'segment_cut'})
+        qg = {f'qubit_{i}': {f'qubit_{i}.qdrv', f'qubit_{i}.rdrv', f'qubit_{i}.rdlo'} for i in range(self.num_ch)}
+        comp = Compiler([{'name': 'delay', 't': float(c['dt_inter_shot'])}] + body)
+        comp.run_ir_passes(get_passes(self._real_fpga, self._real_qchip, compiler_flags={'schedule': True}, qubit_grouping=qg))
+        progs, info = comp.compile_segments(self._real_fpga, self.slot_bytes // 16)
+        out = []
+        for k, (prog, inf) in enumerate(zip(progs, info)):
+            exe = self.tc.run_assemble_stage(prog, self.cc, elem_cfg_pool=self.pool)
+            cmd_max = max(len(d.data if hasattr(d, 'data') else bytes(d))
+                          for n, d in exe.get_binaries_fromboard().items() if 'command' in n)
+            assert cmd_max <= self.slot_bytes, f'phys {idx} segment {k}: {cmd_max} B > slot'
+            rps = {}
+            for instrs in prog.program.values():
+                for ins in instrs:
+                    if ins['op'] == 'pulse' and ins['dest'].endswith('.rdlo'):
+                        rps[ins['dest']] = rps.get(ins['dest'], 0) + 1
+            out.append((exe, dict(seg=k, cmd_bytes_max=cmd_max, n_cmds_max=cmd_max // 16, dur_us=inf['end_ns'] / 1e3, rps=rps,
+                                  t_start_ns=inf['t_start_ns'], idle=inf['idle'], overlap_ns=inf['overlap_ns'])))
+        rep = dict(idx=idx, name=c['name'], n_segments=len(out), shots=int(c['shots']), dt_us=float(c['dt_inter_shot']) * 1e6,
+                   segments=[m for _, m in out], sum_dur_us=sum(m['dur_us'] for _, m in out))
+        forced = [f"{m['seg'] - 1}->{m['seg']} ({m['overlap_ns']:.1f} ns)" for m in rep['segments'] if not m['idle']]
+        print(f"[segments] phys {idx}: {len(out)} segments, " + (f"NOT idle: {', '.join(forced)}" if forced else 'every cut idle'), flush=True)
+        self._seg_cache[idx] = (out, rep)
+        return out, rep
 
     def readout_sim(self, n_q, per_shot_us):
         key = (n_q, round(per_shot_us, 3))
@@ -410,8 +450,6 @@ class Runner:
         self.bench = load_bench()
         self.progs = Programs(a.gw, a.num_ch, pool_tables=getattr(a, 'pool_tables', False))
         self.progs.build_pool()
-        self.progs.seg_cap = getattr(a, 'seg_cap', None) or None        # plan A0 boundary control: split geometry
-        self.progs.seg_pulses = getattr(a, 'seg_pulses', None) or None
         self.progs.repeat_override = getattr(a, 'repeat_override', 0) or 0
         self.std = StdServerClient(BOARD, a.bits)
         self.bits_hash = os.path.basename(os.path.normpath(a.bits))
@@ -632,12 +670,7 @@ class Runner:
         """plan A0: oversized RB experiment idx (5/6) as a sub-circuit stream: K segment images replayed R = shots
         times (REPT); evidence = the sticky CNR flag of the whole K*R-unit batch, exact word counts, elapsed."""
         from qubic.rpc_client import CircuitRunnerClient
-        import phys_split
-        cap = getattr(self.progs, 'seg_cap', None) or phys_split.CAP
-        segs, rep_ = self.progs._seg_cache.get((idx, cap, getattr(self.progs, 'seg_pulses', None))) or \
-            phys_split.build_segments(self.progs, idx, cap=cap, max_pulses=getattr(self.progs, 'seg_pulses', None))
-        if not rep_['verify_ok']:
-            raise RuntimeError(f"segment split does not reproduce the unbroken program: {rep_['verify']}")
+        segs, rep_ = self.progs.segments(idx)
         exes = [e for e, _ in segs]; metas = [m for _, m in segs]
         R = rep_['shots']
         r = CircuitRunnerClient(BOARD, RPC_PORT, ddr_cmd=True, num_ch=self.a.num_ch, slot_bytes=self.progs.slot_bytes)
@@ -744,9 +777,7 @@ class Runner:
     def run(self):
         a = self.a
         if getattr(a, 'phys', False):
-            ctrl = f'_ctrl{a.seg_pulses}p_cap{a.seg_cap}' if getattr(a, 'seg_pulses', None) else ''
-            if getattr(a, 'seg_cap', None) and not getattr(a, 'seg_pulses', None): ctrl = f'_cap{a.seg_cap}'
-            if getattr(a, 'ch_mask', None) is not None: ctrl += f'_mask{int(a.ch_mask):x}'
+            ctrl = f'_mask{int(a.ch_mask):x}' if getattr(a, 'ch_mask', None) is not None else ''
             if getattr(a, 'repeat_override', 0): ctrl += f'_R{a.repeat_override}'
             if getattr(a, 'prefill', 0): ctrl += f'_prefill{a.prefill}'
             items = [('phys_cal' if a.calib_n else 'phys', f'phys{i}' + (f'_n{a.calib_n}' if a.calib_n else '') + ctrl, [i]) for i in a.idx]
@@ -783,11 +814,9 @@ def main():
     p.add_argument('--note', default='', help='free text recorded in every row')
     p.add_argument('--phys', action='store_true', help='plan A: physics experiments from benchmark_qce/physic_experiment.py (--idx = experiment idx)')
     p.add_argument('--calib-n', type=int, default=0, help='plan A3: run the --phys experiment with this loop count (calibration series)')
-    p.add_argument('--seg-cap', type=int, default=0, help='plan A0 control: segment pulse cap (default 2046)')
     p.add_argument('--ch-mask', default=None, help='diagnostic: force the CE channel mask (int, bit c = 1 -> core c masked) on the segment stream')
     p.add_argument('--repeat-override', type=int, default=0, help='diagnostic: replay count R for the segment stream (default = shots)')
     p.add_argument('--prefill', type=int, default=16, help='segment streams: GLOBAL_START only after this many units are in DDR (-1 = all; 0 = off; default 16 = the start-up head start that removed the residual boundary stalls, 2026-09-03)')
-    p.add_argument('--seg-pulses', type=int, default=0, help='plan A0 control: use only the first M pulses of the RB body (capacity-fitting control)')
     p.add_argument('--stop-at', type=int, default=None, help='plan B: single-circuit early-stop run (0 = full run of a pair); rows also go to raw_runs_stop.csv')
     p.add_argument('--cp-ns', type=int, default=0, help='plan B: emulated checkpoint delay in ns (cp_step = shots // 10)')
     p.add_argument('--pair-id', default='', help='plan B: pair identifier shared by the full and stop run')
